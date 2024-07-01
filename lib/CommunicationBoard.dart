@@ -1,30 +1,58 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
-class CommunicationBoard extends StatelessWidget {
+class CommunicationBoard extends StatefulWidget {
   const CommunicationBoard({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          _buildTopBar(),
-          _buildNameBar(),
-          _buildActionButtons(),
-          _buildCategoryGrid(),
-        ],
-      ),
-      bottomNavigationBar: _buildBottomNav(),
-    );
+  _CommunicationBoardState createState() => _CommunicationBoardState();
+}
+
+class _CommunicationBoardState extends State<CommunicationBoard> {
+  final TextEditingController _textController = TextEditingController();
+  final FlutterTts _flutterTts = FlutterTts();
+
+  @override
+  void dispose() {
+    _textController.dispose();
+    _flutterTts.stop();
+    super.dispose();
   }
 
   Widget _buildTopBar() {
-    return Row(
-      children: [
-        const Expanded(child: TextField(decoration: InputDecoration(hintText: 'Field Text', contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0)))),
-        ElevatedButton(onPressed: () {}, child: const Text('Delete')),
-        ElevatedButton(onPressed: () {}, child: const Text('Speak')),
-      ],
+    return Container(
+      padding: const EdgeInsets.all(8),
+      child: Row(
+        children: [
+          Expanded(
+            child: TextField(
+              controller: _textController,
+              decoration: const InputDecoration(hintText: 'Field Text'),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              _textController.clear();
+            },
+            child: const Icon(Icons.delete),
+          ),
+          const SizedBox(width: 8),
+          ElevatedButton(
+            onPressed: () async {
+              String text = _textController.text;
+              if (text.isNotEmpty) {
+                await _flutterTts.speak(text);
+              }
+            },
+            child: const Row(
+              children: [
+                Text('Speak'),
+                Icon(Icons.volume_up, size: 18),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -32,7 +60,7 @@ class CommunicationBoard extends StatelessWidget {
     return Row(
       children: [
         const BackButton(),
-        const Expanded(child: Text('Name of Category')),
+        const Expanded(child: Text('Name of Category', style: TextStyle(fontSize: 16))),
         TextButton(onPressed: () {}, child: const Text('Add word')),
       ],
     );
@@ -42,6 +70,7 @@ class CommunicationBoard extends StatelessWidget {
     return Row(
       children: [
         Expanded(child: ElevatedButton(onPressed: () {}, child: const Text('Add to field text'))),
+        const SizedBox(width: 8),
         Expanded(child: ElevatedButton(onPressed: () {}, child: const Text('Go to category'))),
       ],
     );
@@ -53,6 +82,8 @@ class CommunicationBoard extends StatelessWidget {
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           childAspectRatio: 1,
+          crossAxisSpacing: 8,
+          mainAxisSpacing: 8,
         ),
         itemCount: 12,
         itemBuilder: (context, index) {
@@ -72,6 +103,24 @@ class CommunicationBoard extends StatelessWidget {
         BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Setting'),
       ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey[100],
+      body: SafeArea(
+        child: Column(
+          children: [
+            _buildTopBar(),
+            _buildNameBar(),
+            _buildActionButtons(),
+            _buildCategoryGrid(),
+          ],
+        ),
+      ),
+      bottomNavigationBar: _buildBottomNav(),
     );
   }
 }
