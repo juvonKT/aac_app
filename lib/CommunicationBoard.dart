@@ -85,7 +85,7 @@ class _CommunicationBoardState extends State<CommunicationBoard> {
           crossAxisSpacing: 8,
           mainAxisSpacing: 8,
         ),
-        itemCount: 12,
+        itemCount: 21,
         itemBuilder: (context, index) {
           return Container(
             margin: const EdgeInsets.all(8),
