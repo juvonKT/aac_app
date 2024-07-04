@@ -1,28 +1,49 @@
 // lib/home_page.dart
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'settings.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
   FlutterTts flutterTts = FlutterTts();
-  List<String> message = [];
+  Map<String, List<String>> phrases = {};
+  List<String> selectedPhrases = [];
 
-  void _addWord() {
-    setState(() {
-      message.add('ok');
+  @override
+  void initState() {
+    super.initState();
+    loadPhrases().then((data) {
+      setState(() {
+        phrases = data;
+      });
     });
   }
 
-  void _removeWord() {
+  Future<Map<String, List<String>>> loadPhrases() async {
+    String jsonString = await rootBundle.loadString('assets/phrases.json');
+    Map<String, dynamic> jsonMap = json.decode(jsonString);
+    return jsonMap.map((key, value) => MapEntry(key, List<String>.from(value)));
+  }
+
+  void addPhrase(String phrase) {
     setState(() {
-      if (message.isNotEmpty) {
-        message.removeLast();
+      selectedPhrases.add(phrase);
+    });
+  }
+
+  void removePhrase() {
+    setState(() {
+      if (selectedPhrases.isNotEmpty) {
+        selectedPhrases.removeLast();
       }
     });
     Fluttertoast.showToast(
@@ -32,14 +53,14 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void _removeAllWords() {
+  void clearPhrases() {
     setState(() {
-      message.clear();
+      selectedPhrases.clear();
     });
   }
 
   void _speak() async {
-    await flutterTts.speak(message.join(' '));
+    await flutterTts.speak(selectedPhrases.join(' '));
   }
 
   @override
@@ -54,15 +75,15 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Text(
-          message.join(' '),
+          selectedPhrases.join(' '),
           style: const TextStyle(color: Colors.white),
         ),
         actions: [
           GestureDetector(
-            onLongPress: _removeAllWords,
+            onLongPress: clearPhrases,
             child: IconButton(
               icon: const Icon(Icons.backspace, color: Colors.white),
-              onPressed: _removeWord,
+              onPressed: removePhrase,
             ),
           ),
           IconButton(
@@ -88,7 +109,7 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                  onPressed: _addWord,
+                  onPressed: () {},
                   child: const Text('ADD TO TEXT'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.deepPurple,
@@ -113,23 +134,43 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
               child: GridView.builder(
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16.0),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
+                  crossAxisSpacing: 16.0,
+                  mainAxisSpacing: 16.0,
                 ),
-                itemCount: 12,
+                itemCount: phrases.keys.length,
                 itemBuilder: (context, index) {
-                  return Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Icon(
-                      Icons.image,
-                      color: Colors.grey[600],
-                      size: 48,
+                  String category = phrases.keys.elementAt(index);
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PhraseListPage(
+                            category: category,
+                            phrases: phrases[category]!,
+                            onPhraseSelected: addPhrase,
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.deepPurple[300],
+                        borderRadius: BorderRadius.circular(18.0),
+                      ),
+                      child: Center(
+                        child: Text(
+                          category,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
                     ),
                   );
                 },
@@ -160,6 +201,65 @@ class _HomePageState extends State<HomePage> {
         ],
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
+      ),
+    );
+  }
+}
+
+class PhraseListPage extends StatelessWidget {
+  final String category;
+  final List<String> phrases;
+  final Function(String) onPhraseSelected;
+
+  PhraseListPage({
+    required this.category,
+    required this.phrases,
+    required this.onPhraseSelected,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Text(
+          category,
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+      body: GridView.builder(
+        padding: const EdgeInsets.all(16.0),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 16.0,
+          mainAxisSpacing: 16.0,
+        ),
+        itemCount: phrases.length,
+        itemBuilder: (context, index) {
+          String phrase = phrases[index];
+          return GestureDetector(
+            onTap: () {
+              onPhraseSelected(phrase);
+              Navigator.pop(context);
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.deepPurple,
+                borderRadius: BorderRadius.circular(18.0),
+              ),
+              child: Center(
+                child: Text(
+                  phrase,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }

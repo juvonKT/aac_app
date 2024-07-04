@@ -1,0 +1,14 @@
+{
+  "people": ["I", "You", "Me", "We", "He", "She", "They", "Them", "Us"],
+  "things": ["chair", "car", "book", "pen", "table", "phone", "computer", "bed", "cup"],
+  "actions": ["run", "walk", "read", "write", "eat", "drink", "sleep", "talk", "play"],
+  "feelings": ["happy", "sad", "angry", "excited", "scared", "nervous", "bored", "tired"],
+  "places": ["home", "school", "work", "park", "store", "restaurant", "hospital", "library", "beach"],
+  "questions": ["What", "Why", "When", "How", "Where", "Who", "Can", "Do", "Is"],
+  "responses": ["Yes", "No", "Maybe", "Okay", "Sure", "Of course", "I don't know", "That's right", "I think so"],
+  "colors": ["red", "blue", "green", "yellow", "orange", "purple", "black", "white", "pink"],
+  "food": ["apple", "banana", "bread", "chicken", "rice", "pizza", "salad", "sandwich", "milk"],
+  "time": ["morning", "afternoon", "evening", "night", "today", "tomorrow", "yesterday", "now", "later"],
+  "family": ["mother", "father", "sister", "brother", "son", "daughter", "husband", "wife"],
+  "weather": ["sun", "rain", "cloud", "wind", "snow", "storm", "temperature", "humidity"]
+}
