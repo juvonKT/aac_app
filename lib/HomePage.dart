@@ -1,35 +1,45 @@
 // lib/home_page.dart
 import 'package:flutter/material.dart';
+import 'settings.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-import 'Settings.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
   FlutterTts flutterTts = FlutterTts();
-  List<String> _words = [];
+  List<String> message = [];
 
   void _addWord() {
     setState(() {
-      _words.add('ok');
+      message.add('ok');
     });
   }
 
   void _removeWord() {
     setState(() {
-      if (_words.isNotEmpty) {
-        _words.removeLast();
+      if (message.isNotEmpty) {
+        message.removeLast();
       }
+    });
+    Fluttertoast.showToast(
+      msg: "Hold to remove all",
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+    );
+  }
+
+  void _removeAllWords() {
+    setState(() {
+      message.clear();
     });
   }
 
   void _speak() async {
-    await flutterTts.speak(_words.join(' '));
+    await flutterTts.speak(message.join(' '));
   }
 
   @override
@@ -44,13 +54,16 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Text(
-          _words.join(' '),
+          message.join(' '),
           style: const TextStyle(color: Colors.white),
         ),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.close, color: Colors.white),
-            onPressed: _removeWord,
+          GestureDetector(
+            onLongPress: _removeAllWords,
+            child: IconButton(
+              icon: const Icon(Icons.backspace, color: Colors.white),
+              onPressed: _removeWord,
+            ),
           ),
           IconButton(
             icon: const Icon(Icons.volume_up, color: Colors.white),
