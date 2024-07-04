@@ -1,6 +1,7 @@
 // lib/home_page.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'Settings.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -44,15 +45,15 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.black,
         title: Text(
           _words.join(' '),
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.close, color: Colors.white),
+            icon: const Icon(Icons.close, color: Colors.white),
             onPressed: _removeWord,
           ),
           IconButton(
-            icon: Icon(Icons.volume_up, color: Colors.white),
+            icon: const Icon(Icons.volume_up, color: Colors.white),
             onPressed: _speak,
           ),
         ],
@@ -61,8 +62,8 @@ class _HomePageState extends State<HomePage> {
         color: Colors.white,
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Center(
                 child: Text(
                   'Home',
@@ -75,7 +76,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 ElevatedButton(
                   onPressed: _addWord,
-                  child: Text('ADD TO TEXT'),
+                  child: const Text('ADD TO TEXT'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.deepPurple,
                     foregroundColor: Colors.white,
@@ -86,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 ElevatedButton(
                   onPressed: () {},
-                  child: Text('GO TO CATEGORY'),
+                  child: const Text('GO TO CATEGORY'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.deepPurple,
                     foregroundColor: Colors.white,
@@ -99,8 +100,8 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
               child: GridView.builder(
-                padding: EdgeInsets.all(16),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                padding: const EdgeInsets.all(16),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
                   crossAxisSpacing: 16,
                   mainAxisSpacing: 16,
@@ -125,7 +126,16 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        currentIndex: 0, // This is to highlight the Home tab
+        onTap: (index) {
+          if (index == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Settings()),
+            );
+          }
+        },
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
