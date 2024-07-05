@@ -112,9 +112,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text(
-          selectedPhrases.join(' '),
-          style: const TextStyle(color: Colors.white),
+        title: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Text(
+            selectedPhrases.join(' '),
+            style: const TextStyle(color: Colors.white),
+          ),
         ),
         actions: [
           GestureDetector(
@@ -263,9 +266,12 @@ class PhraseListPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text(
-          selectedPhrases.join(' '),
-          style: const TextStyle(color: Colors.white),
+        title: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Text(
+            selectedPhrases.join(' '),
+            style: const TextStyle(color: Colors.white),
+          ),
         ),
         actions: [
           GestureDetector(
@@ -349,7 +355,7 @@ class PhraseListPage extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0, // This is to highlight the Home tab
+        currentIndex: 0,
         onTap: (index) {
           if (index == 1) {
             Navigator.push(
