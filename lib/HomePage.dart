@@ -17,6 +17,7 @@ class _HomePageState extends State<HomePage> {
   FlutterTts flutterTts = FlutterTts();
   Map<String, List<String>> phrases = {};
   List<String> selectedPhrases = [];
+  String? selectedCategory;
 
   @override
   void initState() {
@@ -69,6 +70,43 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
+  void goToCategory() {
+    if (selectedCategory != null) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => PhraseListPage(
+            category: selectedCategory!,
+            phrases: phrases[selectedCategory!]!,
+            onPhraseSelected: addPhrase,
+            onClearPhrases: clearPhrases,
+            onRemovePhrase: removePhrase,
+            onSpeak: _speak,
+            selectedPhrases: selectedPhrases,
+          ),
+        ),
+      );
+    } else {
+      Fluttertoast.showToast(
+        msg: "Please select a category first",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+      );
+    }
+  }
+
+  void addToText() {
+    if (selectedCategory != null) {
+      addPhrase(selectedCategory!);
+    } else {
+      Fluttertoast.showToast(
+        msg: "Please select a category first",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,7 +147,7 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: addToText,
                   child: const Text('ADD TO TEXT'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.deepPurple,
@@ -120,7 +158,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: goToCategory,
                   child: const Text('GO TO CATEGORY'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.deepPurple,
@@ -145,20 +183,15 @@ class _HomePageState extends State<HomePage> {
                   String category = phrases.keys.elementAt(index);
                   return GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => PhraseListPage(
-                            category: category,
-                            phrases: phrases[category]!,
-                            onPhraseSelected: addPhrase,
-                          ),
-                        ),
-                      );
+                      setState(() {
+                        selectedCategory = category;
+                      });
                     },
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.deepPurple[300],
+                        color: selectedCategory == category
+                            ? Colors.deepPurple
+                            : Colors.deepPurple[300],
                         borderRadius: BorderRadius.circular(18.0),
                       ),
                       child: Center(
@@ -210,11 +243,19 @@ class PhraseListPage extends StatelessWidget {
   final String category;
   final List<String> phrases;
   final Function(String) onPhraseSelected;
+  final VoidCallback onClearPhrases;
+  final VoidCallback onRemovePhrase;
+  final VoidCallback onSpeak;
+  final List<String> selectedPhrases;
 
   PhraseListPage({
     required this.category,
     required this.phrases,
     required this.onPhraseSelected,
+    required this.onClearPhrases,
+    required this.onRemovePhrase,
+    required this.onSpeak,
+    required this.selectedPhrases,
   });
 
   @override
@@ -223,43 +264,112 @@ class PhraseListPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Text(
-          category,
-          style: TextStyle(color: Colors.white),
+          selectedPhrases.join(' '),
+          style: const TextStyle(color: Colors.white),
         ),
+        actions: [
+          GestureDetector(
+            onLongPress: onClearPhrases,
+            child: IconButton(
+              icon: const Icon(Icons.backspace, color: Colors.white),
+              onPressed: onRemovePhrase,
+            ),
+          ),
+          IconButton(
+            icon: const Icon(Icons.volume_up, color: Colors.white),
+            onPressed: onSpeak,
+          ),
+        ],
       ),
-      body: GridView.builder(
-        padding: const EdgeInsets.all(16.0),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 16.0,
-          mainAxisSpacing: 16.0,
-        ),
-        itemCount: phrases.length,
-        itemBuilder: (context, index) {
-          String phrase = phrases[index];
-          return GestureDetector(
-            onTap: () {
-              onPhraseSelected(phrase);
-              Navigator.pop(context);
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.deepPurple,
-                borderRadius: BorderRadius.circular(18.0),
-              ),
-              child: Center(
-                child: Text(
-                  phrase,
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.arrow_back, color: Colors.black),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                Text(
+                  category,
                   style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18.0,
+                    fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-              ),
+                IconButton(
+                  icon: const Icon(Icons.add, color: Colors.black),
+                  onPressed: () {
+                    onPhraseSelected(category);
+                  },
+                ),
+              ],
             ),
-          );
+          ),
+          Expanded(
+            child: GridView.builder(
+              padding: const EdgeInsets.all(16.0),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                crossAxisSpacing: 16.0,
+                mainAxisSpacing: 16.0,
+              ),
+              itemCount: phrases.length,
+              itemBuilder: (context, index) {
+                String phrase = phrases[index];
+                return GestureDetector(
+                  onTap: () {
+                    onPhraseSelected(phrase);
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurple,
+                      borderRadius: BorderRadius.circular(18.0),
+                    ),
+                    child: Center(
+                      child: Text(
+                        phrase,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0, // This is to highlight the Home tab
+        onTap: (index) {
+          if (index == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Settings()),
+            );
+          }
         },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
+          ),
+        ],
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.grey,
       ),
     );
   }
