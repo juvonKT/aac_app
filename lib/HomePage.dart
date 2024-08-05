@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   FlutterTts flutterTts = FlutterTts();
-  Map<String, List<String>> phrases = {};
+  Map<String, Map<String, dynamic>> phrases = {};
   List<String> selectedPhrases = [];
   String? selectedCategory;
 
@@ -29,10 +29,16 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  Future<Map<String, List<String>>> loadPhrases() async {
+  Future<Map<String, Map<String, dynamic>>> loadPhrases() async {
     String jsonString = await rootBundle.loadString('assets/phrases.json');
     Map<String, dynamic> jsonMap = json.decode(jsonString);
-    return jsonMap.map((key, value) => MapEntry(key, List<String>.from(value)));
+    return jsonMap.map((key, value) => MapEntry(key, {
+      "categoryImage": value["categoryImage"] as String,
+      "phrases": List<Map<String, String>>.from(value["phrases"].map((item) => {
+        "phrase": item["phrase"] as String,
+        "image": item["image"] as String,
+      })),
+    }));
   }
 
   void addPhrase(String phrase) {
@@ -77,7 +83,7 @@ class _HomePageState extends State<HomePage> {
         MaterialPageRoute(
           builder: (context) => PhraseListPage(
             category: selectedCategory!,
-            phrases: phrases[selectedCategory!]!,
+            phrases: phrases[selectedCategory!]!["phrases"],
             onPhraseSelected: addPhrase,
             onClearPhrases: clearPhrases,
             onRemovePhrase: removePhrase,
@@ -177,13 +183,14 @@ class _HomePageState extends State<HomePage> {
               child: GridView.builder(
                 padding: const EdgeInsets.all(16.0),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
+                  crossAxisCount: 2,
                   crossAxisSpacing: 16.0,
                   mainAxisSpacing: 16.0,
                 ),
                 itemCount: phrases.keys.length,
                 itemBuilder: (context, index) {
                   String category = phrases.keys.elementAt(index);
+                  String categoryImage = phrases[category]!["categoryImage"];
                   return GestureDetector(
                     onTap: () {
                       setState(() {
@@ -197,15 +204,23 @@ class _HomePageState extends State<HomePage> {
                             : Colors.deepPurple[300],
                         borderRadius: BorderRadius.circular(18.0),
                       ),
-                      child: Center(
-                        child: Text(
-                          category,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.bold,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            categoryImage,
+                            height: 50.0,
+                            width: 50.0,
                           ),
-                        ),
+                          Text(
+                            category,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   );
@@ -244,7 +259,7 @@ class _HomePageState extends State<HomePage> {
 
 class PhraseListPage extends StatelessWidget {
   final String category;
-  final List<String> phrases;
+  final List<Map<String, String>> phrases;
   final Function(String) onPhraseSelected;
   final VoidCallback onClearPhrases;
   final VoidCallback onRemovePhrase;
@@ -326,10 +341,10 @@ class PhraseListPage extends StatelessWidget {
               ),
               itemCount: phrases.length,
               itemBuilder: (context, index) {
-                String phrase = phrases[index];
+                Map<String, String> phrase = phrases[index];
                 return GestureDetector(
                   onTap: () {
-                    onPhraseSelected(phrase);
+                    onPhraseSelected(phrase["phrase"]!);
                     Navigator.pop(context);
                   },
                   child: Container(
@@ -337,15 +352,23 @@ class PhraseListPage extends StatelessWidget {
                       color: Colors.deepPurple,
                       borderRadius: BorderRadius.circular(18.0),
                     ),
-                    child: Center(
-                      child: Text(
-                        phrase,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          phrase["image"]!,
+                          height: 50.0,
+                          width: 50.0,
                         ),
-                      ),
+                        Text(
+                          phrase["phrase"]!,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 );
