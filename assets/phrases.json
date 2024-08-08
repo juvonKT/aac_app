@@ -26,6 +26,160 @@
       {"phrase": "bed", "image": "assets/images/test.png"},
       {"phrase": "cup", "image": "assets/images/test.png"}
     ]
+  },
+  "actions": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Eat", "image": "assets/images/test.png"},
+      {"phrase": "Drink", "image": "assets/images/test.png"},
+      {"phrase": "Sleep", "image": "assets/images/test.png"},
+      {"phrase": "Play", "image": "assets/images/test.png"},
+      {"phrase": "Run", "image": "assets/images/test.png"},
+      {"phrase": "Walk", "image": "assets/images/test.png"},
+      {"phrase": "Jump", "image": "assets/images/test.png"},
+      {"phrase": "Help", "image": "assets/images/test.png"},
+      {"phrase": "Read", "image": "assets/images/test.png"},
+      {"phrase": "Listen", "image": "assets/images/test.png"}
+    ]
+  },
+  "places": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Here", "image": "assets/images/test.png"},
+      {"phrase": "There", "image": "assets/images/test.png"},
+      {"phrase": "Home", "image": "assets/images/test.png"},
+      {"phrase": "School", "image": "assets/images/test.png"},
+      {"phrase": "Park", "image": "assets/images/test.png"},
+      {"phrase": "Store", "image": "assets/images/test.png"},
+      {"phrase": "Library", "image": "assets/images/test.png"},
+      {"phrase": "Restaurant", "image": "assets/images/test.png"},
+      {"phrase": "Hospital", "image": "assets/images/test.png"},
+      {"phrase": "Gym", "image": "assets/images/test.png"}
+    ]
+  },
+  "food": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Apple", "image": "assets/images/test.png"},
+      {"phrase": "Banana", "image": "assets/images/test.png"},
+      {"phrase": "Carrot", "image": "assets/images/test.png"},
+      {"phrase": "Juice", "image": "assets/images/test.png"},
+      {"phrase": "Water", "image": "assets/images/test.png"},
+      {"phrase": "Bread", "image": "assets/images/test.png"},
+      {"phrase": "Milk", "image": "assets/images/test.png"},
+      {"phrase": "Cheese", "image": "assets/images/test.png"},
+      {"phrase": "Chicken", "image": "assets/images/test.png"},
+      {"phrase": "Pizza", "image": "assets/images/test.png"},
+      {"phrase": "Rice", "image": "assets/images/test.png"},
+      {"phrase": "Pasta", "image": "assets/images/test.png"},
+      {"phrase": "Yogurt", "image": "assets/images/test.png"},
+      {"phrase": "Grapes", "image": "assets/images/test.png"},
+      {"phrase": "Orange", "image": "assets/images/test.png"}
+    ]
+  },
+  "feelings": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Happy", "image": "assets/images/test.png"},
+      {"phrase": "Sad", "image": "assets/images/test.png"},
+      {"phrase": "Excited", "image": "assets/images/test.png"},
+      {"phrase": "Scared", "image": "assets/images/test.png"},
+      {"phrase": "Angry", "image": "assets/images/test.png"},
+      {"phrase": "Tired", "image": "assets/images/test.png"},
+      {"phrase": "Bored", "image": "assets/images/test.png"},
+      {"phrase": "Surprised", "image": "assets/images/test.png"},
+      {"phrase": "Frustrated", "image": "assets/images/test.png"},
+      {"phrase": "Nervous", "image": "assets/images/test.png"}
+    ]
+  },
+  "descriptive": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Red", "image": "assets/images/test.png"},
+      {"phrase": "Blue", "image": "assets/images/test.png"},
+      {"phrase": "Green", "image": "assets/images/test.png"},
+      {"phrase": "Big", "image": "assets/images/test.png"},
+      {"phrase": "Small", "image": "assets/images/test.png"},
+      {"phrase": "Soft", "image": "assets/images/test.png"},
+      {"phrase": "Hard", "image": "assets/images/test.png"},
+      {"phrase": "Hot", "image": "assets/images/test.png"},
+      {"phrase": "Cold", "image": "assets/images/test.png"},
+      {"phrase": "Fast", "image": "assets/images/test.png"},
+      {"phrase": "Slow", "image": "assets/images/test.png"},
+      {"phrase": "Loud", "image": "assets/images/test.png"},
+      {"phrase": "Quiet", "image": "assets/images/test.png"},
+      {"phrase": "Heavy", "image": "assets/images/test.png"},
+      {"phrase": "Light", "image": "assets/images/test.png"}
+    ]
+  },
+  "questions": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "What?", "image": "assets/images/test.png"},
+      {"phrase": "Where?", "image": "assets/images/test.png"},
+      {"phrase": "When?", "image": "assets/images/test.png"},
+      {"phrase": "How?", "image": "assets/images/test.png"},
+      {"phrase": "Why?", "image": "assets/images/test.png"},
+      {"phrase": "Who?", "image": "assets/images/test.png"},
+      {"phrase": "Which?", "image": "assets/images/test.png"},
+      {"phrase": "Can I?", "image": "assets/images/test.png"},
+      {"phrase": "Do you?", "image": "assets/images/test.png"},
+      {"phrase": "Is it?", "image": "assets/images/test.png"}
+    ]
+  },
+  "time": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Morning", "image": "assets/images/test.png"},
+      {"phrase": "Afternoon", "image": "assets/images/test.png"},
+      {"phrase": "Evening", "image": "assets/images/test.png"},
+      {"phrase": "Night", "image": "assets/images/test.png"},
+      {"phrase": "Today", "image": "assets/images/test.png"},
+      {"phrase": "Tomorrow", "image": "assets/images/test.png"},
+      {"phrase": "Yesterday", "image": "assets/images/test.png"},
+      {"phrase": "Now", "image": "assets/images/test.png"},
+      {"phrase": "Later", "image": "assets/images/test.png"},
+      {"phrase": "Soon", "image": "assets/images/test.png"}
+    ]
+  },
+  "social": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Hello", "image": "assets/images/test.png"},
+      {"phrase": "Goodbye", "image": "assets/images/test.png"},
+      {"phrase": "Please", "image": "assets/images/test.png"},
+      {"phrase": "Thank You", "image": "assets/images/test.png"},
+      {"phrase": "Sorry", "image": "assets/images/test.png"},
+      {"phrase": "How are you?", "image": "assets/images/test.png"},
+      {"phrase": "I need help", "image": "assets/images/test.png"},
+      {"phrase": "Nice to meet you", "image": "assets/images/test.png"},
+      {"phrase": "Excuse me", "image": "assets/images/test.png"},
+      {"phrase": "I don't understand", "image": "assets/images/test.png"},
+      {"phrase": "Can you repeat that?", "image": "assets/images/test.png"},
+      {"phrase": "What’s your name?", "image": "assets/images/test.png"},
+      {"phrase": "I’m lost", "image": "assets/images/test.png"},
+      {"phrase": "I’m hungry", "image": "assets/images/test.png"},
+      {"phrase": "I’m thirsty", "image": "assets/images/test.png"}
+    ]
+  },
+  "health": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Head", "image": "assets/images/test.png"},
+      {"phrase": "Arm", "image": "assets/images/test.png"},
+      {"phrase": "Leg", "image": "assets/images/test.png"},
+      {"phrase": "Medicine", "image": "assets/images/test.png"},
+      {"phrase": "Doctor", "image": "assets/images/test.png"},
+      {"phrase": "Sick", "image": "assets/images/test.png"},
+      {"phrase": "Hurt", "image": "assets/images/test.png"},
+      {"phrase": "Stomach", "image": "assets/images/test.png"},
+      {"phrase": "Back", "image": "assets/images/test.png"},
+      {"phrase": "Ear", "image": "assets/images/test.png"},
+      {"phrase": "Eye", "image": "assets/images/test.png"},
+      {"phrase": "Nose", "image": "assets/images/test.png"},
+      {"phrase": "Throat", "image": "assets/images/test.png"},
+      {"phrase": "Cough", "image": "assets/images/test.png"},
+      {"phrase": "Fever", "image": "assets/images/test.png"}
+    ]
   }
 }
-
