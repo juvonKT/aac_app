@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'settings.dart';
 import 'AddPhrasePage.dart';
 
-class PhraseListPage extends StatelessWidget {
+class PhraseListPage extends StatefulWidget {
   final String category;
   final List<Map<String, String>> phrases;
   final Function(String) onPhraseSelected;
@@ -10,8 +10,10 @@ class PhraseListPage extends StatelessWidget {
   final VoidCallback onRemovePhrase;
   final VoidCallback onSpeak;
   final List<String> selectedPhrases;
+  final VoidCallback savePhrase;
 
-  PhraseListPage({
+  const PhraseListPage({
+    super.key,
     required this.category,
     required this.phrases,
     required this.onPhraseSelected,
@@ -19,7 +21,21 @@ class PhraseListPage extends StatelessWidget {
     required this.onRemovePhrase,
     required this.onSpeak,
     required this.selectedPhrases,
+    required this.savePhrase,
   });
+
+  @override
+  _PhraseListPageState createState() => _PhraseListPageState();
+}
+
+class _PhraseListPageState extends State<PhraseListPage> {
+  List<Map<String, String>> phrasesList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    phrasesList = widget.phrases;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,21 +45,21 @@ class PhraseListPage extends StatelessWidget {
         title: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Text(
-            selectedPhrases.join(' '),
+            widget.selectedPhrases.join(' '),
             style: const TextStyle(color: Colors.white),
           ),
         ),
         actions: [
           GestureDetector(
-            onLongPress: onClearPhrases,
+            onLongPress: widget.onClearPhrases,
             child: IconButton(
               icon: const Icon(Icons.backspace, color: Colors.white),
-              onPressed: onRemovePhrase,
+              onPressed: widget.onRemovePhrase,
             ),
           ),
           IconButton(
             icon: const Icon(Icons.volume_up, color: Colors.white),
-            onPressed: onSpeak,
+            onPressed: widget.onSpeak,
           ),
         ],
       ),
@@ -61,7 +77,7 @@ class PhraseListPage extends StatelessWidget {
                   },
                 ),
                 Text(
-                  category,
+                  widget.category,
                   style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -72,16 +88,17 @@ class PhraseListPage extends StatelessWidget {
                   onPressed: () async {
                     final newPhraseText = await Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => AddPhrasePage()),
+                      MaterialPageRoute(
+                          builder: (context) => AddPhrasePage()),
                     );
                     if (newPhraseText != null && newPhraseText is String) {
-                      // Add the new phrase to the list of phrases
-                      Map<String, String> newPhrase = {
-                        "phrase": newPhraseText,
-                        "image": "assets/images/test.png"
-                      };
-                      phrases.add(newPhrase);
-                      (context as Element).markNeedsBuild();
+                      setState(() {
+                        phrasesList.add({
+                          "phrase": newPhraseText,
+                          "image": "assets/images/test.png",
+                        });
+                      });
+                      widget.savePhrase();
                     }
                   },
                 ),
@@ -96,12 +113,12 @@ class PhraseListPage extends StatelessWidget {
                 crossAxisSpacing: 16.0,
                 mainAxisSpacing: 16.0,
               ),
-              itemCount: phrases.length,
+              itemCount: phrasesList.length,
               itemBuilder: (context, index) {
-                Map<String, String> phrase = phrases[index];
+                Map<String, String> phrase = phrasesList[index];
                 return GestureDetector(
                   onTap: () {
-                    onPhraseSelected(phrase["phrase"]!);
+                    widget.onPhraseSelected(phrase["phrase"]!);
                     Navigator.pop(context);
                   },
                   child: Container(

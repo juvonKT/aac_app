@@ -6,7 +6,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:aac_app/PhraseListPage.dart';
 import 'AddCategoryPage.dart';
-
+import 'dart:io';
+import 'package:path_provider/path_provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -32,21 +33,51 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<Map<String, Map<String, dynamic>>> loadPhrases() async {
-    String jsonString = await rootBundle.loadString('assets/phrases.json');
-    Map<String, dynamic> jsonMap = json.decode(jsonString);
-    return jsonMap.map((key, value) {
-      List<dynamic> phrasesList = value["phrases"];
-      List<Map<String, String>> phrasesTyped = phrasesList.map((item) {
-        return {
-          "phrase": item["phrase"] as String,
-          "image": item["image"] as String,
-        };
-      }).toList();
-      return MapEntry(key, {
-        "categoryImage": value["categoryImage"] as String,
-        "phrases": phrasesTyped,
+    final String directory = (await getApplicationDocumentsDirectory()).path;
+    final String path = '$directory/phrases.json';
+    final File file = File(path);
+
+    if (await file.exists()) {
+      String jsonString = await file.readAsString();
+      Map<String, dynamic> jsonMap = json.decode(jsonString);
+      return jsonMap.map((key, value) {
+        List<dynamic> phrasesList = value["phrases"];
+        List<Map<String, String>> phrasesTyped = phrasesList.map((item) {
+          return {
+            "phrase": item["phrase"] as String,
+            "image": item["image"] as String,
+          };
+        }).toList();
+        return MapEntry(key, {
+          "categoryImage": value["categoryImage"] as String,
+          "phrases": phrasesTyped,
+        });
       });
-    });
+    } else {
+      String jsonString = await rootBundle.loadString('assets/phrases.json');
+      Map<String, dynamic> jsonMap = json.decode(jsonString);
+      await file.writeAsString(jsonString);
+      return jsonMap.map((key, value) {
+        List<dynamic> phrasesList = value["phrases"];
+        List<Map<String, String>> phrasesTyped = phrasesList.map((item) {
+          return {
+            "phrase": item["phrase"] as String,
+            "image": item["image"] as String,
+          };
+        }).toList();
+        return MapEntry(key, {
+          "categoryImage": value["categoryImage"] as String,
+          "phrases": phrasesTyped,
+        });
+      });
+    }
+  }
+
+  Future<void> savePhrases() async {
+    final String directory = (await getApplicationDocumentsDirectory()).path;
+    final String path = '$directory/phrases.json';
+    final File file = File(path);
+    await file.writeAsString(json.encode(phrases));
   }
 
   void addPhrase(String phrase) {
@@ -96,6 +127,7 @@ class _HomePageState extends State<HomePage> {
           onRemovePhrase: removePhrase,
           onSpeak: _speak,
           selectedPhrases: selectedPhrases,
+          savePhrase: savePhrases,
         ),
       ),
     );
@@ -154,11 +186,13 @@ class _HomePageState extends State<HomePage> {
                         MaterialPageRoute(builder: (context) => AddCategoryPage()),
                       );
                       if (newCategoryText != null && newCategoryText is String) {
-                        phrases[newCategoryText] = {
-                          "categoryImage": "assets/images/test.png", // Set a default image
-                          "phrases": <Map<String, String>>[]
-                        };
-                        (context as Element).markNeedsBuild();
+                        setState(() {
+                          phrases[newCategoryText] = {
+                            "categoryImage": "assets/images/test.png", // Set a default image
+                            "phrases": <Map<String, String>>[]
+                          };
+                        });
+                        await savePhrases();
                       }
                     },
                   ),
