@@ -10,6 +10,9 @@ class AddCategoryPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Create New Category'),
         backgroundColor: Colors.black,
+        leading: const BackButton(
+          color: Colors.white,
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
