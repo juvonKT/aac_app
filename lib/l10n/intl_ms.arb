@@ -1,0 +1,20 @@
+{
+  "@@locale": "ms",
+  "setting": "Tetapan",
+  "userGuide": "Panduan Pengguna",
+  "language": "Bahasa",
+  "colourScheme": "Skema Warna",
+  "userA": "Pengguna A",
+  "userB": "Pengguna B",
+  "userC": "Pengguna C",
+  "addWord": "Tambah Perkataan",
+  "speak": "Bercakap",
+  "nameOfCategory": "Nama Kategori",
+  "addFieldText": "Tambah ke teks medan",
+  "goToCategory": "Pergi ke Kategori",
+  "addPhrase": "Tambah Frasa",
+  "createNewPhrase": "Cipta Frasa Baharu",
+  "addCategory": "Tambah Kategori",
+  "createNewCategory": "Cipta Kategori Baharu",
+  "userGuideContent": "Kandungan Panduan Pengguna Di Sini"
+}

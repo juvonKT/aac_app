@@ -1,29 +1,42 @@
 import 'package:flutter/material.dart';
-
-import 'CommunicationBoard.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:provider/provider.dart';
 import 'HomePage.dart';
+import 'providers/language_provider.dart';
+import 'generated/l10n.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => LanguageProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        // primaryColor: const Color(0xFF4A4063),
-        // scaffoldBackgroundColor: const Color(0xFFF5F5F5),
-        primarySwatch: Colors.deepPurple,
-      ),
-      // home: const CommunicationBoard(),
-      home: HomePage(),
-
-
+    return Consumer<LanguageProvider>(
+      builder: (context, languageProvider, child) {
+        return MaterialApp(
+          title: 'Your App Title',
+          theme: ThemeData(
+            primarySwatch: Colors.deepPurple,
+          ),
+          home: HomePage(),
+          localizationsDelegates: [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: S.delegate.supportedLocales,
+          locale: languageProvider.currentLocale,
+        );
+      },
     );
   }
 }
-

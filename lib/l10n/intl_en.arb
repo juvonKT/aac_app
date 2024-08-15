@@ -1,0 +1,20 @@
+{
+  "@@locale": "e",
+  "setting": "Settings",
+  "userGuide": "User Guide",
+  "language": "Language",
+  "colourScheme": "Colour Scheme",
+  "userA": "User A",
+  "userB": "User B",
+  "userC": "User C",
+  "addWord": "Add word",
+  "speak": "Speak",
+  "nameOfCategory": "Name of Category",
+  "addFieldText": "Add to field text",
+  "goToCategory": "Go to Category",
+  "addPhrase": "Add Phrase",
+  "createNewPhrase": "Create New Phrase",
+  "addCategory": "Add Category",
+  "createNewCategory": "Create New Category",
+  "userGuideContent": "User Guide Content Goes Here"
+}

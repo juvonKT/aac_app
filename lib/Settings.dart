@@ -1,6 +1,8 @@
-// lib/settings.dart
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'UserGuidePage.dart';
+import 'generated/l10n.dart';
+import 'providers/language_provider.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -11,16 +13,18 @@ class Settings extends StatefulWidget {
 
 class _SettingsState extends State<Settings> {
   String _selectedUser = 'User A';
-  String _selectedLanguage = 'English';
   String _selectedColourScheme = 'Light';
 
   @override
   Widget build(BuildContext context) {
+    final languageProvider = Provider.of<LanguageProvider>(context);
+    final s = S.of(context);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: const Text(
-          'Settings',
+        title: Text(
+          s.setting,
           style: TextStyle(color: Colors.white),
         ),
       ),
@@ -50,28 +54,27 @@ class _SettingsState extends State<Settings> {
             ),
             const Divider(),
             ListTile(
-              title: const Text('Language'),
-              subtitle: Text(_selectedLanguage),
-              trailing: DropdownButton<String>(
-                value: _selectedLanguage,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    _selectedLanguage = newValue!;
-                  });
+              title: Text(s.language),
+              subtitle: Text(_getLanguageName(languageProvider.currentLocale)),
+              trailing: DropdownButton<Locale>(
+                value: languageProvider.currentLocale,
+                onChanged: (Locale? newValue) {
+                  if (newValue != null) {
+                    languageProvider.setLocale(newValue);
+                  }
                 },
-                items: <String>['English', 'Malay', 'Mandarin', 'Tamil']
-                    .map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
+                items: [
+                  DropdownMenuItem(value: Locale('en', ''), child: Text('English')),
+                  DropdownMenuItem(value: Locale('ms', ''), child: Text('Malay')),
+                  DropdownMenuItem(value: Locale('zh', ''), child: Text('Mandarin')),
+                  DropdownMenuItem(value: Locale('ta', ''), child: Text('Tamil')),
+                ],
                 underline: const SizedBox(),
               ),
             ),
             const Divider(),
             ListTile(
-              title: const Text('Colour Scheme'),
+              title: Text(s.colourScheme),
               subtitle: Text(_selectedColourScheme),
               trailing: DropdownButton<String>(
                 value: _selectedColourScheme,
@@ -92,7 +95,7 @@ class _SettingsState extends State<Settings> {
             ),
             const Divider(),
             ListTile(
-              title: const Text('User Guide'),
+              title: Text(s.userGuide),
               onTap: () {
                 Navigator.push(
                   context,
@@ -104,25 +107,40 @@ class _SettingsState extends State<Settings> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 1, // This is to highlight the Settings tab
+        currentIndex: 1,
         onTap: (index) {
           if (index == 0) {
             Navigator.pop(context);
           }
         },
-        items: const [
+        items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: 'Settings',
+            label:'Settings',
           ),
         ],
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
       ),
     );
+  }
+
+  String _getLanguageName(Locale locale) {
+    switch (locale.languageCode) {
+      case 'en':
+        return 'English';
+      case 'ms':
+        return 'Malay';
+      case 'zh':
+        return 'Mandarin';
+      case 'ta':
+        return 'Tamil';
+      default:
+        return 'Unknown';
+    }
   }
 }

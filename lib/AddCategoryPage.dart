@@ -1,5 +1,6 @@
 // lib/AddPhrasePage.dart
 import 'package:flutter/material.dart';
+import 'generated/l10n.dart';
 
 class AddCategoryPage extends StatelessWidget {
   final TextEditingController _controller = TextEditingController();

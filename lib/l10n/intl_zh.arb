@@ -1,0 +1,20 @@
+{
+  "@@locale": "zh",
+  "setting": "设置",
+  "userGuide": "用户指南",
+  "language": "语言",
+  "colourScheme": "配色方案",
+  "userA": "用户A",
+  "userB": "用户B",
+  "userC": "用户C",
+  "addWord": "添加单词",
+  "speak": "说",
+  "nameOfCategory": "类别名称",
+  "addFieldText": "添加到字段文本",
+  "goToCategory": "前往类别",
+  "addPhrase": "添加短语",
+  "createNewPhrase": "创建新短语",
+  "addCategory": "添加类别",
+  "createNewCategory": "创建新类别",
+  "userGuideContent": "用户指南内容在这里"
+}
