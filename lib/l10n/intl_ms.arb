@@ -7,14 +7,11 @@
   "userA": "Pengguna A",
   "userB": "Pengguna B",
   "userC": "Pengguna C",
-  "addWord": "Tambah Perkataan",
-  "speak": "Bercakap",
-  "nameOfCategory": "Nama Kategori",
-  "addFieldText": "Tambah ke teks medan",
-  "goToCategory": "Pergi ke Kategori",
   "addPhrase": "Tambah Frasa",
-  "createNewPhrase": "Cipta Frasa Baharu",
+  "newPhrase": "Cipta Frasa Baharu",
   "addCategory": "Tambah Kategori",
-  "createNewCategory": "Cipta Kategori Baharu",
-  "userGuideContent": "Kandungan Panduan Pengguna Di Sini"
+  "newCategory": "Cipta Kategori Baharu",
+  "userGuideContent": "Kandungan Panduan Pengguna Di Sini",
+  "home": "Laman Utama",
+  "removeMessage": "Tekan dan tahan untuk membuang semua"
 }

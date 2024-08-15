@@ -23,21 +23,16 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addCategory": MessageLookupByLibrary.simpleMessage("Tambah Kategori"),
-        "addFieldText":
-            MessageLookupByLibrary.simpleMessage("Tambah ke teks medan"),
         "addPhrase": MessageLookupByLibrary.simpleMessage("Tambah Frasa"),
-        "addWord": MessageLookupByLibrary.simpleMessage("Tambah Perkataan"),
         "colourScheme": MessageLookupByLibrary.simpleMessage("Skema Warna"),
-        "createNewCategory":
-            MessageLookupByLibrary.simpleMessage("Cipta Kategori Baharu"),
-        "createNewPhrase":
-            MessageLookupByLibrary.simpleMessage("Cipta Frasa Baharu"),
-        "goToCategory":
-            MessageLookupByLibrary.simpleMessage("Pergi ke Kategori"),
+        "home": MessageLookupByLibrary.simpleMessage("Laman Utama"),
         "language": MessageLookupByLibrary.simpleMessage("Bahasa"),
-        "nameOfCategory": MessageLookupByLibrary.simpleMessage("Nama Kategori"),
+        "newCategory":
+            MessageLookupByLibrary.simpleMessage("Cipta Kategori Baharu"),
+        "newPhrase": MessageLookupByLibrary.simpleMessage("Cipta Frasa Baharu"),
+        "removeMessage": MessageLookupByLibrary.simpleMessage(
+            "Tekan dan tahan untuk membuang semua"),
         "setting": MessageLookupByLibrary.simpleMessage("Tetapan"),
-        "speak": MessageLookupByLibrary.simpleMessage("Bercakap"),
         "userA": MessageLookupByLibrary.simpleMessage("Pengguna A"),
         "userB": MessageLookupByLibrary.simpleMessage("Pengguna B"),
         "userC": MessageLookupByLibrary.simpleMessage("Pengguna C"),

@@ -23,21 +23,15 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addCategory": MessageLookupByLibrary.simpleMessage("Add Category"),
-        "addFieldText":
-            MessageLookupByLibrary.simpleMessage("Add to field text"),
         "addPhrase": MessageLookupByLibrary.simpleMessage("Add Phrase"),
-        "addWord": MessageLookupByLibrary.simpleMessage("Add word"),
         "colourScheme": MessageLookupByLibrary.simpleMessage("Colour Scheme"),
-        "createNewCategory":
-            MessageLookupByLibrary.simpleMessage("Create New Category"),
-        "createNewPhrase":
-            MessageLookupByLibrary.simpleMessage("Create New Phrase"),
-        "goToCategory": MessageLookupByLibrary.simpleMessage("Go to Category"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
-        "nameOfCategory":
-            MessageLookupByLibrary.simpleMessage("Name of Category"),
+        "newCategory": MessageLookupByLibrary.simpleMessage("New Category"),
+        "newPhrase": MessageLookupByLibrary.simpleMessage("New Phrase"),
+        "removeMessage":
+            MessageLookupByLibrary.simpleMessage("Hold to remove all"),
         "setting": MessageLookupByLibrary.simpleMessage("Settings"),
-        "speak": MessageLookupByLibrary.simpleMessage("Speak"),
         "userA": MessageLookupByLibrary.simpleMessage("User A"),
         "userB": MessageLookupByLibrary.simpleMessage("User B"),
         "userC": MessageLookupByLibrary.simpleMessage("User C"),

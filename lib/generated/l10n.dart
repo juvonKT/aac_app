@@ -120,56 +120,6 @@ class S {
     );
   }
 
-  /// `Add word`
-  String get addWord {
-    return Intl.message(
-      'Add word',
-      name: 'addWord',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Speak`
-  String get speak {
-    return Intl.message(
-      'Speak',
-      name: 'speak',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Name of Category`
-  String get nameOfCategory {
-    return Intl.message(
-      'Name of Category',
-      name: 'nameOfCategory',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Add to field text`
-  String get addFieldText {
-    return Intl.message(
-      'Add to field text',
-      name: 'addFieldText',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Go to Category`
-  String get goToCategory {
-    return Intl.message(
-      'Go to Category',
-      name: 'goToCategory',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Add Phrase`
   String get addPhrase {
     return Intl.message(
@@ -180,11 +130,11 @@ class S {
     );
   }
 
-  /// `Create New Phrase`
-  String get createNewPhrase {
+  /// `New Phrase`
+  String get newPhrase {
     return Intl.message(
-      'Create New Phrase',
-      name: 'createNewPhrase',
+      'New Phrase',
+      name: 'newPhrase',
       desc: '',
       args: [],
     );
@@ -200,11 +150,11 @@ class S {
     );
   }
 
-  /// `Create New Category`
-  String get createNewCategory {
+  /// `New Category`
+  String get newCategory {
     return Intl.message(
-      'Create New Category',
-      name: 'createNewCategory',
+      'New Category',
+      name: 'newCategory',
       desc: '',
       args: [],
     );
@@ -215,6 +165,26 @@ class S {
     return Intl.message(
       'User Guide Content Goes Here',
       name: 'userGuideContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get home {
+    return Intl.message(
+      'Home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hold to remove all`
+  String get removeMessage {
+    return Intl.message(
+      'Hold to remove all',
+      name: 'removeMessage',
       desc: '',
       args: [],
     );

@@ -1,11 +1,14 @@
 // lib/AddPhrasePage.dart
 import 'package:flutter/material.dart';
+import 'generated/l10n.dart';
+
 
 class AddPhrasePage extends StatelessWidget {
   final TextEditingController _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Create New Phrase'),
@@ -20,8 +23,8 @@ class AddPhrasePage extends StatelessWidget {
           children: [
             TextField(
               controller: _controller,
-              decoration: const InputDecoration(
-                labelText: 'New Phrase',
+              decoration: InputDecoration(
+                labelText: s.newPhrase,
                 border: OutlineInputBorder(),
               ),
             ),
@@ -37,7 +40,7 @@ class AddPhrasePage extends StatelessWidget {
                 backgroundColor: Colors.deepPurple,
                 foregroundColor: Colors.white,
               ),
-              child: const Text('Add Phrase'),
+              child: Text(s.addPhrase),
             ),
           ],
         ),

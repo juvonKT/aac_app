@@ -8,6 +8,7 @@ import 'package:aac_app/PhraseListPage.dart';
 import 'AddCategoryPage.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
+import 'generated/l10n.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -86,14 +87,14 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  void removePhrase() {
+  void removePhrase(String localizedMessage) {
     setState(() {
       if (selectedPhrases.isNotEmpty) {
         selectedPhrases.removeLast();
       }
     });
     Fluttertoast.showToast(
-      msg: "Hold to remove all",
+      msg: localizedMessage,
       toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.BOTTOM,
     );
@@ -116,6 +117,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void goToCategory(String category) {
+    final s = S.of(context);
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -124,7 +126,7 @@ class _HomePageState extends State<HomePage> {
           phrases: phrases[category]!["phrases"],
           onPhraseSelected: addPhrase,
           onClearPhrases: clearPhrases,
-          onRemovePhrase: removePhrase,
+          onRemovePhrase: () => removePhrase(s.removeMessage),
           onSpeak: _speak,
           selectedPhrases: selectedPhrases,
           savePhrase: savePhrases,
@@ -135,6 +137,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
@@ -150,7 +154,7 @@ class _HomePageState extends State<HomePage> {
             onLongPress: clearPhrases,
             child: IconButton(
               icon: const Icon(Icons.backspace, color: Colors.white),
-              onPressed: removePhrase,
+              onPressed: () => removePhrase(s.removeMessage),
             ),
           ),
           IconButton(
@@ -167,11 +171,11 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.all(16.0),
               child: Row(
                 children: [
-                  const Expanded(
+                  Expanded(
                     child: Center(
                       child: Text(
-                        "Home",
-                        style: TextStyle(
+                        s.home,
+                        style: const TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                         ),
@@ -258,14 +262,14 @@ class _HomePageState extends State<HomePage> {
             );
           }
         },
-        items: const [
+        items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: s.home,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: 'Settings',
+            label: s.setting,
           ),
         ],
         selectedItemColor: Colors.black,

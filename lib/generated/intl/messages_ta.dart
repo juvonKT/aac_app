@@ -23,20 +23,17 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addCategory": MessageLookupByLibrary.simpleMessage("வகையைச் சேர்"),
-        "addFieldText":
-            MessageLookupByLibrary.simpleMessage("புலப் படிவத்திற்குச் சேர்"),
         "addPhrase": MessageLookupByLibrary.simpleMessage("அணைப்பைச் சேர்"),
-        "addWord": MessageLookupByLibrary.simpleMessage("வார்த்தையைச் சேர்"),
         "colourScheme": MessageLookupByLibrary.simpleMessage("நிறத் திட்டம்"),
-        "createNewCategory":
-            MessageLookupByLibrary.simpleMessage("புதிய வகையை உருவாக்கு"),
-        "createNewPhrase":
-            MessageLookupByLibrary.simpleMessage("புதிய அணைப்பை உருவாக்கு"),
-        "goToCategory": MessageLookupByLibrary.simpleMessage("வகைக்கு செல்"),
+        "home": MessageLookupByLibrary.simpleMessage("முகப்பு"),
         "language": MessageLookupByLibrary.simpleMessage("மொழி"),
-        "nameOfCategory": MessageLookupByLibrary.simpleMessage("வகையின் பெயர்"),
+        "newCategory":
+            MessageLookupByLibrary.simpleMessage("புதிய வகையை உருவாக்கு"),
+        "newPhrase":
+            MessageLookupByLibrary.simpleMessage("புதிய அணைப்பை உருவாக்கு"),
+        "removeMessage":
+            MessageLookupByLibrary.simpleMessage("அனைத்தையும் நீக்க திடு"),
         "setting": MessageLookupByLibrary.simpleMessage("அமைப்புகள்"),
-        "speak": MessageLookupByLibrary.simpleMessage("பேசி"),
         "userA": MessageLookupByLibrary.simpleMessage("பயனர் A"),
         "userB": MessageLookupByLibrary.simpleMessage("பயனர் B"),
         "userC": MessageLookupByLibrary.simpleMessage("பயனர் C"),

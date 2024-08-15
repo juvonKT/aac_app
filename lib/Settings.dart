@@ -12,13 +12,12 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
-  String _selectedUser = 'User A';
-  String _selectedColourScheme = 'Light';
-
   @override
   Widget build(BuildContext context) {
     final languageProvider = Provider.of<LanguageProvider>(context);
     final s = S.of(context);
+    String _selectedUser = s.userA;
+    String _selectedColourScheme = 'Light';
 
     return Scaffold(
       appBar: AppBar(
@@ -41,7 +40,7 @@ class _SettingsState extends State<Settings> {
                     _selectedUser = newValue!;
                   });
                 },
-                items: <String>['User A', 'User B', 'User C']
+                items: <String>[s.userA, s.userB, s.userC]
                     .map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
@@ -116,11 +115,11 @@ class _SettingsState extends State<Settings> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: s.home,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label:'Settings',
+            label:s.setting,
           ),
         ],
         selectedItemColor: Colors.black,

@@ -7,6 +7,8 @@ class AddCategoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Create New Category'),
@@ -21,8 +23,8 @@ class AddCategoryPage extends StatelessWidget {
           children: [
             TextField(
               controller: _controller,
-              decoration: const InputDecoration(
-                labelText: 'New Category',
+              decoration:  InputDecoration(
+                labelText: s.newCategory,
                 border: OutlineInputBorder(),
               ),
             ),
@@ -38,7 +40,7 @@ class AddCategoryPage extends StatelessWidget {
                 backgroundColor: Colors.deepPurple,
                 foregroundColor: Colors.white,
               ),
-              child: const Text('Add Category'),
+              child: Text(s.addCategory),
             ),
           ],
         ),
