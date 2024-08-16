@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'settings.dart';
 import 'AddPhrasePage.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class PhraseListPage extends StatefulWidget {
   final String category;
@@ -35,6 +36,20 @@ class _PhraseListPageState extends State<PhraseListPage> {
   void initState() {
     super.initState();
     phrasesList = widget.phrases;
+  }
+
+  void deletePhrase(int index) {
+    String deletedPhrase = phrasesList[index]["phrase"]!;
+    setState(() {
+      phrasesList.removeAt(index);
+    });
+    widget.savePhrase();
+
+    Fluttertoast.showToast(
+      msg: "Phrase '$deletedPhrase' has been deleted",
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+    );
   }
 
   @override
@@ -120,6 +135,32 @@ class _PhraseListPageState extends State<PhraseListPage> {
                   onTap: () {
                     widget.onPhraseSelected(phrase["phrase"]!);
                     Navigator.pop(context);
+                  },
+                  onLongPress: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: const Text('Delete Phrase'),
+                          content: Text('Are you sure you want to delete "${phrase["phrase"]}"?'),
+                          actions: <Widget>[
+                            TextButton(
+                              child: const Text('Cancel'),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                            TextButton(
+                              child: const Text('Delete'),
+                              onPressed: () {
+                                deletePhrase(index);
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ],
+                        );
+                      },
+                    );
                   },
                   child: Container(
                     decoration: BoxDecoration(

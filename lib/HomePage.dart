@@ -135,6 +135,20 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  void deleteCategory(String category) async {
+    setState(() {
+      phrases.remove(category);
+    });
+    await savePhrases();
+
+    // Show a toast message to confirm deletion
+    Fluttertoast.showToast(
+      msg: S.of(context).categoryDeleted(category),
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
@@ -218,6 +232,33 @@ class _HomePageState extends State<HomePage> {
                   return GestureDetector(
                     onTap: () {
                       goToCategory(category);
+                    },
+                    onLongPress: () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          final s = S.of(context); // Get the localization object
+                          return AlertDialog(
+                            title: Text(s.deleteCategory),
+                            content: Text(s.deleteCategoryConfirmation(category)),
+                            actions: <Widget>[
+                              TextButton(
+                                child: Text(s.cancel),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                              ),
+                              TextButton(
+                                child: Text(s.delete),
+                                onPressed: () {
+                                  deleteCategory(category);
+                                  Navigator.of(context).pop();
+                                },
+                              ),
+                            ],
+                          );
+                        },
+                      );
                     },
                     child: Container(
                       decoration: BoxDecoration(

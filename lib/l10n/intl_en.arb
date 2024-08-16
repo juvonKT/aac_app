@@ -13,5 +13,10 @@
   "newCategory": "New Category",
   "userGuideContent": "User Guide Content Goes Here",
   "home": "Home",
-  "removeMessage": "Hold to remove all"
+  "removeMessage": "Hold to remove all",
+  "deleteCategory": "Delete Category",
+  "deleteCategoryConfirmation": "Are you sure you want to delete the category '{category}' and all its phrases?",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "categoryDeleted": "Category '{category}' has been deleted"
 }

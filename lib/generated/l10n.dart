@@ -50,6 +50,24 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  String get deleteCategory => Intl.message('Delete Category', name: 'deleteCategory');
+
+  String deleteCategoryConfirmation(String category) => Intl.message(
+    'Are you sure you want to delete the category \'$category\' and all its phrases?',
+    name: 'deleteCategoryConfirmation',
+    args: [category],
+  );
+
+  String get cancel => Intl.message('Cancel', name: 'cancel');
+
+  String get delete => Intl.message('Delete', name: 'delete');
+
+  String categoryDeleted(String category) => Intl.message(
+    'Category \'$category\' has been deleted',
+    name: 'categoryDeleted',
+    args: [category],
+  );
+
   /// `Settings`
   String get setting {
     return Intl.message(
