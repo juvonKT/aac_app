@@ -20,13 +20,28 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ms';
 
+  static String m0(category) => "Kategori \'${category}\' telah dipadamkan";
+
+  static String m1(category) =>
+      "Adakah anda pasti mahu memadamkan kategori \'${category}\' dan semua frasanya?";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addCategory": MessageLookupByLibrary.simpleMessage("Tambah Kategori"),
         "addPhrase": MessageLookupByLibrary.simpleMessage("Tambah Frasa"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Batal"),
+        "categoryDeleted": m0,
+        "colourPaletteGenerator":
+            MessageLookupByLibrary.simpleMessage("Penjana Palet Warna"),
         "colourScheme": MessageLookupByLibrary.simpleMessage("Skema Warna"),
+        "dark": MessageLookupByLibrary.simpleMessage("Gelap"),
+        "delete": MessageLookupByLibrary.simpleMessage("Padam"),
+        "deleteCategory":
+            MessageLookupByLibrary.simpleMessage("Padamkan Kategori"),
+        "deleteCategoryConfirmation": m1,
         "home": MessageLookupByLibrary.simpleMessage("Laman Utama"),
         "language": MessageLookupByLibrary.simpleMessage("Bahasa"),
+        "light": MessageLookupByLibrary.simpleMessage("Terang"),
         "newCategory":
             MessageLookupByLibrary.simpleMessage("Cipta Kategori Baharu"),
         "newPhrase": MessageLookupByLibrary.simpleMessage("Cipta Frasa Baharu"),

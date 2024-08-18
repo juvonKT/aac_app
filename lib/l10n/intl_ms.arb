@@ -11,7 +11,15 @@
   "newPhrase": "Cipta Frasa Baharu",
   "addCategory": "Tambah Kategori",
   "newCategory": "Cipta Kategori Baharu",
-  "userGuideContent": "Kandungan Panduan Pengguna Di Sini",
   "home": "Laman Utama",
-  "removeMessage": "Tekan dan tahan untuk membuang semua"
+  "removeMessage": "Tekan dan tahan untuk membuang semua",
+  "deleteCategory": "Padamkan Kategori",
+  "deleteCategoryConfirmation": "Adakah anda pasti mahu memadamkan kategori '{category}' dan semua frasanya?",
+  "cancel": "Batal",
+  "delete": "Padam",
+  "categoryDeleted": "Kategori '{category}' telah dipadamkan",
+  "light": "Terang",
+  "dark": "Gelap",
+  "colourPaletteGenerator" : "Penjana Palet Warna",
+  "userGuideContent": "Kandungan Panduan Pengguna Di Sini"
 }

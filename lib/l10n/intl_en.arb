@@ -11,12 +11,15 @@
   "newPhrase": "New Phrase",
   "addCategory": "Add Category",
   "newCategory": "New Category",
-  "userGuideContent": "User Guide Content Goes Here",
   "home": "Home",
   "removeMessage": "Hold to remove all",
   "deleteCategory": "Delete Category",
   "deleteCategoryConfirmation": "Are you sure you want to delete the category '{category}' and all its phrases?",
   "cancel": "Cancel",
   "delete": "Delete",
-  "categoryDeleted": "Category '{category}' has been deleted"
+  "categoryDeleted": "Category '{category}' has been deleted",
+  "light": "Light",
+  "dark": "Dark",
+  "colourPaletteGenerator" : "Colour Palette Generator",
+  "userGuideContent": "User Guide Content Goes Here"
 }

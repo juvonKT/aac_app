@@ -11,7 +11,15 @@
   "newPhrase": "新短语",
   "addCategory": "添加类别",
   "newCategory": "新类别",
-  "userGuideContent": "用户指南内容在这里",
   "home": "首页",
-  "removeMessage": "按住以删除全部"
+  "removeMessage": "按住以删除全部",
+  "deleteCategory": "删除类别",
+  "deleteCategoryConfirmation": "您确定要删除类别 '{category}' 及其所有短语吗？",
+  "cancel": "取消",
+  "delete": "删除",
+  "categoryDeleted": "类别 '{category}' 已被删除",
+  "light": "浅色",
+  "dark": "深色",
+  "colourPaletteGenerator" : "调色板生成器",
+  "userGuideContent": "用户指南内容在这里"
 }

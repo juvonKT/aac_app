@@ -17,7 +17,7 @@ class _SettingsState extends State<Settings> {
     final languageProvider = Provider.of<LanguageProvider>(context);
     final s = S.of(context);
     String _selectedUser = s.userA;
-    String _selectedColourScheme = 'Light';
+    String _selectedColourScheme = s.light;
 
     return Scaffold(
       appBar: AppBar(
@@ -82,7 +82,7 @@ class _SettingsState extends State<Settings> {
                     _selectedColourScheme = newValue!;
                   });
                 },
-                items: <String>['Light', 'Dark', 'Colour Palette Generator']
+                items: <String>[s.light, s.dark, s.colourPaletteGenerator]
                     .map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,

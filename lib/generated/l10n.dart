@@ -160,16 +160,6 @@ class S {
     );
   }
 
-  /// `User Guide Content Goes Here`
-  String get userGuideContent {
-    return Intl.message(
-      'User Guide Content Goes Here',
-      name: 'userGuideContent',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Home`
   String get home {
     return Intl.message(
@@ -237,6 +227,46 @@ class S {
       name: 'categoryDeleted',
       desc: '',
       args: [category],
+    );
+  }
+
+  /// `Light`
+  String get light {
+    return Intl.message(
+      'Light',
+      name: 'light',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dark`
+  String get dark {
+    return Intl.message(
+      'Dark',
+      name: 'dark',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Colour Palette Generator`
+  String get colourPaletteGenerator {
+    return Intl.message(
+      'Colour Palette Generator',
+      name: 'colourPaletteGenerator',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User Guide Content Goes Here`
+  String get userGuideContent {
+    return Intl.message(
+      'User Guide Content Goes Here',
+      name: 'userGuideContent',
+      desc: '',
+      args: [],
     );
   }
 }

@@ -31,13 +31,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "addPhrase": MessageLookupByLibrary.simpleMessage("Add Phrase"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "categoryDeleted": m0,
+        "colourPaletteGenerator":
+            MessageLookupByLibrary.simpleMessage("Colour Palette Generator"),
         "colourScheme": MessageLookupByLibrary.simpleMessage("Colour Scheme"),
+        "dark": MessageLookupByLibrary.simpleMessage("Dark"),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "deleteCategory":
             MessageLookupByLibrary.simpleMessage("Delete Category"),
         "deleteCategoryConfirmation": m1,
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "light": MessageLookupByLibrary.simpleMessage("Light"),
         "newCategory": MessageLookupByLibrary.simpleMessage("New Category"),
         "newPhrase": MessageLookupByLibrary.simpleMessage("New Phrase"),
         "removeMessage":

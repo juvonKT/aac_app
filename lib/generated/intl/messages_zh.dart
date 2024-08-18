@@ -20,13 +20,26 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'zh';
 
+  static String m0(category) => "类别 \'${category}\' 已被删除";
+
+  static String m1(category) => "您确定要删除类别 \'${category}\' 及其所有短语吗？";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addCategory": MessageLookupByLibrary.simpleMessage("添加类别"),
         "addPhrase": MessageLookupByLibrary.simpleMessage("添加短语"),
+        "cancel": MessageLookupByLibrary.simpleMessage("取消"),
+        "categoryDeleted": m0,
+        "colourPaletteGenerator":
+            MessageLookupByLibrary.simpleMessage("调色板生成器"),
         "colourScheme": MessageLookupByLibrary.simpleMessage("配色方案"),
+        "dark": MessageLookupByLibrary.simpleMessage("深色"),
+        "delete": MessageLookupByLibrary.simpleMessage("删除"),
+        "deleteCategory": MessageLookupByLibrary.simpleMessage("删除类别"),
+        "deleteCategoryConfirmation": m1,
         "home": MessageLookupByLibrary.simpleMessage("首页"),
         "language": MessageLookupByLibrary.simpleMessage("语言"),
+        "light": MessageLookupByLibrary.simpleMessage("浅色"),
         "newCategory": MessageLookupByLibrary.simpleMessage("新类别"),
         "newPhrase": MessageLookupByLibrary.simpleMessage("新短语"),
         "removeMessage": MessageLookupByLibrary.simpleMessage("按住以删除全部"),
