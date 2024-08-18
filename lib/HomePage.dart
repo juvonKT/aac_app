@@ -23,16 +23,6 @@ class _HomePageState extends State<HomePage> {
   List<String> selectedPhrases = [];
   String? selectedCategory;
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   loadPhrases().then((data) {
-  //     setState(() {
-  //       phrases = data;
-  //     });
-  //   });
-  // }
-
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -88,8 +78,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> savePhrases() async {
+    Locale locale = Localizations.localeOf(context);
+    String languageCode = locale.languageCode;
+
     final String directory = (await getApplicationDocumentsDirectory()).path;
-    final String path = '$directory/phrases_en.json';
+    final String path = '$directory/phrases_$languageCode.json';
     final File file = File(path);
     await file.writeAsString(json.encode(phrases));
   }

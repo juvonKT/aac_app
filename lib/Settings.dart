@@ -16,8 +16,8 @@ class _SettingsState extends State<Settings> {
   Widget build(BuildContext context) {
     final languageProvider = Provider.of<LanguageProvider>(context);
     final s = S.of(context);
-    String _selectedUser = s.userA;
-    String _selectedColourScheme = s.light;
+    String selectedUser = s.userA;
+    String selectedColourScheme = s.light;
 
     return Scaffold(
       appBar: AppBar(
@@ -34,10 +34,10 @@ class _SettingsState extends State<Settings> {
             ListTile(
               leading: const Icon(Icons.person),
               title: DropdownButton<String>(
-                value: _selectedUser,
+                value: selectedUser,
                 onChanged: (String? newValue) {
                   setState(() {
-                    _selectedUser = newValue!;
+                    selectedUser = newValue!;
                   });
                 },
                 items: <String>[s.userA, s.userB, s.userC]
@@ -62,7 +62,7 @@ class _SettingsState extends State<Settings> {
                     languageProvider.setLocale(newValue);
                   }
                 },
-                items: [
+                items: const [
                   DropdownMenuItem(value: Locale('en', ''), child: Text('English')),
                   DropdownMenuItem(value: Locale('ms', ''), child: Text('Malay')),
                   DropdownMenuItem(value: Locale('zh', ''), child: Text('Mandarin')),
@@ -74,12 +74,12 @@ class _SettingsState extends State<Settings> {
             const Divider(),
             ListTile(
               title: Text(s.colourScheme),
-              subtitle: Text(_selectedColourScheme),
+              subtitle: Text(selectedColourScheme),
               trailing: DropdownButton<String>(
-                value: _selectedColourScheme,
+                value: selectedColourScheme,
                 onChanged: (String? newValue) {
                   setState(() {
-                    _selectedColourScheme = newValue!;
+                    selectedColourScheme = newValue!;
                   });
                 },
                 items: <String>[s.light, s.dark, s.colourPaletteGenerator]

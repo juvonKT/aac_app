@@ -66,6 +66,7 @@ flutter:
   assets:
     - assets/phrases_en.json
     - assets/phrases_zh.json
+    - assets/phrases_ms.json
     - assets/images/test.png
     - lib/l10n/
 
