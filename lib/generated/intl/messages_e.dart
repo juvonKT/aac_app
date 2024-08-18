@@ -20,11 +20,22 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'e';
 
+  static String m0(category) => "Category \'${category}\' has been deleted";
+
+  static String m1(category) =>
+      "Are you sure you want to delete the category \'${category}\' and all its phrases?";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addCategory": MessageLookupByLibrary.simpleMessage("Add Category"),
         "addPhrase": MessageLookupByLibrary.simpleMessage("Add Phrase"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "categoryDeleted": m0,
         "colourScheme": MessageLookupByLibrary.simpleMessage("Colour Scheme"),
+        "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+        "deleteCategory":
+            MessageLookupByLibrary.simpleMessage("Delete Category"),
+        "deleteCategoryConfirmation": m1,
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "newCategory": MessageLookupByLibrary.simpleMessage("New Category"),

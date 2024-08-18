@@ -1,0 +1,184 @@
+{
+  "人": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "我", "image": "assets/images/test.png"},
+      {"phrase": "你", "image": "assets/images/test.png"},
+      {"phrase": "我", "image": "assets/images/test.png"},
+      {"phrase": "我们", "image": "assets/images/test.png"},
+      {"phrase": "他", "image": "assets/images/test.png"},
+      {"phrase": "她", "image": "assets/images/test.png"},
+      {"phrase": "他们", "image": "assets/images/test.png"},
+      {"phrase": "我们", "image": "assets/images/test.png"}
+    ]
+  },
+  "东西": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "椅子", "image": "assets/images/test.png"},
+      {"phrase": "车", "image": "assets/images/test.png"},
+      {"phrase": "书", "image": "assets/images/test.png"},
+      {"phrase": "笔", "image": "assets/images/test.png"},
+      {"phrase": "桌子", "image": "assets/images/test.png"},
+      {"phrase": "电话", "image": "assets/images/test.png"},
+      {"phrase": "电脑", "image": "assets/images/test.png"},
+      {"phrase": "床", "image": "assets/images/test.png"},
+      {"phrase": "杯子", "image": "assets/images/test.png"}
+    ]
+  },
+  "动作": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "吃", "image": "assets/images/test.png"},
+      {"phrase": "喝", "image": "assets/images/test.png"},
+      {"phrase": "睡觉", "image": "assets/images/test.png"},
+      {"phrase": "玩", "image": "assets/images/test.png"},
+      {"phrase": "跑", "image": "assets/images/test.png"},
+      {"phrase": "走", "image": "assets/images/test.png"},
+      {"phrase": "跳", "image": "assets/images/test.png"},
+      {"phrase": "帮助", "image": "assets/images/test.png"},
+      {"phrase": "读", "image": "assets/images/test.png"},
+      {"phrase": "听", "image": "assets/images/test.png"}
+    ]
+  },
+  "地方": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "这里", "image": "assets/images/test.png"},
+      {"phrase": "那里", "image": "assets/images/test.png"},
+      {"phrase": "家", "image": "assets/images/test.png"},
+      {"phrase": "学校", "image": "assets/images/test.png"},
+      {"phrase": "公园", "image": "assets/images/test.png"},
+      {"phrase": "商店", "image": "assets/images/test.png"},
+      {"phrase": "图书馆", "image": "assets/images/test.png"},
+      {"phrase": "餐厅", "image": "assets/images/test.png"},
+      {"phrase": "医院", "image": "assets/images/test.png"},
+      {"phrase": "健身房", "image": "assets/images/test.png"}
+    ]
+  },
+  "食物": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "苹果", "image": "assets/images/test.png"},
+      {"phrase": "香蕉", "image": "assets/images/test.png"},
+      {"phrase": "胡萝卜", "image": "assets/images/test.png"},
+      {"phrase": "果汁", "image": "assets/images/test.png"},
+      {"phrase": "水", "image": "assets/images/test.png"},
+      {"phrase": "面包", "image": "assets/images/test.png"},
+      {"phrase": "牛奶", "image": "assets/images/test.png"},
+      {"phrase": "奶酪", "image": "assets/images/test.png"},
+      {"phrase": "鸡肉", "image": "assets/images/test.png"},
+      {"phrase": "披萨", "image": "assets/images/test.png"},
+      {"phrase": "米饭", "image": "assets/images/test.png"},
+      {"phrase": "意大利面", "image": "assets/images/test.png"},
+      {"phrase": "酸奶", "image": "assets/images/test.png"},
+      {"phrase": "葡萄", "image": "assets/images/test.png"},
+      {"phrase": "橙子", "image": "assets/images/test.png"}
+    ]
+  },
+  "感觉": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "快乐", "image": "assets/images/test.png"},
+      {"phrase": "伤心", "image": "assets/images/test.png"},
+      {"phrase": "兴奋", "image": "assets/images/test.png"},
+      {"phrase": "害怕", "image": "assets/images/test.png"},
+      {"phrase": "生气", "image": "assets/images/test.png"},
+      {"phrase": "疲倦", "image": "assets/images/test.png"},
+      {"phrase": "无聊", "image": "assets/images/test.png"},
+      {"phrase": "惊讶", "image": "assets/images/test.png"},
+      {"phrase": "挫折", "image": "assets/images/test.png"},
+      {"phrase": "紧张", "image": "assets/images/test.png"}
+    ]
+  },
+  "形容词": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "红色", "image": "assets/images/test.png"},
+      {"phrase": "蓝色", "image": "assets/images/test.png"},
+      {"phrase": "绿色", "image": "assets/images/test.png"},
+      {"phrase": "大", "image": "assets/images/test.png"},
+      {"phrase": "小", "image": "assets/images/test.png"},
+      {"phrase": "软", "image": "assets/images/test.png"},
+      {"phrase": "硬", "image": "assets/images/test.png"},
+      {"phrase": "热", "image": "assets/images/test.png"},
+      {"phrase": "冷", "image": "assets/images/test.png"},
+      {"phrase": "快", "image": "assets/images/test.png"},
+      {"phrase": "慢", "image": "assets/images/test.png"},
+      {"phrase": "吵", "image": "assets/images/test.png"},
+      {"phrase": "安静", "image": "assets/images/test.png"},
+      {"phrase": "重", "image": "assets/images/test.png"},
+      {"phrase": "轻", "image": "assets/images/test.png"}
+    ]
+  },
+  "问题": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "什么？", "image": "assets/images/test.png"},
+      {"phrase": "哪里？", "image": "assets/images/test.png"},
+      {"phrase": "什么时候？", "image": "assets/images/test.png"},
+      {"phrase": "怎么？", "image": "assets/images/test.png"},
+      {"phrase": "为什么？", "image": "assets/images/test.png"},
+      {"phrase": "谁？", "image": "assets/images/test.png"},
+      {"phrase": "哪个？", "image": "assets/images/test.png"},
+      {"phrase": "我可以吗？", "image": "assets/images/test.png"},
+      {"phrase": "你呢？", "image": "assets/images/test.png"},
+      {"phrase": "是吗？", "image": "assets/images/test.png"}
+    ]
+  },
+  "时间": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "早上", "image": "assets/images/test.png"},
+      {"phrase": "下午", "image": "assets/images/test.png"},
+      {"phrase": "晚上", "image": "assets/images/test.png"},
+      {"phrase": "夜晚", "image": "assets/images/test.png"},
+      {"phrase": "今天", "image": "assets/images/test.png"},
+      {"phrase": "明天", "image": "assets/images/test.png"},
+      {"phrase": "昨天", "image": "assets/images/test.png"},
+      {"phrase": "现在", "image": "assets/images/test.png"},
+      {"phrase": "稍后", "image": "assets/images/test.png"},
+      {"phrase": "很快", "image": "assets/images/test.png"}
+    ]
+  },
+  "社交": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "你好", "image": "assets/images/test.png"},
+      {"phrase": "再见", "image": "assets/images/test.png"},
+      {"phrase": "请", "image": "assets/images/test.png"},
+      {"phrase": "谢谢", "image": "assets/images/test.png"},
+      {"phrase": "对不起", "image": "assets/images/test.png"},
+      {"phrase": "你好吗？", "image": "assets/images/test.png"},
+      {"phrase": "我需要帮助", "image": "assets/images/test.png"},
+      {"phrase": "很高兴见到你", "image": "assets/images/test.png"},
+      {"phrase": "打扰一下", "image": "assets/images/test.png"},
+      {"phrase": "我不理解", "image": "assets/images/test.png"},
+      {"phrase": "你能重复一下吗？", "image": "assets/images/test.png"},
+      {"phrase": "你叫什么名字？", "image": "assets/images/test.png"},
+      {"phrase": "我迷路了", "image": "assets/images/test.png"},
+      {"phrase": "我饿了", "image": "assets/images/test.png"},
+      {"phrase": "我渴了", "image": "assets/images/test.png"}
+    ]
+  },
+  "身体": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "头", "image": "assets/images/test.png"},
+      {"phrase": "手臂", "image": "assets/images/test.png"},
+      {"phrase": "腿", "image": "assets/images/test.png"},
+      {"phrase": "药", "image": "assets/images/test.png"},
+      {"phrase": "医生", "image": "assets/images/test.png"},
+      {"phrase": "生病", "image": "assets/images/test.png"},
+      {"phrase": "受伤", "image": "assets/images/test.png"},
+      {"phrase": "胃", "image": "assets/images/test.png"},
+      {"phrase": "背", "image": "assets/images/test.png"},
+      {"phrase": "耳朵", "image": "assets/images/test.png"},
+      {"phrase": "眼睛", "image": "assets/images/test.png"},
+      {"phrase": "鼻子", "image": "assets/images/test.png"},
+      {"phrase": "喉咙", "image": "assets/images/test.png"},
+      {"phrase": "咳嗽", "image": "assets/images/test.png"},
+      {"phrase": "发烧", "image": "assets/images/test.png"}
+    ]
+  }
+}

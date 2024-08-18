@@ -23,9 +23,19 @@ class _HomePageState extends State<HomePage> {
   List<String> selectedPhrases = [];
   String? selectedCategory;
 
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   loadPhrases().then((data) {
+  //     setState(() {
+  //       phrases = data;
+  //     });
+  //   });
+  // }
+
   @override
-  void initState() {
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
     loadPhrases().then((data) {
       setState(() {
         phrases = data;
@@ -34,8 +44,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<Map<String, Map<String, dynamic>>> loadPhrases() async {
+    Locale locale = Localizations.localeOf(context);
+    String languageCode = locale.languageCode;
+
     final String directory = (await getApplicationDocumentsDirectory()).path;
-    final String path = '$directory/phrases.json';
+    final String path = '$directory/phrases_$languageCode.json';
     final File file = File(path);
 
     if (await file.exists()) {
@@ -55,7 +68,7 @@ class _HomePageState extends State<HomePage> {
         });
       });
     } else {
-      String jsonString = await rootBundle.loadString('assets/phrases.json');
+      String jsonString = await rootBundle.loadString('assets/phrases_$languageCode.json');
       Map<String, dynamic> jsonMap = json.decode(jsonString);
       await file.writeAsString(jsonString);
       return jsonMap.map((key, value) {
@@ -76,7 +89,7 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> savePhrases() async {
     final String directory = (await getApplicationDocumentsDirectory()).path;
-    final String path = '$directory/phrases.json';
+    final String path = '$directory/phrases_en.json';
     final File file = File(path);
     await file.writeAsString(json.encode(phrases));
   }
