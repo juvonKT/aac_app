@@ -1,0 +1,181 @@
+{
+  "orang": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Saya", "image": "assets/images/test.png"},
+      {"phrase": "Awak", "image": "assets/images/test.png"},
+      {"phrase": "Dia", "image": "assets/images/test.png"},
+      {"phrase": "Mereka", "image": "assets/images/test.png"},
+      {"phrase": "Kami", "image": "assets/images/test.png"}
+    ]
+  },
+  "benda": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Kerusi", "image": "assets/images/test.png"},
+      {"phrase": "Kereta", "image": "assets/images/test.png"},
+      {"phrase": "Buku", "image": "assets/images/test.png"},
+      {"phrase": "Pen", "image": "assets/images/test.png"},
+      {"phrase": "Meja", "image": "assets/images/test.png"},
+      {"phrase": "Telefon", "image": "assets/images/test.png"},
+      {"phrase": "Komputer", "image": "assets/images/test.png"},
+      {"phrase": "Katil", "image": "assets/images/test.png"},
+      {"phrase": "Cawan", "image": "assets/images/test.png"}
+    ]
+  },
+  "tindakan": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Makan", "image": "assets/images/test.png"},
+      {"phrase": "Minum", "image": "assets/images/test.png"},
+      {"phrase": "Tidur", "image": "assets/images/test.png"},
+      {"phrase": "Main", "image": "assets/images/test.png"},
+      {"phrase": "Lari", "image": "assets/images/test.png"},
+      {"phrase": "Jalan", "image": "assets/images/test.png"},
+      {"phrase": "Lompat", "image": "assets/images/test.png"},
+      {"phrase": "Tolong", "image": "assets/images/test.png"},
+      {"phrase": "Baca", "image": "assets/images/test.png"},
+      {"phrase": "Dengar", "image": "assets/images/test.png"}
+    ]
+  },
+  "tempat": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Sini", "image": "assets/images/test.png"},
+      {"phrase": "Sana", "image": "assets/images/test.png"},
+      {"phrase": "Rumah", "image": "assets/images/test.png"},
+      {"phrase": "Sekolah", "image": "assets/images/test.png"},
+      {"phrase": "Taman", "image": "assets/images/test.png"},
+      {"phrase": "Kedai", "image": "assets/images/test.png"},
+      {"phrase": "Perpustakaan", "image": "assets/images/test.png"},
+      {"phrase": "Restoran", "image": "assets/images/test.png"},
+      {"phrase": "Hospital", "image": "assets/images/test.png"},
+      {"phrase": "Gim", "image": "assets/images/test.png"}
+    ]
+  },
+  "makanan": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Epal", "image": "assets/images/test.png"},
+      {"phrase": "Pisang", "image": "assets/images/test.png"},
+      {"phrase": "Lobak Merah", "image": "assets/images/test.png"},
+      {"phrase": "Jus", "image": "assets/images/test.png"},
+      {"phrase": "Air", "image": "assets/images/test.png"},
+      {"phrase": "Roti", "image": "assets/images/test.png"},
+      {"phrase": "Susu", "image": "assets/images/test.png"},
+      {"phrase": "Keju", "image": "assets/images/test.png"},
+      {"phrase": "Ayam", "image": "assets/images/test.png"},
+      {"phrase": "Pizza", "image": "assets/images/test.png"},
+      {"phrase": "Nasi", "image": "assets/images/test.png"},
+      {"phrase": "Pasta", "image": "assets/images/test.png"},
+      {"phrase": "Yogurt", "image": "assets/images/test.png"},
+      {"phrase": "Anggur", "image": "assets/images/test.png"},
+      {"phrase": "Oren", "image": "assets/images/test.png"}
+    ]
+  },
+  "perasaan": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Gembira", "image": "assets/images/test.png"},
+      {"phrase": "Sedih", "image": "assets/images/test.png"},
+      {"phrase": "Teruja", "image": "assets/images/test.png"},
+      {"phrase": "Takut", "image": "assets/images/test.png"},
+      {"phrase": "Marah", "image": "assets/images/test.png"},
+      {"phrase": "Penat", "image": "assets/images/test.png"},
+      {"phrase": "Bosan", "image": "assets/images/test.png"},
+      {"phrase": "Terkejut", "image": "assets/images/test.png"},
+      {"phrase": "Kecewa", "image": "assets/images/test.png"},
+      {"phrase": "Gementar", "image": "assets/images/test.png"}
+    ]
+  },
+  "deskriptif": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Merah", "image": "assets/images/test.png"},
+      {"phrase": "Biru", "image": "assets/images/test.png"},
+      {"phrase": "Hijau", "image": "assets/images/test.png"},
+      {"phrase": "Besar", "image": "assets/images/test.png"},
+      {"phrase": "Kecil", "image": "assets/images/test.png"},
+      {"phrase": "Lembut", "image": "assets/images/test.png"},
+      {"phrase": "Keras", "image": "assets/images/test.png"},
+      {"phrase": "Panas", "image": "assets/images/test.png"},
+      {"phrase": "Sejuk", "image": "assets/images/test.png"},
+      {"phrase": "Cepat", "image": "assets/images/test.png"},
+      {"phrase": "Lambat", "image": "assets/images/test.png"},
+      {"phrase": "Kuat", "image": "assets/images/test.png"},
+      {"phrase": "Senyap", "image": "assets/images/test.png"},
+      {"phrase": "Berat", "image": "assets/images/test.png"},
+      {"phrase": "Ringan", "image": "assets/images/test.png"}
+    ]
+  },
+  "soalan": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Apa?", "image": "assets/images/test.png"},
+      {"phrase": "Di Mana?", "image": "assets/images/test.png"},
+      {"phrase": "Bila?", "image": "assets/images/test.png"},
+      {"phrase": "Bagaimana?", "image": "assets/images/test.png"},
+      {"phrase": "Kenapa?", "image": "assets/images/test.png"},
+      {"phrase": "Siapa?", "image": "assets/images/test.png"},
+      {"phrase": "Yang Mana?", "image": "assets/images/test.png"},
+      {"phrase": "Boleh tak?", "image": "assets/images/test.png"},
+      {"phrase": "Adakah anda", "image": "assets/images/test.png"},
+      {"phrase": "Adakah ia", "image": "assets/images/test.png"}
+    ]
+  },
+  "masa": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Pagi", "image": "assets/images/test.png"},
+      {"phrase": "Tengah hari", "image": "assets/images/test.png"},
+      {"phrase": "Petang", "image": "assets/images/test.png"},
+      {"phrase": "Malam", "image": "assets/images/test.png"},
+      {"phrase": "Hari ini", "image": "assets/images/test.png"},
+      {"phrase": "Esok", "image": "assets/images/test.png"},
+      {"phrase": "Semalam", "image": "assets/images/test.png"},
+      {"phrase": "Sekarang", "image": "assets/images/test.png"},
+      {"phrase": "Nanti", "image": "assets/images/test.png"},
+      {"phrase": "Tak lama lagi", "image": "assets/images/test.png"}
+    ]
+  },
+  "sosial": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Helo", "image": "assets/images/test.png"},
+      {"phrase": "Selamat tinggal", "image": "assets/images/test.png"},
+      {"phrase": "Tolonglah", "image": "assets/images/test.png"},
+      {"phrase": "Terima kasih", "image": "assets/images/test.png"},
+      {"phrase": "Maaf", "image": "assets/images/test.png"},
+      {"phrase": "Apa khabar?", "image": "assets/images/test.png"},
+      {"phrase": "Saya perlukan bantuan", "image": "assets/images/test.png"},
+      {"phrase": "Selamat berkenalan", "image": "assets/images/test.png"},
+      {"phrase": "Maafkan saya", "image": "assets/images/test.png"},
+      {"phrase": "Saya tak faham", "image": "assets/images/test.png"},
+      {"phrase": "Bolehkah anda mengulanginya?", "image": "assets/images/test.png"},
+      {"phrase": "Siapa nama awak", "image": "assets/images/test.png"},
+      {"phrase": "Saya sesat", "image": "assets/images/test.png"},
+      {"phrase": "Saya lapar", "image": "assets/images/test.png"},
+      {"phrase": "Saya dahaga", "image": "assets/images/test.png"}
+    ]
+  },
+  "kesihatan": {
+    "categoryImage": "assets/images/test.png",
+    "phrases": [
+      {"phrase": "Kepala", "image": "assets/images/test.png"},
+      {"phrase": "Lengan", "image": "assets/images/test.png"},
+      {"phrase": "Kaki", "image": "assets/images/test.png"},
+      {"phrase": "Ubat", "image": "assets/images/test.png"},
+      {"phrase": "Doktor", "image": "assets/images/test.png"},
+      {"phrase": "Sakit", "image": "assets/images/test.png"},
+      {"phrase": "Cedera", "image": "assets/images/test.png"},
+      {"phrase": "Perut", "image": "assets/images/test.png"},
+      {"phrase": "Belakang", "image": "assets/images/test.png"},
+      {"phrase": "Telinga", "image": "assets/images/test.png"},
+      {"phrase": "Mata", "image": "assets/images/test.png"},
+      {"phrase": "Hidung", "image": "assets/images/test.png"},
+      {"phrase": "Tekak", "image": "assets/images/test.png"},
+      {"phrase": "Batuk", "image": "assets/images/test.png"},
+      {"phrase": "Demam", "image": "assets/images/test.png"}
+    ]
+  }
+}
