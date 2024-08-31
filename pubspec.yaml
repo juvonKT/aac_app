@@ -68,6 +68,55 @@ flutter:
     - assets/phrases_zh.json
     - assets/phrases_ms.json
     - assets/images/test.png
+    - assets/images/people/people.png
+    - assets/images/things/things.png
+    - assets/images/actions/actions.png
+    - assets/images/places/places.png
+    - assets/images/food/food.png
+    - assets/images/feelings/feelings.png
+    - assets/images/descriptive/descriptive.png
+    - assets/images/questions/questions.png
+    - assets/images/time/time.png
+    - assets/images/social/social.png
+    - assets/images/health/health.png
+    - assets/images/people/I.png
+    - assets/images/people/you.png
+    - assets/images/people/me.png
+    - assets/images/people/we.png
+    - assets/images/people/he.png
+    - assets/images/people/she.png
+    - assets/images/people/they.png
+    - assets/images/people/them.png
+    - assets/images/people/us.png
+    - assets/images/things/chair.png
+    - assets/images/things/car.png
+    - assets/images/things/book.png
+    - assets/images/things/pen.png
+    - assets/images/things/table.png
+    - assets/images/things/phone.png
+    - assets/images/things/computer.png
+    - assets/images/things/bed.png
+    - assets/images/things/cup.png
+    - assets/images/actions/eat.png
+    - assets/images/actions/drink.png
+    - assets/images/actions/sleep.png
+    - assets/images/actions/play.png
+    - assets/images/actions/run.png
+    - assets/images/actions/walk.png
+    - assets/images/actions/jump.png
+    - assets/images/actions/help.png
+    - assets/images/actions/read.png
+    - assets/images/actions/listen.png
+    - assets/images/places/here.png
+    - assets/images/places/there.png
+    - assets/images/places/home.png
+    - assets/images/places/school.png
+    - assets/images/places/park.png
+    - assets/images/places/store.png
+    - assets/images/places/library.png
+    - assets/images/places/restaurant.png
+    - assets/images/places/hospital.png
+    - assets/images/places/gym.png
     - lib/l10n/
 
 flutter_intl:

@@ -1,64 +1,64 @@
 {
   "people": {
-    "categoryImage": "assets/images/test.png",
+    "categoryImage": "assets/images/people/people.png",
     "phrases": [
-      {"phrase": "I", "image": "assets/images/test.png"},
-      {"phrase": "You", "image": "assets/images/test.png"},
-      {"phrase": "Me", "image": "assets/images/test.png"},
-      {"phrase": "We", "image": "assets/images/test.png"},
-      {"phrase": "He", "image": "assets/images/test.png"},
-      {"phrase": "She", "image": "assets/images/test.png"},
-      {"phrase": "They", "image": "assets/images/test.png"},
-      {"phrase": "Them", "image": "assets/images/test.png"},
-      {"phrase": "Us", "image": "assets/images/test.png"}
+      {"phrase": "I", "image": "assets/images/people/I.png"},
+      {"phrase": "You", "image": "assets/images/people/you.png"},
+      {"phrase": "Me", "image": "assets/images/people/me.png"},
+      {"phrase": "We", "image": "assets/images/people/we.png"},
+      {"phrase": "He", "image": "assets/images/people/he.png"},
+      {"phrase": "She", "image": "assets/images/people/she.png"},
+      {"phrase": "They", "image": "assets/images/people/they.png"},
+      {"phrase": "Them", "image": "assets/images/people/them.png"},
+      {"phrase": "Us", "image": "assets/images/people/us.png"}
     ]
   },
   "things": {
-    "categoryImage": "assets/images/test.png",
+    "categoryImage": "assets/images/things/things.png",
     "phrases": [
-      {"phrase": "chair", "image": "assets/images/test.png"},
-      {"phrase": "car", "image": "assets/images/test.png"},
-      {"phrase": "book", "image": "assets/images/test.png"},
-      {"phrase": "pen", "image": "assets/images/test.png"},
-      {"phrase": "table", "image": "assets/images/test.png"},
-      {"phrase": "phone", "image": "assets/images/test.png"},
-      {"phrase": "computer", "image": "assets/images/test.png"},
-      {"phrase": "bed", "image": "assets/images/test.png"},
-      {"phrase": "cup", "image": "assets/images/test.png"}
+      {"phrase": "chair", "image": "assets/images/things/chair.png"},
+      {"phrase": "car", "image": "assets/images/things/car.png"},
+      {"phrase": "book", "image": "assets/images/things/book.png"},
+      {"phrase": "pen", "image": "assets/images/things/pen.png"},
+      {"phrase": "table", "image": "assets/images/things/table.png"},
+      {"phrase": "phone", "image": "assets/images/things/phone.png"},
+      {"phrase": "computer", "image": "assets/images/things/computer.png"},
+      {"phrase": "bed", "image": "assets/images/things/bed.png"},
+      {"phrase": "cup", "image": "assets/images/things/cup.png"}
     ]
   },
   "actions": {
-    "categoryImage": "assets/images/test.png",
+    "categoryImage": "assets/images/actions/actions.png",
     "phrases": [
-      {"phrase": "Eat", "image": "assets/images/test.png"},
-      {"phrase": "Drink", "image": "assets/images/test.png"},
-      {"phrase": "Sleep", "image": "assets/images/test.png"},
-      {"phrase": "Play", "image": "assets/images/test.png"},
-      {"phrase": "Run", "image": "assets/images/test.png"},
-      {"phrase": "Walk", "image": "assets/images/test.png"},
-      {"phrase": "Jump", "image": "assets/images/test.png"},
-      {"phrase": "Help", "image": "assets/images/test.png"},
-      {"phrase": "Read", "image": "assets/images/test.png"},
-      {"phrase": "Listen", "image": "assets/images/test.png"}
+      {"phrase": "Eat", "image": "assets/images/actions/eat.png"},
+      {"phrase": "Drink", "image": "assets/images/actions/drink.png"},
+      {"phrase": "Sleep", "image": "assets/images/actions/sleep.png"},
+      {"phrase": "Play", "image": "assets/images/actions/play.png"},
+      {"phrase": "Run", "image": "assets/images/actions/run.png"},
+      {"phrase": "Walk", "image": "assets/images/actions/walk.png"},
+      {"phrase": "Jump", "image": "assets/images/actions/jump.png"},
+      {"phrase": "Help", "image": "assets/images/actions/help.png"},
+      {"phrase": "Read", "image": "assets/images/actions/read.png"},
+      {"phrase": "Listen", "image": "assets/images/actions/listen.png"}
     ]
   },
   "places": {
-    "categoryImage": "assets/images/test.png",
+    "categoryImage": "assets/images/places/places.png",
     "phrases": [
-      {"phrase": "Here", "image": "assets/images/test.png"},
-      {"phrase": "There", "image": "assets/images/test.png"},
-      {"phrase": "Home", "image": "assets/images/test.png"},
-      {"phrase": "School", "image": "assets/images/test.png"},
-      {"phrase": "Park", "image": "assets/images/test.png"},
-      {"phrase": "Store", "image": "assets/images/test.png"},
-      {"phrase": "Library", "image": "assets/images/test.png"},
-      {"phrase": "Restaurant", "image": "assets/images/test.png"},
-      {"phrase": "Hospital", "image": "assets/images/test.png"},
-      {"phrase": "Gym", "image": "assets/images/test.png"}
+      {"phrase": "Here", "image": "assets/images/places/here.png"},
+      {"phrase": "There", "image": "assets/images/places/there.png"},
+      {"phrase": "Home", "image": "assets/images/places/home.png"},
+      {"phrase": "School", "image": "assets/images/places/school.png"},
+      {"phrase": "Park", "image": "assets/images/places/park.png"},
+      {"phrase": "Store", "image": "assets/images/places/store.png"},
+      {"phrase": "Library", "image": "assets/images/places/library.png"},
+      {"phrase": "Restaurant", "image": "assets/images/places/restaurant.png"},
+      {"phrase": "Hospital", "image": "assets/images/places/hospital.png"},
+      {"phrase": "Gym", "image": "assets/images/places/gym.png"}
     ]
   },
   "food": {
-    "categoryImage": "assets/images/test.png",
+    "categoryImage": "assets/images/food/food.png",
     "phrases": [
       {"phrase": "Apple", "image": "assets/images/test.png"},
       {"phrase": "Banana", "image": "assets/images/test.png"},
@@ -78,7 +78,7 @@
     ]
   },
   "feelings": {
-    "categoryImage": "assets/images/test.png",
+    "categoryImage": "assets/images/feelings/feelings.png",
     "phrases": [
       {"phrase": "Happy", "image": "assets/images/test.png"},
       {"phrase": "Sad", "image": "assets/images/test.png"},
@@ -93,7 +93,7 @@
     ]
   },
   "descriptive": {
-    "categoryImage": "assets/images/test.png",
+    "categoryImage": "assets/images/descriptive/descriptive.png",
     "phrases": [
       {"phrase": "Red", "image": "assets/images/test.png"},
       {"phrase": "Blue", "image": "assets/images/test.png"},
@@ -113,7 +113,7 @@
     ]
   },
   "questions": {
-    "categoryImage": "assets/images/test.png",
+    "categoryImage": "assets/images/questions/questions.png",
     "phrases": [
       {"phrase": "What?", "image": "assets/images/test.png"},
       {"phrase": "Where?", "image": "assets/images/test.png"},
@@ -128,7 +128,7 @@
     ]
   },
   "time": {
-    "categoryImage": "assets/images/test.png",
+    "categoryImage": "assets/images/time/time.png",
     "phrases": [
       {"phrase": "Morning", "image": "assets/images/test.png"},
       {"phrase": "Afternoon", "image": "assets/images/test.png"},
@@ -143,7 +143,7 @@
     ]
   },
   "social": {
-    "categoryImage": "assets/images/test.png",
+    "categoryImage": "assets/images/social/social.png",
     "phrases": [
       {"phrase": "Hello", "image": "assets/images/test.png"},
       {"phrase": "Goodbye", "image": "assets/images/test.png"},
@@ -163,7 +163,7 @@
     ]
   },
   "health": {
-    "categoryImage": "assets/images/test.png",
+    "categoryImage": "assets/images/health/health.png",
     "phrases": [
       {"phrase": "Head", "image": "assets/images/test.png"},
       {"phrase": "Arm", "image": "assets/images/test.png"},
