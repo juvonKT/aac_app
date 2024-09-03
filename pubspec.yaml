@@ -117,6 +117,95 @@ flutter:
     - assets/images/places/restaurant.png
     - assets/images/places/hospital.png
     - assets/images/places/gym.png
+    - assets/images/food/apple.png
+    - assets/images/food/banana.png
+    - assets/images/food/carrot.png
+    - assets/images/food/juice.png
+    - assets/images/food/water.png
+    - assets/images/food/bread.png
+    - assets/images/food/milk.png
+    - assets/images/food/cheese.png
+    - assets/images/food/chicken.png
+    - assets/images/food/pizza.png
+    - assets/images/feelings/happy.png
+    - assets/images/feelings/sad.png
+    - assets/images/feelings/excited.png
+    - assets/images/feelings/scared.png
+    - assets/images/feelings/angry.png
+    - assets/images/feelings/tired.png
+    - assets/images/feelings/bored.png
+    - assets/images/feelings/surprised.png
+    - assets/images/feelings/nervous.png
+    - assets/images/descriptive/red.png
+    - assets/images/descriptive/blue.png
+    - assets/images/descriptive/green.png
+    - assets/images/descriptive/big.png
+    - assets/images/descriptive/small.png
+    - assets/images/descriptive/soft.png
+    - assets/images/descriptive/hard.png
+    - assets/images/descriptive/hot.png
+    - assets/images/descriptive/cold.png
+    - assets/images/descriptive/fast.png
+    - assets/images/descriptive/slow.png
+    - assets/images/descriptive/loud.png
+    - assets/images/descriptive/quiet.png
+    - assets/images/descriptive/heavy.png
+    - assets/images/descriptive/light.png
+    - assets/images/questions/what.png
+    - assets/images/questions/where.png
+    - assets/images/questions/when.png
+    - assets/images/questions/how.png
+    - assets/images/questions/why.png
+    - assets/images/questions/who.png
+    - assets/images/questions/which.png
+    - assets/images/questions/can_i.png
+    - assets/images/questions/do_you.png
+    - assets/images/questions/is_it.png
+  
+    - assets/images/time/morning.png
+    - assets/images/time/afternoon.png
+    - assets/images/time/evening.png
+    - assets/images/time/night.png
+    - assets/images/time/today.png
+    - assets/images/time/tomorrow.png
+    - assets/images/time/yesterday.png
+    - assets/images/time/now.png
+    - assets/images/time/later.png
+    - assets/images/time/soon.png
+  
+    - assets/images/social/hello.png
+    - assets/images/social/goodbye.png
+    - assets/images/social/please.png
+    - assets/images/social/thank_you.png
+    - assets/images/social/sorry.png
+    - assets/images/social/how_are_you.png
+    - assets/images/social/i_need_help.png
+    - assets/images/social/nice_to_meet_you.png
+    - assets/images/social/excuse_me.png
+    - assets/images/social/i_don't_understand.png
+    - assets/images/social/can_you_repeat_that.png
+    - assets/images/social/what's_your_name.png
+    - assets/images/social/i'm_lost.png
+    - assets/images/social/i'm_hungry.png
+    - assets/images/social/i'm_thirsty.png
+  
+    - assets/images/health/head.png
+    - assets/images/health/arm.png
+    - assets/images/health/leg.png
+    - assets/images/health/medicine.png
+    - assets/images/health/doctor.png
+    - assets/images/health/sick.png
+    - assets/images/health/hurt.png
+    - assets/images/health/stomach.png
+    - assets/images/health/back.png
+    - assets/images/health/ear.png
+    - assets/images/health/eye.png
+    - assets/images/health/nose.png
+    - assets/images/health/throat.png
+    - assets/images/health/cough.png
+    - assets/images/health/fever.png
+
+
     - lib/l10n/
 
 flutter_intl:
