@@ -67,7 +67,7 @@ class _SettingsState extends State<Settings> {
                   DropdownMenuItem(value: Locale('en', ''), child: Text('English')),
                   DropdownMenuItem(value: Locale('ms', ''), child: Text('Malay')),
                   DropdownMenuItem(value: Locale('zh', ''), child: Text('Mandarin')),
-                  DropdownMenuItem(value: Locale('ta', ''), child: Text('Tamil')),
+                  DropdownMenuItem(value: Locale('ja', ''), child: Text('Japanese')),
                 ],
                 underline: const SizedBox(),
               ),
@@ -146,8 +146,8 @@ class _SettingsState extends State<Settings> {
         return 'Malay';
       case 'zh':
         return 'Mandarin';
-      case 'ta':
-        return 'Tamil';
+      case 'ja':
+        return 'Japanese';
       default:
         return 'Unknown';
     }

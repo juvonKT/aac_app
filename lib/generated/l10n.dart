@@ -277,8 +277,8 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ja'),
       Locale.fromSubtags(languageCode: 'ms'),
-      Locale.fromSubtags(languageCode: 'ta'),
       Locale.fromSubtags(languageCode: 'zh'),
     ];
   }
