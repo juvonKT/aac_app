@@ -161,30 +161,30 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         title: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Text(
             selectedPhrases.join(' '),
-            style: const TextStyle(color: Colors.white),
+            style: TextStyle(color: Theme.of(context).appBarTheme.foregroundColor),
           ),
         ),
         actions: [
           GestureDetector(
             onLongPress: clearPhrases,
             child: IconButton(
-              icon: const Icon(Icons.backspace, color: Colors.white),
+              icon: Icon(Icons.backspace, color: Theme.of(context).iconTheme.color),
               onPressed: () => removePhrase(s.removeMessage),
             ),
           ),
           IconButton(
-            icon: const Icon(Icons.volume_up, color: Colors.white),
+            icon: Icon(Icons.volume_up, color: Theme.of(context).iconTheme.color),
             onPressed: _speak,
           ),
         ],
       ),
       body: Container(
-        color: Colors.white,
+        color: Theme.of(context).scaffoldBackgroundColor,
         child: Column(
           children: [
             Padding(
@@ -203,7 +203,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.add, color: Colors.black),
+                    icon: Icon(Icons.add, color: Theme.of(context).iconTheme.color),
                     onPressed: () async {
                       final newCategoryText = await Navigator.push(
                         context,
@@ -283,7 +283,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           Text(
                             category,
-                            style: const TextStyle(
+                            style: TextStyle(
                               color: Colors.white,
                               fontSize: 18.0,
                               fontWeight: FontWeight.bold,
@@ -319,8 +319,9 @@ class _HomePageState extends State<HomePage> {
             label: s.setting,
           ),
         ],
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.grey,
+        backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+        selectedItemColor: Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
+        unselectedItemColor: Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
       ),
     );
   }

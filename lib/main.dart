@@ -4,11 +4,15 @@ import 'package:provider/provider.dart';
 import 'HomePage.dart';
 import 'providers/language_provider.dart';
 import 'generated/l10n.dart';
+import 'providers/theme_provider.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => LanguageProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => LanguageProvider()),
+        ChangeNotifierProvider(create: (context) => ThemeProvider()),
+      ],
       child: const MyApp(),
     ),
   );
@@ -19,14 +23,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<LanguageProvider>(
-      builder: (context, languageProvider, child) {
+    return Consumer2<LanguageProvider, ThemeProvider>(
+      builder: (context, languageProvider, themeProvider, child) {
         return MaterialApp(
-          title: 'Your App Title',
-          theme: ThemeData(
-            primarySwatch: Colors.deepPurple,
-          ),
-          home: HomePage(),
+          title: 'AAC App',
+          theme: themeProvider.lightTheme,
+          darkTheme: themeProvider.darkTheme,
+          themeMode: themeProvider.themeMode,
+          home: const HomePage(),
           localizationsDelegates: [
             S.delegate,
             GlobalMaterialLocalizations.delegate,

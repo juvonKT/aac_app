@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'UserGuidePage.dart';
 import 'generated/l10n.dart';
 import 'providers/language_provider.dart';
+import 'providers/theme_provider.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -15,20 +16,20 @@ class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     final languageProvider = Provider.of<LanguageProvider>(context);
+    final themeProvider = Provider.of<ThemeProvider>(context);
     final s = S.of(context);
     String selectedUser = s.userA;
-    String selectedColourScheme = s.light;
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         title: Text(
           s.setting,
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Theme.of(context).appBarTheme.foregroundColor),
         ),
       ),
       body: Container(
-        color: Colors.white,
+        color: Theme.of(context).scaffoldBackgroundColor,
         child: ListView(
           children: [
             ListTile(
@@ -73,22 +74,30 @@ class _SettingsState extends State<Settings> {
             ),
             const Divider(),
             ListTile(
+              leading: const Icon(Icons.brightness_6),
               title: Text(s.colourScheme),
-              subtitle: Text(selectedColourScheme),
-              trailing: DropdownButton<String>(
-                value: selectedColourScheme,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    selectedColourScheme = newValue!;
-                  });
+              subtitle: Text(_getThemeModeName(themeProvider.themeMode, s)),
+              trailing: DropdownButton<ThemeMode>(
+                value: themeProvider.themeMode,
+                onChanged: (ThemeMode? newMode) {
+                  if (newMode != null) {
+                    themeProvider.setTheme(newMode);
+                  }
                 },
-                items: <String>[s.light, s.dark, s.colourPaletteGenerator]
-                    .map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
+                items: [
+                  DropdownMenuItem(
+                    value: ThemeMode.light,
+                    child: Text(s.light),
+                  ),
+                  DropdownMenuItem(
+                    value: ThemeMode.dark,
+                    child: Text(s.dark),
+                  ),
+                  DropdownMenuItem(
+                    value: ThemeMode.system,
+                    child: Text(s.colourPaletteGenerator),
+                  ),
+                ],
                 underline: const SizedBox(),
               ),
             ),
@@ -122,8 +131,9 @@ class _SettingsState extends State<Settings> {
             label:s.setting,
           ),
         ],
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.grey,
+        backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+        selectedItemColor: Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
+        unselectedItemColor: Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
       ),
     );
   }
@@ -140,6 +150,18 @@ class _SettingsState extends State<Settings> {
         return 'Tamil';
       default:
         return 'Unknown';
+    }
+  }
+
+  String _getThemeModeName(ThemeMode mode, S s) {
+    switch (mode) {
+      case ThemeMode.light:
+        return s.light;
+      case ThemeMode.dark:
+        return s.dark;
+      case ThemeMode.system:
+      default:
+        return s.light;
     }
   }
 }
