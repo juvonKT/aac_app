@@ -69,7 +69,11 @@
       {"phrase": "Milk", "image": "assets/images/food/milk.png"},
       {"phrase": "Cheese", "image": "assets/images/food/cheese.png"},
       {"phrase": "Chicken", "image": "assets/images/food/chicken.png"},
-      {"phrase": "Pizza", "image": "assets/images/food/pizza.png"}
+      {"phrase": "Rice", "image": "assets/images/food/rice.png"},
+      {"phrase": "Pasta", "image": "assets/images/food/pasta.png"},
+      {"phrase": "Yogurt", "image": "assets/images/food/yogurt.png"},
+      {"phrase": "Grapes", "image": "assets/images/food/grapes.png"},
+      {"phrase": "Orange", "image": "assets/images/food/orange.png"}
     ]
   },
   "feelings": {

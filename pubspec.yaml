@@ -127,6 +127,11 @@ flutter:
     - assets/images/food/cheese.png
     - assets/images/food/chicken.png
     - assets/images/food/pizza.png
+    - assets/images/food/rice.png
+    - assets/images/food/pasta.png
+    - assets/images/food/yogurt.png
+    - assets/images/food/grapes.png
+    - assets/images/food/orange.png
     - assets/images/feelings/happy.png
     - assets/images/feelings/sad.png
     - assets/images/feelings/excited.png
