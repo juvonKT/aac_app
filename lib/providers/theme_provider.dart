@@ -16,14 +16,14 @@ class ThemeProvider with ChangeNotifier {
       primaryColor: Colors.white,
       scaffoldBackgroundColor: Colors.white,
       appBarTheme: AppBarTheme(
-        backgroundColor: Colors.grey[600],
+        backgroundColor: Colors.grey[400],
         foregroundColor: Colors.black,
         elevation: 0,
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: Colors.grey[600],
+        backgroundColor: Colors.grey[400],
         selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.grey[300],
+        unselectedItemColor: Colors.grey[200],
       ),
       textTheme: TextTheme(
         bodyLarge: TextStyle(color: Colors.black),
