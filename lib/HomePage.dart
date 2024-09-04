@@ -113,6 +113,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _speak() async {
+    Locale locale = Localizations.localeOf(context);
+    String languageCode = locale.languageCode;
+
+    // Set the language for flutter_tts
+    await flutterTts.setLanguage(languageCode);
     await flutterTts.speak(selectedPhrases.join(' '));
   }
 
@@ -254,7 +259,6 @@ class _HomePageState extends State<HomePage> {
                 itemBuilder: (context, index) {
                   String category = phrases.keys.elementAt(index);
                   String categoryImage = phrases[category]!["categoryImage"];
-                  // Generate a distinct color for each category based on the index
                   Color categoryColor = getColorFromIndex(index);
 
                   return GestureDetector(
