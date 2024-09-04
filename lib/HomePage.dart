@@ -155,6 +155,25 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  Color getColorFromIndex(int index) {
+    final colors = [
+      Colors.purple,
+      Colors.blue,
+      Colors.grey,
+      Colors.green,
+      Colors.red,
+      Colors.pink,
+      Colors.indigo,
+      Colors.cyan,
+      Colors.amber,
+      Colors.brown,
+      Colors.teal,
+      Colors.lime,
+    ];
+    // Generate a color by cycling through the color list
+    return colors[index % colors.length].withOpacity(0.7 + (0.3 * (index % 2)));
+  }
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
@@ -235,6 +254,9 @@ class _HomePageState extends State<HomePage> {
                 itemBuilder: (context, index) {
                   String category = phrases.keys.elementAt(index);
                   String categoryImage = phrases[category]!["categoryImage"];
+                  // Generate a distinct color for each category based on the index
+                  Color categoryColor = getColorFromIndex(index);
+
                   return GestureDetector(
                     onTap: () {
                       goToCategory(category);
@@ -270,7 +292,7 @@ class _HomePageState extends State<HomePage> {
                       decoration: BoxDecoration(
                         color: selectedCategory == category
                             ? Colors.deepPurple
-                            : Colors.deepPurple[300],
+                            : categoryColor,
                         borderRadius: BorderRadius.circular(18.0),
                       ),
                       child: Column(

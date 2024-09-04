@@ -52,6 +52,39 @@ class _PhraseListPageState extends State<PhraseListPage> {
     );
   }
 
+  LinearGradient getGradientFromIndex(int index, int totalPhrases) {
+    // Calculate hue increment based on total phrases to ensure smooth transitions
+    final hueIncrement = 360 / totalPhrases; // Distribute hues evenly around the circle
+    final hue = (index * hueIncrement) % 360;
+
+    // Colors based on calculated hues, with slight variations for gradient effect
+    final color1 = HSVColor.fromAHSV(1, hue.toDouble(), 0.7, 0.8).toColor();
+    final color2 = HSVColor.fromAHSV(1, (hue + 20) % 360, 0.8, 0.9).toColor();
+
+    return LinearGradient(
+      colors: [color1, color2],
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+    );
+  }
+
+  Color getColorFromIndex(int index) {
+    final colors = [
+      Colors.pink,
+      Colors.red,
+      Colors.orange,
+      Colors.amber,
+      Colors.lime,
+      Colors.green,
+      Colors.cyan,
+      Colors.blue,
+      Colors.indigo,
+      Colors.purple,
+    ];
+    // Generate a color by cycling through the color list
+    return colors[index % colors.length].withOpacity(0.7 + (0.3 * (index % 2)));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -164,7 +197,7 @@ class _PhraseListPageState extends State<PhraseListPage> {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.deepPurple,
+                      color: getColorFromIndex(index),
                       borderRadius: BorderRadius.circular(18.0),
                     ),
                     child: Column(
