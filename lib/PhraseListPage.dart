@@ -70,16 +70,18 @@ class _PhraseListPageState extends State<PhraseListPage> {
 
   Color getColorFromIndex(int index) {
     final colors = [
-      Colors.pink,
-      Colors.red,
-      Colors.orange,
-      Colors.amber,
-      Colors.lime,
-      Colors.green,
-      Colors.cyan,
       Colors.blue,
+      Colors.green,
+      Colors.red,
+      Colors.grey,
+      Colors.pink,
       Colors.indigo,
+      Colors.cyan,
+      Colors.amber,
       Colors.purple,
+      Colors.brown,
+      Colors.teal,
+      Colors.lime,
     ];
     // Generate a color by cycling through the color list
     return colors[index % colors.length].withOpacity(0.7 + (0.3 * (index % 2)));
