@@ -249,7 +249,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Container(
               height: 1.0,
-              color: Colors.black,
+              color: Theme.of(context).appBarTheme.foregroundColor,
               width: double.infinity,
             ),
             Expanded(
