@@ -212,7 +212,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(10.0),
               child: Row(
                 children: [
                   Expanded(
@@ -246,6 +246,11 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
+            ),
+            Container(
+              height: 1.0,
+              color: Colors.black,
+              width: double.infinity,
             ),
             Expanded(
               child: GridView.builder(
