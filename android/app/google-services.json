@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "144456212891",
+    "project_id": "aac-app-b98d0",
+    "storage_bucket": "aac-app-b98d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144456212891:android:173d7af8108cb4a991413e",
+        "android_client_info": {
+          "package_name": "com.example.aac_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM53XA09j1vvLn0WVV3Ivzsn6lamSOQHM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144456212891:android:18929c14046ed30c91413e",
+        "android_client_info": {
+          "package_name": "com.fyp.aac_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM53XA09j1vvLn0WVV3Ivzsn6lamSOQHM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
