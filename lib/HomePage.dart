@@ -11,7 +11,7 @@ import 'package:path_provider/path_provider.dart';
 import 'generated/l10n.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({super.key, required String userName, required bool isColorBlind});
 
   @override
   _HomePageState createState() => _HomePageState();
