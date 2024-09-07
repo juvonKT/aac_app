@@ -70,18 +70,18 @@ class _PhraseListPageState extends State<PhraseListPage> {
 
   Color getColorFromIndex(int index) {
     final colors = [
-      Colors.blue,
-      Colors.green,
-      Colors.red,
-      Colors.grey,
-      Colors.pink,
-      Colors.indigo,
-      Colors.cyan,
-      Colors.amber,
-      Colors.purple,
-      Colors.brown,
-      Colors.teal,
-      Colors.lime,
+      const Color(0xFFF36856),
+      const Color(0xFFc84adc),
+      const Color(0xFFf0e408),
+      const Color(0xFFf39f19),
+      const Color(0xFF46f88d),
+      const Color(0xFF49fedc),
+      const Color(0xFFfcff58),
+      const Color(0xFF8777ad),
+      const Color(0xFF748e49),
+      const Color(0xFFdb6e40),
+      const Color(0xFFdb778b),
+      const Color(0xFF28d297)
     ];
     // Generate a color by cycling through the color list
     return colors[index % colors.length].withOpacity(0.7 + (0.3 * (index % 2)));
@@ -213,7 +213,7 @@ class _PhraseListPageState extends State<PhraseListPage> {
                         Text(
                           phrase["phrase"]!,
                           style: const TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontSize: 18.0,
                             fontWeight: FontWeight.bold,
                           ),
