@@ -301,12 +301,24 @@ class _HomePageState extends State<HomePage> {
                         return Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              foregroundColor: Colors.black, // Button text color
+                              backgroundColor: Colors.purple[200],
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
+                              ),
+                            ),
                             onPressed: () => addPhrase(suggestedWords[index]),
                             child: Text(suggestedWords[index]),
                           ),
                         );
                       },
                     ),
+                  ),
+                  Container(
+                    height: 1.0,
+                    color: Theme.of(context).appBarTheme.foregroundColor,
+                    width: double.infinity,
                   ),
                   // Category grid
                   Expanded(
