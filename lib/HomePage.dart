@@ -9,6 +9,7 @@ import 'AddCategoryPage.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'generated/l10n.dart';
+import 'api_service.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required String userName, required bool isColorBlind});
@@ -22,6 +23,8 @@ class _HomePageState extends State<HomePage> {
   Map<String, Map<String, dynamic>> phrases = {};
   List<String> selectedPhrases = [];
   String? selectedCategory;
+  List<String> suggestedWords = [];
+  final ApiService apiService = ApiService();
 
   @override
   void didChangeDependencies() {
@@ -87,9 +90,23 @@ class _HomePageState extends State<HomePage> {
     await file.writeAsString(json.encode(phrases));
   }
 
+  Future<void> updateSuggestedWords() async {
+    try {
+      List<String> newSuggestions = await apiService.getSuggestions(selectedPhrases);
+      setState(() {
+        suggestedWords = newSuggestions;
+      });
+      print("suggested: $suggestedWords");
+    } catch (e) {
+      print('Error getting suggestions: $e');
+      // Optionally show an error message to the user
+    }
+  }
+
   void addPhrase(String phrase) {
     setState(() {
       selectedPhrases.add(phrase);
+      updateSuggestedWords();
     });
   }
 
@@ -99,6 +116,7 @@ class _HomePageState extends State<HomePage> {
         selectedPhrases.removeLast();
       }
     });
+    updateSuggestedWords();
     Fluttertoast.showToast(
       msg: localizedMessage,
       toastLength: Toast.LENGTH_SHORT,
@@ -178,6 +196,20 @@ class _HomePageState extends State<HomePage> {
     // Generate a color by cycling through the color list
     return colors[index % colors.length].withOpacity(0.7 + (0.3 * (index % 2)));
   }
+  // can remove later
+  Future<void> testConnection() async {
+    try {
+      String result = await apiService.testConnection();
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(result)),
+      );
+    } catch (e) {
+      print('Test connection error: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Connection test failed: $e')),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -204,6 +236,10 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: Icon(Icons.volume_up, color: Theme.of(context).iconTheme.color),
             onPressed: _speak,
+          ),
+          IconButton(
+            icon: Icon(Icons.network_check),
+            onPressed: testConnection,
           ),
         ],
       ),
@@ -236,7 +272,7 @@ class _HomePageState extends State<HomePage> {
                       if (newCategoryText != null && newCategoryText is String) {
                         setState(() {
                           phrases[newCategoryText] = {
-                            "categoryImage": "assets/images/test.png", // Set a default image
+                            "categoryImage": "assets/images/test.png",
                             "phrases": <Map<String, String>>[]
                           };
                         });
@@ -253,78 +289,102 @@ class _HomePageState extends State<HomePage> {
               width: double.infinity,
             ),
             Expanded(
-              child: GridView.builder(
-                padding: const EdgeInsets.all(16.0),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  crossAxisSpacing: 16.0,
-                  mainAxisSpacing: 16.0,
-                ),
-                itemCount: phrases.keys.length,
-                itemBuilder: (context, index) {
-                  String category = phrases.keys.elementAt(index);
-                  String categoryImage = phrases[category]!["categoryImage"];
-                  Color categoryColor = getColorFromIndex(index);
-
-                  return GestureDetector(
-                    onTap: () {
-                      goToCategory(category);
-                    },
-                    onLongPress: () {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          final s = S.of(context); // Get the localization object
-                          return AlertDialog(
-                            title: Text(s.deleteCategory),
-                            content: Text(s.deleteCategoryConfirmation(category)),
-                            actions: <Widget>[
-                              TextButton(
-                                child: Text(s.cancel),
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                              ),
-                              TextButton(
-                                child: Text(s.delete),
-                                onPressed: () {
-                                  deleteCategory(category);
-                                  Navigator.of(context).pop();
-                                },
-                              ),
-                            ],
-                          );
-                        },
-                      );
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: selectedCategory == category
-                            ? Colors.deepPurple
-                            : categoryColor,
-                        borderRadius: BorderRadius.circular(18.0),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            categoryImage,
-                            height: 50.0,
-                            width: 50.0,
+              child: Column(
+                children: [
+                  // Suggested words section
+                  Container(
+                    height: 100, // Adjust as needed
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: suggestedWords.length,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ElevatedButton(
+                            onPressed: () => addPhrase(suggestedWords[index]),
+                            child: Text(suggestedWords[index]),
                           ),
-                          Text(
-                            category,
-                            style: const TextStyle(
-                              color: Colors.black,
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold,
+                        );
+                      },
+                    ),
+                  ),
+                  // Category grid
+                  Expanded(
+                    child: GridView.builder(
+                      padding: const EdgeInsets.all(16.0),
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3,
+                        crossAxisSpacing: 16.0,
+                        mainAxisSpacing: 16.0,
+                      ),
+                      itemCount: phrases.keys.length,
+                      itemBuilder: (context, index) {
+                        String category = phrases.keys.elementAt(index);
+                        String categoryImage = phrases[category]!["categoryImage"];
+                        Color categoryColor = getColorFromIndex(index);
+
+                        return GestureDetector(
+                          onTap: () {
+                            goToCategory(category);
+                          },
+                          onLongPress: () {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                final s = S.of(context);
+                                return AlertDialog(
+                                  title: Text(s.deleteCategory),
+                                  content: Text(s.deleteCategoryConfirmation(category)),
+                                  actions: <Widget>[
+                                    TextButton(
+                                      child: Text(s.cancel),
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                    TextButton(
+                                      child: Text(s.delete),
+                                      onPressed: () {
+                                        deleteCategory(category);
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: selectedCategory == category
+                                  ? Colors.deepPurple
+                                  : categoryColor,
+                              borderRadius: BorderRadius.circular(18.0),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  categoryImage,
+                                  height: 50.0,
+                                  width: 50.0,
+                                ),
+                                Text(
+                                  category,
+                                  style: const TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                        ],
-                      ),
+                        );
+                      },
                     ),
-                  );
-                },
+                  ),
+                ],
               ),
             ),
           ],
