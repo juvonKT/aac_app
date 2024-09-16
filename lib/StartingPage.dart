@@ -22,6 +22,7 @@ class _StartingPageState extends State<StartingPage> {
         builder: (context) => HomePage(
           userName: userName,
           isColorBlind: isColorBlind,
+          userId: 1,
         ),
       ),
     );

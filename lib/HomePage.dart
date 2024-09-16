@@ -10,9 +10,11 @@ import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'generated/l10n.dart';
 import 'api_service.dart';
+import 'firestore_service.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key, required String userName, required bool isColorBlind});
+  final int userId;
+  const HomePage({Key? key, required String userName, required bool isColorBlind, required this.userId}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -23,8 +25,11 @@ class _HomePageState extends State<HomePage> {
   Map<String, Map<String, dynamic>> phrases = {};
   List<String> selectedPhrases = [];
   String? selectedCategory;
+  List<MapEntry<String, int>> topStartingWords = [];
   List<String> suggestedWords = [];
+  final FirestoreService _firestoreService = FirestoreService();
   final ApiService apiService = ApiService();
+  bool showStartingWords = true;
 
   @override
   void didChangeDependencies() {
@@ -34,6 +39,23 @@ class _HomePageState extends State<HomePage> {
         phrases = data;
       });
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    fetchTopStartingWords();
+  }
+
+  Future<void> fetchTopStartingWords() async {
+    try {
+      List<MapEntry<String, int>> words = await _firestoreService.getTopStartingWords(widget.userId, 5);
+      setState(() {
+        topStartingWords = words;
+      });
+    } catch (e) {
+      print('Error fetching top starting words: $e');
+    }
   }
 
   Future<Map<String, Map<String, dynamic>>> loadPhrases() async {
@@ -106,8 +128,9 @@ class _HomePageState extends State<HomePage> {
   void addPhrase(String phrase) {
     setState(() {
       selectedPhrases.add(phrase);
-      updateSuggestedWords();
+      showStartingWords = false;  // Hide starting words after adding any phrase
     });
+    updateSuggestedWords();
   }
 
   void removePhrase(String localizedMessage) {
@@ -115,6 +138,7 @@ class _HomePageState extends State<HomePage> {
       if (selectedPhrases.isNotEmpty) {
         selectedPhrases.removeLast();
       }
+      showStartingWords = selectedPhrases.isEmpty;  // Show starting words if all phrases are removed
     });
     updateSuggestedWords();
     Fluttertoast.showToast(
@@ -127,7 +151,9 @@ class _HomePageState extends State<HomePage> {
   void clearPhrases() {
     setState(() {
       selectedPhrases.clear();
+      showStartingWords = true;  // Show starting words when phrases are cleared
     });
+    updateSuggestedWords();
   }
 
   void _speak() async {
@@ -211,6 +237,23 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  Widget _buildWordButton(String word, bool isStartingWord) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          foregroundColor: Colors.black,
+          backgroundColor: isStartingWord ? Colors.blue[200] : Colors.purple[200],
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+        ),
+        onPressed: () => addPhrase(word),
+        child: Text(word),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
@@ -291,28 +334,17 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: Column(
                 children: [
-                  // Suggested words section
+                  // Word suggestions section (starting words + next words)
                   Container(
                     height: 100, // Adjust as needed
-                    child: ListView.builder(
+                    child: ListView(
                       scrollDirection: Axis.horizontal,
-                      itemCount: suggestedWords.length,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              foregroundColor: Colors.black, // Button text color
-                              backgroundColor: Colors.purple[200],
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
-                              ),
-                            ),
-                            onPressed: () => addPhrase(suggestedWords[index]),
-                            child: Text(suggestedWords[index]),
-                          ),
-                        );
-                      },
+                      children: [
+                        if (showStartingWords)
+                          ...topStartingWords.map((entry) => _buildWordButton(entry.key, true))
+                        else
+                          ...suggestedWords.map((word) => _buildWordButton(word, false)),
+                      ],
                     ),
                   ),
                   Container(

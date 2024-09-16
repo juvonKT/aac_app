@@ -1,4 +1,7 @@
+import 'package:aac_app/SentencePage.dart';
 import 'package:aac_app/StartingPage.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
@@ -11,9 +14,18 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    print("Firebase initialized successfully");
+  } catch (e) {
+    print("Error initializing Firebase: $e");
+  }
+  if (kDebugMode) {
+    FirebaseFirestore.setLoggingEnabled(true);
+  }
+  // ..
   runApp(
     MultiProvider(
       providers: [
@@ -38,7 +50,7 @@ class MyApp extends StatelessWidget {
           darkTheme: themeProvider.darkTheme,
           themeMode: themeProvider.themeMode,
           home: StartingPage(),
-          localizationsDelegates: [
+          localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,

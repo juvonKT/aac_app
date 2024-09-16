@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 class ApiService {
   // final String _baseUrl = 'http://10.0.2.2:5001';  // For Android emulator
-  final String _baseUrl = 'http://192.168.0.170:5001';
+  final String _baseUrl = 'http://192.168.100.122:5001';
 
   Future<String> testConnection() async {
     final url = Uri.parse('$_baseUrl/test');
