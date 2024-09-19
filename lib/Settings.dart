@@ -4,6 +4,8 @@ import 'UserGuidePage.dart';
 import 'generated/l10n.dart';
 import 'providers/language_provider.dart';
 import 'providers/theme_provider.dart';
+import 'StartingPage.dart';
+import 'user_provider.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -13,12 +15,31 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
+  // List<String> userList = [];
+  String selectedUser = 'Add New User';
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   // Initialize with a default option
+  //   selectedUser = 'Add New User';
+  // }
+
+  // void _addNewUser(String userName) {
+  //   setState(() {
+  //     userList.add(userName);
+  //     selectedUser = userName; // Set the newly added user as the selected user
+  //   });
+  // }
+
   @override
   Widget build(BuildContext context) {
     final languageProvider = Provider.of<LanguageProvider>(context);
     final themeProvider = Provider.of<ThemeProvider>(context);
     final s = S.of(context);
-    String selectedUser = s.userA;
+    final userProvider = Provider.of<UserProvider>(context);
+    final userList = userProvider.users;
+    String? selectedUser = userProvider.selectedUser ?? 'Add New User';
 
     return Scaffold(
       appBar: AppBar(
@@ -28,91 +49,112 @@ class _SettingsState extends State<Settings> {
           style: TextStyle(color: Theme.of(context).appBarTheme.foregroundColor),
         ),
       ),
-      body: Container(
-        color: Theme.of(context).scaffoldBackgroundColor,
-        child: ListView(
-          children: [
-            ListTile(
-              leading: const Icon(Icons.person),
-              title: DropdownButton<String>(
-                value: selectedUser,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    selectedUser = newValue!;
-                  });
-                },
-                items: <String>[s.userA, s.userB, s.userC]
-                    .map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
+      body: ListView(
+        children: [
+          ListTile(
+            leading: const Icon(Icons.person),
+            title: DropdownButton<String>(
+              value: selectedUser,
+              onChanged: (String? newValue) {
+                if (newValue != null && newValue != 'Add New User') {
+                  userProvider.selectUser(newValue); // Set selected user globally
+                }
+                if (newValue == 'Add New User') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const StartingPage(),
+                    ),
                   );
-                }).toList(),
-                underline: const SizedBox(),
-                isExpanded: true,
-              ),
-            ),
-            const Divider(),
-            ListTile(
-              title: Text(s.language),
-              subtitle: Text(_getLanguageName(languageProvider.currentLocale)),
-              trailing: DropdownButton<Locale>(
-                value: languageProvider.currentLocale,
-                onChanged: (Locale? newValue) {
-                  if (newValue != null) {
-                    languageProvider.setLocale(newValue);
-                  }
-                },
-                items: const [
-                  DropdownMenuItem(value: Locale('en', ''), child: Text('English')),
-                  DropdownMenuItem(value: Locale('ms', ''), child: Text('Malay')),
-                  DropdownMenuItem(value: Locale('zh', ''), child: Text('Mandarin')),
-                  DropdownMenuItem(value: Locale('ja', ''), child: Text('Japanese')),
-                ],
-                underline: const SizedBox(),
-              ),
-            ),
-            const Divider(),
-            ListTile(
-              leading: const Icon(Icons.brightness_6),
-              title: Text(s.colourScheme),
-              subtitle: Text(_getThemeModeName(themeProvider.themeMode, s)),
-              trailing: DropdownButton<ThemeMode>(
-                value: themeProvider.themeMode,
-                onChanged: (ThemeMode? newMode) {
-                  if (newMode != null) {
-                    themeProvider.setTheme(newMode);
-                  }
-                },
-                items: [
-                  DropdownMenuItem(
-                    value: ThemeMode.light,
-                    child: Text(s.light),
-                  ),
-                  DropdownMenuItem(
-                    value: ThemeMode.dark,
-                    child: Text(s.dark),
-                  ),
-                  DropdownMenuItem(
-                    value: ThemeMode.system,
-                    child: Text(s.colourPaletteGenerator),
-                  ),
-                ],
-                underline: const SizedBox(),
-              ),
-            ),
-            const Divider(),
-            ListTile(
-              title: Text(s.userGuide),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => UserGuidePage()),
-                );
+                }
               },
+              items: [
+                ...userList.map((user) => DropdownMenuItem<String>(
+                  value: user,
+                  child: Text(user),
+                )),
+                const DropdownMenuItem<String>(
+                  value: 'Add New User',
+                  child: Text('Add New User'),
+                ),
+              ],
+              isExpanded: true,
             ),
-          ],
-        ),
+          ),
+          if (selectedUser == 'Add New User')
+            ListTile(
+              title: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const StartingPage(),
+                    ),
+                  );
+                },
+                child: Text('Add New User'),
+              ),
+            ),
+          const Divider(),
+          ListTile(
+            title: Text(s.language),
+            subtitle: Text(_getLanguageName(languageProvider.currentLocale)),
+            trailing: DropdownButton<Locale>(
+              value: languageProvider.currentLocale,
+              onChanged: (Locale? newValue) {
+                if (newValue != null) {
+                  languageProvider.setLocale(newValue);
+                }
+              },
+              items: const [
+                DropdownMenuItem(value: Locale('en', ''), child: Text('English')),
+                DropdownMenuItem(value: Locale('ms', ''), child: Text('Malay')),
+                DropdownMenuItem(value: Locale('zh', ''), child: Text('Mandarin')),
+                DropdownMenuItem(value: Locale('ja', ''), child: Text('Japanese')),
+              ],
+              underline: const SizedBox(),
+            ),
+          ),
+          const Divider(),
+          ListTile(
+            leading: const Icon(Icons.brightness_6),
+            title: Text(s.colourScheme),
+            subtitle: Text(_getThemeModeName(themeProvider.themeMode, s)),
+            trailing: DropdownButton<ThemeMode>(
+              value: themeProvider.themeMode,
+              onChanged: (ThemeMode? newMode) {
+                if (newMode != null) {
+                  themeProvider.setTheme(newMode);
+                }
+              },
+              items: [
+                DropdownMenuItem(
+                  value: ThemeMode.light,
+                  child: Text(s.light),
+                ),
+                DropdownMenuItem(
+                  value: ThemeMode.dark,
+                  child: Text(s.dark),
+                ),
+                DropdownMenuItem(
+                  value: ThemeMode.system,
+                  child: Text(s.colourPaletteGenerator),
+                ),
+              ],
+              underline: const SizedBox(),
+            ),
+          ),
+          const Divider(),
+          ListTile(
+            title: Text(s.userGuide),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => UserGuidePage()),
+              );
+            },
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 1,
@@ -128,7 +170,7 @@ class _SettingsState extends State<Settings> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label:s.setting,
+            label: s.setting,
           ),
         ],
         backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor,

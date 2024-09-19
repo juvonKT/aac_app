@@ -1,75 +1,43 @@
 import 'package:flutter/material.dart';
-import 'Settings.dart';
-import 'generated/l10n.dart';
-import 'HomePage.dart';
+import 'package:provider/provider.dart';
+import 'user_provider.dart';
 
 class StartingPage extends StatefulWidget {
+  const StartingPage({super.key});
+
   @override
   _StartingPageState createState() => _StartingPageState();
 }
 
 class _StartingPageState extends State<StartingPage> {
   final TextEditingController _controller = TextEditingController();
-  bool isColorBlind = false;
 
-  void goToHomePage() {
+  void _addUser(BuildContext context) {
     String userName = _controller.text;
-
-    // Navigate to HomePage, passing the userName and color blindness info
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => HomePage(
-          userName: userName,
-          isColorBlind: isColorBlind,
-          userId: 1,
-        ),
-      ),
-    );
+    if (userName.isNotEmpty) {
+      Provider.of<UserProvider>(context, listen: false).addUser(userName);
+      Navigator.pop(context);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
-
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Welcome!',
-        style: TextStyle(color: Colors.white),),
-        backgroundColor: Colors.black,
+        title: const Text('Welcome!'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextField(
               controller: _controller,
-              decoration: InputDecoration(
-                labelText: 'Enter your name',
-                border: OutlineInputBorder(),
-              ),
+              decoration: const InputDecoration(labelText: 'Enter your name'),
             ),
             const SizedBox(height: 20),
-            Row(
-              children: [
-                Checkbox(
-                  value: isColorBlind,
-                  onChanged: (bool? value) {
-                    setState(() {
-                      isColorBlind = value ?? false;
-                    });
-                  },
-                ),
-                const Text('Do you have color blindness?'),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Center(
-              child: ElevatedButton(
-                onPressed: goToHomePage,
-                child: const Text('Continue'),
-              ),
+            ElevatedButton(
+              onPressed: () => _addUser(context),
+              child: const Text('Add User'),
             ),
           ],
         ),
