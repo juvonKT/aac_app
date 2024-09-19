@@ -185,6 +185,7 @@ class _HomePageState extends State<HomePage> {
           onSpeak: _speak,
           selectedPhrases: selectedPhrases,
           savePhrase: savePhrases,
+          userId: widget.userId,
         ),
       ),
     );

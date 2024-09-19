@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'firestore_service.dart';
 import 'settings.dart';
 import 'AddPhrasePage.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -12,6 +13,7 @@ class PhraseListPage extends StatefulWidget {
   final VoidCallback onSpeak;
   final List<String> selectedPhrases;
   final VoidCallback savePhrase;
+  final int userId;
 
   const PhraseListPage({
     super.key,
@@ -23,6 +25,7 @@ class PhraseListPage extends StatefulWidget {
     required this.onSpeak,
     required this.selectedPhrases,
     required this.savePhrase,
+    required this.userId
   });
 
   @override
@@ -30,6 +33,7 @@ class PhraseListPage extends StatefulWidget {
 }
 
 class _PhraseListPageState extends State<PhraseListPage> {
+  final FirestoreService _firestoreService = FirestoreService();
   List<Map<String, String>> phrasesList = [];
 
   @override
@@ -168,6 +172,7 @@ class _PhraseListPageState extends State<PhraseListPage> {
                 Map<String, String> phrase = phrasesList[index];
                 return GestureDetector(
                   onTap: () {
+                    _firestoreService.addSentence(widget.userId, phrase["phrase"]!);
                     widget.onPhraseSelected(phrase["phrase"]!);
                     Navigator.pop(context);
                   },

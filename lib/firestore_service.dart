@@ -3,12 +3,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
+
   Future<List<String>> getSentenceHistory(int userId) async {
     try {
       print("Attempting to fetch sentence history for user $userId");
-      QuerySnapshot snapshot = await _db
-          .collection('users')
-          .doc('user$userId')
+      QuerySnapshot snapshot = await _db.collection('users')
+          .doc(userId.toString())
           .collection('sentences')
           .orderBy('sentence_id')
           .get();
@@ -21,17 +21,31 @@ class FirestoreService {
     }
   }
 
-  Future<void> addSentence(int userId, String sentenceContent) async {
+
+  Future<void> addSentence(int userId, String sentence) async {
     try {
-      await _db.collection('users').doc(userId.toString()).collection('sentences').add({
-        'sentence_content': sentenceContent,
-        'sentence_id': FieldValue.serverTimestamp(),
+      DocumentReference docRef = _db.collection('users')
+          .doc(userId.toString())
+          .collection('sentenceHistory')
+          .doc(sentence);  // Use sentence as document ID
+
+      await _db.runTransaction((transaction) async {
+        DocumentSnapshot snapshot = await transaction.get(docRef);
+        if (!snapshot.exists) {
+          await transaction.set(docRef, {
+            'sentence_content': sentence,
+            'usage_count': 1,
+          });
+        } else {
+          int newCount = (snapshot['usage_count'] as int) + 1;
+          await transaction.update(docRef, {'usage_count': newCount});
+        }
       });
-      print("Sentence added successfully");
     } catch (e) {
-      print("Error adding sentence: $e");
+      print("Error adding or incrementing sentence: $e");
     }
   }
+
 
   Future<List<MapEntry<String, int>>> getTopStartingWords(int userId, int limit) async {
     try {
