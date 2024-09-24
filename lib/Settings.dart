@@ -57,7 +57,7 @@ class _SettingsState extends State<Settings> {
               value: selectedUser,
               onChanged: (String? newValue) {
                 if (newValue != null && newValue != 'Add New User') {
-                  userProvider.selectUser(newValue); // Set selected user globally
+                  userProvider.selectUser(newValue);
                 }
                 if (newValue == 'Add New User') {
                   Navigator.push(

@@ -4,6 +4,17 @@ class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
 
+  Future<void> addPhraseForUser(int userId, String phrase) async {
+    // Specify the document path for the user and their phrases
+    DocumentReference userRef = _db.collection('users').doc(userId.toString());
+
+    // Add the phrase to the user's phrases collection
+    await userRef.collection('phrases').add({
+      'phrase': phrase,
+      'timestamp': FieldValue.serverTimestamp(),
+    });
+  }
+
   Future<List<String>> getSentenceHistory(int userId) async {
     try {
       print("Attempting to fetch sentence history for user $userId");
@@ -22,7 +33,7 @@ class FirestoreService {
   }
 
 
-  Future<void> addSentence(int userId, String sentence) async {
+  Future<void> addSentence(String? userId, String sentence) async {
     try {
       DocumentReference docRef = _db.collection('users')
           .doc(userId.toString())
@@ -45,6 +56,8 @@ class FirestoreService {
       print("Error adding or incrementing sentence: $e");
     }
   }
+
+
 
 
   Future<List<MapEntry<String, int>>> getTopStartingWords(int userId, int limit) async {

@@ -13,7 +13,7 @@ class PhraseListPage extends StatefulWidget {
   final VoidCallback onSpeak;
   final List<String> selectedPhrases;
   final VoidCallback savePhrase;
-  final int userId;
+  final String? userId;
 
   const PhraseListPage({
     super.key,

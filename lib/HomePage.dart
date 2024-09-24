@@ -11,10 +11,12 @@ import 'package:path_provider/path_provider.dart';
 import 'generated/l10n.dart';
 import 'api_service.dart';
 import 'firestore_service.dart';
+import 'user_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
-  final int userId;
-  const HomePage({Key? key, required String userName, required bool isColorBlind, required this.userId}) : super(key: key);
+  int userId;
+  HomePage({Key? key, required String userName, required bool isColorBlind, required this.userId}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -172,6 +174,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void goToCategory(String category) {
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
     final s = S.of(context);
     Navigator.push(
       context,
@@ -185,7 +188,7 @@ class _HomePageState extends State<HomePage> {
           onSpeak: _speak,
           selectedPhrases: selectedPhrases,
           savePhrase: savePhrases,
-          userId: widget.userId,
+          userId: userProvider.selectedUserId,
         ),
       ),
     );
@@ -258,6 +261,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    // final userProvider = Provider.of<UserProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
