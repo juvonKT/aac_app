@@ -50,8 +50,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> fetchTopStartingWords() async {
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
     try {
-      List<MapEntry<String, int>> words = await _firestoreService.getTopStartingWords(widget.userId, 5);
+      List<MapEntry<String, int>> words = await _firestoreService.getTopStartingWords(userProvider.selectedUserId, 5);
       setState(() {
         topStartingWords = words;
       });

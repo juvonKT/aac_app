@@ -15,7 +15,7 @@ class FirestoreService {
     });
   }
 
-  Future<List<String>> getSentenceHistory(int userId) async {
+  Future<List<String>> getSentenceHistory(String? userId) async {
     try {
       print("Attempting to fetch sentence history for user $userId");
       QuerySnapshot snapshot = await _db.collection('users')
@@ -60,7 +60,7 @@ class FirestoreService {
 
 
 
-  Future<List<MapEntry<String, int>>> getTopStartingWords(int userId, int limit) async {
+  Future<List<MapEntry<String, int>>> getTopStartingWords(String? userId, int limit) async {
     try {
       List<String> sentences = await getSentenceHistory(userId);
       Map<String, int> wordCount = {};
