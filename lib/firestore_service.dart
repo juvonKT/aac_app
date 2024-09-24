@@ -20,8 +20,7 @@ class FirestoreService {
       print("Attempting to fetch sentence history for user $userId");
       QuerySnapshot snapshot = await _db.collection('users')
           .doc(userId.toString())
-          .collection('sentences')
-          .orderBy('sentence_id')
+          .collection('sentenceHistory')
           .get();
       print("Successfully fetched ${snapshot.docs.length} sentences");
       List<String> sentences = snapshot.docs.map((doc) => doc['sentence_content'] as String).toList();
