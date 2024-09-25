@@ -16,7 +16,7 @@ import 'package:provider/provider.dart';
 import 'dart:ui';
 
 class HomePage extends StatefulWidget {
-  int userId;
+  String? userId;
   HomePage({Key? key, required String userName, required bool isColorBlind, required this.userId}) : super(key: key);
 
   @override
@@ -146,14 +146,13 @@ class _HomePageState extends State<HomePage> {
       try {
         await _firestoreService.addPhraseForUser(userProvider.selectedUserId, phrase);
       } catch (e) {
-        // Handle errors here (e.g., show a toast or log the error)
         print('Error adding phrase to Firestore: $e');
       }
     }
-    if (mounted) {  // Ensure the widget is still in the tree
+    if (mounted) {
       setState(() {
         selectedPhrases.add(phrase);
-        showStartingWords = false;  // Hide starting words after adding any phrase
+        showStartingWords = false;
       });
       updateSuggestedWords();
     }

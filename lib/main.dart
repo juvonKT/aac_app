@@ -30,7 +30,7 @@ void main() async {
   if (kDebugMode) {
     FirebaseFirestore.setLoggingEnabled(true);
   }
-  // ..
+
   runApp(
     MultiProvider(
       providers: [
@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
           theme: themeProvider.lightTheme,
           darkTheme: themeProvider.darkTheme,
           themeMode: themeProvider.themeMode,
-          home: HomePage(userName: 'User A', isColorBlind: false, userId: 001,),
+          home: HomePage(userName: 'User A', isColorBlind: false, userId: '001',),
           localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,

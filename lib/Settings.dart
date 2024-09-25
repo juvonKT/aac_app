@@ -15,22 +15,7 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
-  // List<String> userList = [];
   String selectedUser = 'Add New User';
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   // Initialize with a default option
-  //   selectedUser = 'Add New User';
-  // }
-
-  // void _addNewUser(String userName) {
-  //   setState(() {
-  //     userList.add(userName);
-  //     selectedUser = userName; // Set the newly added user as the selected user
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -81,20 +66,17 @@ class _SettingsState extends State<Settings> {
               isExpanded: true,
             ),
           ),
-          if (selectedUser == 'Add New User')
+
+          if (selectedUser != 'Add New User' && selectedUser != null)
             ListTile(
               title: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const StartingPage(),
-                    ),
-                  );
+                  ShowDeleteConfirmation(context, selectedUser!, userProvider);
                 },
-                child: Text('Add New User'),
+                child: Text('Delete User'),
               ),
             ),
+
           const Divider(),
           ListTile(
             title: Text(s.language),
@@ -193,6 +175,33 @@ class _SettingsState extends State<Settings> {
       default:
         return 'Unknown';
     }
+  }
+
+  void ShowDeleteConfirmation(BuildContext context, String userName, UserProvider userProvider) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Delete User'),
+          content: Text('Are you sure you want to delete $userName?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                userProvider.deleteUser(userName);
+                Navigator.of(context).pop();
+              },
+              child: Text('Delete'),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   String _getThemeModeName(ThemeMode mode, S s) {
