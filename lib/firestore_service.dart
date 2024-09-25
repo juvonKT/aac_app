@@ -5,26 +5,34 @@ class FirestoreService {
 
 
   Future<void> addPhraseForUser(String? userId, String phrase) async {
-    // Specify the document path for the user and their phrases
-    DocumentReference userRef = _db.collection('users').doc(userId.toString());
-
-    // Add the phrase to the user's phrases collection
-    await userRef.collection('phrases').add({
-      'phrase': phrase,
-      'timestamp': FieldValue.serverTimestamp(),
-    });
+    if (userId == null) return;
+    try {
+      await _db.collection('users').doc(userId).collection('phrases').add({
+        'phrase': phrase,
+        'timestamp': FieldValue.serverTimestamp(),
+      });
+    } catch (e) {
+      print("Error adding phrase for user: $e");
+    }
   }
 
   Future<List<String>> getSentenceHistory(String? userId) async {
+    if (userId == null) return [];
     try {
-      print("Attempting to fetch sentence history for user $userId");
       QuerySnapshot snapshot = await _db.collection('users')
-          .doc(userId.toString())
+          .doc(userId)
           .collection('sentenceHistory')
-          .get();
-      print("Successfully fetched ${snapshot.docs.length} sentences");
-      List<String> sentences = snapshot.docs.map((doc) => doc['sentence_content'] as String).toList();
-      return sentences;
+          .get(GetOptions(source: Source.cache));
+
+      if (snapshot.docs.isEmpty) {
+        // If cache is empty, try to fetch from server
+        snapshot = await _db.collection('users')
+            .doc(userId)
+            .collection('sentenceHistory')
+            .get(GetOptions(source: Source.server));
+      }
+
+      return snapshot.docs.map((doc) => doc['sentence_content'] as String).toList();
     } catch (e) {
       print("Error fetching sentence history: $e");
       return [];
@@ -33,22 +41,23 @@ class FirestoreService {
 
 
   Future<void> addSentence(String? userId, String sentence) async {
+    if (userId == null) return;
     try {
       DocumentReference docRef = _db.collection('users')
-          .doc(userId.toString())
+          .doc(userId)
           .collection('sentenceHistory')
-          .doc(sentence);  // Use sentence as document ID
+          .doc(sentence);
 
       await _db.runTransaction((transaction) async {
         DocumentSnapshot snapshot = await transaction.get(docRef);
         if (!snapshot.exists) {
-          await transaction.set(docRef, {
+          transaction.set(docRef, {
             'sentence_content': sentence,
             'usage_count': 1,
           });
         } else {
-          int newCount = (snapshot['usage_count'] as int) + 1;
-          await transaction.update(docRef, {'usage_count': newCount});
+          int newCount = ((snapshot.data() as Map<String, dynamic>)['usage_count'] as int) + 1;
+          transaction.update(docRef, {'usage_count': newCount});
         }
       });
     } catch (e) {
@@ -56,10 +65,8 @@ class FirestoreService {
     }
   }
 
-
-
-
   Future<List<MapEntry<String, int>>> getTopStartingWords(String? userId, int limit) async {
+    if (userId == null) return [];
     try {
       List<String> sentences = await getSentenceHistory(userId);
       Map<String, int> wordCount = {};

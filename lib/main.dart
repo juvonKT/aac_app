@@ -23,6 +23,10 @@ void main() async {
   } catch (e) {
     print("Error initializing Firebase: $e");
   }
+  FirebaseFirestore.instance.settings = const Settings(
+    persistenceEnabled: true,
+    cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED,
+  );
   if (kDebugMode) {
     FirebaseFirestore.setLoggingEnabled(true);
   }

@@ -13,6 +13,7 @@ import 'api_service.dart';
 import 'firestore_service.dart';
 import 'user_provider.dart';
 import 'package:provider/provider.dart';
+import 'dart:ui';
 
 class HomePage extends StatefulWidget {
   int userId;
@@ -32,6 +33,8 @@ class _HomePageState extends State<HomePage> {
   final FirestoreService _firestoreService = FirestoreService();
   final ApiService apiService = ApiService();
   bool showStartingWords = true;
+  bool _isOffline = false;
+  bool _isLoadingWords = true;
 
   @override
   void didChangeDependencies() {
@@ -50,14 +53,21 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> fetchTopStartingWords() async {
+    setState(() {
+      _isLoadingWords = true;
+    });
     final userProvider = Provider.of<UserProvider>(context, listen: false);
     try {
       List<MapEntry<String, int>> words = await _firestoreService.getTopStartingWords(userProvider.selectedUserId, 5);
       setState(() {
         topStartingWords = words;
+        _isLoadingWords = false;
       });
     } catch (e) {
       print('Error fetching top starting words: $e');
+      setState(() {
+        _isLoadingWords = false;
+      });
     }
   }
 
@@ -130,7 +140,6 @@ class _HomePageState extends State<HomePage> {
 
   void addPhrase(String phrase) async {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
-
     if (showStartingWords) {
       try {
         await _firestoreService.addPhraseForUser(userProvider.selectedUserId, phrase);
@@ -139,7 +148,6 @@ class _HomePageState extends State<HomePage> {
         print('Error adding phrase to Firestore: $e');
       }
     }
-
     if (mounted) {  // Ensure the widget is still in the tree
       setState(() {
         selectedPhrases.add(phrase);
@@ -273,6 +281,24 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  Widget _buildWordSuggestionsSection() {
+    if (_isLoadingWords) {
+      return const Center(child: CircularProgressIndicator());
+    } else if (topStartingWords.isEmpty) {
+      return Center(child: Text(_isOffline ? 'Offline. Using cached data.' : 'No starting words available.'));
+    } else {
+      return ListView(
+        scrollDirection: Axis.horizontal,
+        children: [
+          if (showStartingWords)
+            ...topStartingWords.map((entry) => _buildWordButton(entry.key, true))
+          else
+            ...suggestedWords.map((word) => _buildWordButton(word, false)),
+        ],
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
@@ -357,17 +383,7 @@ class _HomePageState extends State<HomePage> {
                   // Word suggestions section (starting words + next words)
                   SizedBox(
                     height: 100, // Adjust as needed
-                    child: topStartingWords.isEmpty && showStartingWords
-                        ? const Center(child: CircularProgressIndicator())// Show a loading spinner until words are fetched
-                        : ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        if (showStartingWords)
-                          ...topStartingWords.map((entry) => _buildWordButton(entry.key, true))
-                        else
-                          ...suggestedWords.map((word) => _buildWordButton(word, false)),
-                      ],
-                    ),
+                    child:_buildWordSuggestionsSection(),
                   ),
                   Container(
                     height: 1.0,
