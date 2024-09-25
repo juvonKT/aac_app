@@ -4,7 +4,7 @@ class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
 
-  Future<void> addPhraseForUser(int userId, String phrase) async {
+  Future<void> addPhraseForUser(String? userId, String phrase) async {
     // Specify the document path for the user and their phrases
     DocumentReference userRef = _db.collection('users').doc(userId.toString());
 
