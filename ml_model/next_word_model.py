@@ -1,82 +1,71 @@
 from flask import Flask, request, jsonify
-from transformers import GPT2Tokenizer, TFGPT2LMHeadModel
 import tensorflow as tf
-import re
-import string
+from transformers import TFBertForMaskedLM, BertTokenizer
+import regex
 
 app = Flask(__name__)
 
-# Load tokenizer and model
-tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
-tokenizer.clean_up_tokenization_spaces = False 
-model = TFGPT2LMHeadModel.from_pretrained('gpt2')
+# Load pre-trained model and tokenizer
+models = {
+    "JA": TFBertForMaskedLM.from_pretrained('cl-tohoku/bert-base-japanese'),
+    "ZH": TFBertForMaskedLM.from_pretrained('bert-base-chinese'),
+    "EN": TFBertForMaskedLM.from_pretrained('bert-base-uncased')
+}
 
-# unwanted punctuation characters
-unwanted_punctuation = set(string.punctuation + ' ')
+tokenizers = {
+    "JA": BertTokenizer.from_pretrained('cl-tohoku/bert-base-japanese'),
+    "ZH": BertTokenizer.from_pretrained('bert-base-chinese'),
+    "EN": BertTokenizer.from_pretrained('bert-base-uncased')
+}
 
-# function to filter out non-alphabetic tokens and avoid duplicates
-def is_valid_word(word):
-    # remove any non-alphabetic characters and check if the word is not empty
-    return bool(re.match(r'^[a-zA-Z]+$', word))
+def is_chinese(word):
+    return regex.search(r'\p{Han}', word) is not None
 
-def get_unique_suggestions(input_text, k=10):  # Reduced k for faster results
-    seen_words = set()
-    suggestions = []
+def predict_next_word(input_text, language_token):
+    model = models[language_token]
+    tokenizer = tokenizers[language_token]
 
-    for _ in range(10):  # Limit iterations to avoid long loops
-        # Tokenize the input text
-        input_ids = tokenizer.encode(input_text, return_tensors='tf')
-        
-        # Get the model's outputs
-        output = model(input_ids)
-        
-        # Extract logits for the next token prediction
-        logits = output.logits[:, -1, :]  # We want the last token's logits
-        
-        # Get the probabilities by applying softmax
-        probs = tf.nn.softmax(logits, axis=-1)
-        
-        # Get the top-k token indices and their probabilities
-        top_k_indices = tf.math.top_k(probs, k=k).indices.numpy().flatten()
-
-        # Decode the top-k tokens
-        new_suggestions = [tokenizer.decode([token_id]).strip() for token_id in top_k_indices]
-        
-        # Filter out unwanted punctuation, non-alphabetic tokens, and duplicates
-        for word in new_suggestions:
-            normalized_word = word.lower()
-            if (not set(word).intersection(unwanted_punctuation) and 
-                is_valid_word(word) and 
-                normalized_word not in seen_words):
-                seen_words.add(normalized_word)
-                suggestions.append(word)
-                
-        # Stop if the number of unique suggestions is sufficient
-        if len(suggestions) >= k:
-            break
+    input_text = input_text.replace('[MASK]', tokenizer.mask_token)
+    inputs = tokenizer(input_text, return_tensors='tf', add_special_tokens=True)
     
-    print(f"Final Suggestions: {suggestions}")
-    return suggestions[:k]  # Return at most k suggestions
+    # Find the position of the mask token
+    input_ids = inputs['input_ids']
+    mask_token_index = tf.where(input_ids == tokenizer.mask_token_id)
+    
+    # Get the logits for the mask token
+    token_logits = model(inputs).logits
+    mask_token_logits = token_logits[0, mask_token_index[0][1], :]
+    
+    # Initialize an empty list to store valid words
+    valid_words = set()
+    top_k = 50
+    
+    while len(valid_words) < 50:
+        tokens = tf.math.top_k(mask_token_logits, top_k).indices.numpy()
+        words = [tokenizer.decode([token]) for token in tokens]
+        # Filter out punctuation and add valid words to the list
+        if language_token == "ZH":
+            valid_words.update([word for word in words if is_chinese(word)])
+        else:
+            valid_words.update([word for word in words if all(c.isalpha() or c.isdigit() for c in word)])
+        top_k += 10
+    
+    return list(valid_words)[:50]
 
 @app.route('/suggest', methods=['POST'])
 def suggest():
-    print("sugessttt")
     data = request.json
-    app.logger.info(f"Request data: {data}")
     selected_phrases = data.get('selected_phrases', [])
-    print(f"Selected phrases: {selected_phrases}")
-    suggestions = get_unique_suggestions(selected_phrases, k=50)
-    print(f"Generated suggestions: {suggestions}")
+    language_code = data.get('language_code', 'EN').upper()
+    selected_phrases_to_string = ' '.join(selected_phrases) + " [MASK]"
+    suggestions = predict_next_word(selected_phrases_to_string, language_code)
 
     return jsonify(suggestions)
 
 @app.route('/test', methods=['GET'])
 def test():
     print("testttt")
-    app.logger.info("Test endpoint called")
     return jsonify({"message": "Connection successful!"})
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001)
-

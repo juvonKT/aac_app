@@ -126,8 +126,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> updateSuggestedWords() async {
+    Locale locale = Localizations.localeOf(context);
+    String languageCode = locale.languageCode;
     try {
-      List<String> newSuggestions = await apiService.getSuggestions(selectedPhrases);
+      List<String> newSuggestions = await apiService.getSuggestions(selectedPhrases, languageCode);
       setState(() {
         suggestedWords = newSuggestions;
       });
