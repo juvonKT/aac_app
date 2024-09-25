@@ -128,13 +128,27 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  void addPhrase(String phrase) {
-    setState(() {
-      selectedPhrases.add(phrase);
-      showStartingWords = false;  // Hide starting words after adding any phrase
-    });
-    updateSuggestedWords();
+  void addPhrase(String phrase) async {
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+
+    if (showStartingWords) {
+      try {
+        await _firestoreService.addPhraseForUser(userProvider.selectedUserId, phrase);
+      } catch (e) {
+        // Handle errors here (e.g., show a toast or log the error)
+        print('Error adding phrase to Firestore: $e');
+      }
+    }
+
+    if (mounted) {  // Ensure the widget is still in the tree
+      setState(() {
+        selectedPhrases.add(phrase);
+        showStartingWords = false;  // Hide starting words after adding any phrase
+      });
+      updateSuggestedWords();
+    }
   }
+
 
   void removePhrase(String localizedMessage) {
     setState(() {
@@ -341,9 +355,11 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   // Word suggestions section (starting words + next words)
-                  Container(
+                  SizedBox(
                     height: 100, // Adjust as needed
-                    child: ListView(
+                    child: topStartingWords.isEmpty && showStartingWords
+                        ? const Center(child: CircularProgressIndicator())// Show a loading spinner until words are fetched
+                        : ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
                         if (showStartingWords)
