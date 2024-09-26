@@ -33,7 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "categoryDeleted": m0,
         "colourPaletteGenerator":
             MessageLookupByLibrary.simpleMessage("カラーパレットジェネレーター"),
-        "colourScheme": MessageLookupByLibrary.simpleMessage("カラースキーム"),
+        "colourScheme": MessageLookupByLibrary.simpleMessage("テーマ"),
         "dark": MessageLookupByLibrary.simpleMessage("ダーク"),
         "delete": MessageLookupByLibrary.simpleMessage("削除"),
         "deleteCategory": MessageLookupByLibrary.simpleMessage("カテゴリを削除"),

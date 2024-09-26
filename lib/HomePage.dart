@@ -74,7 +74,6 @@ class _HomePageState extends State<HomePage> {
   Future<Map<String, Map<String, dynamic>>> loadPhrases() async {
     Locale locale = Localizations.localeOf(context);
     String languageCode = locale.languageCode;
-
     final String directory = (await getApplicationDocumentsDirectory()).path;
     final String path = '$directory/phrases_$languageCode.json';
     final File file = File(path);
