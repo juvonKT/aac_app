@@ -25,6 +25,7 @@ class _SettingsState extends State<Settings> {
     final userProvider = Provider.of<UserProvider>(context);
     final userList = userProvider.users;
     String? selectedUser = userProvider.selectedUser ?? 'Add New User';
+    String? selectedUserId = userProvider.selectedUserId;
 
     return Scaffold(
       appBar: AppBar(
@@ -42,7 +43,7 @@ class _SettingsState extends State<Settings> {
               value: selectedUser,
               onChanged: (String? newValue) {
                 if (newValue != null && newValue != 'Add New User') {
-                  userProvider.selectUser(newValue);
+                  userProvider.selectUser(newValue, selectedUserId);
                 }
                 if (newValue == 'Add New User') {
                   Navigator.push(
