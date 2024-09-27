@@ -8,7 +8,9 @@ import 'StartingPage.dart';
 import 'user_provider.dart';
 
 class Settings extends StatefulWidget {
-  const Settings({super.key});
+  final Function() onLanguageChanged;
+
+  const Settings({Key? key, required this.onLanguageChanged}) : super(key: key);
 
   @override
   _SettingsState createState() => _SettingsState();
@@ -87,6 +89,7 @@ class _SettingsState extends State<Settings> {
               onChanged: (Locale? newValue) {
                 if (newValue != null) {
                   languageProvider.setLocale(newValue);
+                  widget.onLanguageChanged(); // Call the callback
                 }
               },
               items: const [

@@ -14,16 +14,22 @@ import 'firestore_service.dart';
 import 'user_provider.dart';
 import 'package:provider/provider.dart';
 import 'dart:ui';
+import 'package:flutter/widgets.dart';
 
 class HomePage extends StatefulWidget {
   String? userId;
-  HomePage({Key? key, required String userName, required bool isColorBlind, required this.userId}) : super(key: key);
+  HomePage({
+    Key? key,
+    required String userName,
+    required bool isColorBlind,
+    required this.userId
+  }) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
   FlutterTts flutterTts = FlutterTts();
   Map<String, Map<String, dynamic>> phrases = {};
   List<String> selectedPhrases = [];
@@ -56,6 +62,20 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    flutterTts.stop();
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      fetchTopStartingWords();
+    }
+  }
+
   Future<void> fetchTopStartingWords() async {
     setState(() {
       _isLoadingWords = true;
@@ -64,16 +84,29 @@ class _HomePageState extends State<HomePage> {
       Locale locale = Localizations.localeOf(context);
       String languageCode = locale.languageCode;
       List<MapEntry<String, int>> words = await _firestoreService.getTopStartingWords(widget.userId, languageCode, 7);
-      print('awaaa');
       setState(() {
         topStartingWords = words;
         _isLoadingWords = false;
+        showStartingWords = true;
       });
     } catch (e) {
       print('Error fetching top starting words: $e');
       setState(() {
         _isLoadingWords = false;
       });
+    }
+  }
+
+  Future<void> refreshWordsAndClearPhrases() async {
+    // Clear phrases immediately
+    clearPhrases();
+
+    // Introduce a slight delay to allow for language change to process
+    await Future.delayed(const Duration(milliseconds: 100));
+
+    // Fetch top words if user is logged in
+    if (widget.userId != null) {
+      await fetchTopStartingWords();
     }
   }
 
@@ -203,12 +236,6 @@ class _HomePageState extends State<HomePage> {
     await flutterTts.speak(selectedPhrases.join(' '));
   }
 
-  @override
-  void dispose() {
-    flutterTts.stop();
-    super.dispose();
-  }
-
   void goToCategory(String category) {
     final s = S.of(context);
     Navigator.push(
@@ -224,6 +251,7 @@ class _HomePageState extends State<HomePage> {
           selectedPhrases: selectedPhrases,
           savePhrase: savePhrases,
           userId: widget.userId,
+          onLanguageChanged: refreshWordsAndClearPhrases,
         ),
       ),
     );
@@ -489,7 +517,11 @@ class _HomePageState extends State<HomePage> {
           if (index == 1) {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const Settings()),
+              MaterialPageRoute(
+                builder: (context) =>  Settings(
+                  onLanguageChanged: refreshWordsAndClearPhrases
+                ),
+              ),
             );
           }
         },

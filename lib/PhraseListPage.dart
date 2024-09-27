@@ -14,6 +14,7 @@ class PhraseListPage extends StatefulWidget {
   final List<String> selectedPhrases;
   final VoidCallback savePhrase;
   final String? userId;
+  final Function() onLanguageChanged;
 
   const PhraseListPage({
     super.key,
@@ -25,7 +26,8 @@ class PhraseListPage extends StatefulWidget {
     required this.onSpeak,
     required this.selectedPhrases,
     required this.savePhrase,
-    required this.userId
+    required this.userId,
+    required this.onLanguageChanged
   });
 
   @override
@@ -88,6 +90,17 @@ class _PhraseListPageState extends State<PhraseListPage> {
     ];
     // Generate a color by cycling through the color list
     return colors[index % colors.length].withOpacity(0.7 + (0.3 * (index % 2)));
+  }
+
+  void _navigateToSettings() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => Settings(
+          onLanguageChanged: widget.onLanguageChanged,
+        ),
+      ),
+    );
   }
 
   @override
@@ -235,10 +248,7 @@ class _PhraseListPageState extends State<PhraseListPage> {
         currentIndex: 0,
         onTap: (index) {
           if (index == 1) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const Settings()),
-            );
+            _navigateToSettings();
           }
         },
         items: const [
