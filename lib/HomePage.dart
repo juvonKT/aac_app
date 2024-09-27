@@ -141,18 +141,22 @@ class _HomePageState extends State<HomePage> {
   }
 
   void addPhrase(String phrase) async {
+    setState(() {
+      selectedPhrases.add(phrase);
+    });
+
     if (showStartingWords) {
-      setState(() {
-        selectedPhrases.add(phrase);
-        showStartingWords = false;
-      });
-      updateSuggestedWords();
       try {
         await _firestoreService.addPhraseForUser(widget.userId, phrase);
       } catch (e) {
         print('Error adding phrase to Firestore: $e');
       }
+      setState(() {
+        showStartingWords = false;
+      });
     }
+
+    updateSuggestedWords();
   }
 
 
