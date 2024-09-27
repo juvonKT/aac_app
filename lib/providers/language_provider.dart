@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'user_provider.dart';
 import 'package:aac_app/generated/l10n.dart';
 
 class LanguageProvider with ChangeNotifier {
@@ -10,5 +12,12 @@ class LanguageProvider with ChangeNotifier {
     if (!S.delegate.supportedLocales.contains(locale)) return;
     _currentLocale = locale;
     notifyListeners();
+  }
+
+  void loadUserLanguage(BuildContext context) {
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    if (userProvider.selectedLanguage != null) {
+      setLocale(Locale(userProvider.selectedLanguage!));
+    }
   }
 }

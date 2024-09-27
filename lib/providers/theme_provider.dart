@@ -1,4 +1,6 @@
+import 'package:aac_app/providers/user_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ThemeProvider with ChangeNotifier {
   ThemeMode _themeMode = ThemeMode.light;
@@ -8,6 +10,15 @@ class ThemeProvider with ChangeNotifier {
   void setTheme(ThemeMode themeMode) {
     _themeMode = themeMode;
     notifyListeners();
+  }
+
+  void loadUserTheme(BuildContext context) {
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    print("LOADING USER THEME");
+    print(userProvider.selectedTheme);
+    if (userProvider.selectedTheme != null) {
+      setTheme(userProvider.selectedTheme == 'ThemeMode.dark' ? ThemeMode.dark : ThemeMode.light);
+    }
   }
 
   ThemeData get lightTheme {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'user_provider.dart';
+import 'providers/user_provider.dart';
 
 class StartingPage extends StatefulWidget {
   final VoidCallback onUserCreated;
@@ -15,7 +15,7 @@ class StartingPage extends StatefulWidget {
 class _StartingPageState extends State<StartingPage> {
   final TextEditingController _controller = TextEditingController();
 
-  void _addUser(BuildContext context) async {
+  void _addUser(BuildContext context, String languageCode, String userTheme) async {
     String userName = _controller.text;
     if (userName.isNotEmpty) {
       String userId = FirebaseFirestore.instance.collection('users').doc().id;
@@ -24,7 +24,7 @@ class _StartingPageState extends State<StartingPage> {
         'userName': userName,
       });
 
-      Provider.of<UserProvider>(context, listen: false).addUser(userId, userName);
+      Provider.of<UserProvider>(context, listen: false).addUser(userId, userName, languageCode, userTheme);
       widget.onUserCreated(); // Call the callback when a new user is created
       Navigator.pop(context);
     }
@@ -46,7 +46,7 @@ class _StartingPageState extends State<StartingPage> {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () => _addUser(context),
+              onPressed: () => _addUser(context, 'en', 'ThemeMode.light'),
               child: const Text('Add User'),
             ),
           ],
