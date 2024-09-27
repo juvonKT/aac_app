@@ -57,7 +57,10 @@ def suggest():
     data = request.json
     selected_phrases = data.get('selected_phrases', [])
     language_code = data.get('language_code', 'EN').upper()
-    selected_phrases_to_string = ' '.join(selected_phrases) + " [MASK]"
+    if language_code == "EN":
+        selected_phrases_to_string = ' '.join(selected_phrases) + " [MASK]"
+    else:
+        selected_phrases_to_string = ' '.join(selected_phrases) + "[MASK]"
     suggestions = predict_next_word(selected_phrases_to_string, language_code)
 
     return jsonify(suggestions)

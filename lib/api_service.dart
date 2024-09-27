@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 
 class ApiService {
   // final String _baseUrl = 'http://10.0.2.2:5001';  // For Android emulator
-  final String _baseUrl = 'http://192.168.0.170:5001';
+  // final String _baseUrl = 'http://192.168.0.170:5001';
+  final String _baseUrl = 'https://chongmingg-aac-app-en.hf.space';
 
   Future<String> testConnection() async {
     final url = Uri.parse('$_baseUrl/test');

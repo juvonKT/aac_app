@@ -294,12 +294,12 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
     try {
       String result = await apiService.testConnection();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(result)),
+        SnackBar(content: Text("Can use suggestions")),
       );
     } catch (e) {
       print('Test connection error: $e');
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Connection test failed: $e')),
+        SnackBar(content: Text("Can't use suggestions")),
       );
     }
   }
