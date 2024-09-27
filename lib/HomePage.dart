@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:aac_app/providers/language_provider.dart';
 import 'package:flutter/material.dart';
 import 'settings.dart';
 import 'package:flutter_tts/flutter_tts.dart';
@@ -11,7 +12,7 @@ import 'package:path_provider/path_provider.dart';
 import 'generated/l10n.dart';
 import 'api_service.dart';
 import 'firestore_service.dart';
-import 'user_provider.dart';
+import 'providers/user_provider.dart';
 import 'package:provider/provider.dart';
 import 'dart:ui';
 import 'package:flutter/widgets.dart';
@@ -45,6 +46,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    final languageProvider = Provider.of<LanguageProvider>(context, listen: false);
+    languageProvider.loadUserLanguage(context);
+
     loadPhrases().then((data) {
       setState(() {
         phrases = data;
@@ -519,7 +523,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
               context,
               MaterialPageRoute(
                 builder: (context) =>  Settings(
-                  onLanguageChanged: refreshWordsAndClearPhrases
+                    onLanguageChanged: refreshWordsAndClearPhrases
                 ),
               ),
             );

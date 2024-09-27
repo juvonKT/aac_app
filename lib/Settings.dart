@@ -1,3 +1,4 @@
+import 'package:aac_app/providers/user_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'UserGuidePage.dart';
@@ -5,7 +6,7 @@ import 'generated/l10n.dart';
 import 'providers/language_provider.dart';
 import 'providers/theme_provider.dart';
 import 'StartingPage.dart';
-import 'user_provider.dart';
+import 'providers/user_provider.dart';
 
 class Settings extends StatefulWidget {
   final Function() onLanguageChanged;
@@ -28,6 +29,7 @@ class _SettingsState extends State<Settings> {
     final userList = userProvider.users;
     String? selectedUser = userProvider.selectedUser ?? 'Add New User';
     String? selectedUserId = userProvider.selectedUserId;
+    String? selectedTheme = userProvider.selectedTheme;
 
     return Scaffold(
       appBar: AppBar(
@@ -46,6 +48,8 @@ class _SettingsState extends State<Settings> {
               onChanged: (String? newValue) {
                 if (newValue != null && newValue != 'Add New User') {
                   userProvider.selectUser(newValue);
+                  languageProvider.loadUserLanguage(context);
+                  themeProvider.loadUserTheme(context);
                   widget.onLanguageChanged();
                 }
                 if (newValue == 'Add New User') {
@@ -94,6 +98,7 @@ class _SettingsState extends State<Settings> {
               onChanged: (Locale? newValue) {
                 if (newValue != null) {
                   languageProvider.setLocale(newValue);
+                  userProvider.setUserLanguage(newValue.languageCode);
                   widget.onLanguageChanged(); // Call the callback
                 }
               },
@@ -116,6 +121,7 @@ class _SettingsState extends State<Settings> {
               onChanged: (ThemeMode? newMode) {
                 if (newMode != null) {
                   themeProvider.setTheme(newMode);
+                  userProvider.setUserTheme(newMode.toString());
                 }
               },
               items: [
