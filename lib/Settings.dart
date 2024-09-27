@@ -46,12 +46,17 @@ class _SettingsState extends State<Settings> {
               onChanged: (String? newValue) {
                 if (newValue != null && newValue != 'Add New User') {
                   userProvider.selectUser(newValue);
+                  widget.onLanguageChanged();
                 }
                 if (newValue == 'Add New User') {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const StartingPage(),
+                      builder: (context) => StartingPage(
+                        onUserCreated: () {
+                          widget.onLanguageChanged(); // Call the callback when new user is created
+                        },
+                      ),
                     ),
                   );
                 }

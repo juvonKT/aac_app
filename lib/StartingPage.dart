@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart'; // Import Firestore
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'user_provider.dart';
 
 class StartingPage extends StatefulWidget {
-  const StartingPage({super.key});
+  final VoidCallback onUserCreated;
+
+  const StartingPage({Key? key, required this.onUserCreated}) : super(key: key);
 
   @override
   _StartingPageState createState() => _StartingPageState();
@@ -23,6 +25,7 @@ class _StartingPageState extends State<StartingPage> {
       });
 
       Provider.of<UserProvider>(context, listen: false).addUser(userId, userName);
+      widget.onUserCreated(); // Call the callback when a new user is created
       Navigator.pop(context);
     }
   }
