@@ -78,7 +78,7 @@
       {"phrase": "Gembira", "image": "assets/images/feelings/happy.png"},
       {"phrase": "Sedih", "image": "assets/images/feelings/sad.png"},
       {"phrase": "Teruja", "image": "assets/images/feelings/excited.png"},
-      {"phrase": "Takut", "image": "ssets/images/feelings/scared.png"},
+      {"phrase": "Takut", "image": "assets/images/feelings/scared.png"},
       {"phrase": "Marah", "image": "assets/images/feelings/angry.png"},
       {"phrase": "Penat", "image": "assets/images/feelings/tired.png"},
       {"phrase": "Bosan", "image": "assets/images/feelings/bored.png"},
