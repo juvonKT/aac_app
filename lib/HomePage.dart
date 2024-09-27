@@ -212,9 +212,10 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
         showStartingWords = true;
       }
 
-      updateSuggestedWords();
+
     });
 
+    updateSuggestedWords();
     Fluttertoast.showToast(
       msg: localizedMessage,
       toastLength: Toast.LENGTH_SHORT,
