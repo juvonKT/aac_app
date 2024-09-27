@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
     });
     final userProvider = Provider.of<UserProvider>(context, listen: false);
     try {
-      List<MapEntry<String, int>> words = await _firestoreService.getTopStartingWords(userProvider.selectedUserId, 5);
+      List<MapEntry<String, int>> words = await _firestoreService.getTopStartingWords(userProvider.selectedUserId, 7);
       setState(() {
         topStartingWords = words;
         _isLoadingWords = false;
@@ -141,19 +141,18 @@ class _HomePageState extends State<HomePage> {
 
   void addPhrase(String phrase) async {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
+
     if (showStartingWords) {
-      try {
-        await _firestoreService.addPhraseForUser(userProvider.selectedUserId, phrase);
-      } catch (e) {
-        print('Error adding phrase to Firestore: $e');
-      }
-    }
-    if (mounted) {
       setState(() {
         selectedPhrases.add(phrase);
         showStartingWords = false;
       });
       updateSuggestedWords();
+      try {
+        await _firestoreService.addPhraseForUser(userProvider.selectedUserId, phrase);
+      } catch (e) {
+        print('Error adding phrase to Firestore: $e');
+      }
     }
   }
 
@@ -163,7 +162,10 @@ class _HomePageState extends State<HomePage> {
       if (selectedPhrases.isNotEmpty) {
         selectedPhrases.removeLast();
       }
-      showStartingWords = selectedPhrases.isEmpty;  // Show starting words if all phrases are removed
+      if (selectedPhrases.isEmpty) {
+        fetchTopStartingWords();
+        showStartingWords = true;
+      }
     });
     updateSuggestedWords();
     Fluttertoast.showToast(
@@ -179,6 +181,7 @@ class _HomePageState extends State<HomePage> {
       showStartingWords = true;  // Show starting words when phrases are cleared
     });
     updateSuggestedWords();
+    fetchTopStartingWords();
   }
 
   void _speak() async {

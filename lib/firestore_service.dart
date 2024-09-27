@@ -3,56 +3,54 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
-
-  Future<void> addPhraseForUser(String? userId, String phrase) async {
-    if (userId == null) return;
-    try {
-      await _db.collection('users').doc(userId).collection('phrases').add({
-        'phrase': phrase,
-        'timestamp': FieldValue.serverTimestamp(),
-      });
-    } catch (e) {
-      print("Error adding phrase for user: $e");
-    }
-  }
-
-  Future<List<String>> getSentenceHistory(String? userId) async {
+  Future<List<Map<String, dynamic>>> getPhraseHistory(String? userId) async {
     if (userId == null) return [];
     try {
-      QuerySnapshot snapshot = await _db.collection('users')
+      // First, try to get data from the server
+      QuerySnapshot serverSnapshot = await _db.collection('users')
           .doc(userId)
-          .collection('sentenceHistory')
-          .get(GetOptions(source: Source.cache));
+          .collection('phraseHistory')
+          .get(GetOptions(source: Source.server));
 
-      if (snapshot.docs.isEmpty) {
-        // If cache is empty, try to fetch from server
-        snapshot = await _db.collection('users')
-            .doc(userId)
-            .collection('sentenceHistory')
-            .get(GetOptions(source: Source.server));
+      // If we successfully got data from the server, return it
+      if (serverSnapshot.docs.isNotEmpty) {
+        return serverSnapshot.docs.map((doc) => {
+          'phrase': doc['phrase'] as String,
+          'usage_count': doc['usage_count'] as int,
+        }).toList();
       }
 
-      return snapshot.docs.map((doc) => doc['sentence_content'] as String).toList();
+      // If server request failed (likely due to no internet), fall back to cache
+      QuerySnapshot cacheSnapshot = await _db.collection('users')
+          .doc(userId)
+          .collection('phraseHistory')
+          .get(GetOptions(source: Source.cache));
+
+      return cacheSnapshot.docs.map((doc) => {
+        'phrase': doc['phrase'] as String,
+        'usage_count': doc['usage_count'] as int,
+      }).toList();
     } catch (e) {
-      print("Error fetching sentence history: $e");
+      print("Error fetching phrase history: $e");
+      // In case of any error, return an empty list
       return [];
     }
   }
 
 
-  Future<void> addSentence(String? userId, String sentence) async {
+  Future<void> addPhraseForUser(String? userId, String phrase) async {
     if (userId == null) return;
     try {
       DocumentReference docRef = _db.collection('users')
           .doc(userId)
-          .collection('sentenceHistory')
-          .doc(sentence);
+          .collection('phraseHistory')
+          .doc(phrase);
 
       await _db.runTransaction((transaction) async {
         DocumentSnapshot snapshot = await transaction.get(docRef);
         if (!snapshot.exists) {
           transaction.set(docRef, {
-            'sentence_content': sentence,
+            'phrase': phrase,
             'usage_count': 1,
           });
         } else {
@@ -61,18 +59,19 @@ class FirestoreService {
         }
       });
     } catch (e) {
-      print("Error adding or incrementing sentence: $e");
+      print("Error adding or incrementing phrase: $e");
     }
   }
 
   Future<List<MapEntry<String, int>>> getTopStartingWords(String? userId, int limit) async {
     if (userId == null) return [];
     try {
-      List<String> sentences = await getSentenceHistory(userId);
+      List<Map<String, dynamic>> phrases = await getPhraseHistory(userId);
       Map<String, int> wordCount = {};
-      for (String sentence in sentences) {
-        String firstWord = sentence.split(' ').first.toLowerCase();
-        wordCount[firstWord] = (wordCount[firstWord] ?? 0) + 1;
+      for (var phrase in phrases) {
+        String firstWord = phrase['phrase'].split(' ').first.toLowerCase();
+        int count = phrase['usage_count'];
+        wordCount[firstWord] = (wordCount[firstWord] ?? 0) + count;
       }
       List<MapEntry<String, int>> sortedWords = wordCount.entries.toList()
         ..sort((a, b) => b.value.compareTo(a.value));

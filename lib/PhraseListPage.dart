@@ -33,7 +33,6 @@ class PhraseListPage extends StatefulWidget {
 }
 
 class _PhraseListPageState extends State<PhraseListPage> {
-  final FirestoreService _firestoreService = FirestoreService();
   List<Map<String, String>> phrasesList = [];
 
   @override
@@ -172,7 +171,7 @@ class _PhraseListPageState extends State<PhraseListPage> {
                 Map<String, String> phrase = phrasesList[index];
                 return GestureDetector(
                   onTap: () {
-                    _firestoreService.addSentence(widget.userId, phrase["phrase"]!);
+                    // _firestoreService.addSentence(widget.userId, phrase["phrase"]!);
                     widget.onPhraseSelected(phrase["phrase"]!);
                     Navigator.pop(context);
                   },
