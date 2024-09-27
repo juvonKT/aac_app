@@ -50,9 +50,18 @@ class UserProvider with ChangeNotifier {
     }
   }
 
-  Future<void> selectUser(String? userName, String? userId) async {
-    _selectedUser = userName;
-    _selectedUserId = userId;
+  Future<void> selectUser(String? userName) async {
+    if (userName != null) {
+      int index = _users.indexOf(userName);
+      if (index != -1) {
+        _selectedUser = userName;
+        _selectedUserId = _userIds[index];
+      }
+    } else {
+      _selectedUser = null;
+      _selectedUserId = null;
+    }
+
     notifyListeners();
 
     final prefs = await SharedPreferences.getInstance();
