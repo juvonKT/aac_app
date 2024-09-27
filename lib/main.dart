@@ -31,12 +31,15 @@ void main() async {
     FirebaseFirestore.setLoggingEnabled(true);
   }
 
+  final userProvider = UserProvider();
+  await userProvider.loadUserData();
+
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => LanguageProvider()),
         ChangeNotifierProvider(create: (context) => ThemeProvider()),
-        ChangeNotifierProvider(create: (context) => UserProvider()),
+        ChangeNotifierProvider.value(value: userProvider),
       ],
       child: const MyApp(),
     ),
@@ -55,7 +58,15 @@ class MyApp extends StatelessWidget {
           theme: themeProvider.lightTheme,
           darkTheme: themeProvider.darkTheme,
           themeMode: themeProvider.themeMode,
-          home: HomePage(userName: 'User A', isColorBlind: false, userId: '001',),
+          home: Consumer<UserProvider>(
+            builder: (context, userProvider, _) {
+              return HomePage(
+                userName: userProvider.selectedUser ?? 'Default User',
+                isColorBlind: false,
+                userId: userProvider.selectedUserId,
+              );
+            },
+          ),
           localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,

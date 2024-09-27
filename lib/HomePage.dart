@@ -49,16 +49,17 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    fetchTopStartingWords();
+    if (widget.userId != null) {
+      fetchTopStartingWords();
+    }
   }
 
   Future<void> fetchTopStartingWords() async {
     setState(() {
       _isLoadingWords = true;
     });
-    final userProvider = Provider.of<UserProvider>(context, listen: false);
     try {
-      List<MapEntry<String, int>> words = await _firestoreService.getTopStartingWords(userProvider.selectedUserId, 7);
+      List<MapEntry<String, int>> words = await _firestoreService.getTopStartingWords(widget.userId, 7);
       setState(() {
         topStartingWords = words;
         _isLoadingWords = false;
@@ -140,8 +141,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   void addPhrase(String phrase) async {
-    final userProvider = Provider.of<UserProvider>(context, listen: false);
-
     if (showStartingWords) {
       setState(() {
         selectedPhrases.add(phrase);
@@ -149,7 +148,7 @@ class _HomePageState extends State<HomePage> {
       });
       updateSuggestedWords();
       try {
-        await _firestoreService.addPhraseForUser(userProvider.selectedUserId, phrase);
+        await _firestoreService.addPhraseForUser(widget.userId, phrase);
       } catch (e) {
         print('Error adding phrase to Firestore: $e');
       }
@@ -200,7 +199,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   void goToCategory(String category) {
-    final userProvider = Provider.of<UserProvider>(context, listen: false);
     final s = S.of(context);
     Navigator.push(
       context,
@@ -214,7 +212,7 @@ class _HomePageState extends State<HomePage> {
           onSpeak: _speak,
           selectedPhrases: selectedPhrases,
           savePhrase: savePhrases,
-          userId: userProvider.selectedUserId,
+          userId: widget.userId,
         ),
       ),
     );
@@ -305,7 +303,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    // final userProvider = Provider.of<UserProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
