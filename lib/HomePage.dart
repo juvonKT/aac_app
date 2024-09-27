@@ -49,9 +49,11 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    if (widget.userId != null) {
-      fetchTopStartingWords();
-    }
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (widget.userId != null) {
+        fetchTopStartingWords();
+      }
+    });
   }
 
   Future<void> fetchTopStartingWords() async {
@@ -59,7 +61,10 @@ class _HomePageState extends State<HomePage> {
       _isLoadingWords = true;
     });
     try {
-      List<MapEntry<String, int>> words = await _firestoreService.getTopStartingWords(widget.userId, 7);
+      Locale locale = Localizations.localeOf(context);
+      String languageCode = locale.languageCode;
+      List<MapEntry<String, int>> words = await _firestoreService.getTopStartingWords(widget.userId, languageCode, 7);
+      print('awaaa');
       setState(() {
         topStartingWords = words;
         _isLoadingWords = false;
@@ -141,22 +146,22 @@ class _HomePageState extends State<HomePage> {
   }
 
   void addPhrase(String phrase) async {
+    bool tempShowStarting = showStartingWords;
     setState(() {
       selectedPhrases.add(phrase);
+      showStartingWords = false;
     });
-
-    if (showStartingWords) {
+    updateSuggestedWords();
+    if (tempShowStarting) {
       try {
-        await _firestoreService.addPhraseForUser(widget.userId, phrase);
+        Locale locale = Localizations.localeOf(context);
+        String languageCode = locale.languageCode;
+        await _firestoreService.addPhraseForUser(widget.userId, phrase, languageCode);
       } catch (e) {
         print('Error adding phrase to Firestore: $e');
       }
-      setState(() {
-        showStartingWords = false;
-      });
     }
 
-    updateSuggestedWords();
   }
 
 
@@ -164,10 +169,12 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       if (selectedPhrases.isNotEmpty) {
         selectedPhrases.removeLast();
-      }
-      if (selectedPhrases.isEmpty) {
-        fetchTopStartingWords();
-        showStartingWords = true;
+
+        // Check if the first phrase was removed
+        if (selectedPhrases.isEmpty) {
+          fetchTopStartingWords();
+          showStartingWords = true;
+        }
       }
     });
     updateSuggestedWords();

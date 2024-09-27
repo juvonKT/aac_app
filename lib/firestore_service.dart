@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
-  Future<List<Map<String, dynamic>>> getPhraseHistory(String? userId) async {
+  Future<List<Map<String, dynamic>>> getPhraseHistory(String? userId, String languageCode) async {
     if (userId == null) return [];
 
     try {
@@ -11,6 +11,8 @@ class FirestoreService {
       QuerySnapshot serverSnapshot = await _db.collection('users')
           .doc(userId)
           .collection('phraseHistory')
+          .doc(languageCode)
+          .collection('phrases')
           .get(GetOptions(source: Source.server));
 
       return serverSnapshot.docs.map((doc) => {
@@ -25,6 +27,8 @@ class FirestoreService {
         QuerySnapshot cacheSnapshot = await _db.collection('users')
             .doc(userId)
             .collection('phraseHistory')
+            .doc(languageCode)
+            .collection('phrases')
             .get(GetOptions(source: Source.cache));
 
         return cacheSnapshot.docs.map((doc) => {
@@ -38,13 +42,14 @@ class FirestoreService {
     }
   }
 
-
-  Future<void> addPhraseForUser(String? userId, String phrase) async {
+  Future<void> addPhraseForUser(String? userId, String phrase, String languageCode) async {
     if (userId == null) return;
     try {
       DocumentReference docRef = _db.collection('users')
           .doc(userId)
           .collection('phraseHistory')
+          .doc(languageCode)
+          .collection('phrases')
           .doc(phrase);
 
       await _db.runTransaction((transaction) async {
@@ -64,13 +69,13 @@ class FirestoreService {
     }
   }
 
-  Future<List<MapEntry<String, int>>> getTopStartingWords(String? userId, int limit) async {
+  Future<List<MapEntry<String, int>>> getTopStartingWords(String? userId, String languageCode, int limit) async {
     if (userId == null) return [];
     try {
-      List<Map<String, dynamic>> phrases = await getPhraseHistory(userId);
+      List<Map<String, dynamic>> phrases = await getPhraseHistory(userId, languageCode);
       Map<String, int> wordCount = {};
       for (var phrase in phrases) {
-        String firstWord = phrase['phrase'].split(' ').first.toLowerCase();
+        String firstWord = phrase['phrase'];
         int count = phrase['usage_count'];
         wordCount[firstWord] = (wordCount[firstWord] ?? 0) + count;
       }
