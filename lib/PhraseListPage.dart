@@ -43,6 +43,11 @@ class _PhraseListPageState extends State<PhraseListPage> {
     phrasesList = widget.phrases;
   }
 
+  void updateAppBar() {
+    setState(() {
+    });
+  }
+
   void deletePhrase(int index) {
     String deletedPhrase = phrasesList[index]["phrase"]!;
     setState(() {
@@ -117,10 +122,16 @@ class _PhraseListPageState extends State<PhraseListPage> {
         ),
         actions: [
           GestureDetector(
-            onLongPress: widget.onClearPhrases,
+            onLongPress: () {
+              widget.onClearPhrases();
+              updateAppBar();
+              },
             child: IconButton(
               icon: const Icon(Icons.backspace, color: Colors.white),
-              onPressed: widget.onRemovePhrase,
+              onPressed: () {
+                widget.onRemovePhrase();
+                updateAppBar();
+              },
             ),
           ),
           IconButton(

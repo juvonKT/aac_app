@@ -206,15 +206,15 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
     setState(() {
       if (selectedPhrases.isNotEmpty) {
         selectedPhrases.removeLast();
-
-        // Check if the first phrase was removed
-        if (selectedPhrases.isEmpty) {
-          fetchTopStartingWords();
-          showStartingWords = true;
-        }
       }
+      else {
+        fetchTopStartingWords();
+        showStartingWords = true;
+      }
+
+      updateSuggestedWords();
     });
-    updateSuggestedWords();
+
     Fluttertoast.showToast(
       msg: localizedMessage,
       toastLength: Toast.LENGTH_SHORT,
