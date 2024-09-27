@@ -5,35 +5,36 @@ class FirestoreService {
 
   Future<List<Map<String, dynamic>>> getPhraseHistory(String? userId) async {
     if (userId == null) return [];
+
     try {
-      // First, try to get data from the server
+      // Try to get data from the server
       QuerySnapshot serverSnapshot = await _db.collection('users')
           .doc(userId)
           .collection('phraseHistory')
           .get(GetOptions(source: Source.server));
 
-      // If we successfully got data from the server, return it
-      if (serverSnapshot.docs.isNotEmpty) {
-        return serverSnapshot.docs.map((doc) => {
-          'phrase': doc['phrase'] as String,
-          'usage_count': doc['usage_count'] as int,
-        }).toList();
-      }
-
-      // If server request failed (likely due to no internet), fall back to cache
-      QuerySnapshot cacheSnapshot = await _db.collection('users')
-          .doc(userId)
-          .collection('phraseHistory')
-          .get(GetOptions(source: Source.cache));
-
-      return cacheSnapshot.docs.map((doc) => {
+      return serverSnapshot.docs.map((doc) => {
         'phrase': doc['phrase'] as String,
         'usage_count': doc['usage_count'] as int,
       }).toList();
     } catch (e) {
-      print("Error fetching phrase history: $e");
-      // In case of any error, return an empty list
-      return [];
+      print("Error fetching from server: $e");
+
+      // If there's an error (likely due to no internet), fall back to cache
+      try {
+        QuerySnapshot cacheSnapshot = await _db.collection('users')
+            .doc(userId)
+            .collection('phraseHistory')
+            .get(GetOptions(source: Source.cache));
+
+        return cacheSnapshot.docs.map((doc) => {
+          'phrase': doc['phrase'] as String,
+          'usage_count': doc['usage_count'] as int,
+        }).toList();
+      } catch (cacheError) {
+        print("Error fetching from cache: $cacheError");
+        return [];
+      }
     }
   }
 
