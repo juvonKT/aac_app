@@ -36,11 +36,13 @@ class PhraseListPage extends StatefulWidget {
 
 class _PhraseListPageState extends State<PhraseListPage> {
   List<Map<String, String>> phrasesList = [];
+  List<Map<String, String>> normalPhrasesList = [];
 
   @override
   void initState() {
     super.initState();
     phrasesList = widget.phrases;
+    normalPhrasesList = phrasesList;
   }
 
   void updateAppBar() {
@@ -107,6 +109,173 @@ class _PhraseListPageState extends State<PhraseListPage> {
       ),
     );
   }
+
+  void _changeToPastTense() {
+    if (widget.category == "actions") {
+      List<Map<String, String>> updatedPhrases = [];
+
+      for (var phraseMap in phrasesList) {
+        String phrase = phraseMap["phrase"]!;
+
+        // Check if the phrase is already in past tense (tracked by a new key)
+        if (phraseMap.containsKey("isPastTense") && phraseMap["isPastTense"] == "true") {
+          updatedPhrases.add(phraseMap); // Skip if it's already converted
+        } else if (phraseMap.containsKey("isProgressiveTense") && phraseMap["isProgressiveTense"] == "true") {
+          updatedPhrases.add(phraseMap); // Skip if it's in progressive tense
+        } else {
+          // Extract the verb (assuming it's the first word of the phrase)
+          List<String> words = phrase.split(" ");
+          String verb = words[0];
+
+          // Convert the verb to past tense
+          String pastTenseVerb = _convertToPastTense(verb);
+          words[0] = pastTenseVerb;
+
+          // Reassemble the phrase without adding any suffix
+          String updatedPhrase = words.join(" ");
+          updatedPhrases.add({
+            "phrase": updatedPhrase,
+            "image": phraseMap["image"] ?? "assets/images/default.png",
+            "isPastTense": "true", // Track that this phrase is in past tense
+          });
+        }
+      }
+
+      // Update phrasesList with the new past tense phrases
+      setState(() {
+        phrasesList = updatedPhrases;
+      });
+    }
+  }
+
+  void _resetToNormalPhrases() {
+    setState(() {
+      phrasesList = List<Map<String, String>>.from(
+          normalPhrasesList.map((phraseMap) => Map<String, String>.from(phraseMap))
+      );
+    });
+
+    widget.savePhrase();
+  }
+
+  String _convertToPastTense(String verb) {
+    // Handle irregular verbs
+    const irregularVerbs = {
+      "arise": "arose",
+      "awake": "awoke",
+      "be": "was",
+      "bear": "bore",
+      "beat": "beat",
+      "become": "became",
+      "begin": "began",
+      "bend": "bent",
+      // a lot more but lazy to add (add when free)
+      "eat": "ate",
+      "read": "read",
+      "drink": "drank",
+      "sleep": "slept",
+      "run": "ran",
+    };
+
+    // Check if the verb is an irregular verb
+    String pastTense;
+    if (irregularVerbs.containsKey(verb.toLowerCase())) {
+      pastTense = irregularVerbs[verb.toLowerCase()]!;
+    } else {
+      pastTense = _convertVerbToPastTense(verb);
+    }
+
+    // Return the past tense with the first letter capitalized
+    return _capitalizeFirstLetter(pastTense);
+  }
+
+// Function to convert a single regular verb to past tense using rules
+  String _convertVerbToPastTense(String verb) {
+    // Rule-based approach for regular verbs
+    if (verb.endsWith("e")) {
+      return verb + "d"; // e.g., "like" -> "liked"
+    } else if (verb.endsWith("y") && verb.length > 1 && !isVowel(verb[verb.length - 2])) {
+      return verb.substring(0, verb.length - 1) + "ied"; // e.g., "hurry" -> "hurried"
+    } else {
+      return verb + "ed"; // e.g., "play" -> "played"
+    }
+  }
+
+// Function to check if a character is a vowel
+  bool isVowel(String char) {
+    return "aeiou".contains(char.toLowerCase());
+  }
+
+// Helper function to capitalize the first letter of a string
+  String _capitalizeFirstLetter(String word) {
+    if (word.isEmpty) return word;
+    return word[0].toUpperCase() + word.substring(1);
+  }
+
+  void _changeToProgressiveTense() {
+    if (widget.category == "actions") {
+      List<Map<String, String>> updatedPhrases = [];
+
+      for (var phraseMap in phrasesList) {
+        String phrase = phraseMap["phrase"]!;
+
+        // Check if the phrase is already in progressive tense (tracked by a new key)
+        if (phraseMap.containsKey("isProgressiveTense") && phraseMap["isProgressiveTense"] == "true") {
+          updatedPhrases.add(phraseMap); // Skip if it's already converted
+        } else if (phraseMap.containsKey("isPastTense") && phraseMap["isPastTense"] == "true") {
+          updatedPhrases.add(phraseMap); // Skip if it's in past tense
+        } else {
+          // Extract the verb (assuming it's the first word of the phrase)
+          List<String> words = phrase.split(" ");
+          String verb = words[0];
+
+          // Convert the verb to progressive tense
+          String progressiveVerb = _convertToProgressiveTense(verb);
+          words[0] = progressiveVerb;
+
+          // Reassemble the phrase without adding any suffix
+          String updatedPhrase = words.join(" ");
+          updatedPhrases.add({
+            "phrase": updatedPhrase,
+            "image": phraseMap["image"] ?? "assets/images/default.png",
+            "isProgressiveTense": "true", // Track that this phrase is in progressive tense
+          });
+        }
+      }
+
+      // Update phrasesList with the new progressive tense phrases
+      setState(() {
+        phrasesList = updatedPhrases;
+      });
+
+      // Save the updated phrases
+      widget.savePhrase();
+    }
+  }
+
+// Helper function to convert a verb to the progressive tense
+  String _convertToProgressiveTense(String verb) {
+    // Handle irregular verbs if necessary
+    const irregularVerbs = {
+      "run": "running",
+    };
+
+    // Check if the verb is irregular (optional)
+    if (irregularVerbs.containsKey(verb.toLowerCase())) {
+      return irregularVerbs[verb.toLowerCase()]!;
+    }
+
+    // Apply rules to convert regular verbs to the progressive tense
+    if (verb.endsWith("e") && verb != "be") {
+      return verb.substring(0, verb.length - 1) + "ing";
+    } else if (verb.endsWith("ie")) {
+      return verb.substring(0, verb.length - 2) + "ying";
+    } else {
+      return verb + "ing";
+    }
+  }
+
+// Example functions to change tenses (you would implement these properly)
 
   @override
   Widget build(BuildContext context) {
@@ -264,11 +433,47 @@ class _PhraseListPageState extends State<PhraseListPage> {
               ),
             ),
           ),
+        if (widget.category == "actions") ...[
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                // Past Tense Button
+                Flexible(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      _changeToPastTense(); // Convert to past tense
+                    },
+                    child: const Text('Past Tense'),
+                  ),
+                ),
+
+                // Progressive Tense Button
+                Flexible(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      _changeToProgressiveTense(); // Convert to progressive tense
+                    },
+                    child: const Text(
+                      'Progressive Tense',
+                      textScaleFactor: 0.9, // Adjust text scale factor as needed
+                    ),
+                  ),
+                ),
+
+                // Reset Button
+                Flexible(
+                  child: ElevatedButton(
+                    onPressed: _resetToNormalPhrases,
+                    child: const Text('Normal'),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
-      ),
-
-
-
+      ]),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         onTap: (index) {

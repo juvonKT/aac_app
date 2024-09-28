@@ -113,16 +113,16 @@
   "questions": {
     "categoryImage": "assets/images/questions/questions.png",
     "phrases": [
-      {"phrase": "What?", "image": "assets/images/questions/what.png"},
-      {"phrase": "Where?", "image": "assets/images/questions/where.png"},
-      {"phrase": "When?", "image": "assets/images/questions/when.png"},
-      {"phrase": "How?", "image": "assets/images/questions/how.png"},
-      {"phrase": "Why?", "image": "assets/images/questions/why.png"},
-      {"phrase": "Who?", "image": "assets/images/questions/who.png"},
-      {"phrase": "Which?", "image": "assets/images/questions/which.png"},
-      {"phrase": "Can I?", "image": "assets/images/questions/can_i.png"},
-      {"phrase": "Do you?", "image": "assets/images/questions/do_you.png"},
-      {"phrase": "Is it?", "image": "assets/images/questions/is_it.png"}
+      {"phrase": "What", "image": "assets/images/questions/what.png"},
+      {"phrase": "Where", "image": "assets/images/questions/where.png"},
+      {"phrase": "When", "image": "assets/images/questions/when.png"},
+      {"phrase": "How", "image": "assets/images/questions/how.png"},
+      {"phrase": "Why", "image": "assets/images/questions/why.png"},
+      {"phrase": "Who", "image": "assets/images/questions/who.png"},
+      {"phrase": "Which", "image": "assets/images/questions/which.png"},
+      {"phrase": "Can I", "image": "assets/images/questions/can_i.png"},
+      {"phrase": "Do you", "image": "assets/images/questions/do_you.png"},
+      {"phrase": "Is it", "image": "assets/images/questions/is_it.png"}
     ]
   },
   "time": {
@@ -148,13 +148,13 @@
       {"phrase": "Please", "image": "assets/images/social/please.png"},
       {"phrase": "Thank You", "image": "assets/images/social/thank_you.png"},
       {"phrase": "Sorry", "image": "assets/images/social/sorry.png"},
-      {"phrase": "How are you?", "image": "assets/images/social/how_are_you.png"},
+      {"phrase": "How are you", "image": "assets/images/social/how_are_you.png"},
       {"phrase": "I need help", "image": "assets/images/social/i_need_help.png"},
       {"phrase": "Nice to meet you", "image": "assets/images/social/nice_to_meet_you.png"},
       {"phrase": "Excuse me", "image": "assets/images/social/excuse_me.png"},
       {"phrase": "I don't understand", "image": "assets/images/social/i_don't_understand.png"},
-      {"phrase": "Can you repeat that?", "image": "assets/images/social/can_you_repeat_that.png"},
-      {"phrase": "What’s your name?", "image": "assets/images/social/what's_your_name.png"},
+      {"phrase": "Can you repeat that", "image": "assets/images/social/can_you_repeat_that.png"},
+      {"phrase": "What’s your name", "image": "assets/images/social/what's_your_name.png"},
       {"phrase": "I’m lost", "image": "assets/images/social/i'm_lost.png"},
       {"phrase": "I’m hungry", "image": "assets/images/social/i'm_hungry.png"},
       {"phrase": "I’m thirsty", "image": "assets/images/social/i'm_thirsty.png"}
