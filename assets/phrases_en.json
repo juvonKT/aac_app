@@ -10,21 +10,43 @@
       {"phrase": "She", "image": "assets/images/people/she.png"},
       {"phrase": "They", "image": "assets/images/people/they.png"},
       {"phrase": "Them", "image": "assets/images/people/them.png"},
-      {"phrase": "Us", "image": "assets/images/people/us.png"}
+      {"phrase": "Us", "image": "assets/images/people/us.png"},
+      {"phrase": "Friend", "image": "assets/images/people/friend.png"},
+      {"phrase": "Family", "image": "assets/images/people/family.png"},
+      {"phrase": "Stranger", "image": "assets/images/people/stranger.png"},
+      {"phrase": "Teacher", "image": "assets/images/people/teacher.png"},
+      {"phrase": "Mom", "image": "assets/images/people/mom.png"},
+      {"phrase": "Dad", "image": "assets/images/people/dad.png"},
+      {"phrase": "Brother", "image": "assets/images/people/brother.png"},
+      {"phrase": "Sister", "image": "assets/images/people/sister.png"},
+      {"phrase": "Nurse", "image": "assets/images/people/nurse.png"},
+      {"phrase": "Caregiver", "image": "assets/images/people/caregiver.png"}
     ]
   },
   "things": {
     "categoryImage": "assets/images/things/things.png",
     "phrases": [
-      {"phrase": "chair", "image": "assets/images/things/chair.png"},
-      {"phrase": "car", "image": "assets/images/things/car.png"},
-      {"phrase": "book", "image": "assets/images/things/book.png"},
-      {"phrase": "pen", "image": "assets/images/things/pen.png"},
-      {"phrase": "table", "image": "assets/images/things/table.png"},
-      {"phrase": "phone", "image": "assets/images/things/phone.png"},
-      {"phrase": "computer", "image": "assets/images/things/computer.png"},
-      {"phrase": "bed", "image": "assets/images/things/bed.png"},
-      {"phrase": "cup", "image": "assets/images/things/cup.png"}
+      {"phrase": "Chair", "image": "assets/images/things/chair.png"},
+      {"phrase": "Car", "image": "assets/images/things/car.png"},
+      {"phrase": "Book", "image": "assets/images/things/book.png"},
+      {"phrase": "Pen", "image": "assets/images/things/pen.png"},
+      {"phrase": "Table", "image": "assets/images/things/table.png"},
+      {"phrase": "Phone", "image": "assets/images/things/phone.png"},
+      {"phrase": "Computer", "image": "assets/images/things/computer.png"},
+      {"phrase": "Bed", "image": "assets/images/things/bed.png"},
+      {"phrase": "Cup", "image": "assets/images/things/cup.png"},
+
+      {"phrase": "Bag", "image": "assets/images/things/bag.png"},
+      {"phrase": "Watch", "image": "assets/images/things/watch.png"},
+      {"phrase": "Glass", "image": "assets/images/things/glass.png"},
+      {"phrase": "Wallet", "image": "assets/images/things/wallet.png"},
+      {"phrase": "Key", "image": "assets/images/things/key.png"},
+      {"phrase": "iPad", "image": "assets/images/things/ipad.png"},
+
+      {"phrase": "Stuff", "image": "assets/images/things/stuff.png"},
+      {"phrase": "It", "image": "assets/images/things/it.png"},
+      {"phrase": "This", "image": "assets/images/things/this.png"},
+      {"phrase": "That", "image": "assets/images/things/that.png"}
     ]
   },
   "actions": {
@@ -39,7 +61,42 @@
       {"phrase": "Jump", "image": "assets/images/actions/jump.png"},
       {"phrase": "Help", "image": "assets/images/actions/help.png"},
       {"phrase": "Read", "image": "assets/images/actions/read.png"},
-      {"phrase": "Listen", "image": "assets/images/actions/listen.png"}
+      {"phrase": "Listen", "image": "assets/images/actions/listen.png"},
+
+      {"phrase": "Is", "image": "assets/images/little_words/is.png"},
+      {"phrase": "Are", "image": "assets/images/little_words/is.png"},
+      {"phrase": "Talk", "image": "assets/images/actions/talk.png"},
+      {"phrase": "Sing", "image": "assets/images/actions/sing.png"},
+      {"phrase": "Dance", "image": "assets/images/actions/dance.png"},
+      {"phrase": "Swim", "image": "assets/images/actions/swim.png"},
+      {"phrase": "Want", "image": "assets/images/actions/want.png"},
+      {"phrase": "Stop", "image": "assets/images/actions/stop.png"},
+      {"phrase": "See", "image": "assets/images/actions/see.png"},
+      {"phrase": "Think", "image": "assets/images/actions/think.png"},
+      {"phrase": "Go", "image": "assets/images/actions/go.png"},
+      {"phrase": "Look", "image": "assets/images/actions/look.png"},
+      {"phrase": "Know", "image": "assets/images/actions/know.png"},
+      {"phrase": "Come", "image": "assets/images/actions/come.png"},
+      {"phrase": "Put", "image": "assets/images/actions/put.png"},
+      {"phrase": "Say", "image": "assets/images/actions/say.png"},
+      {"phrase": "Do", "image": "assets/images/actions/do.png"},
+      {"phrase": "Get", "image": "assets/images/actions/get.png"},
+      {"phrase": "Take", "image": "assets/images/actions/take.png"},
+      {"phrase": "Make", "image": "assets/images/actions/make.png"},
+      {"phrase": "Give", "image": "assets/images/actions/give.png"},
+      {"phrase": "Have", "image": "assets/images/actions/have.png"},
+      {"phrase": "Use", "image": "assets/images/actions/use.png"},
+      {"phrase": "Tell", "image": "assets/images/actions/tell.png"},
+      {"phrase": "Sit", "image": "assets/images/actions/sit.png"},
+      {"phrase": "Open", "image": "assets/images/actions/open.png"},
+      {"phrase": "Start", "image": "assets/images/actions/start.png"},
+      {"phrase": "Try", "image": "assets/images/actions/try.png"},
+      {"phrase": "Wait", "image": "assets/images/actions/wait.png"},
+      {"phrase": "Watch", "image": "assets/images/actions/watch.png"},
+      {"phrase": "Wash", "image": "assets/images/actions/wash.png"},
+      {"phrase": "Turn", "image": "assets/images/actions/turn.png"},
+      {"phrase": "Stay", "image": "assets/images/actions/stay.png"},
+      {"phrase": "Show", "image": "assets/images/actions/show.png"}
     ]
   },
   "places": {
@@ -54,7 +111,11 @@
       {"phrase": "Library", "image": "assets/images/places/library.png"},
       {"phrase": "Restaurant", "image": "assets/images/places/restaurant.png"},
       {"phrase": "Hospital", "image": "assets/images/places/hospital.png"},
-      {"phrase": "Gym", "image": "assets/images/places/gym.png"}
+      {"phrase": "Gym", "image": "assets/images/places/gym.png"},
+      {"phrase": "Beach", "image": "assets/images/places/beach.png"},
+      {"phrase": "Office", "image": "assets/images/places/office.png"},
+      {"phrase": "Hotel", "image": "assets/images/places/hotel.png"},
+      {"phrase": "Shopping Mall", "image": "assets/images/places/shop.png"}
     ]
   },
   "food": {
@@ -73,7 +134,18 @@
       {"phrase": "Pasta", "image": "assets/images/food/pasta.png"},
       {"phrase": "Yogurt", "image": "assets/images/food/yogurt.png"},
       {"phrase": "Grapes", "image": "assets/images/food/grapes.png"},
-      {"phrase": "Orange", "image": "assets/images/food/orange.png"}
+      {"phrase": "Orange", "image": "assets/images/food/orange.png"},
+
+      {"phrase": "Sandwich", "image": "assets/images/food/sandwich.png"},
+      {"phrase": "Pizza", "image": "assets/images/food/pizza.png"},
+      {"phrase": "Salad", "image": "assets/images/food/salad.png"},
+      {"phrase": "Fish", "image": "assets/images/food/fish.png"},
+      {"phrase": "Cake", "image": "assets/images/food/cake.png"},
+      {"phrase": "Fruit", "image": "assets/images/food/fruit.png"},
+      {"phrase": "Snack", "image": "assets/images/food/snack.png"},
+      {"phrase": "Dinner", "image": "assets/images/food/dinner.png"},
+      {"phrase": "Lunch", "image": "assets/images/food/lunch.png"},
+      {"phrase": "Breakfast", "image": "assets/images/food/breakfast.png"}
     ]
   },
   "feelings": {
@@ -87,7 +159,15 @@
       {"phrase": "Tired", "image": "assets/images/feelings/tired.png"},
       {"phrase": "Bored", "image": "assets/images/feelings/bored.png"},
       {"phrase": "Surprised", "image": "assets/images/feelings/surprised.png"},
-      {"phrase": "Nervous", "image": "assets/images/feelings/nervous.png"}
+      {"phrase": "Nervous", "image": "assets/images/feelings/nervous.png"},
+
+      {"phrase": "Calm", "image": "assets/images/feelings/calm.png"},
+      {"phrase": "Confused", "image": "assets/images/feelings/confused.png"},
+      {"phrase": "Worried", "image": "assets/images/feelings/worried.png"},
+      {"phrase": "Sick", "image": "assets/images/feelings/sick.png"},
+      {"phrase": "Safe", "image": "assets/images/feelings/safe.png"},
+      {"phrase": "Hurt", "image": "assets/images/feelings/hurt.png"},
+      {"phrase": "Hungry", "image": "assets/images/feelings/hungry.png"}
     ]
   },
   "descriptive": {
@@ -107,7 +187,22 @@
       {"phrase": "Loud", "image": "assets/images/descriptive/loud.png"},
       {"phrase": "Quiet", "image": "assets/images/descriptive/quiet.png"},
       {"phrase": "Heavy", "image": "assets/images/descriptive/heavy.png"},
-      {"phrase": "Light", "image": "assets/images/descriptive/light.png"}
+      {"phrase": "Light", "image": "assets/images/descriptive/light.png"},
+
+      {"phrase": "Good", "image": "assets/images/descriptive/good.png"},
+      {"phrase": "Bad", "image": "assets/images/descriptive/bad.png"},
+      {"phrase": "Different", "image": "assets/images/descriptive/different.png"},
+      {"phrase": "Same", "image": "assets/images/descriptive/same.png"},
+      {"phrase": "Little", "image": "assets/images/descriptive/little.png"},
+      {"phrase": "Disgusting", "image": "assets/images/descriptive/disgusting.png"},
+      {"phrase": "Nice", "image": "assets/images/descriptive/nice.png"},
+      {"phrase": "Favorite", "image": "assets/images/descriptive/favorite.png"},
+      {"phrase": "Fun", "image": "assets/images/descriptive/fun.png"},
+      {"phrase": "Funny", "image": "assets/images/descriptive/funny.png"},
+      {"phrase": "Old", "image": "assets/images/descriptive/old.png"},
+      {"phrase": "New", "image": "assets/images/descriptive/new.png"},
+      {"phrase": "Dirty", "image": "assets/images/descriptive/dirty.png"},
+      {"phrase": "Wet", "image": "assets/images/descriptive/wet.png"}
     ]
   },
   "questions": {
@@ -120,9 +215,11 @@
       {"phrase": "Why", "image": "assets/images/questions/why.png"},
       {"phrase": "Who", "image": "assets/images/questions/who.png"},
       {"phrase": "Which", "image": "assets/images/questions/which.png"},
-      {"phrase": "Can I", "image": "assets/images/questions/can_i.png"},
+      {"phrase": "Can", "image": "assets/images/questions/can_i.png"},
       {"phrase": "Do you", "image": "assets/images/questions/do_you.png"},
-      {"phrase": "Is it", "image": "assets/images/questions/is_it.png"}
+      {"phrase": "Is it", "image": "assets/images/questions/is_it.png"},
+
+      {"phrase": "Will", "image": "assets/images/questions/is_it.png"}
     ]
   },
   "time": {
@@ -137,7 +234,24 @@
       {"phrase": "Yesterday", "image": "assets/images/time/yesterday.png"},
       {"phrase": "Now", "image": "assets/images/time/now.png"},
       {"phrase": "Later", "image": "assets/images/time/later.png"},
-      {"phrase": "Soon", "image": "assets/images/time/soon.png"}
+      {"phrase": "Soon", "image": "assets/images/time/soon.png"},
+
+      {"phrase": "Next Week", "image": "assets/images/time/next_week.png"},
+      {"phrase": "Next Month", "image": "assets/images/time/next_month.png"},
+      {"phrase": "Day", "image": "assets/images/time/day.png"},
+      {"phrase": "Month", "image": "assets/images/time/month.png"},
+      {"phrase": "Year", "image": "assets/images/time/year.png"},
+      {"phrase": "Tonight", "image": "assets/images/time/tonight.png"},
+      {"phrase": "Always", "image": "assets/images/time/always.png"},
+      {"phrase": "Again", "image": "assets/images/time/again.png"},
+      {"phrase": "Never", "image": "assets/images/time/never.png"},
+      {"phrase": "Early", "image": "assets/images/time/early.png"},
+      {"phrase": "Week", "image": "assets/images/time/week.png"},
+      {"phrase": "Weekend", "image": "assets/images/time/weekend.png"},
+      {"phrase": "Before", "image": "assets/images/time/before.png"},
+      {"phrase": "After", "image": "assets/images/time/after.png"},
+      {"phrase": "First", "image": "assets/images/time/first.png"},
+      {"phrase": "Last", "image": "assets/images/time/last.png"}
     ]
   },
   "social": {
@@ -157,7 +271,18 @@
       {"phrase": "What’s your name", "image": "assets/images/social/what's_your_name.png"},
       {"phrase": "I’m lost", "image": "assets/images/social/i'm_lost.png"},
       {"phrase": "I’m hungry", "image": "assets/images/social/i'm_hungry.png"},
-      {"phrase": "I’m thirsty", "image": "assets/images/social/i'm_thirsty.png"}
+      {"phrase": "I’m thirsty", "image": "assets/images/social/i'm_thirsty.png"},
+
+      {"phrase": "Welcome", "image": "assets/images/social/welcome.png"},
+      {"phrase": "Good Morning", "image": "assets/images/social/good_morning.png"},
+      {"phrase": "Good Night", "image": "assets/images/social/good_night.png"},
+      {"phrase": "Take Care", "image": "assets/images/social/take_care.png"},
+      {"phrase": "See You Later", "image": "assets/images/social/see_you_later.png"},
+      {"phrase": "You're welcome", "image": "assets/images/social/youre_welcome.png"},
+      {"phrase": "Let's chat", "image": "assets/images/social/lets_chat.png"},
+      {"phrase": "I have something to say", "image": "assets/images/social/i_have_something_to_say.png"},
+      {"phrase": "I'm joking", "image": "assets/images/social/im_joking.png"},
+      {"phrase": "Please wait", "image": "assets/images/social/please_wait.png"}
     ]
   },
   "health": {
@@ -178,6 +303,153 @@
       {"phrase": "Throat", "image": "assets/images/health/throat.png"},
       {"phrase": "Cough", "image": "assets/images/health/cough.png"},
       {"phrase": "Fever", "image": "assets/images/health/fever.png"}
+    ]
+  },
+
+
+  "transportation": {
+    "categoryImage": "assets/images/transportation/transportation.png",
+    "phrases": [
+      {"phrase": "Bus", "image": "assets/images/transportation/bus.png"},
+      {"phrase": "Train", "image": "assets/images/transportation/train.png"},
+      {"phrase": "Bicycle", "image": "assets/images/transportation/bicycle.png"},
+      {"phrase": "Taxi", "image": "assets/images/transportation/taxi.png"},
+      {"phrase": "Walking", "image": "assets/images/transportation/walking.png"},
+      {"phrase": "Car", "image": "assets/images/transportation/car.png"}
+    ]
+  },
+  "weather": {
+    "categoryImage": "assets/images/weather/weather.png",
+    "phrases": [
+      {"phrase": "Sunny", "image": "assets/images/weather/sunny.png"},
+      {"phrase": "Rainy", "image": "assets/images/weather/rainy.png"},
+      {"phrase": "Cloudy", "image": "assets/images/weather/cloudy.png"},
+      {"phrase": "Windy", "image": "assets/images/weather/windy.png"},
+      {"phrase": "Snowy", "image": "assets/images/weather/snowy.png"},
+      {"phrase": "Hot", "image": "assets/images/weather/hot.png"},
+      {"phrase": "Cold", "image": "assets/images/weather/cold.png"}
+    ]
+  },
+  "preferences": {
+    "categoryImage": "assets/images/preferences/preferences.png",
+    "phrases": [
+      {"phrase": "I like it", "image": "assets/images/preferences/i_like_it.png"},
+      {"phrase": "I don’t like it", "image": "assets/images/preferences/i_dont_like_it.png"},
+      {"phrase": "I want this", "image": "assets/images/preferences/i_want_this.png"},
+      {"phrase": "I need this", "image": "assets/images/preferences/i_need_this.png"},
+      {"phrase": "I prefer", "image": "assets/images/preferences/i_prefer.png"},
+      {"phrase": "I love", "image": "assets/images/preferences/i_love.png"}
+    ]
+  },
+  "little words": {
+    "categoryImage": "assets/images/little_words/little_words.png",
+    "phrases": [
+      {"phrase": "In", "image": "assets/images/little_words/in.png"},
+      {"phrase": "Out", "image": "assets/images/little_words/out.png"},
+      {"phrase": "Up", "image": "assets/images/little_words/up.png"},
+      {"phrase": "Down", "image": "assets/images/little_words/down.png"},
+      {"phrase": "And", "image": "assets/images/little_words/and.png"},
+      {"phrase": "Not", "image": "assets/images/little_words/not.png"},
+      {"phrase": "Some", "image": "assets/images/little_words/some.png"},
+      {"phrase": "Because", "image": "assets/images/little_words/because.png"},
+      {"phrase": "More", "image": "assets/images/little_words/more.png"},
+      {"phrase": "To", "image": "assets/images/little_words/to.png"},
+      {"phrase": "For", "image": "assets/images/little_words/for.png"},
+      {"phrase": "On", "image": "assets/images/little_words/on.png"},
+      {"phrase": "With", "image": "assets/images/little_words/with.png"},
+      {"phrase": "Off", "image": "assets/images/little_words/off.png"},
+      {"phrase": "All", "image": "assets/images/little_words/all.png"},
+      {"phrase": "Too", "image": "assets/images/little_words/too.png"},
+      {"phrase": "Don't", "image": "assets/images/little_words/dont.png"},
+      {"phrase": "At", "image": "assets/images/little_words/at.png"},
+      {"phrase": "Away", "image": "assets/images/little_words/away.png"},
+      {"phrase": "By", "image": "assets/images/little_words/by.png"},
+      {"phrase": "From", "image": "assets/images/little_words/from.png"},
+      {"phrase": "Over", "image": "assets/images/little_words/over.png"},
+      {"phrase": "Under", "image": "assets/images/little_words/under.png"},
+      {"phrase": "Need", "image": "assets/images/little_words/under.png"}
+    ]
+  },
+  "activities": {
+    "categoryImage": "assets/images/activities/activities.png",
+    "phrases": [
+      {"phrase": "Birthday", "image": "assets/images/activities/birthday.png"},
+      {"phrase": "Game", "image": "assets/images/activities/game.png"},
+      {"phrase": "Music", "image": "assets/images/activities/music.png"},
+      {"phrase": "Outside", "image": "assets/images/activities/outside.png"},
+      {"phrase": "TV", "image": "assets/images/activities/tv.png"},
+      {"phrase": "Work", "image": "assets/images/activities/work.png"}
+    ]
+  },
+  "communication": {
+    "categoryImage": "assets/images/communication/communication.png",
+    "phrases": [
+      {"phrase": "Email", "image": "assets/images/communication/email.png"},
+      {"phrase": "Message", "image": "assets/images/communication/message.png"},
+      {"phrase": "Social media", "image": "assets/images/communication/social_media.png"},
+      {"phrase": "Call", "image": "assets/images/communication/call.png"},
+      {"phrase": "Change", "image": "assets/images/communication/change.png"}
+    ]
+  },
+  "help": {
+    "categoryImage": "assets/images/help/help.png",
+    "phrases": [
+      {"phrase": "I don't know", "image": "assets/images/help/i_dont_know.png"},
+      {"phrase": "Yes", "image": "assets/images/help/yes.png"},
+      {"phrase": "No", "image": "assets/images/help/no.png"},
+      {"phrase": "Maybe", "image": "assets/images/help/maybe.png"},
+      {"phrase": "Not ready", "image": "assets/images/help/not_ready.png"},
+      {"phrase": "I need to talk to you", "image": "assets/images/help/i_need_to_talk_to_you.png"},
+      {"phrase": "Please get my AAC", "image": "assets/images/help/please_get_my_aac.png"},
+      {"phrase": "That's not what I said", "image": "assets/images/help/thats_not_what_i_said.png"},
+      {"phrase": "Something's wrong", "image": "assets/images/help/somethings_wrong.png"},
+      {"phrase": "Ask a yes/no question", "image": "assets/images/help/ask_a_yes_no_question.png"},
+      {"phrase": "Charge my iPad", "image": "assets/images/help/charge_my_ipad.png"},
+      {"phrase": "I have something to say", "image": "assets/images/help/i_have_something_to_say.png"},
+      {"phrase": "I don't understand", "image": "assets/images/help/i_dont_understand.png"},
+      {"phrase": "Whatever", "image": "assets/images/help/whatever.png"},
+      {"phrase": "Oops/Backspace", "image": "assets/images/help/oops_backspace.png"},
+      {"phrase": "Space", "image": "assets/images/help/space.png"},
+      {"phrase": "Awesome", "image": "assets/images/help/awesome.png"},
+      {"phrase": "Hurry up!", "image": "assets/images/help/hurry_up.png"},
+      {"phrase": "Help calming down", "image": "assets/images/help/help_calming_down.png"},
+      {"phrase": "Please repeat that", "image": "assets/images/help/please_repeat_that.png"},
+      {"phrase": "Do it myself", "image": "assets/images/help/do_it_myself.png"},
+      {"phrase": "I need a break", "image": "assets/images/help/i_need_a_break.png"}
+    ]
+  },
+  "animals": {
+    "categoryImage": "assets/images/animals/animals.png",
+    "phrases": [
+      {"phrase": "Dog", "image": "assets/images/animals/dog.png"},
+      {"phrase": "Cat", "image": "assets/images/animals/cat.png"},
+      {"phrase": "Bird", "image": "assets/images/animals/bird.png"},
+      {"phrase": "Fish", "image": "assets/images/animals/fish.png"},
+      {"phrase": "Horse", "image": "assets/images/animals/horse.png"}
+    ]
+  },
+  "numbers": {
+    "categoryImage": "assets/images/numbers/numbers.png",
+    "phrases": [
+      {"phrase": "0", "image": "assets/images/numbers/0.png"},
+      {"phrase": "1", "image": "assets/images/numbers/1.png"},
+      {"phrase": "2", "image": "assets/images/numbers/2.png"},
+      {"phrase": "3", "image": "assets/images/numbers/3.png"},
+      {"phrase": "4", "image": "assets/images/numbers/4.png"},
+      {"phrase": "5", "image": "assets/images/numbers/5.png"},
+      {"phrase": "6", "image": "assets/images/numbers/6.png"},
+      {"phrase": "7", "image": "assets/images/numbers/7.png"},
+      {"phrase": "8", "image": "assets/images/numbers/8.png"},
+      {"phrase": "9", "image": "assets/images/numbers/9.png"}
+    ]
+  },
+  "punctuation": {
+    "categoryImage": "assets/images/punctuation/punctuation.png",
+    "phrases": [
+      {"phrase": ".", "image": "assets/images/punctuation/period.png"},
+      {"phrase": "?", "image": "assets/images/punctuation/question_mark.png"},
+      {"phrase": "!", "image": "assets/images/punctuation/question_mark.png"},
+      {"phrase": ",", "image": "assets/images/punctuation/question_mark.png"}
     ]
   }
 }

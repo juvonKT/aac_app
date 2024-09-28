@@ -247,7 +247,7 @@ class _PhraseListPageState extends State<PhraseListPage> {
   String _convertToProgressiveTense(String verb) {
     // Handle irregular verbs if necessary
     const irregularVerbs = {
-      "run": "running",
+      "run": "Running",
     };
 
     // Check if the verb is irregular (optional)

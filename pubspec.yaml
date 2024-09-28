@@ -73,6 +73,7 @@ flutter:
     - assets/phrases_zh.json
     - assets/phrases_ms.json
     - assets/phrases_ja.json
+
     - assets/images/test.png
     - assets/images/people/people.png
     - assets/images/things/things.png
@@ -85,6 +86,7 @@ flutter:
     - assets/images/time/time.png
     - assets/images/social/social.png
     - assets/images/health/health.png
+
     - assets/images/people/I.png
     - assets/images/people/you.png
     - assets/images/people/me.png
@@ -94,6 +96,17 @@ flutter:
     - assets/images/people/they.png
     - assets/images/people/them.png
     - assets/images/people/us.png
+    - assets/images/people/friend.png
+    - assets/images/people/family.png
+    - assets/images/people/stranger.png
+    - assets/images/people/teacher.png
+    - assets/images/people/mom.png
+    - assets/images/people/dad.png
+    - assets/images/people/brother.png
+    - assets/images/people/sister.png
+    - assets/images/people/nurse.png
+    - assets/images/people/caregiver.png
+
     - assets/images/things/chair.png
     - assets/images/things/car.png
     - assets/images/things/book.png
@@ -103,6 +116,13 @@ flutter:
     - assets/images/things/computer.png
     - assets/images/things/bed.png
     - assets/images/things/cup.png
+    - assets/images/things/bag.png
+    - assets/images/things/watch.png
+    - assets/images/things/glass.png
+    - assets/images/things/wallet.png
+    - assets/images/things/key.png
+    - assets/images/things/ipad.png
+
     - assets/images/actions/eat.png
     - assets/images/actions/drink.png
     - assets/images/actions/sleep.png
@@ -113,6 +133,7 @@ flutter:
     - assets/images/actions/help.png
     - assets/images/actions/read.png
     - assets/images/actions/listen.png
+
     - assets/images/places/here.png
     - assets/images/places/there.png
     - assets/images/places/home.png
@@ -123,6 +144,11 @@ flutter:
     - assets/images/places/restaurant.png
     - assets/images/places/hospital.png
     - assets/images/places/gym.png
+    - assets/images/places/beach.png
+    - assets/images/places/office.png
+    - assets/images/places/hotel.png
+    - assets/images/places/shop.png
+
     - assets/images/food/apple.png
     - assets/images/food/banana.png
     - assets/images/food/carrot.png
@@ -138,6 +164,7 @@ flutter:
     - assets/images/food/yogurt.png
     - assets/images/food/grapes.png
     - assets/images/food/orange.png
+
     - assets/images/feelings/happy.png
     - assets/images/feelings/sad.png
     - assets/images/feelings/excited.png
@@ -147,6 +174,7 @@ flutter:
     - assets/images/feelings/bored.png
     - assets/images/feelings/surprised.png
     - assets/images/feelings/nervous.png
+
     - assets/images/descriptive/red.png
     - assets/images/descriptive/blue.png
     - assets/images/descriptive/green.png
@@ -162,6 +190,7 @@ flutter:
     - assets/images/descriptive/quiet.png
     - assets/images/descriptive/heavy.png
     - assets/images/descriptive/light.png
+
     - assets/images/questions/what.png
     - assets/images/questions/where.png
     - assets/images/questions/when.png
