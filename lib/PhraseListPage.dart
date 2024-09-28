@@ -119,9 +119,9 @@ class _PhraseListPageState extends State<PhraseListPage> {
 
         // Check if the phrase is already in past tense (tracked by a new key)
         if (phraseMap.containsKey("isPastTense") && phraseMap["isPastTense"] == "true") {
-          updatedPhrases.add(phraseMap); // Skip if it's already converted
+          updatedPhrases = normalPhrasesList;
         } else if (phraseMap.containsKey("isProgressiveTense") && phraseMap["isProgressiveTense"] == "true") {
-          updatedPhrases.add(phraseMap); // Skip if it's in progressive tense
+          updatedPhrases = normalPhrasesList;
         } else {
           // Extract the verb (assuming it's the first word of the phrase)
           List<String> words = phrase.split(" ");
@@ -146,16 +146,6 @@ class _PhraseListPageState extends State<PhraseListPage> {
         phrasesList = updatedPhrases;
       });
     }
-  }
-
-  void _resetToNormalPhrases() {
-    setState(() {
-      phrasesList = List<Map<String, String>>.from(
-          normalPhrasesList.map((phraseMap) => Map<String, String>.from(phraseMap))
-      );
-    });
-
-    widget.savePhrase();
   }
 
   String _convertToPastTense(String verb) {
@@ -221,9 +211,9 @@ class _PhraseListPageState extends State<PhraseListPage> {
 
         // Check if the phrase is already in progressive tense (tracked by a new key)
         if (phraseMap.containsKey("isProgressiveTense") && phraseMap["isProgressiveTense"] == "true") {
-          updatedPhrases.add(phraseMap); // Skip if it's already converted
+          updatedPhrases = normalPhrasesList; // Skip if it's already converted
         } else if (phraseMap.containsKey("isPastTense") && phraseMap["isPastTense"] == "true") {
-          updatedPhrases.add(phraseMap); // Skip if it's in past tense
+          updatedPhrases = normalPhrasesList; // Skip if it's in past tense
         } else {
           // Extract the verb (assuming it's the first word of the phrase)
           List<String> words = phrase.split(" ");
@@ -457,16 +447,7 @@ class _PhraseListPageState extends State<PhraseListPage> {
                     },
                     child: const Text(
                       'Progressive Tense',
-                      textScaleFactor: 0.9, // Adjust text scale factor as needed
                     ),
-                  ),
-                ),
-
-                // Reset Button
-                Flexible(
-                  child: ElevatedButton(
-                    onPressed: _resetToNormalPhrases,
-                    child: const Text('Normal'),
                   ),
                 ),
               ],
