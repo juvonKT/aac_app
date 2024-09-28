@@ -20,6 +20,6 @@
   "categoryDeleted": "Kategori '{category}' telah dipadamkan",
   "light": "Terang",
   "dark": "Gelap",
-  "colourPaletteGenerator" : "Penjana Palet Warna",
+  "system" : "Sistem",
   "userGuideContent": "Kandungan Panduan Pengguna Di Sini"
 }

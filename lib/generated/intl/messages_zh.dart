@@ -30,8 +30,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "addPhrase": MessageLookupByLibrary.simpleMessage("添加短语"),
         "cancel": MessageLookupByLibrary.simpleMessage("取消"),
         "categoryDeleted": m0,
-        "colourPaletteGenerator":
-            MessageLookupByLibrary.simpleMessage("调色板生成器"),
         "colourScheme": MessageLookupByLibrary.simpleMessage("配色方案"),
         "dark": MessageLookupByLibrary.simpleMessage("深色"),
         "delete": MessageLookupByLibrary.simpleMessage("删除"),
@@ -44,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "newPhrase": MessageLookupByLibrary.simpleMessage("新短语"),
         "removeMessage": MessageLookupByLibrary.simpleMessage("按住以删除全部"),
         "setting": MessageLookupByLibrary.simpleMessage("设置"),
+        "system": MessageLookupByLibrary.simpleMessage("系统"),
         "userA": MessageLookupByLibrary.simpleMessage("用户A"),
         "userB": MessageLookupByLibrary.simpleMessage("用户B"),
         "userC": MessageLookupByLibrary.simpleMessage("用户C"),

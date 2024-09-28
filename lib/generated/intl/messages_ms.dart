@@ -31,8 +31,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "addPhrase": MessageLookupByLibrary.simpleMessage("Tambah Frasa"),
         "cancel": MessageLookupByLibrary.simpleMessage("Batal"),
         "categoryDeleted": m0,
-        "colourPaletteGenerator":
-            MessageLookupByLibrary.simpleMessage("Penjana Palet Warna"),
         "colourScheme": MessageLookupByLibrary.simpleMessage("Skema Warna"),
         "dark": MessageLookupByLibrary.simpleMessage("Gelap"),
         "delete": MessageLookupByLibrary.simpleMessage("Padam"),
@@ -48,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMessage": MessageLookupByLibrary.simpleMessage(
             "Tekan dan tahan untuk membuang semua"),
         "setting": MessageLookupByLibrary.simpleMessage("Tetapan"),
+        "system": MessageLookupByLibrary.simpleMessage("Sistem"),
         "userA": MessageLookupByLibrary.simpleMessage("Pengguna A"),
         "userB": MessageLookupByLibrary.simpleMessage("Pengguna B"),
         "userC": MessageLookupByLibrary.simpleMessage("Pengguna C"),

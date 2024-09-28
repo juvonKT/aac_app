@@ -20,6 +20,6 @@
   "categoryDeleted": "カテゴリ'{category}'が削除されました",
   "light": "ライト",
   "dark": "ダーク",
-  "colourPaletteGenerator": "カラーパレットジェネレーター",
+  "system": "システム",
   "userGuideContent": "ユーザーガイドの内容がここに表示されます"
 }

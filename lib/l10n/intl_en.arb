@@ -20,7 +20,7 @@
   "categoryDeleted": "Category '{category}' has been deleted",
   "light": "Light",
   "dark": "Dark",
-  "colourPaletteGenerator" : "Colour Palette Generator",
+  "system" : "System",
   "userGuideContent": "User Guide Content Goes Here"
 }
 

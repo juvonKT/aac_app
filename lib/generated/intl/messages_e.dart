@@ -31,8 +31,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "addPhrase": MessageLookupByLibrary.simpleMessage("Add Phrase"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "categoryDeleted": m0,
-        "colourPaletteGenerator":
-            MessageLookupByLibrary.simpleMessage("Colour Palette Generator"),
         "colourScheme": MessageLookupByLibrary.simpleMessage("Colour Scheme"),
         "dark": MessageLookupByLibrary.simpleMessage("Dark"),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
@@ -47,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMessage":
             MessageLookupByLibrary.simpleMessage("Hold to remove all"),
         "setting": MessageLookupByLibrary.simpleMessage("Settings"),
+        "system": MessageLookupByLibrary.simpleMessage("System"),
         "userA": MessageLookupByLibrary.simpleMessage("User A"),
         "userB": MessageLookupByLibrary.simpleMessage("User B"),
         "userC": MessageLookupByLibrary.simpleMessage("User C"),

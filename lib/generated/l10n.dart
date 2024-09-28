@@ -250,11 +250,11 @@ class S {
     );
   }
 
-  /// `Colour Palette Generator`
-  String get colourPaletteGenerator {
+  /// `System`
+  String get system {
     return Intl.message(
-      'Colour Palette Generator',
-      name: 'colourPaletteGenerator',
+      'System',
+      name: 'system',
       desc: '',
       args: [],
     );

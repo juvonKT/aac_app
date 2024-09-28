@@ -423,37 +423,47 @@ class _PhraseListPageState extends State<PhraseListPage> {
               ),
             ),
           ),
-        if (widget.category == "actions") ...[
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                // Past Tense Button
-                Flexible(
-                  child: ElevatedButton(
-                    onPressed: () {
-                      _changeToPastTense(); // Convert to past tense
-                    },
-                    child: const Text('Past Tense'),
-                  ),
-                ),
-
-                // Progressive Tense Button
-                Flexible(
-                  child: ElevatedButton(
-                    onPressed: () {
-                      _changeToProgressiveTense(); // Convert to progressive tense
-                    },
-                    child: const Text(
-                      'Progressive Tense',
+          if (widget.category == "actions") ...[
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    child: ElevatedButton.icon(
+                      onPressed: () => _changeToPastTense(),
+                      icon: const Icon(Icons.history, size: 18),
+                      label: const Text('Past'),
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor: Colors.blue[700],
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: ElevatedButton.icon(
+                      onPressed: () => _changeToProgressiveTense(),
+                      icon: const Icon(Icons.access_time, size: 18),
+                      label: const Text('Progressive'),
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor: Colors.green[700],
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
       ]),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,

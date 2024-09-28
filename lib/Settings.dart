@@ -135,7 +135,7 @@ class _SettingsState extends State<Settings> {
                 ),
                 DropdownMenuItem(
                   value: ThemeMode.system,
-                  child: Text(s.colourPaletteGenerator),
+                  child: Text(s.system),
                 ),
               ],
               underline: const SizedBox(),

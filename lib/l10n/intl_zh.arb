@@ -20,6 +20,6 @@
   "categoryDeleted": "类别 '{category}' 已被删除",
   "light": "浅色",
   "dark": "深色",
-  "colourPaletteGenerator" : "调色板生成器",
+  "system" : "系统",
   "userGuideContent": "用户指南内容在这里"
 }

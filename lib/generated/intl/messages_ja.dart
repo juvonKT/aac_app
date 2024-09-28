@@ -31,8 +31,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "addPhrase": MessageLookupByLibrary.simpleMessage("フレーズを追加"),
         "cancel": MessageLookupByLibrary.simpleMessage("キャンセル"),
         "categoryDeleted": m0,
-        "colourPaletteGenerator":
-            MessageLookupByLibrary.simpleMessage("カラーパレットジェネレーター"),
         "colourScheme": MessageLookupByLibrary.simpleMessage("テーマ"),
         "dark": MessageLookupByLibrary.simpleMessage("ダーク"),
         "delete": MessageLookupByLibrary.simpleMessage("削除"),
@@ -45,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "newPhrase": MessageLookupByLibrary.simpleMessage("新しいフレーズ"),
         "removeMessage": MessageLookupByLibrary.simpleMessage("長押ししてすべて削除"),
         "setting": MessageLookupByLibrary.simpleMessage("設定"),
+        "system": MessageLookupByLibrary.simpleMessage("システム"),
         "userA": MessageLookupByLibrary.simpleMessage("ユーザーA"),
         "userB": MessageLookupByLibrary.simpleMessage("ユーザーB"),
         "userC": MessageLookupByLibrary.simpleMessage("ユーザーC"),
