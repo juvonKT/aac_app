@@ -125,7 +125,7 @@ class _PhraseListPageState extends State<PhraseListPage> {
             onLongPress: () {
               widget.onClearPhrases();
               updateAppBar();
-              },
+            },
             child: IconButton(
               icon: const Icon(Icons.backspace, color: Colors.white),
               onPressed: () {
@@ -165,8 +165,7 @@ class _PhraseListPageState extends State<PhraseListPage> {
                   onPressed: () async {
                     final newPhraseText = await Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => AddPhrasePage()),
+                      MaterialPageRoute(builder: (context) => AddPhrasePage()),
                     );
                     if (newPhraseText != null && newPhraseText is String) {
                       setState(() {
@@ -183,78 +182,93 @@ class _PhraseListPageState extends State<PhraseListPage> {
             ),
           ),
           Expanded(
-            child: GridView.builder(
+            child: SingleChildScrollView( // Allowing to scroll
               padding: const EdgeInsets.all(16.0),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                crossAxisSpacing: 16.0,
-                mainAxisSpacing: 16.0,
-              ),
-              itemCount: phrasesList.length,
-              itemBuilder: (context, index) {
-                Map<String, String> phrase = phrasesList[index];
-                return GestureDetector(
-                  onTap: () {
-                    // _firestoreService.addSentence(widget.userId, phrase["phrase"]!);
-                    widget.onPhraseSelected(phrase["phrase"]!);
-                    Navigator.pop(context);
-                  },
-                  onLongPress: () {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: const Text('Delete Phrase'),
-                          content: Text('Are you sure you want to delete "${phrase["phrase"]}"?'),
-                          actions: <Widget>[
-                            TextButton(
-                              child: const Text('Cancel'),
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
+              child: LayoutBuilder(
+                builder: (BuildContext context, BoxConstraints constraints) {
+                  return Wrap(
+                    spacing: 16.0,
+                    runSpacing: 16.0,
+                    children: List.generate(phrasesList.length, (index) {
+                      Map<String, String> phrase = phrasesList[index];
+                      return GestureDetector(
+                        onTap: () {
+                          widget.onPhraseSelected(phrase["phrase"]!);
+                          Navigator.pop(context);
+                        },
+                        onLongPress: () {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: const Text('Delete Phrase'),
+                                content: Text('Are you sure you want to delete "${phrase["phrase"]}"?'),
+                                actions: <Widget>[
+                                  TextButton(
+                                    child: const Text('Cancel'),
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                  ),
+                                  TextButton(
+                                    child: const Text('Delete'),
+                                    onPressed: () {
+                                      deletePhrase(index);
+                                      Navigator.of(context).pop();
+                                    },
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        },
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(
+                            minHeight: 120, // Set the minimum height
+                          ),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * 0.3 - 16, // Fixed width for each box
+                            decoration: BoxDecoration(
+                              color: getColorFromIndex(index),
+                              borderRadius: BorderRadius.circular(18.0),
                             ),
-                            TextButton(
-                              child: const Text('Delete'),
-                              onPressed: () {
-                                deletePhrase(index);
-                                Navigator.of(context).pop();
-                              },
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  phrase["image"]!,
+                                  height: 50.0,
+                                  width: 50.0,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    phrase["phrase"]!,
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    overflow: TextOverflow.visible, // Text wraps
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
-                        );
-                      },
-                    );
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: getColorFromIndex(index),
-                      borderRadius: BorderRadius.circular(18.0),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          phrase["image"]!,
-                          height: 50.0,
-                          width: 50.0,
-                        ),
-                        Text(
-                          phrase["phrase"]!,
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                );
-              },
+                      );
+                    }),
+                  );
+                },
+              ),
             ),
           ),
         ],
       ),
+
+
+
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         onTap: (index) {
