@@ -48,7 +48,7 @@ class _SettingsState extends State<Settings> {
               onChanged: (String? newValue) {
                 if (newValue != null && newValue != 'Add New User') {
                   userProvider.selectUser(newValue);
-                  languageProvider.loadUserLanguage(context);
+                  languageProvider.loadUserLanguage(userProvider);
                   themeProvider.loadUserTheme(context);
                   widget.onLanguageChanged();
                 }
@@ -121,7 +121,7 @@ class _SettingsState extends State<Settings> {
               onChanged: (ThemeMode? newMode) {
                 if (newMode != null) {
                   themeProvider.setTheme(newMode);
-                  userProvider.setUserTheme(newMode.toString());
+                  userProvider.setUserTheme(newMode.toString().split('.').last);
                 }
               },
               items: [

@@ -158,5 +158,12 @@ class UserProvider with ChangeNotifier {
       }
     }
   }
+  String getLanguageCode() {
+    return _selectedLanguage ?? 'en'; // Default to English if no language is set
+  }
+
+  String getTheme() {
+    return _selectedTheme ?? 'light'; // Default to light theme if no theme is set
+  }
 
 }

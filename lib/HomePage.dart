@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:aac_app/providers/language_provider.dart';
+import 'package:aac_app/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'settings.dart';
 import 'package:flutter_tts/flutter_tts.dart';
@@ -46,9 +47,6 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final languageProvider = Provider.of<LanguageProvider>(context, listen: false);
-    languageProvider.loadUserLanguage(context);
-
     loadPhrases().then((data) {
       setState(() {
         phrases = data;
@@ -60,6 +58,13 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      final languageProvider = Provider.of<LanguageProvider>(context, listen: false);
+      final userProvider = Provider.of<UserProvider>(context, listen: false);
+      final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
+
+      languageProvider.loadUserLanguage(userProvider);
+      loadUserTheme(userProvider, themeProvider);
+
       if (widget.userId != null) {
         fetchTopStartingWords();
       }
@@ -85,8 +90,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
       _isLoadingWords = true;
     });
     try {
-      Locale locale = Localizations.localeOf(context);
-      String languageCode = locale.languageCode;
+      final userProvider = Provider.of<UserProvider>(context, listen: false);
+      await userProvider.loadUserData();
+      String languageCode = userProvider.getLanguageCode();
       List<MapEntry<String, int>> words = await _firestoreService.getTopStartingWords(widget.userId, languageCode, 7);
       setState(() {
         topStartingWords = words;
@@ -112,11 +118,13 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
     if (widget.userId != null) {
       await fetchTopStartingWords();
     }
+    loadPhrases();
   }
 
   Future<Map<String, Map<String, dynamic>>> loadPhrases() async {
-    Locale locale = Localizations.localeOf(context);
-    String languageCode = locale.languageCode;
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    await userProvider.loadUserData();
+    String languageCode = userProvider.getLanguageCode();
     final String directory = (await getApplicationDocumentsDirectory()).path;
     final String path = '$directory/phrases_$languageCode.json';
     final File file = File(path);
@@ -158,8 +166,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
   }
 
   Future<void> savePhrases() async {
-    Locale locale = Localizations.localeOf(context);
-    String languageCode = locale.languageCode;
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    await userProvider.loadUserData();
+    String languageCode = userProvider.getLanguageCode();
 
     final String directory = (await getApplicationDocumentsDirectory()).path;
     final String path = '$directory/phrases_$languageCode.json';
@@ -168,8 +177,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
   }
 
   Future<void> updateSuggestedWords() async {
-    Locale locale = Localizations.localeOf(context);
-    String languageCode = locale.languageCode;
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    await userProvider.loadUserData();
+    String languageCode = userProvider.getLanguageCode();
     try {
       List<String> newSuggestions = await apiService.getSuggestions(selectedPhrases, languageCode);
       setState(() {
@@ -191,8 +201,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
     updateSuggestedWords();
     if (tempShowStarting) {
       try {
-        Locale locale = Localizations.localeOf(context);
-        String languageCode = locale.languageCode;
+        final userProvider = Provider.of<UserProvider>(context, listen: false);
+        await userProvider.loadUserData();
+        String languageCode = userProvider.getLanguageCode();
         await _firestoreService.addPhraseForUser(widget.userId, phrase, languageCode);
       } catch (e) {
         print('Error adding phrase to Firestore: $e');
@@ -211,8 +222,6 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
         fetchTopStartingWords();
         showStartingWords = true;
       }
-
-
     });
 
     updateSuggestedWords();
@@ -233,8 +242,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
   }
 
   void _speak() async {
-    Locale locale = Localizations.localeOf(context);
-    String languageCode = locale.languageCode;
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    await userProvider.loadUserData();
+    String languageCode = userProvider.getLanguageCode();
 
     // Set the language for flutter_tts
     await flutterTts.setLanguage(languageCode);
@@ -306,6 +316,20 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("Can't use suggestions")),
       );
+    }
+  }
+
+  void loadUserTheme(UserProvider userProvider, ThemeProvider themeProvider) {
+    String savedTheme = userProvider.getTheme();
+    switch (savedTheme) {
+      case 'light':
+        themeProvider.setTheme(ThemeMode.light);
+        break;
+      case 'dark':
+        themeProvider.setTheme(ThemeMode.dark);
+        break;
+      default:
+        themeProvider.setTheme(ThemeMode.system);
     }
   }
 
