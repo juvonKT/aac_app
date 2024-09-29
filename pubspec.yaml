@@ -164,6 +164,12 @@ flutter:
     - assets/images/food/yogurt.png
     - assets/images/food/grapes.png
     - assets/images/food/orange.png
+    - assets/images/food/sandwich.jpeg
+    - assets/images/food/salad.png
+    - assets/images/food/fish.png
+    - assets/images/food/cake.png
+    - assets/images/food/fruit.png
+    - assets/images/food/snack.png
 
     - assets/images/feelings/happy.png
     - assets/images/feelings/sad.png
@@ -174,6 +180,9 @@ flutter:
     - assets/images/feelings/bored.png
     - assets/images/feelings/surprised.png
     - assets/images/feelings/nervous.png
+    - assets/images/feelings/calm.png
+    - assets/images/feelings/worried.png
+    - assets/images/feelings/safe.png
 
     - assets/images/descriptive/red.png
     - assets/images/descriptive/blue.png
@@ -190,6 +199,14 @@ flutter:
     - assets/images/descriptive/quiet.png
     - assets/images/descriptive/heavy.png
     - assets/images/descriptive/light.png
+    - assets/images/descriptive/good.png
+    - assets/images/descriptive/different.jpg
+    - assets/images/descriptive/same.png
+    - assets/images/descriptive/nice.png
+    - assets/images/descriptive/favourite.png
+    - assets/images/descriptive/old.png
+    - assets/images/descriptive/dirty.png
+    - assets/images/descriptive/wet.png
 
     - assets/images/questions/what.png
     - assets/images/questions/where.png
@@ -244,6 +261,41 @@ flutter:
     - assets/images/health/throat.png
     - assets/images/health/cough.png
     - assets/images/health/fever.png
+
+    - assets/images/transportation/transportation.png
+    - assets/images/transportation/bus.png
+    - assets/images/transportation/train.png
+    - assets/images/transportation/bicycle.png
+    - assets/images/transportation/taxi.png
+    - assets/images/transportation/walking.png
+    - assets/images/transportation/car.png
+
+    - assets/images/weather/weather.png
+    - assets/images/weather/sunny.png
+    - assets/images/weather/rainy.png
+    - assets/images/weather/cloudy.png
+    - assets/images/weather/windy.png
+    - assets/images/weather/snowy.png
+    - assets/images/weather/hot.png
+    - assets/images/weather/cold.png
+
+    - assets/images/animals/animals.png
+    - assets/images/animals/dog.png
+    - assets/images/animals/cat.png
+    - assets/images/animals/bird.png
+    - assets/images/animals/horse.png
+
+    - assets/images/numbers/numbers.jpg
+    - assets/images/numbers/0.png
+    - assets/images/numbers/1.jpeg
+    - assets/images/numbers/2.png
+    - assets/images/numbers/3.png
+    - assets/images/numbers/4.png
+    - assets/images/numbers/5.png
+    - assets/images/numbers/6.png
+    - assets/images/numbers/7.png
+    - assets/images/numbers/8.jpeg
+    - assets/images/numbers/9.png
 
 
     - lib/l10n/
