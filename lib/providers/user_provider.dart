@@ -59,8 +59,15 @@ class UserProvider with ChangeNotifier {
 
     _selectedUser = prefs.getString('selectedUser');
     _selectedUserId = prefs.getString('selectedUserId');
-    _selectedLanguage = prefs.getString('selectedUserLanguage');
-    _selectedTheme = prefs.getString('selectedUserTheme');
+
+    // Load the selected user's language and theme
+    if (_selectedUserId != null) {
+      _selectedLanguage = _userLanguages[_selectedUserId];
+      _selectedTheme = _userThemes[_selectedUserId];
+    } else {
+      _selectedLanguage = prefs.getString('selectedUserLanguage');
+      _selectedTheme = prefs.getString('selectedUserTheme');
+    }
 
     print("LOADING USERS");
     print("selectedUser: $_selectedUser");
@@ -117,17 +124,25 @@ class UserProvider with ChangeNotifier {
   }
 
   Future<void> setUserLanguage(String languageCode) async {
-    _userLanguages[_selectedUserId.toString()] = languageCode;
-    notifyListeners();
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('selectedUserLanguage', languageCode ?? '');
+    if (_selectedUserId != null) {
+      _userLanguages[_selectedUserId!] = languageCode;
+      _selectedLanguage = languageCode;
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('userLanguages', jsonEncode(_userLanguages));
+      await prefs.setString('selectedUserLanguage', languageCode);
+      notifyListeners();
+    }
   }
 
   Future<void> setUserTheme(String theme) async {
-    _userThemes[_selectedUserId.toString()] = theme;
-    notifyListeners();
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('selectedUserTheme', theme ?? '');
+    if (_selectedUserId != null) {
+      _userThemes[_selectedUserId!] = theme;
+      _selectedTheme = theme;
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('userThemes', jsonEncode(_userThemes));
+      await prefs.setString('selectedUserTheme', theme);
+      notifyListeners();
+    }
   }
 
   Future<void> selectUser(String? userName) async {
@@ -142,28 +157,27 @@ class UserProvider with ChangeNotifier {
       if (index != -1 && index < _userIds.length) {
         _selectedUser = userName;
         newSelectedUserId = _userIds[index];
-        _selectedLanguage = _userLanguages[newSelectedUserId];
-        _selectedTheme = _userThemes[newSelectedUserId];
+        _selectedLanguage = _userLanguages[newSelectedUserId] ?? 'en';
+        _selectedTheme = _userThemes[newSelectedUserId] ?? 'light';
       } else {
         print("Error: User $userName found in _users but not in _userIds");
-        // Handle the error, maybe set to the first available user or null
         if (_users.isNotEmpty && _userIds.isNotEmpty) {
           _selectedUser = _users[0];
           newSelectedUserId = _userIds[0];
-          _selectedLanguage = _userLanguages[newSelectedUserId];
-          _selectedTheme = _userThemes[newSelectedUserId];
+          _selectedLanguage = _userLanguages[newSelectedUserId] ?? 'en';
+          _selectedTheme = _userThemes[newSelectedUserId] ?? 'light';
         } else {
           _selectedUser = null;
           newSelectedUserId = null;
-          _selectedLanguage = null;
-          _selectedTheme = null;
+          _selectedLanguage = 'en';
+          _selectedTheme = 'light';
         }
       }
     } else {
       _selectedUser = null;
       newSelectedUserId = null;
-      _selectedLanguage = null;
-      _selectedTheme = null;
+      _selectedLanguage = 'en';
+      _selectedTheme = 'light';
     }
 
     print("SELECTING USER");
@@ -175,15 +189,10 @@ class UserProvider with ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('selectedUser', _selectedUser ?? '');
     await prefs.setString('selectedUserId', newSelectedUserId ?? '');
-    await prefs.setString('selectedUserLanguage', _selectedLanguage ?? '');
-    await prefs.setString('selectedUserTheme', _selectedTheme ?? '');
+    await prefs.setString('selectedUserLanguage', _selectedLanguage ?? 'en');
+    await prefs.setString('selectedUserTheme', _selectedTheme ?? 'light');
 
-    // Set _selectedUserId after saving to SharedPreferences
     _selectedUserId = newSelectedUserId;
-
-    // Verify saved data
-    print("Verification - Saved selectedUser: ${prefs.getString('selectedUser')}");
-    print("Verification - Saved selectedUserId: ${prefs.getString('selectedUserId')}");
 
     notifyListeners();
   }
@@ -219,12 +228,14 @@ class UserProvider with ChangeNotifier {
       }
     }
   }
+
   String getLanguageCode() {
-    return _selectedLanguage ?? 'en'; // Default to English if no language is set
+    return _selectedLanguage ?? 'en';
   }
 
   String getTheme() {
-    return _selectedTheme ?? 'light'; // Default to light theme if no theme is set
+    return _selectedTheme ?? 'light';
   }
 
 }
+

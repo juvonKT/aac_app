@@ -14,10 +14,19 @@ class ThemeProvider with ChangeNotifier {
 
   void loadUserTheme(BuildContext context) {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
-    print("LOADING USER THEME");
-    print(userProvider.selectedTheme);
-    if (userProvider.selectedTheme != null) {
-      setTheme(userProvider.selectedTheme == 'ThemeMode.dark' ? ThemeMode.dark : ThemeMode.light);
+    String savedTheme = userProvider.getTheme();
+    switch (savedTheme) {
+      case 'light':
+        setTheme(ThemeMode.light);
+        break;
+      case 'dark':
+        setTheme(ThemeMode.dark);
+        break;
+      case 'system':
+        setTheme(ThemeMode.system);
+        break;
+      default:
+        setTheme(ThemeMode.light);
     }
   }
 

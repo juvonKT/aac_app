@@ -43,7 +43,7 @@ class _SettingsState extends State<Settings> {
             leading: const Icon(Icons.person),
             title: DropdownButton<String>(
               value: userList.contains(selectedUser) ? selectedUser : null,
-              hint: Text('Select User'),
+              hint: const Text('Select User'),
               onChanged: (String? newValue) {
                 if (newValue != null) {
                   if (newValue == 'Add New User') {
@@ -62,6 +62,7 @@ class _SettingsState extends State<Settings> {
                     languageProvider.loadUserLanguage(userProvider);
                     themeProvider.loadUserTheme(context);
                     widget.onLanguageChanged();
+                    setState(() {});
                   }
                 }
               },
@@ -98,7 +99,7 @@ class _SettingsState extends State<Settings> {
                 if (newValue != null) {
                   languageProvider.setLocale(newValue);
                   userProvider.setUserLanguage(newValue.languageCode);
-                  widget.onLanguageChanged(); // Call the callback
+                  widget.onLanguageChanged();
                 }
               },
               items: const [
