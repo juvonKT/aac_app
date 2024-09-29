@@ -218,7 +218,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
       if (selectedPhrases.isNotEmpty) {
         selectedPhrases.removeLast();
       }
-      else {
+      if (selectedPhrases.isEmpty) {
         fetchTopStartingWords();
         showStartingWords = true;
       }
