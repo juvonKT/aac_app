@@ -204,6 +204,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
         final userProvider = Provider.of<UserProvider>(context, listen: false);
         await userProvider.loadUserData();
         String languageCode = userProvider.getLanguageCode();
+        print(widget.userId);
+        print("test word");
+
         await _firestoreService.addPhraseForUser(widget.userId, phrase, languageCode);
       } catch (e) {
         print('Error adding phrase to Firestore: $e');

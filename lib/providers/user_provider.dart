@@ -86,11 +86,8 @@ class UserProvider with ChangeNotifier {
 
       // Save users first
       await prefs.setString('users', jsonEncode(updatedUsers));
-      print("After saving users - updatedUserIds: $updatedUserIds");
-
       // Save userIds
       await prefs.setString('userIds', jsonEncode(updatedUserIds));
-      print("After saving userIds - updatedUserIds: $updatedUserIds");
 
       // Update the rest of the data
       _userIds = updatedUserIds;
@@ -134,34 +131,61 @@ class UserProvider with ChangeNotifier {
   }
 
   Future<void> selectUser(String? userName) async {
-    if (userName != null) {
+    print("Selecting user: $userName");
+    print("Current _users: $_users");
+    print("Current _userIds: $_userIds");
+
+    String? newSelectedUserId;
+
+    if (userName != null && userName != 'Add New User') {
       int index = _users.indexOf(userName);
-      if (index != -1) {
+      if (index != -1 && index < _userIds.length) {
         _selectedUser = userName;
-        _selectedUserId = _userIds[index];
-        _selectedLanguage = _userLanguages[_selectedUserId];
-        _selectedTheme = _userThemes[_selectedUserId];
+        newSelectedUserId = _userIds[index];
+        _selectedLanguage = _userLanguages[newSelectedUserId];
+        _selectedTheme = _userThemes[newSelectedUserId];
+      } else {
+        print("Error: User $userName found in _users but not in _userIds");
+        // Handle the error, maybe set to the first available user or null
+        if (_users.isNotEmpty && _userIds.isNotEmpty) {
+          _selectedUser = _users[0];
+          newSelectedUserId = _userIds[0];
+          _selectedLanguage = _userLanguages[newSelectedUserId];
+          _selectedTheme = _userThemes[newSelectedUserId];
+        } else {
+          _selectedUser = null;
+          newSelectedUserId = null;
+          _selectedLanguage = null;
+          _selectedTheme = null;
+        }
       }
     } else {
       _selectedUser = null;
-      _selectedUserId = null;
+      newSelectedUserId = null;
       _selectedLanguage = null;
       _selectedTheme = null;
     }
 
     print("SELECTING USER");
-    print(selectedUser);
-    print(selectedUserId);
-    print(selectedLanguage);
-    print(selectedTheme);
-
-    notifyListeners();
+    print("selectedUser: $_selectedUser");
+    print("selectedUserId: $newSelectedUserId");
+    print("selectedLanguage: $_selectedLanguage");
+    print("selectedTheme: $_selectedTheme");
 
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('selectedUser', _selectedUser ?? '');
-    await prefs.setString('selectedUserId', _selectedUserId ?? '');
+    await prefs.setString('selectedUserId', newSelectedUserId ?? '');
     await prefs.setString('selectedUserLanguage', _selectedLanguage ?? '');
     await prefs.setString('selectedUserTheme', _selectedTheme ?? '');
+
+    // Set _selectedUserId after saving to SharedPreferences
+    _selectedUserId = newSelectedUserId;
+
+    // Verify saved data
+    print("Verification - Saved selectedUser: ${prefs.getString('selectedUser')}");
+    print("Verification - Saved selectedUserId: ${prefs.getString('selectedUserId')}");
+
+    notifyListeners();
   }
 
   Future<void> deleteUser(String userName) async {
