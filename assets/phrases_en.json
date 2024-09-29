@@ -35,7 +35,6 @@
       {"phrase": "Computer", "image": "assets/images/things/computer.png"},
       {"phrase": "Bed", "image": "assets/images/things/bed.png"},
       {"phrase": "Cup", "image": "assets/images/things/cup.png"},
-
       {"phrase": "Bag", "image": "assets/images/things/bag.png"},
       {"phrase": "Watch", "image": "assets/images/things/watch.png"},
       {"phrase": "Glass", "image": "assets/images/things/glass.png"},
@@ -135,7 +134,6 @@
       {"phrase": "Yogurt", "image": "assets/images/food/yogurt.png"},
       {"phrase": "Grapes", "image": "assets/images/food/grapes.png"},
       {"phrase": "Orange", "image": "assets/images/food/orange.png"},
-
       {"phrase": "Sandwich", "image": "assets/images/food/sandwich.jpeg"},
       {"phrase": "Pizza", "image": "assets/images/food/pizza.png"},
       {"phrase": "Salad", "image": "assets/images/food/salad.png"},
@@ -186,7 +184,6 @@
       {"phrase": "Quiet", "image": "assets/images/descriptive/quiet.png"},
       {"phrase": "Heavy", "image": "assets/images/descriptive/heavy.png"},
       {"phrase": "Light", "image": "assets/images/descriptive/light.png"},
-
       {"phrase": "Good", "image": "assets/images/descriptive/good.png"},
       {"phrase": "Different", "image": "assets/images/descriptive/different.jpg"},
       {"phrase": "Same", "image": "assets/images/descriptive/same.png"},
