@@ -28,18 +28,33 @@ class UserProvider with ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     String? userIdsString = prefs.getString('userIds');
     String? usersString = prefs.getString('users');
-    String? userLanguagesString = prefs.getString('userLanguages');
-    String? userThemesString = prefs.getString('userThemes');
-
     if (userIdsString != null && usersString != null) {
-      _userIds = List<String>.from(jsonDecode(userIdsString));
-      _users = List<String>.from(jsonDecode(usersString));
-      _userLanguages = userLanguagesString != null
-          ? Map<String, String>.from(jsonDecode(userLanguagesString))
-          : {};
-      _userThemes = userThemesString != null
-          ? Map<String, String>.from(jsonDecode(userThemesString))
-          : {};
+      try {
+        _userIds = List<String>.from(jsonDecode(userIdsString));
+        _users = List<String>.from(jsonDecode(usersString));
+
+        String? userLanguagesString = prefs.getString('userLanguages');
+        String? userThemesString = prefs.getString('userThemes');
+
+        _userLanguages = userLanguagesString != null
+            ? Map<String, String>.from(jsonDecode(userLanguagesString))
+            : {};
+        _userThemes = userThemesString != null
+            ? Map<String, String>.from(jsonDecode(userThemesString))
+            : {};
+      } catch (e) {
+        print("Error decoding user data: $e");
+        _userIds = [];
+        _users = [];
+        _userLanguages = {};
+        _userThemes = {};
+      }
+    } else {
+      print("No user data found in SharedPreferences");
+      _userIds = [];
+      _users = [];
+      _userLanguages = {};
+      _userThemes = {};
     }
 
     _selectedUser = prefs.getString('selectedUser');
@@ -47,38 +62,60 @@ class UserProvider with ChangeNotifier {
     _selectedLanguage = prefs.getString('selectedUserLanguage');
     _selectedTheme = prefs.getString('selectedUserTheme');
 
-          print("LOADING USERS");
-      print(selectedUser);
-      print(selectedUserId);
-      print(selectedLanguage);
-      print(selectedTheme);
+    print("LOADING USERS");
+    print("selectedUser: $_selectedUser");
+    print("selectedUserId: $_selectedUserId");
+    print("selectedLanguage: $_selectedLanguage");
+    print("selectedTheme: $_selectedTheme");
 
-      notifyListeners();
-    }
+    notifyListeners();
+  }
 
-    Future<void> addUser(String userId, String userName, String languageCode, String userTheme) async {
-      if (!_users.contains(userName)) {
-        _userIds.add(userId);
-      _users.add(userName);
+  Future<void> addUser(String userId, String userName, String languageCode, String userTheme) async {
+    print("Before adding user - _userIds: $_userIds");
+    print("Before adding user - _users: $_users");
+
+    if (!_users.contains(userName)) {
+      List<String> updatedUserIds = List<String>.from(_userIds)..add(userId);
+      List<String> updatedUsers = List<String>.from(_users)..add(userName);
+
+      print("Before saving - updatedUserIds: $updatedUserIds");
+      print("Before saving - updatedUsers: $updatedUsers");
+
+      final prefs = await SharedPreferences.getInstance();
+
+      // Save users first
+      await prefs.setString('users', jsonEncode(updatedUsers));
+      print("After saving users - updatedUserIds: $updatedUserIds");
+
+      // Save userIds
+      await prefs.setString('userIds', jsonEncode(updatedUserIds));
+      print("After saving userIds - updatedUserIds: $updatedUserIds");
+
+      // Update the rest of the data
+      _userIds = updatedUserIds;
+      _users = updatedUsers;
       _userLanguages[userId] = languageCode;
+      _userThemes[userId] = userTheme;
       _selectedUser = userName;
       _selectedUserId = userId;
       _selectedLanguage = languageCode;
       _selectedTheme = userTheme;
 
-      print("ADDING USER");
-      print(selectedUser);
-      print(selectedUserId);
-      print(selectedLanguage);
-      print(selectedTheme);
-
-      notifyListeners();
-
-      final prefs = await SharedPreferences.getInstance();
-      await prefs.setString('users', jsonEncode(_users));
-      await prefs.setString('userIds', jsonEncode(_userIds));
       await prefs.setString('userLanguages', jsonEncode(_userLanguages));
       await prefs.setString('userThemes', jsonEncode(_userThemes));
+
+      // Save selected user data
+      await prefs.setString('selectedUser', _selectedUser ?? '');
+      await prefs.setString('selectedUserId', _selectedUserId ?? '');
+      await prefs.setString('selectedUserLanguage', _selectedLanguage ?? '');
+      await prefs.setString('selectedUserTheme', _selectedTheme ?? '');
+
+      print("After saving all data - _userIds: $_userIds");
+      print("Verification - Saved userIds: ${prefs.getString('userIds')}");
+      print("Verification - Saved users: ${prefs.getString('users')}");
+
+      notifyListeners();
     }
   }
 

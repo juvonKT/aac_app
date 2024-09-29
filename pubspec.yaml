@@ -122,6 +122,11 @@ flutter:
     - assets/images/things/wallet.png
     - assets/images/things/key.png
     - assets/images/things/ipad.png
+    - assets/images/things/stuff.png
+    - assets/images/things/it.png
+    - assets/images/things/this.png
+    - assets/images/things/that.png
+
 
     - assets/images/actions/eat.png
     - assets/images/actions/drink.png

@@ -27,9 +27,7 @@ class _SettingsState extends State<Settings> {
     final s = S.of(context);
     final userProvider = Provider.of<UserProvider>(context);
     final userList = userProvider.users;
-    String? selectedUser = userProvider.selectedUser ?? 'Add New User';
-    String? selectedUserId = userProvider.selectedUserId;
-    String? selectedTheme = userProvider.selectedTheme;
+    String selectedUser = userProvider.selectedUser ?? 'Add New User';
 
     return Scaffold(
       appBar: AppBar(
@@ -44,25 +42,27 @@ class _SettingsState extends State<Settings> {
           ListTile(
             leading: const Icon(Icons.person),
             title: DropdownButton<String>(
-              value: selectedUser,
+              value: userList.contains(selectedUser) ? selectedUser : null,
+              hint: Text('Select User'),
               onChanged: (String? newValue) {
-                if (newValue != null && newValue != 'Add New User') {
-                  userProvider.selectUser(newValue);
-                  languageProvider.loadUserLanguage(userProvider);
-                  themeProvider.loadUserTheme(context);
-                  widget.onLanguageChanged();
-                }
-                if (newValue == 'Add New User') {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => StartingPage(
-                        onUserCreated: () {
-                          widget.onLanguageChanged(); // Call the callback when new user is created
-                        },
+                if (newValue != null) {
+                  if (newValue == 'Add New User') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => StartingPage(
+                          onUserCreated: () {
+                            widget.onLanguageChanged();
+                          },
+                        ),
                       ),
-                    ),
-                  );
+                    );
+                  } else {
+                    userProvider.selectUser(newValue);
+                    languageProvider.loadUserLanguage(userProvider);
+                    themeProvider.loadUserTheme(context);
+                    widget.onLanguageChanged();
+                  }
                 }
               },
               items: [
@@ -75,7 +75,6 @@ class _SettingsState extends State<Settings> {
                   child: Text('Add New User'),
                 ),
               ],
-              isExpanded: true,
             ),
           ),
 
