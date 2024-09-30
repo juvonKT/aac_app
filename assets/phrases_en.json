@@ -60,7 +60,6 @@
       {"phrase": "Help", "image": "assets/images/actions/help.png"},
       {"phrase": "Read", "image": "assets/images/actions/read.png"},
       {"phrase": "Listen", "image": "assets/images/actions/listen.png"},
-
       {"phrase": "Talk", "image": "assets/images/actions/talk.png"},
       {"phrase": "Sing", "image": "assets/images/actions/sing.png"},
       {"phrase": "Dance", "image": "assets/images/actions/dance.png"},
