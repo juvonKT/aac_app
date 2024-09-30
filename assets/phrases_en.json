@@ -81,7 +81,7 @@
     ]
   },
   "actions 2": {
-    "categoryImage": "assets/images/actions/actions2.png",
+    "categoryImage": "assets/images/actions2/actions2.png",
     "phrases": [
       {"phrase": "Want", "image": "assets/images/actions2/want.png"},
       {"phrase": "Say", "image": "assets/images/actions2/say.png"},
