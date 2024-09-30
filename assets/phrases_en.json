@@ -272,17 +272,15 @@
       {"phrase": "I’m lost", "image": "assets/images/social/i'm_lost.png"},
       {"phrase": "I’m hungry", "image": "assets/images/social/i'm_hungry.png"},
       {"phrase": "I’m thirsty", "image": "assets/images/social/i'm_thirsty.png"},
-
-      {"phrase": "Welcome", "image": "assets/images/social/welcome.png"},
-      {"phrase": "Good Morning", "image": "assets/images/social/good_morning.png"},
-      {"phrase": "Good Night", "image": "assets/images/social/good_night.png"},
+      {"phrase": "Welcome", "image": "assets/images/social/welcome.jpeg"},
+      {"phrase": "Good Morning", "image": "assets/images/social/good_morning.jpeg"},
+      {"phrase": "Good Night", "image": "assets/images/social/good_night.jpeg"},
       {"phrase": "Take Care", "image": "assets/images/social/take_care.png"},
-      {"phrase": "See You Later", "image": "assets/images/social/see_you_later.png"},
-      {"phrase": "You're welcome", "image": "assets/images/social/youre_welcome.png"},
-      {"phrase": "Let's chat", "image": "assets/images/social/lets_chat.png"},
-      {"phrase": "I have something to say", "image": "assets/images/social/i_have_something_to_say.png"},
-      {"phrase": "I'm joking", "image": "assets/images/social/im_joking.png"},
-      {"phrase": "Please wait", "image": "assets/images/social/please_wait.png"}
+      {"phrase": "See You Later", "image": "assets/images/social/see_you_later.jpeg"},
+      {"phrase": "Let's chat", "image": "assets/images/social/lets_chat.jpeg"},
+      {"phrase": "I have something to say", "image": "assets/images/social/i_have_something_to_say.jpeg"},
+      {"phrase": "I'm joking", "image": "assets/images/social/im_joking.jpeg"},
+      {"phrase": "Please wait", "image": "assets/images/social/please_wait.jpeg"}
     ]
   },
   "health": {

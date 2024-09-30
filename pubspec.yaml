@@ -291,6 +291,15 @@ flutter:
     - assets/images/social/i'm_lost.png
     - assets/images/social/i'm_hungry.png
     - assets/images/social/i'm_thirsty.png
+    - assets/images/social/welcome.jpeg
+    - assets/images/social/good_morning.jpeg
+    - assets/images/social/good_night.jpeg
+    - assets/images/social/take_care.png
+    - assets/images/social/see_you_later.jpeg
+    - assets/images/social/lets_chat.jpeg
+    - assets/images/social/i_have_something_to_say.jpeg
+    - assets/images/social/im_joking.jpeg
+    - assets/images/social/please_wait.jpeg
 
     - assets/images/health/head.png
     - assets/images/health/arm.png
