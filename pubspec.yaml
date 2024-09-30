@@ -275,6 +275,22 @@ flutter:
     - assets/images/time/now.png
     - assets/images/time/later.png
     - assets/images/time/soon.png
+    - assets/images/time/next_week.png
+    - assets/images/time/next_month.png
+    - assets/images/time/day.png
+    - assets/images/time/month.png
+    - assets/images/time/year.png
+    - assets/images/time/tonight.png
+    - assets/images/time/always.png
+    - assets/images/time/again.png
+    - assets/images/time/never.png
+    - assets/images/time/early.png
+    - assets/images/time/week.png
+    - assets/images/time/weekend.png
+    - assets/images/time/before.png
+    - assets/images/time/after.png
+    - assets/images/time/first.png
+    - assets/images/time/last.png
 
     - assets/images/social/hello.png
     - assets/images/social/goodbye.png

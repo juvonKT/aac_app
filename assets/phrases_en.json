@@ -236,7 +236,6 @@
       {"phrase": "Now", "image": "assets/images/time/now.png"},
       {"phrase": "Later", "image": "assets/images/time/later.png"},
       {"phrase": "Soon", "image": "assets/images/time/soon.png"},
-
       {"phrase": "Next Week", "image": "assets/images/time/next_week.png"},
       {"phrase": "Next Month", "image": "assets/images/time/next_month.png"},
       {"phrase": "Day", "image": "assets/images/time/day.png"},
