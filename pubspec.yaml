@@ -193,6 +193,10 @@ flutter:
     - assets/images/food/cake.png
     - assets/images/food/fruit.png
     - assets/images/food/snack.png
+    - assets/images/food/dinner.png
+    - assets/images/food/lunch.png
+    - assets/images/food/breakfast.png
+
 
     - assets/images/feelings/happy.png
     - assets/images/feelings/sad.png
@@ -206,6 +210,7 @@ flutter:
     - assets/images/feelings/calm.png
     - assets/images/feelings/worried.png
     - assets/images/feelings/safe.png
+    - assets/images/feelings/confused.png
 
     - assets/images/descriptive/red.png
     - assets/images/descriptive/blue.png
@@ -226,10 +231,16 @@ flutter:
     - assets/images/descriptive/different.jpg
     - assets/images/descriptive/same.png
     - assets/images/descriptive/nice.png
-    - assets/images/descriptive/favourite.png
+    - assets/images/descriptive/favorite.png
     - assets/images/descriptive/old.png
     - assets/images/descriptive/dirty.png
     - assets/images/descriptive/wet.png
+    - assets/images/descriptive/bad.png
+    - assets/images/descriptive/little.png
+    - assets/images/descriptive/disgusting.png
+    - assets/images/descriptive/fun.png
+    - assets/images/descriptive/funny.png
+    - assets/images/descriptive/new.png
 
     - assets/images/questions/what.png
     - assets/images/questions/where.png
