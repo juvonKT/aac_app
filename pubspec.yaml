@@ -157,7 +157,7 @@ flutter:
     - assets/images/actions/turn.jpeg
     - assets/images/actions/stay.jpeg
 
-    - assets/images/actions2/actions2.jpeg
+    - assets/images/actions2/actions2.png
     - assets/images/actions2/want.png
     - assets/images/actions2/say.png
     - assets/images/actions2/get.png
@@ -168,6 +168,13 @@ flutter:
     - assets/images/actions2/tell.png
     - assets/images/actions2/tell.png
     - assets/images/actions2/show.png
+    - assets/images/actions2/is.png
+    - assets/images/actions2/are.png
+    - assets/images/actions2/think.png
+    - assets/images/actions2/do.png
+    - assets/images/actions2/give.png
+    - assets/images/actions2/use.png
+    - assets/images/actions2/try.png
 
     - assets/images/places/here.png
     - assets/images/places/there.png
@@ -275,6 +282,22 @@ flutter:
     - assets/images/time/now.png
     - assets/images/time/later.png
     - assets/images/time/soon.png
+    - assets/images/time/next_week.png
+    - assets/images/time/next_month.png
+    - assets/images/time/day.png
+    - assets/images/time/month.png
+    - assets/images/time/year.png
+    - assets/images/time/tonight.png
+    - assets/images/time/always.png
+    - assets/images/time/again.png
+    - assets/images/time/never.png
+    - assets/images/time/early.png
+    - assets/images/time/week.png
+    - assets/images/time/weekend.png
+    - assets/images/time/before.png
+    - assets/images/time/after.png
+    - assets/images/time/first.png
+    - assets/images/time/last.png
 
     - assets/images/social/hello.png
     - assets/images/social/goodbye.png
@@ -390,6 +413,17 @@ flutter:
     - assets/images/little_words/away.jpeg
     - assets/images/little_words/under.jpeg
     - assets/images/little_words/need.jpeg
+    - assets/images/little_words/not.png
+    - assets/images/little_words/some.png
+    - assets/images/little_words/because.png
+    - assets/images/little_words/more.png
+    - assets/images/little_words/to.png
+    - assets/images/little_words/for.png
+    - assets/images/little_words/too.png
+    - assets/images/little_words/at.png
+    - assets/images/little_words/by.png
+    - assets/images/little_words/over.png
+    - assets/images/little_words/from.png
 
     - assets/images/animals/animals.png
     - assets/images/animals/dog.png
