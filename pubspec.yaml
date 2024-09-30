@@ -325,6 +325,21 @@ flutter:
     - assets/images/weather/hot.png
     - assets/images/weather/cold.png
 
+    - assets/images/little_words/little_words.jpeg
+    - assets/images/little_words/in.png
+    - assets/images/little_words/out.png
+    - assets/images/little_words/up.png
+    - assets/images/little_words/down.png
+    - assets/images/little_words/and.jpeg
+    - assets/images/little_words/on.jpeg
+    - assets/images/little_words/with.jpeg
+    - assets/images/little_words/off.jpeg
+    - assets/images/little_words/all.png
+    - assets/images/little_words/dont.png
+    - assets/images/little_words/away.jpeg
+    - assets/images/little_words/under.jpeg
+    - assets/images/little_words/need.jpeg
+
     - assets/images/animals/animals.png
     - assets/images/animals/dog.png
     - assets/images/animals/cat.png
