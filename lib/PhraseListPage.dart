@@ -111,7 +111,7 @@ class _PhraseListPageState extends State<PhraseListPage> {
   }
 
   void _changeToPastTense() {
-    if (widget.category == "actions") {
+    if (widget.category == "actions 1" || widget.category == "actions 2") {
       List<Map<String, String>> updatedPhrases = [];
 
       for (var phraseMap in phrasesList) {
@@ -165,13 +165,58 @@ class _PhraseListPageState extends State<PhraseListPage> {
       "drink": "drank",
       "sleep": "slept",
       "run": "ran",
+      "sing": "sang",
+      "swim": "swam",
+      "see": "saw",
+      "go": "went",
+      "come": "came",
+      "put": "put",
+      "sit": "sat",
+      // "stay": "stayed"
+      "is": "was",
+      "are": "were",
+      "think": "thought",
+      "know": "knew",
+      "say": "said",
+      "do": "did",
+      "get": "got",
+      "take": "took",
+      "make": "made",
+      "give": "gave",
+      "have": "had",
+      "tell": "told",
+    };
+
+    const doubledConsonantVerbs = {
+      "jog", "plan", "drop", "shop", "stop", "chat",
+      "control", "slim", "ban", "step", "wrap", "fit",
+      "shred", "beg", "drag", "drug", "install", "drum", "spam", "can", "stun", "thin", "chop", "equip", "hop", "rap", "slip", "trip",
+      "admit", "benefit", "commit", "input", "permit", "regret", "submit",
+      "nod", "pad", "skid", "brag", "bug", "gig", "mug", "plug", "shrug", "tag", "zigzag", "enroll", "fulfill", "rebel", "cram",
+      "jam", "scam", "skim", "trim", "bin", "conn", "fan", "grin", "man", "pin", "scan", "tan", "tin", "twin", "clap", "dip",
+      "drip", "grip", "kidnap", "map", "nap", "rip", "skip", "slap", "ship", "strip", "swap", "top", "trap", "whip", "zip",
+      "bat", "bet", "boycott", "combat", "dot", "duet", "emit", "format", "knit", "knot", "omit", "pat", "plot", "rot", "spot",
+      "squat", "transmit",
+      "bed", "bud", "kid", "plod", "prod", "sled", "stud", "thud", "bag", "chug", "clog", "dog", "flag", "flog", "fog", "gag",
+      "glug", "jig", "lag", "leapfrog", "log", "lug", "nag", "peg", "rig", "sag", "slog", "slug", "snag", "snog", "swig",
+      "tug", "veg", "wag", "annul", "appall", "corral", "distill", "enthrall", "expel", "impel", "propel", "rappel", "repel",
+      "brim", "dam", "dim", "gum", "hem", "hum", "ram", "slam", "slum", "stem", "strum", "telegram", "gun", "pan", "pen",
+      "pun", "shun", "sin", "skin", "span", "sun", "swan", "bop", "cap", "chip", "crop", "cup", "flap", "flip", "flop", "kip",
+      "lap", "lop", "mop", "plop", "pop", "prep", "prop", "quip", "sap", "sip", "slop", "snap", "snip", "strap", "sup",
+      "tap", "tip", " yap", "abet", "abut", " allot", "blot", "but", "clot", "flit", " fret", "grit", "gut", "jet", "jut",
+      "kit", "mat", "pet", "pit", "pot", "rebut", "remit", "slit", "splat", "strut", "swat", "swot", "tot", "trot", "vet",
+      "wet"
     };
 
     // Check if the verb is an irregular verb
     String pastTense;
     if (irregularVerbs.containsKey(verb.toLowerCase())) {
       pastTense = irregularVerbs[verb.toLowerCase()]!;
+    } else if (doubledConsonantVerbs.contains(verb.toLowerCase())) {
+      // If the verb requires doubling the consonant
+      pastTense = verb + verb[verb.length - 1] + "ed"; // e.g., "drop" -> "dropped"
     } else {
+      // Default rule-based conversion
       pastTense = _convertVerbToPastTense(verb);
     }
 
@@ -181,29 +226,26 @@ class _PhraseListPageState extends State<PhraseListPage> {
 
 // Function to convert a single regular verb to past tense using rules
   String _convertVerbToPastTense(String verb) {
-    // Rule-based approach for regular verbs
     if (verb.endsWith("e")) {
       return verb + "d"; // e.g., "like" -> "liked"
     } else if (verb.endsWith("y") && verb.length > 1 && !isVowel(verb[verb.length - 2])) {
       return verb.substring(0, verb.length - 1) + "ied"; // e.g., "hurry" -> "hurried"
     } else {
-      return verb + "ed"; // e.g., "play" -> "played"
+      return verb + "ed"; // Default case for regular verbs
     }
   }
 
-// Function to check if a character is a vowel
   bool isVowel(String char) {
     return "aeiou".contains(char.toLowerCase());
   }
 
-// Helper function to capitalize the first letter of a string
   String _capitalizeFirstLetter(String word) {
     if (word.isEmpty) return word;
     return word[0].toUpperCase() + word.substring(1);
   }
 
   void _changeToProgressiveTense() {
-    if (widget.category == "actions") {
+    if (widget.category == "actions 1" || widget.category == "actions 2") {
       List<Map<String, String>> updatedPhrases = [];
 
       for (var phraseMap in phrasesList) {
@@ -245,18 +287,37 @@ class _PhraseListPageState extends State<PhraseListPage> {
 
 // Helper function to convert a verb to the progressive tense
   String _convertToProgressiveTense(String verb) {
-    // Handle irregular verbs if necessary
-    const irregularVerbs = {
-      "run": "Running",
+    const doubledConsonantVerbs = {
+      "wed", "jog", "drum", "slim", "swim", "begin", "run", "win", "shop", "stop",
+      "forget", "get", "put", "sit",
+      "dig", "plan", "clap", "drop", "wrap", "chat", "cut", "fit", "knit", "quit", "shut",
+      "sled", "control", "patrol", "cram", "spam", "spin", "tan", "chop", "grip", "hop", "nap", "ship",
+      "skip", "top", "duet", "let",
+      "bed", "bid", "blog", "pad", "shred", "skid", "beg", "drag", "mug", "shrug", "zigzag", "compel",
+      "fulfill", "hum", "jam", "scam", "ban", "grin", "sin", "stun", "drip", "equip", "flip", "mop",
+      "rip", "scrap", "slap", "slip", "step", "swap", "trip", "zip", "admit", "bat", "bet", "boycott",
+      "commit", "emit", "input", "permit", "set", "spit", "split", "spot", "transmit",
+      "bud", "clad", "kid", "plod", "prod", "stud", "thud", "bag", "chug", "clog", "dog",
+      "flag", "flog", "fog", "gag", "gig", "hog", "jig", "log", "nag", "peg", "rig", "sag", "slog",
+      "slug", "snag", "snog", "swig", "tag", "tug", "veg", "wag", "annul", "appall", "corral",
+      "distill", "enthrall", "expel", "impel", "propel", "rappel", "repel", "brim", "dam", "dim",
+      "gum", "hem", "ram", "slam", "slum", "stem", "strum", "gun", "pan", "pen", "pun", "shun", "skin",
+      "span", "sun", "swan", "bop", "cap", "chip", "crop", "cup", "flap", "flop", "kip", "lap",
+      "lop", "plop", "pop", "prep", "prop", "quip", "sap", "sip", "slop", "snap", "snip",
+      "strap", "sup", "tap", "tip", "yap", "abet", "abut", "allot", "blot", "but", "clot", "flit", "fret",
+      "grit", "gut", "jet", "jut", "kit", "mat", "pet", "pit", "pot", "rebut", "remit", "slit", "splat",
+      "strut", "swat", "swot", "tot", "trot", "vet", "wet"
     };
 
-    // Check if the verb is irregular (optional)
-    if (irregularVerbs.containsKey(verb.toLowerCase())) {
-      return irregularVerbs[verb.toLowerCase()]!;
-    }
-
     // Apply rules to convert regular verbs to the progressive tense
-    if (verb.endsWith("e") && verb != "be") {
+    if (doubledConsonantVerbs.contains(verb.toLowerCase())) {
+      print(verb);
+      return verb + verb[verb.length - 1] + "ing";
+    } else if (verb.toLowerCase() == "is" || verb.toLowerCase() == "are"){
+      return verb;
+    } else if (verb.endsWith("ee")) {
+      return verb + "ing";
+    }else if (verb.endsWith("e") && verb != "be") {
       return verb.substring(0, verb.length - 1) + "ing";
     } else if (verb.endsWith("ie")) {
       return verb.substring(0, verb.length - 2) + "ying";
@@ -423,7 +484,7 @@ class _PhraseListPageState extends State<PhraseListPage> {
               ),
             ),
           ),
-          if (widget.category == "actions") ...[
+          if (widget.category == "actions 1" || widget.category == "actions 2") ...[
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: Row(
