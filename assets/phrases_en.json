@@ -81,7 +81,7 @@
     ]
   },
   "actions 2": {
-    "categoryImage": "assets/images/actions/actions2.png",
+    "categoryImage": "assets/images/actions2/actions2.png",
     "phrases": [
       {"phrase": "Want", "image": "assets/images/actions2/want.png"},
       {"phrase": "Say", "image": "assets/images/actions2/say.png"},
@@ -351,7 +351,6 @@
       {"phrase": "Away", "image": "assets/images/little_words/away.jpeg"},
       {"phrase": "Under", "image": "assets/images/little_words/under.jpeg"},
       {"phrase": "Need", "image": "assets/images/little_words/need.jpeg"},
-
       {"phrase": "Not", "image": "assets/images/little_words/not.png"},
       {"phrase": "Some", "image": "assets/images/little_words/some.png"},
       {"phrase": "Because", "image": "assets/images/little_words/because.png"},
