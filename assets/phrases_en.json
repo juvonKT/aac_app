@@ -94,7 +94,7 @@
       {"phrase": "Change", "image": "assets/images/actions2/tell.png"},
       {"phrase": "Show", "image": "assets/images/actions2/show.png"},
       {"phrase": "Is", "image": "assets/images/actions2/is.png"},
-      {"phrase": "Are", "image": "assets/images/actions2/is.png"},
+      {"phrase": "Are", "image": "assets/images/actions2/are.png"},
       {"phrase": "Think", "image": "assets/images/actions2/think.png"},
       {"phrase": "Do", "image": "assets/images/actions2/do.png"},
       {"phrase": "Give", "image": "assets/images/actions2/give.png"},
