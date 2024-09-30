@@ -325,6 +325,48 @@ flutter:
     - assets/images/weather/hot.png
     - assets/images/weather/cold.png
 
+    - assets/images/preferences/preferences.png
+    - assets/images/preferences/i_like_it.png
+    - assets/images/preferences/i_dont_like_it.png
+    - assets/images/preferences/i_want_this.png
+    - assets/images/preferences/i_need_this.png
+    - assets/images/preferences/i_prefer.png
+    - assets/images/preferences/i_love.png
+
+    - assets/images/activities/activities.png
+    - assets/images/activities/birthday.png
+    - assets/images/activities/game.png
+    - assets/images/activities/music.png
+    - assets/images/activities/outside.png
+    - assets/images/activities/tv.png
+    - assets/images/activities/work.png
+
+    - assets/images/communication/communication.png
+    - assets/images/communication/email.png
+    - assets/images/communication/message.png
+    - assets/images/communication/social_media.png
+    - assets/images/communication/call.png
+
+    - assets/images/help/help.png
+    - assets/images/help/i_dont_know.png
+    - assets/images/help/yes.png
+    - assets/images/help/no.png
+    - assets/images/help/maybe.png
+    - assets/images/help/not_ready.png
+    - assets/images/help/i_need_to_talk_to_you.png
+    - assets/images/help/thats_not_what_i_said.png
+    - assets/images/help/somethings_wrong.png
+    - assets/images/help/charge_my_ipad.png
+    - assets/images/help/i_have_something_to_say.png
+    - assets/images/help/i_dont_understand.png
+    - assets/images/help/whatever.png
+    - assets/images/help/awesome.png
+    - assets/images/help/hurry_up.png
+    - assets/images/help/help_calming_down.png
+    - assets/images/help/please_repeat_that.png
+    - assets/images/help/do_it_myself.png
+    - assets/images/help/i_need_a_break.png
+
     - assets/images/animals/animals.png
     - assets/images/animals/dog.png
     - assets/images/animals/cat.png
