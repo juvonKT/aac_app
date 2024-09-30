@@ -413,6 +413,17 @@ flutter:
     - assets/images/little_words/away.jpeg
     - assets/images/little_words/under.jpeg
     - assets/images/little_words/need.jpeg
+    - assets/images/little_words/not.png
+    - assets/images/little_words/some.png
+    - assets/images/little_words/because.png
+    - assets/images/little_words/more.png
+    - assets/images/little_words/to.png
+    - assets/images/little_words/for.png
+    - assets/images/little_words/too.png
+    - assets/images/little_words/at.png
+    - assets/images/little_words/by.png
+    - assets/images/little_words/over.png
+    - assets/images/little_words/from.png
 
     - assets/images/animals/animals.png
     - assets/images/animals/dog.png
