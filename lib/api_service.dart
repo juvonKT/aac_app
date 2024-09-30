@@ -40,8 +40,6 @@ class ApiService {
           'language_code': languageCode,  // Include locale in the request
         }),
       );
-      print("Response status code: ${response.statusCode}");
-      print("Response body: ${response.body}");
 
       if (response.statusCode == 200) {
         List<dynamic> suggestions = json.decode(response.body);
