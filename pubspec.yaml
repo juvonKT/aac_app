@@ -157,7 +157,7 @@ flutter:
     - assets/images/actions/turn.jpeg
     - assets/images/actions/stay.jpeg
 
-    - assets/images/actions2/actions2.jpeg
+    - assets/images/actions2/actions2.png
     - assets/images/actions2/want.png
     - assets/images/actions2/say.png
     - assets/images/actions2/get.png
@@ -168,6 +168,13 @@ flutter:
     - assets/images/actions2/tell.png
     - assets/images/actions2/tell.png
     - assets/images/actions2/show.png
+    - assets/images/actions2/is.png
+    - assets/images/actions2/are.png
+    - assets/images/actions2/think.png
+    - assets/images/actions2/do.png
+    - assets/images/actions2/give.png
+    - assets/images/actions2/use.png
+    - assets/images/actions2/try.png
 
     - assets/images/places/here.png
     - assets/images/places/there.png

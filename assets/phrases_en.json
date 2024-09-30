@@ -77,13 +77,11 @@
       {"phrase": "Watch", "image": "assets/images/actions/watch.jpeg"},
       {"phrase": "Wash", "image": "assets/images/actions/wash.jpeg"},
       {"phrase": "Turn", "image": "assets/images/actions/turn.jpeg"},
-      {"phrase": "Stay", "image": "assets/images/actions/stay.jpeg"},
-
-      {"phrase": "Try", "image": "assets/images/actions/try.png"}
+      {"phrase": "Stay", "image": "assets/images/actions/stay.jpeg"}
     ]
   },
   "actions 2": {
-    "categoryImage": "assets/images/actions/actions2.jpeg",
+    "categoryImage": "assets/images/actions/actions2.png",
     "phrases": [
       {"phrase": "Want", "image": "assets/images/actions2/want.png"},
       {"phrase": "Say", "image": "assets/images/actions2/say.png"},
@@ -95,7 +93,6 @@
       {"phrase": "Tell", "image": "assets/images/actions2/tell.png"},
       {"phrase": "Change", "image": "assets/images/actions2/tell.png"},
       {"phrase": "Show", "image": "assets/images/actions2/show.png"},
-
       {"phrase": "Is", "image": "assets/images/actions2/is.png"},
       {"phrase": "Are", "image": "assets/images/actions2/is.png"},
       {"phrase": "Think", "image": "assets/images/actions2/think.png"},
