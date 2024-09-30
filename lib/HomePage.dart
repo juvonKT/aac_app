@@ -370,11 +370,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
           if (showStartingWords)
             ...topStartingWords.map((entry) => _buildWordButton(entry.key, true))
           else
-            // ...suggestedWords.map((word) => _buildWordButton(word, false)),
-            ...suggestedWords.map((word) {
-              print("Adding word: $word");
-              return _buildWordButton(word, false);
-            }),
+            ...suggestedWords.map((word) => _buildWordButton(word, false))
         ],
       );
     }

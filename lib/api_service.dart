@@ -27,6 +27,11 @@ class ApiService {
   }
 
   Future<List<String>> getSuggestions(List<String> selectedPhrases, String languageCode) async {
+    if (selectedPhrases.isEmpty) {
+      print("No selected phrases provided.");
+      return [];
+      }
+
     final url = Uri.parse('$_baseUrl/suggest');
     print("Sending request to $url");
     print("Selected phrases: $selectedPhrases");
