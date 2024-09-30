@@ -27,6 +27,11 @@ class ApiService {
   }
 
   Future<List<String>> getSuggestions(List<String> selectedPhrases, String languageCode) async {
+    if (selectedPhrases.isEmpty) {
+      print("No selected phrases provided.");
+      return [];
+      }
+
     final url = Uri.parse('$_baseUrl/suggest');
     print("Sending request to $url");
     print("Selected phrases: $selectedPhrases");
@@ -40,8 +45,6 @@ class ApiService {
           'language_code': languageCode,  // Include locale in the request
         }),
       );
-      print("Response status code: ${response.statusCode}");
-      print("Response body: ${response.body}");
 
       if (response.statusCode == 200) {
         List<dynamic> suggestions = json.decode(response.body);

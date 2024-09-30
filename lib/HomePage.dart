@@ -67,6 +67,10 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
 
       if (widget.userId != null) {
         fetchTopStartingWords();
+      } else {
+        topStartingWords = [];
+        _isLoadingWords = false;
+        showStartingWords = true;
       }
     });
   }
@@ -354,9 +358,10 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
   }
 
   Widget _buildWordSuggestionsSection() {
+    print("suggested in build: $suggestedWords");
     if (_isLoadingWords) {
       return const Center(child: CircularProgressIndicator());
-    } else if (topStartingWords.isEmpty) {
+    } else if (topStartingWords.isEmpty && suggestedWords.isEmpty) {
       return Center(child: Text(_isOffline ? 'Offline. Using cached data.' : 'No starting words available.'));
     } else {
       return ListView(
@@ -365,7 +370,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
           if (showStartingWords)
             ...topStartingWords.map((entry) => _buildWordButton(entry.key, true))
           else
-            ...suggestedWords.map((word) => _buildWordButton(word, false)),
+            ...suggestedWords.map((word) => _buildWordButton(word, false))
         ],
       );
     }
