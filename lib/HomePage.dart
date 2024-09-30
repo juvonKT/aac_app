@@ -67,6 +67,10 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
 
       if (widget.userId != null) {
         fetchTopStartingWords();
+      } else {
+        topStartingWords = [];
+        _isLoadingWords = false;
+        showStartingWords = true;
       }
     });
   }
