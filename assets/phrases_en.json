@@ -73,7 +73,7 @@
       {"phrase": "Put", "image": "assets/images/actions/put.jpeg"},
       {"phrase": "Sit", "image": "assets/images/actions/sit.png"},
       {"phrase": "Open", "image": "assets/images/actions/open.png"},
-      {"phrase": "Start", "image": "assets/images/actions/start.png"},
+      {"phrase": "Start", "image": "assets/images/actions/start.jpeg"},
       {"phrase": "Wait", "image": "assets/images/actions/wait.png"},
       {"phrase": "Watch", "image": "assets/images/actions/watch.jpeg"},
       {"phrase": "Wash", "image": "assets/images/actions/wash.jpeg"},
@@ -100,6 +100,7 @@
       {"phrase": "Have", "image": "assets/images/actions2/have.png"},
       {"phrase": "Use", "image": "assets/images/actions2/use.png"},
       {"phrase": "Tell", "image": "assets/images/actions2/tell.png"},
+      {"phrase": "Change", "image": "assets/images/actions2/tell.png"},
       {"phrase": "Try", "image": "assets/images/actions2/try.png"},
       {"phrase": "Show", "image": "assets/images/actions2/show.png"}
     ]
