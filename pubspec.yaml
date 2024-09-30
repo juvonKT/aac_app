@@ -157,6 +157,18 @@ flutter:
     - assets/images/actions/turn.jpeg
     - assets/images/actions/stay.jpeg
 
+    - assets/images/actions2/actions2.jpeg
+    - assets/images/actions2/want.png
+    - assets/images/actions2/say.png
+    - assets/images/actions2/get.png
+    - assets/images/actions2/take.png
+    - assets/images/actions2/make.png
+    - assets/images/actions2/know.png
+    - assets/images/actions2/have.png
+    - assets/images/actions2/tell.png
+    - assets/images/actions2/tell.png
+    - assets/images/actions2/show.png
+
     - assets/images/places/here.png
     - assets/images/places/there.png
     - assets/images/places/home.png

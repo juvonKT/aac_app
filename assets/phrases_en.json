@@ -84,25 +84,26 @@
     ]
   },
   "actions 2": {
-    "categoryImage": "assets/images/actions/actions.png",
+    "categoryImage": "assets/images/actions/actions2.jpeg",
     "phrases": [
-      {"phrase": "Is", "image": "assets/images/actions2/is.png"},
-      {"phrase": "Are", "image": "assets/images/actions2/is.png"},
       {"phrase": "Want", "image": "assets/images/actions2/want.png"},
-      {"phrase": "Think", "image": "assets/images/actions2/think.png"},
-      {"phrase": "Know", "image": "assets/images/actions2/know.png"},
       {"phrase": "Say", "image": "assets/images/actions2/say.png"},
-      {"phrase": "Do", "image": "assets/images/actions2/do.png"},
       {"phrase": "Get", "image": "assets/images/actions2/get.png"},
       {"phrase": "Take", "image": "assets/images/actions2/take.png"},
       {"phrase": "Make", "image": "assets/images/actions2/make.png"},
-      {"phrase": "Give", "image": "assets/images/actions2/give.png"},
+      {"phrase": "Know", "image": "assets/images/actions2/know.png"},
       {"phrase": "Have", "image": "assets/images/actions2/have.png"},
-      {"phrase": "Use", "image": "assets/images/actions2/use.png"},
       {"phrase": "Tell", "image": "assets/images/actions2/tell.png"},
       {"phrase": "Change", "image": "assets/images/actions2/tell.png"},
-      {"phrase": "Try", "image": "assets/images/actions2/try.png"},
-      {"phrase": "Show", "image": "assets/images/actions2/show.png"}
+      {"phrase": "Show", "image": "assets/images/actions2/show.png"},
+
+      {"phrase": "Is", "image": "assets/images/actions2/is.png"},
+      {"phrase": "Are", "image": "assets/images/actions2/is.png"},
+      {"phrase": "Think", "image": "assets/images/actions2/think.png"},
+      {"phrase": "Do", "image": "assets/images/actions2/do.png"},
+      {"phrase": "Give", "image": "assets/images/actions2/give.png"},
+      {"phrase": "Use", "image": "assets/images/actions2/use.png"},
+      {"phrase": "Try", "image": "assets/images/actions2/try.png"}
     ]
   },
   "places": {
