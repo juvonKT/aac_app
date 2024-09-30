@@ -149,7 +149,6 @@
       {"phrase": "Cake", "image": "assets/images/food/cake.png"},
       {"phrase": "Fruit", "image": "assets/images/food/fruit.png"},
       {"phrase": "Snack", "image": "assets/images/food/snack.png"},
-
       {"phrase": "Dinner", "image": "assets/images/food/dinner.png"},
       {"phrase": "Lunch", "image": "assets/images/food/lunch.png"},
       {"phrase": "Breakfast", "image": "assets/images/food/breakfast.png"}
@@ -170,7 +169,6 @@
       {"phrase": "Calm", "image": "assets/images/feelings/calm.png"},
       {"phrase": "Worried", "image": "assets/images/feelings/worried.png"},
       {"phrase": "Safe", "image": "assets/images/feelings/safe.png"},
-
       {"phrase": "Confused", "image": "assets/images/feelings/confused.png"}
     ]
   },
@@ -200,7 +198,6 @@
       {"phrase": "Old", "image": "assets/images/descriptive/old.png"},
       {"phrase": "Dirty", "image": "assets/images/descriptive/dirty.png"},
       {"phrase": "Wet", "image": "assets/images/descriptive/wet.png"},
-
       {"phrase": "Bad", "image": "assets/images/descriptive/bad.png"},
       {"phrase": "Little", "image": "assets/images/descriptive/little.png"},
       {"phrase": "Disgusting", "image": "assets/images/descriptive/disgusting.png"},
