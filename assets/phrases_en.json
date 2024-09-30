@@ -443,8 +443,8 @@
     "phrases": [
       {"phrase": ".", "image": "assets/images/punctuation/period.png"},
       {"phrase": "?", "image": "assets/images/punctuation/question_mark.png"},
-      {"phrase": "!", "image": "assets/images/punctuation/question_mark.png"},
-      {"phrase": ",", "image": "assets/images/punctuation/question_mark.png"}
+      {"phrase": "!", "image": "assets/images/punctuation/exclamation_mark.png"},
+      {"phrase": ",", "image": "assets/images/punctuation/comma.png"}
     ]
   }
 }

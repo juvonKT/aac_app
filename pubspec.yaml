@@ -343,6 +343,12 @@ flutter:
     - assets/images/numbers/8.jpeg
     - assets/images/numbers/9.png
 
+    - assets/images/punctuation/punctuation.png
+    - assets/images/punctuation/period.png
+    - assets/images/punctuation/question_mark.png
+    - assets/images/punctuation/exclamation_mark.png
+    - assets/images/punctuation/comma.png
+
 
     - lib/l10n/
 
