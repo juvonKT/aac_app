@@ -411,6 +411,7 @@ class _PhraseListPageState extends State<PhraseListPage> {
                     runSpacing: 16.0,
                     children: List.generate(phrasesList.length, (index) {
                       Map<String, String> phrase = phrasesList[index];
+
                       return GestureDetector(
                         onTap: () {
                           widget.onPhraseSelected(phrase["phrase"]!);

@@ -274,7 +274,6 @@
       {"phrase": "Take Care", "image": "assets/images/social/take_care.png"},
       {"phrase": "See You Later", "image": "assets/images/social/see_you_later.jpeg"},
       {"phrase": "Let's chat", "image": "assets/images/social/lets_chat.jpeg"},
-      {"phrase": "I have something to say", "image": "assets/images/social/i_have_something_to_say.jpeg"},
       {"phrase": "I'm joking", "image": "assets/images/social/im_joking.jpeg"},
       {"phrase": "Please wait", "image": "assets/images/social/please_wait.jpeg"}
     ]
@@ -395,10 +394,10 @@
       {"phrase": "Not ready", "image": "assets/images/help/not_ready.png"},
       {"phrase": "I need to talk to you", "image": "assets/images/help/i_need_to_talk_to_you.png"},
       {"phrase": "That's not what I said", "image": "assets/images/help/thats_not_what_i_said.png"},
-      {"phrase": "Something's wrong", "image": "assets/images/help/somethings_wrong.png"},
+      {"phrase": "Something's\nwrong", "image": "assets/images/help/somethings_wrong.png"},
       {"phrase": "Charge my iPad", "image": "assets/images/help/charge_my_ipad.png"},
-      {"phrase": "I have something to say", "image": "assets/images/help/i_have_something_to_say.png"},
-      {"phrase": "I don't understand", "image": "assets/images/help/i_dont_understand.png"},
+      {"phrase": "I have\nsomething\nto say", "image": "assets/images/help/i_have_something_to_say.png"},
+      {"phrase": "I don't\nunderstand", "image": "assets/images/help/i_dont_understand.png"},
       {"phrase": "Whatever", "image": "assets/images/help/whatever.png"},
       {"phrase": "Awesome", "image": "assets/images/help/awesome.png"},
       {"phrase": "Hurry up!", "image": "assets/images/help/hurry_up.png"},

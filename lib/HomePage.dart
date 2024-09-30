@@ -17,6 +17,7 @@ import 'providers/user_provider.dart';
 import 'package:provider/provider.dart';
 import 'dart:ui';
 import 'package:flutter/widgets.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class HomePage extends StatefulWidget {
   String? userId;
@@ -522,18 +523,23 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Image.asset(
-                                  categoryImage,
-                                  height: 50.0,
-                                  width: 50.0,
+                                Flexible(
+                                  child: Image.asset(
+                                    categoryImage,
+                                    height: 50.0,
+                                    width: 50.0,
+                                    fit: BoxFit.contain,
+                                  ),
                                 ),
-                                Text(
+                                AutoSizeText(
                                   category,
                                   style: const TextStyle(
                                     color: Colors.black,
                                     fontSize: 18.0,
                                     fontWeight: FontWeight.bold,
                                   ),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                               ],
                             ),
