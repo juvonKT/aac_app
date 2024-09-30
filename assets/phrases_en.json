@@ -343,32 +343,33 @@
     ]
   },
   "little words": {
-    "categoryImage": "assets/images/little_words/little_words.png",
+    "categoryImage": "assets/images/little_words/little_words.jpeg",
     "phrases": [
       {"phrase": "In", "image": "assets/images/little_words/in.png"},
       {"phrase": "Out", "image": "assets/images/little_words/out.png"},
       {"phrase": "Up", "image": "assets/images/little_words/up.png"},
       {"phrase": "Down", "image": "assets/images/little_words/down.png"},
-      {"phrase": "And", "image": "assets/images/little_words/and.png"},
+      {"phrase": "And", "image": "assets/images/little_words/and.jpeg"},
+      {"phrase": "On", "image": "assets/images/little_words/on.jpeg"},
+      {"phrase": "With", "image": "assets/images/little_words/with.jpeg"},
+      {"phrase": "Off", "image": "assets/images/little_words/off.jpeg"},
+      {"phrase": "All", "image": "assets/images/little_words/all.png"},
+      {"phrase": "Don't", "image": "assets/images/little_words/dont.png"},
+      {"phrase": "Away", "image": "assets/images/little_words/away.jpeg"},
+      {"phrase": "Under", "image": "assets/images/little_words/under.jpeg"},
+      {"phrase": "Need", "image": "assets/images/little_words/need.jpeg"},
+
       {"phrase": "Not", "image": "assets/images/little_words/not.png"},
       {"phrase": "Some", "image": "assets/images/little_words/some.png"},
       {"phrase": "Because", "image": "assets/images/little_words/because.png"},
       {"phrase": "More", "image": "assets/images/little_words/more.png"},
       {"phrase": "To", "image": "assets/images/little_words/to.png"},
       {"phrase": "For", "image": "assets/images/little_words/for.png"},
-      {"phrase": "On", "image": "assets/images/little_words/on.png"},
-      {"phrase": "With", "image": "assets/images/little_words/with.png"},
-      {"phrase": "Off", "image": "assets/images/little_words/off.png"},
-      {"phrase": "All", "image": "assets/images/little_words/all.png"},
       {"phrase": "Too", "image": "assets/images/little_words/too.png"},
-      {"phrase": "Don't", "image": "assets/images/little_words/dont.png"},
       {"phrase": "At", "image": "assets/images/little_words/at.png"},
-      {"phrase": "Away", "image": "assets/images/little_words/away.png"},
       {"phrase": "By", "image": "assets/images/little_words/by.png"},
-      {"phrase": "From", "image": "assets/images/little_words/from.png"},
       {"phrase": "Over", "image": "assets/images/little_words/over.png"},
-      {"phrase": "Under", "image": "assets/images/little_words/under.png"},
-      {"phrase": "Need", "image": "assets/images/little_words/under.png"}
+      {"phrase": "From", "image": "assets/images/little_words/from.png"}
     ]
   },
   "activities": {
