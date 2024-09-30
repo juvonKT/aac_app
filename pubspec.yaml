@@ -138,6 +138,24 @@ flutter:
     - assets/images/actions/help.png
     - assets/images/actions/read.png
     - assets/images/actions/listen.png
+    - assets/images/actions/talk.png
+    - assets/images/actions/sing.png
+    - assets/images/actions/dance.png
+    - assets/images/actions/swim.jpeg
+    - assets/images/actions/stop.png
+    - assets/images/actions/see.jpeg
+    - assets/images/actions/go.png
+    - assets/images/actions/look.png
+    - assets/images/actions/come.png
+    - assets/images/actions/put.jpeg
+    - assets/images/actions/sit.png
+    - assets/images/actions/open.png
+    - assets/images/actions/start.png
+    - assets/images/actions/wait.png
+    - assets/images/actions/watch.jpeg
+    - assets/images/actions/wash.jpeg
+    - assets/images/actions/turn.jpeg
+    - assets/images/actions/stay.jpeg
 
     - assets/images/places/here.png
     - assets/images/places/there.png
