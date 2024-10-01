@@ -91,7 +91,7 @@
       {"phrase": "Know", "image": "assets/images/actions2/know.png"},
       {"phrase": "Have", "image": "assets/images/actions2/have.png"},
       {"phrase": "Tell", "image": "assets/images/actions2/tell.png"},
-      {"phrase": "Change", "image": "assets/images/actions2/tell.png"},
+      {"phrase": "Change", "image": "assets/images/actions2/change.png"},
       {"phrase": "Show", "image": "assets/images/actions2/show.png"},
       {"phrase": "Is", "image": "assets/images/actions2/is.png"},
       {"phrase": "Are", "image": "assets/images/actions2/are.png"},
@@ -215,7 +215,6 @@
       {"phrase": "Can", "image": "assets/images/questions/can_i.png"},
       {"phrase": "Do you", "image": "assets/images/questions/do_you.png"},
       {"phrase": "Is it", "image": "assets/images/questions/is_it.png"},
-
       {"phrase": "Will", "image": "assets/images/questions/will.png"}
     ]
   },

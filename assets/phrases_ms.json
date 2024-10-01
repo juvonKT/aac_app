@@ -6,7 +6,17 @@
       {"phrase": "Awak", "image": "assets/images/people/you.png"},
       {"phrase": "Dia", "image": "assets/images/people/he.png"},
       {"phrase": "Mereka", "image": "assets/images/people/they.png"},
-      {"phrase": "Kami", "image": "assets/images/people/us.png"}
+      {"phrase": "Kami", "image": "assets/images/people/us.png"},
+      {"phrase": "Kawan", "image": "assets/images/people/friend.png"},
+      {"phrase": "Keluarga", "image": "assets/images/people/family.png"},
+      {"phrase": "Stranger", "image": "assets/images/people/stranger.png"},
+      {"phrase": "Cikgu", "image": "assets/images/people/teacher.png"},
+      {"phrase": "Ibu", "image": "assets/images/people/mom.png"},
+      {"phrase": "Ayah", "image": "assets/images/people/dad.png"},
+      {"phrase": "Abang", "image": "assets/images/people/brother.png"},
+      {"phrase": "Kakak", "image": "assets/images/people/sister.png"},
+      {"phrase": "Jururawat", "image": "assets/images/people/nurse.png"},
+      {"phrase": "Pengasuh", "image": "assets/images/people/caregiver.png"}
     ]
   },
   "benda": {
@@ -20,10 +30,20 @@
       {"phrase": "Telefon", "image": "assets/images/things/phone.png"},
       {"phrase": "Komputer", "image": "assets/images/things/computer.png"},
       {"phrase": "Katil", "image": "assets/images/things/bed.png"},
-      {"phrase": "Cawan", "image": "assets/images/things/cup.png"}
+      {"phrase": "Cawan", "image": "assets/images/things/cup.png"},
+      {"phrase": "Beg", "image": "assets/images/things/bag.png"},
+      {"phrase": "Jam tangan", "image": "assets/images/things/watch.png"},
+      {"phrase": "Kaca", "image": "assets/images/things/glass.png"},
+      {"phrase": "Dompet", "image": "assets/images/things/wallet.png"},
+      {"phrase": "Kunci", "image": "assets/images/things/key.png"},
+      {"phrase": "iPad", "image": "assets/images/things/ipad.png"},
+      {"phrase": "Benda", "image": "assets/images/things/stuff.png"},
+      {"phrase": "Ia", "image": "assets/images/things/it.png"},
+      {"phrase": "Ini", "image": "assets/images/things/this.png"},
+      {"phrase": "Itu", "image": "assets/images/things/that.png"}
     ]
   },
-  "tindakan": {
+  "tindakan 1": {
     "categoryImage": "assets/images/actions/actions.png",
     "phrases": [
       {"phrase": "Makan", "image": "assets/images/actions/eat.png"},
@@ -35,7 +55,47 @@
       {"phrase": "Lompat", "image": "assets/images/actions/jump.png"},
       {"phrase": "Tolong", "image": "assets/images/actions/help.png"},
       {"phrase": "Baca", "image": "assets/images/actions/read.png"},
-      {"phrase": "Dengar", "image": "assets/images/actions/listen.png"}
+      {"phrase": "Dengar", "image": "assets/images/actions/listen.png"},
+      {"phrase": "Cakap", "image": "assets/images/actions/talk.png"},
+      {"phrase": "Nyanyi", "image": "assets/images/actions/sing.png"},
+      {"phrase": "Menari", "image": "assets/images/actions/dance.png"},
+      {"phrase": "Berenang", "image": "assets/images/actions/swim.jpeg"},
+      {"phrase": "Berhenti", "image": "assets/images/actions/stop.png"},
+      {"phrase": "Lihat", "image": "assets/images/actions/see.jpeg"},
+      {"phrase": "Pergi", "image": "assets/images/actions/go.png"},
+      {"phrase": "Tengok", "image": "assets/images/actions/look.png"},
+      {"phrase": "Datang", "image": "assets/images/actions/come.png"},
+      {"phrase": "Letak", "image": "assets/images/actions/put.jpeg"},
+      {"phrase": "Duduk", "image": "assets/images/actions/sit.png"},
+      {"phrase": "Buka", "image": "assets/images/actions/open.png"},
+      {"phrase": "Bermula", "image": "assets/images/actions/start.jpeg"},
+      {"phrase": "Tunggu", "image": "assets/images/actions/wait.png"},
+      {"phrase": "Menonton", "image": "assets/images/actions/watch.jpeg"},
+      {"phrase": "Basuh", "image": "assets/images/actions/wash.jpeg"},
+      {"phrase": "Pusing", "image": "assets/images/actions/turn.jpeg"},
+      {"phrase": "Tinggal", "image": "assets/images/actions/stay.jpeg"}
+    ]
+  },
+  "tindakan 2": {
+    "categoryImage": "assets/images/actions2/actions2.png",
+    "phrases": [
+      {"phrase": "Mahu", "image": "assets/images/actions2/want.png"},
+      {"phrase": "Kata", "image": "assets/images/actions2/say.png"},
+      {"phrase": "Dapatkan", "image": "assets/images/actions2/get.png"},
+      {"phrase": "Ambil", "image": "assets/images/actions2/take.png"},
+      {"phrase": "Buat", "image": "assets/images/actions2/make.png"},
+      {"phrase": "Tahu", "image": "assets/images/actions2/know.png"},
+      {"phrase": "Mempunyai", "image": "assets/images/actions2/have.png"},
+      {"phrase": "Beritahu", "image": "assets/images/actions2/tell.png"},
+      {"phrase": "Tukar", "image": "assets/images/actions2/change.png"},
+      {"phrase": "Tunjuk", "image": "assets/images/actions2/show.png"},
+      {"phrase": "Ialah", "image": "assets/images/actions2/is.png"},
+      {"phrase": "Adalah", "image": "assets/images/actions2/are.png"},
+      {"phrase": "Fikir", "image": "assets/images/actions2/think.png"},
+      {"phrase": "Buat", "image": "assets/images/actions2/do.png"},
+      {"phrase": "Beri", "image": "assets/images/actions2/give.png"},
+      {"phrase": "Guna", "image": "assets/images/actions2/use.png"},
+      {"phrase": "Cuba", "image": "assets/images/actions2/try.png"}
     ]
   },
   "tempat": {
@@ -50,7 +110,11 @@
       {"phrase": "Perpustakaan", "image": "assets/images/places/library.png"},
       {"phrase": "Restoran", "image": "assets/images/places/restaurant.png"},
       {"phrase": "Hospital", "image": "assets/images/places/hospital.png"},
-      {"phrase": "Gim", "image": "assets/images/places/gym.png"}
+      {"phrase": "Gim", "image": "assets/images/places/gym.png"},
+      {"phrase": "Pantai", "image": "assets/images/places/beach.png"},
+      {"phrase": "Pejabat", "image": "assets/images/places/office.png"},
+      {"phrase": "Hotel", "image": "assets/images/places/hotel.png"},
+      {"phrase": "Pusat membeli-belah", "image": "assets/images/places/shop.png"}
     ]
   },
   "makanan": {
@@ -69,7 +133,17 @@
       {"phrase": "Pasta", "image": "assets/images/food/pasta.png"},
       {"phrase": "Yogurt", "image": "assets/images/food/yogurt.png"},
       {"phrase": "Anggur", "image": "assets/images/food/grapes.png"},
-      {"phrase": "Oren", "image": "assets/images/food/orange.png"}
+      {"phrase": "Oren", "image": "assets/images/food/orange.png"},
+      {"phrase": "Sandwic", "image": "assets/images/food/sandwich.jpeg"},
+      {"phrase": "Piza", "image": "assets/images/food/pizza.png"},
+      {"phrase": "Salad", "image": "assets/images/food/salad.png"},
+      {"phrase": "Ikan", "image": "assets/images/food/fish.png"},
+      {"phrase": "Kek", "image": "assets/images/food/cake.png"},
+      {"phrase": "Buah", "image": "assets/images/food/fruit.png"},
+      {"phrase": "Makanan ringan", "image": "assets/images/food/snack.png"},
+      {"phrase": "Makan malam", "image": "assets/images/food/dinner.png"},
+      {"phrase": "Makan tengah hari", "image": "assets/images/food/lunch.png"},
+      {"phrase": "Sarapan", "image": "assets/images/food/breakfast.png"}
     ]
   },
   "perasaan": {
@@ -83,7 +157,11 @@
       {"phrase": "Penat", "image": "assets/images/feelings/tired.png"},
       {"phrase": "Bosan", "image": "assets/images/feelings/bored.png"},
       {"phrase": "Terkejut", "image": "assets/images/feelings/surprised.png"},
-      {"phrase": "Gementar", "image": "assets/images/feelings/nervous.png"}
+      {"phrase": "Gementar", "image": "assets/images/feelings/nervous.png"},
+      {"phrase": "Tenang", "image": "assets/images/feelings/calm.png"},
+      {"phrase": "Risau", "image": "assets/images/feelings/worried.png"},
+      {"phrase": "Selamat", "image": "assets/images/feelings/safe.png"},
+      {"phrase": "Keliru", "image": "assets/images/feelings/confused.png"}
     ]
   },
   "deskriptif": {
@@ -103,7 +181,21 @@
       {"phrase": "Kuat", "image": "assets/images/descriptive/loud.png"},
       {"phrase": "Senyap", "image": "assets/images/descriptive/quiet.png"},
       {"phrase": "Berat", "image": "assets/images/descriptive/heavy.png"},
-      {"phrase": "Ringan", "image": "assets/images/descriptive/light.png"}
+      {"phrase": "Ringan", "image": "assets/images/descriptive/light.png"},
+      {"phrase": "Baik", "image": "assets/images/descriptive/good.png"},
+      {"phrase": "Berbeza", "image": "assets/images/descriptive/different.jpg"},
+      {"phrase": "Sama", "image": "assets/images/descriptive/same.png"},
+      {"phrase": "Bagus", "image": "assets/images/descriptive/nice.png"},
+      {"phrase": "Kegemaran", "image": "assets/images/descriptive/favorite.png"},
+      {"phrase": "Lama", "image": "assets/images/descriptive/old.png"},
+      {"phrase": "Kotor", "image": "assets/images/descriptive/dirty.png"},
+      {"phrase": "Basah", "image": "assets/images/descriptive/wet.png"},
+      {"phrase": "Teruk", "image": "assets/images/descriptive/bad.png"},
+      {"phrase": "Sedikit", "image": "assets/images/descriptive/little.png"},
+      {"phrase": "Menjijikkan", "image": "assets/images/descriptive/disgusting.png"},
+      {"phrase": "Seronok", "image": "assets/images/descriptive/fun.png"},
+      {"phrase": "Kelakar", "image": "assets/images/descriptive/funny.png"},
+      {"phrase": "Baru", "image": "assets/images/descriptive/new.png"}
     ]
   },
   "soalan": {
@@ -118,7 +210,8 @@
       {"phrase": "Yang Mana?", "image": "assets/images/questions/which.png"},
       {"phrase": "Boleh tak?", "image": "assets/images/questions/can_i.png"},
       {"phrase": "Adakah anda", "image": "assets/images/questions/do_you.png"},
-      {"phrase": "Adakah ia", "image": "assets/images/questions/is_it.png"}
+      {"phrase": "Adakah ia", "image": "assets/images/questions/is_it.png"},
+      {"phrase": "Adakah", "image": "assets/images/questions/will.png"}
     ]
   },
   "masa": {
@@ -133,7 +226,23 @@
       {"phrase": "Semalam", "image": "assets/images/time/yesterday.png"},
       {"phrase": "Sekarang", "image": "assets/images/time/now.png"},
       {"phrase": "Nanti", "image": "assets/images/time/later.png"},
-      {"phrase": "Tak lama lagi", "image": "assets/images/time/soon.png"}
+      {"phrase": "Tak lama lagi", "image": "assets/images/time/soon.png"},
+      {"phrase": "Minggu depan", "image": "assets/images/time/next_week.png"},
+      {"phrase": "Bulan depan", "image": "assets/images/time/next_month.png"},
+      {"phrase": "Hari", "image": "assets/images/time/day.png"},
+      {"phrase": "Bulan", "image": "assets/images/time/month.png"},
+      {"phrase": "Tahun", "image": "assets/images/time/year.png"},
+      {"phrase": "Malam ini", "image": "assets/images/time/tonight.png"},
+      {"phrase": "Sentiasa", "image": "assets/images/time/always.png"},
+      {"phrase": "Sekali lagi", "image": "assets/images/time/again.png"},
+      {"phrase": "Tidak pernah", "image": "assets/images/time/never.png"},
+      {"phrase": "Awal", "image": "assets/images/time/early.png"},
+      {"phrase": "Minggu", "image": "assets/images/time/week.png"},
+      {"phrase": "Hujung minggu", "image": "assets/images/time/weekend.png"},
+      {"phrase": "Sebelum", "image": "assets/images/time/before.png"},
+      {"phrase": "Selepas", "image": "assets/images/time/after.png"},
+      {"phrase": "Pertama", "image": "assets/images/time/first.png"},
+      {"phrase": "Terakhir", "image": "assets/images/time/last.png"}
     ]
   },
   "sosial": {
@@ -153,7 +262,15 @@
       {"phrase": "Siapa nama awak", "image": "assets/images/social/what's_your_name.png"},
       {"phrase": "Saya sesat", "image": "assets/images/social/i'm_lost.png"},
       {"phrase": "Saya lapar", "image": "assets/images/social/i'm_hungry.png"},
-      {"phrase": "Saya dahaga", "image": "assets/images/social/i'm_thirsty.png"}
+      {"phrase": "Saya dahaga", "image": "assets/images/social/i'm_thirsty.png"},
+      {"phrase": "Selamat datang", "image": "assets/images/social/welcome.jpeg"},
+      {"phrase": "Selemat pagi", "image": "assets/images/social/good_morning.jpeg"},
+      {"phrase": "Selamat malam", "image": "assets/images/social/good_night.jpeg"},
+      {"phrase": "Jaga diri", "image": "assets/images/social/take_care.png"},
+      {"phrase": "Jumpa lagi nanti", "image": "assets/images/social/see_you_later.jpeg"},
+      {"phrase": "Jom sembang", "image": "assets/images/social/lets_chat.jpeg"},
+      {"phrase": "Saya bergurau", "image": "assets/images/social/im_joking.jpeg"},
+      {"phrase": "Sila tunggu", "image": "assets/images/social/please_wait.jpeg"}
     ]
   },
   "kesihatan": {
@@ -174,6 +291,146 @@
       {"phrase": "Tekak", "image": "assets/images/health/throat.png"},
       {"phrase": "Batuk", "image": "assets/images/health/cough.png"},
       {"phrase": "Demam", "image": "assets/images/health/fever.png"}
+    ]
+  },
+
+  "pengangkutan": {
+    "categoryImage": "assets/images/transportation/transportation.png",
+    "phrases": [
+      {"phrase": "Bas", "image": "assets/images/transportation/bus.png"},
+      {"phrase": "Kereta api", "image": "assets/images/transportation/train.png"},
+      {"phrase": "basikal", "image": "assets/images/transportation/bicycle.png"},
+      {"phrase": "Teksi", "image": "assets/images/transportation/taxi.png"},
+      {"phrase": "Berjalan", "image": "assets/images/transportation/walking.png"},
+      {"phrase": "Kereta", "image": "assets/images/transportation/car.png"}
+    ]
+  },
+  "cuaca": {
+    "categoryImage": "assets/images/weather/weather.png",
+    "phrases": [
+      {"phrase": "Cerah", "image": "assets/images/weather/sunny.png"},
+      {"phrase": "Hujan", "image": "assets/images/weather/rainy.png"},
+      {"phrase": "Mendung", "image": "assets/images/weather/cloudy.png"},
+      {"phrase": "Berangin", "image": "assets/images/weather/windy.png"},
+      {"phrase": "Bersalji", "image": "assets/images/weather/snowy.png"},
+      {"phrase": "Panas", "image": "assets/images/weather/hot.png"},
+      {"phrase": "Sejuk", "image": "assets/images/weather/cold.png"}
+    ]
+  },
+  "lebih suka": {
+    "categoryImage": "assets/images/preferences/preferences.png",
+    "phrases": [
+      {"phrase": "Saya suka", "image": "assets/images/preferences/i_like_it.png"},
+      {"phrase": "Saya tak suka", "image": "assets/images/preferences/i_dont_like_it.png"},
+      {"phrase": "Saya mahu ini", "image": "assets/images/preferences/i_want_this.png"},
+      {"phrase": "Saya perlukan ini", "image": "assets/images/preferences/i_need_this.png"},
+      {"phrase": "Saya lebih suka", "image": "assets/images/preferences/i_prefer.png"},
+      {"phrase": "Saya suka", "image": "assets/images/preferences/i_love.png"}
+    ]
+  },
+  "kata-kata kecil": {
+    "categoryImage": "assets/images/little_words/little_words.jpeg",
+    "phrases": [
+      {"phrase": "Dalam", "image": "assets/images/little_words/in.png"},
+      {"phrase": "Keluar", "image": "assets/images/little_words/out.png"},
+      {"phrase": "Naik", "image": "assets/images/little_words/up.png"},
+      {"phrase": "Turun", "image": "assets/images/little_words/down.png"},
+      {"phrase": "Dan", "image": "assets/images/little_words/and.jpeg"},
+      {"phrase": "Atas", "image": "assets/images/little_words/on.jpeg"},
+      {"phrase": "Dengan", "image": "assets/images/little_words/with.jpeg"},
+      {"phrase": "Dimatikan", "image": "assets/images/little_words/off.jpeg"},
+      {"phrase": "Semua", "image": "assets/images/little_words/all.png"},
+      {"phrase": "Jangan", "image": "assets/images/little_words/dont.png"},
+      {"phrase": "Jauh", "image": "assets/images/little_words/away.jpeg"},
+      {"phrase": "Bawah", "image": "assets/images/little_words/under.jpeg"},
+      {"phrase": "Perlukan", "image": "assets/images/little_words/need.jpeg"},
+      {"phrase": "Bukan", "image": "assets/images/little_words/not.png"},
+      {"phrase": "Beberapa", "image": "assets/images/little_words/some.png"},
+      {"phrase": "Kerana", "image": "assets/images/little_words/because.png"},
+      {"phrase": "Lebih", "image": "assets/images/little_words/more.png"},
+      {"phrase": "Kepada", "image": "assets/images/little_words/to.png"},
+      {"phrase": "Untuk", "image": "assets/images/little_words/for.png"},
+      {"phrase": "Juga", "image": "assets/images/little_words/too.png"},
+      {"phrase": "Di", "image": "assets/images/little_words/at.png"},
+      {"phrase": "Oleh", "image": "assets/images/little_words/by.png"},
+      {"phrase": "Di atas", "image": "assets/images/little_words/over.png"},
+      {"phrase": "Daripada", "image": "assets/images/little_words/from.png"}
+    ]
+  },
+  "aktiviti": {
+    "categoryImage": "assets/images/activities/activities.png",
+    "phrases": [
+      {"phrase": "Hari jadi", "image": "assets/images/activities/birthday.png"},
+      {"phrase": "Permainan", "image": "assets/images/activities/game.png"},
+      {"phrase": "Muzik", "image": "assets/images/activities/music.png"},
+      {"phrase": "Di luar", "image": "assets/images/activities/outside.png"},
+      {"phrase": "TV", "image": "assets/images/activities/tv.png"},
+      {"phrase": "Kerja", "image": "assets/images/activities/work.png"}
+    ]
+  },
+  "komunikasi": {
+    "categoryImage": "assets/images/communication/communication.png",
+    "phrases": [
+      {"phrase": "Emel", "image": "assets/images/communication/email.png"},
+      {"phrase": "Mesej", "image": "assets/images/communication/message.png"},
+      {"phrase": "Media sosial", "image": "assets/images/communication/social_media.png"},
+      {"phrase": "Hubungi", "image": "assets/images/communication/call.png"}
+    ]
+  },
+  "membantu": {
+    "categoryImage": "assets/images/help/help.png",
+    "phrases": [
+      {"phrase": "Saya tidak tahu", "image": "assets/images/help/i_dont_know.png"},
+      {"phrase": "Ya", "image": "assets/images/help/yes.png"},
+      {"phrase": "Tidak", "image": "assets/images/help/no.png"},
+      {"phrase": "Mungkin", "image": "assets/images/help/maybe.png"},
+      {"phrase": "Belum sedia", "image": "assets/images/help/not_ready.png"},
+      {"phrase": "Saya perlu bercakap dengan awak", "image": "assets/images/help/i_need_to_talk_to_you.png"},
+      {"phrase": "Itu bukan apa yang saya katakan", "image": "assets/images/help/thats_not_what_i_said.png"},
+      {"phrase": "Ada sesuatu yang salah", "image": "assets/images/help/somethings_wrong.png"},
+      {"phrase": "Caj iPad saya", "image": "assets/images/help/charge_my_ipad.png"},
+      {"phrase": "Saya ada sesuatu nak cakap", "image": "assets/images/help/i_have_something_to_say.png"},
+      {"phrase": "Saya tak faham", "image": "assets/images/help/i_dont_understand.png"},
+      {"phrase": "Tak kisah", "image": "assets/images/help/whatever.png"},
+      {"phrase": "Hebat", "image": "assets/images/help/awesome.png"},
+      {"phrase": "Cepatlah!", "image": "assets/images/help/hurry_up.png"},
+      {"phrase": "Bantu saya untuk tenang", "image": "assets/images/help/help_calming_down.png"},
+      {"phrase": "Sila ulangi itu", "image": "assets/images/help/please_repeat_that.png"},
+      {"phrase": "Buat sendiri", "image": "assets/images/help/do_it_myself.png"},
+      {"phrase": "Saya perlu rehat", "image": "assets/images/help/i_need_a_break.png"}
+    ]
+  },
+  "haiwan": {
+    "categoryImage": "assets/images/animals/animals.png",
+    "phrases": [
+      {"phrase": "Anjing", "image": "assets/images/animals/dog.png"},
+      {"phrase": "Kucing", "image": "assets/images/animals/cat.png"},
+      {"phrase": "Burung", "image": "assets/images/animals/bird.png"},
+      {"phrase": "Kuda", "image": "assets/images/animals/horse.png"}
+    ]
+  },
+  "nombor": {
+    "categoryImage": "assets/images/numbers/numbers.jpg",
+    "phrases": [
+      {"phrase": "0", "image": "assets/images/numbers/0.png"},
+      {"phrase": "1", "image": "assets/images/numbers/1.jpeg"},
+      {"phrase": "2", "image": "assets/images/numbers/2.png"},
+      {"phrase": "3", "image": "assets/images/numbers/3.png"},
+      {"phrase": "4", "image": "assets/images/numbers/4.png"},
+      {"phrase": "5", "image": "assets/images/numbers/5.png"},
+      {"phrase": "6", "image": "assets/images/numbers/6.png"},
+      {"phrase": "7", "image": "assets/images/numbers/7.png"},
+      {"phrase": "8", "image": "assets/images/numbers/8.jpeg"},
+      {"phrase": "9", "image": "assets/images/numbers/9.png"}
+    ]
+  },
+  "tanda baca": {
+    "categoryImage": "assets/images/punctuation/punctuation.png",
+    "phrases": [
+      {"phrase": ".", "image": "assets/images/punctuation/period.png"},
+      {"phrase": "?", "image": "assets/images/punctuation/question_mark.png"},
+      {"phrase": "!", "image": "assets/images/punctuation/exclamation_mark.png"},
+      {"phrase": ",", "image": "assets/images/punctuation/comma.png"}
     ]
   }
 }

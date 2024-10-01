@@ -91,7 +91,7 @@
       {"phrase": "知る", "image": "assets/images/actions2/know.png"},
       {"phrase": "持つ", "image": "assets/images/actions2/have.png"},
       {"phrase": "伝える", "image": "assets/images/actions2/tell.png"},
-      {"phrase": "変える", "image": "assets/images/actions2/tell.png"},
+      {"phrase": "変える", "image": "assets/images/actions2/change.png"},
       {"phrase": "見せる", "image": "assets/images/actions2/show.png"},
       {"phrase": "です", "image": "assets/images/actions2/is.png"},
       {"phrase": "です（複数）", "image": "assets/images/actions2/are.png"},
