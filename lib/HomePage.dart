@@ -367,12 +367,12 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
     );
   }
 
-  Widget _buildWordSuggestionsSection() {
+  Widget _buildWordSuggestionsSection(S s) {
     print("suggested in build: $suggestedWords");
     if (_isLoadingWords) {
       return const Center(child: CircularProgressIndicator());
     } else if (topStartingWords.isEmpty && suggestedWords.isEmpty) {
-      return Center(child: Text(_isOffline ? 'Offline. Using cached data.' : 'No starting words available.'));
+      return Center(child: Text(_isOffline ? 'Offline. Using cached data.' : s.noStartingWords));
     } else {
       return ListView(
         scrollDirection: Axis.horizontal,
@@ -469,7 +469,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
                   // Word suggestions section (starting words + next words)
                   SizedBox(
                     height: 100, // Adjust as needed
-                    child:_buildWordSuggestionsSection(),
+                    child:_buildWordSuggestionsSection(s),
                   ),
                   Container(
                     height: 1.0,

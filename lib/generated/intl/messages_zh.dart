@@ -69,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "light": MessageLookupByLibrary.simpleMessage("浅色"),
         "newCategory": MessageLookupByLibrary.simpleMessage("新类别"),
         "newPhrase": MessageLookupByLibrary.simpleMessage("新短语"),
+        "noStartingWords": MessageLookupByLibrary.simpleMessage("没有可用的起始词。"),
         "past": MessageLookupByLibrary.simpleMessage("过去"),
         "progressive": MessageLookupByLibrary.simpleMessage("进行时"),
         "purposeContent": MessageLookupByLibrary.simpleMessage(

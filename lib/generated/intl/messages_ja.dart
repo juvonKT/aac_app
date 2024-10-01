@@ -74,6 +74,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "light": MessageLookupByLibrary.simpleMessage("ライト"),
         "newCategory": MessageLookupByLibrary.simpleMessage("新しいカテゴリ"),
         "newPhrase": MessageLookupByLibrary.simpleMessage("新しいフレーズ"),
+        "noStartingWords":
+            MessageLookupByLibrary.simpleMessage("使用可能な開始単語はありません。"),
         "past": MessageLookupByLibrary.simpleMessage("過去"),
         "progressive": MessageLookupByLibrary.simpleMessage("進行形"),
         "purposeContent": MessageLookupByLibrary.simpleMessage(

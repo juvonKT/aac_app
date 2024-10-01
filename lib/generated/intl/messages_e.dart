@@ -78,6 +78,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "light": MessageLookupByLibrary.simpleMessage("Light"),
         "newCategory": MessageLookupByLibrary.simpleMessage("New Category"),
         "newPhrase": MessageLookupByLibrary.simpleMessage("New Phrase"),
+        "noStartingWords": MessageLookupByLibrary.simpleMessage(
+            "No starting words available."),
         "past": MessageLookupByLibrary.simpleMessage("Past"),
         "progressive": MessageLookupByLibrary.simpleMessage("Progressive"),
         "purposeContent": MessageLookupByLibrary.simpleMessage(

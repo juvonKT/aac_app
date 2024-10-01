@@ -81,6 +81,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "newCategory":
             MessageLookupByLibrary.simpleMessage("Cipta Kategori Baharu"),
         "newPhrase": MessageLookupByLibrary.simpleMessage("Cipta Frasa Baharu"),
+        "noStartingWords": MessageLookupByLibrary.simpleMessage(
+            "Tiada kata permulaan yang tersedia."),
         "past": MessageLookupByLibrary.simpleMessage("Lampau"),
         "progressive": MessageLookupByLibrary.simpleMessage("Progresif"),
         "purposeContent": MessageLookupByLibrary.simpleMessage(

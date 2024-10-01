@@ -380,6 +380,16 @@ class S {
     );
   }
 
+  /// `No starting words available.`
+  String get noStartingWords {
+    return Intl.message(
+      'No starting words available.',
+      name: 'noStartingWords',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `What is this app for?`
   String get purposeTitle {
     return Intl.message(

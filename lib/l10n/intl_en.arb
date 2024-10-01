@@ -33,6 +33,7 @@
   "deleteUserConfirmation": "Are you sure you want to delete '{user}'?",
   "past": "Past",
   "progressive" : "Progressive",
+  "noStartingWords" : "No starting words available.",
 
 
   "purposeTitle": "What is this app for?",

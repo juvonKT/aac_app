@@ -33,6 +33,7 @@
   "deleteUserConfirmation": "您确定要删除'{user}'吗？",
   "past": "过去",
   "progressive": "进行时",
+  "noStartingWords": "没有可用的起始词。",
 
   "purposeTitle": "这个应用程序的目的是什么？",
   "purposeContent": "这个应用程序旨在帮助用户，尤其是那些有沟通障碍的用户，使用预定义短语构建句子。它还提供短语建议、多语言和文本转语音等功能，以帮助用户进行有效的沟通。",

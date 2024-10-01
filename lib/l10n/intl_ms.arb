@@ -33,6 +33,7 @@
   "deleteUserConfirmation": "Adakah anda pasti mahu memadamkan '{user}'?",
   "past": "Lampau",
   "progressive": "Progresif",
+  "noStartingWords": "Tiada kata permulaan yang tersedia.",
 
   "purposeTitle": "Apa fungsi aplikasi ini?",
   "purposeContent": "Aplikasi ini direka untuk membantu pengguna, terutamanya mereka yang mempunyai cabaran komunikasi, membina ayat menggunakan frasa yang telah ditetapkan. Ia juga menawarkan ciri seperti cadangan frasa, pelbagai bahasa, dan teks-ke-pidato untuk membantu pengguna dalam komunikasi yang berkesan.",
