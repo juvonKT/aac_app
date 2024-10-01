@@ -216,7 +216,7 @@
       {"phrase": "Do you", "image": "assets/images/questions/do_you.png"},
       {"phrase": "Is it", "image": "assets/images/questions/is_it.png"},
 
-      {"phrase": "Will", "image": "assets/images/questions/is_it.png"}
+      {"phrase": "Will", "image": "assets/images/questions/will.png"}
     ]
   },
   "time": {

@@ -104,7 +104,7 @@ class _SettingsState extends State<Settings> {
               },
               items: const [
                 DropdownMenuItem(value: Locale('en', ''), child: Text('English')),
-                DropdownMenuItem(value: Locale('ms', ''), child: Text('Malay')),
+                // DropdownMenuItem(value: Locale('ms', ''), child: Text('Malay')),
                 DropdownMenuItem(value: Locale('zh', ''), child: Text('Mandarin')),
                 DropdownMenuItem(value: Locale('ja', ''), child: Text('Japanese')),
               ],

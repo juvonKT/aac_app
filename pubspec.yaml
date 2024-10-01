@@ -272,6 +272,7 @@ flutter:
     - assets/images/questions/can_i.png
     - assets/images/questions/do_you.png
     - assets/images/questions/is_it.png
+    - assets/images/questions/will.png
 
     - assets/images/time/morning.png
     - assets/images/time/afternoon.png
