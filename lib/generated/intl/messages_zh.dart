@@ -24,13 +24,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(category) => "您确定要删除类别 \'${category}\' 及其所有短语吗？";
 
+  static String m2(phrase) => "您确定要删除 \'${phrase}\' 吗？";
+
+  static String m3(user) => "您确定要删除\'${user}\'吗？";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addCategory": MessageLookupByLibrary.simpleMessage("添加类别"),
+        "addNewUser": MessageLookupByLibrary.simpleMessage("添加新用户"),
         "addPhrase": MessageLookupByLibrary.simpleMessage("添加短语"),
         "addPhraseContent": MessageLookupByLibrary.simpleMessage(
             "1. 转到设置页面。\n2. 点击“添加短语”或“添加类别”。\n3. 输入详细信息并保存。"),
         "addPhraseTitle": MessageLookupByLibrary.simpleMessage("如何添加新短语或类别"),
+        "addUserButton": MessageLookupByLibrary.simpleMessage("添加用户"),
         "addUserContent": MessageLookupByLibrary.simpleMessage(
             "1. 转到设置页面。\n2. 点击“添加用户”按钮。\n3. 输入用户的名字并保存。"),
         "addUserTitle": MessageLookupByLibrary.simpleMessage("如何添加用户"),
@@ -47,18 +53,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "delete": MessageLookupByLibrary.simpleMessage("删除"),
         "deleteCategory": MessageLookupByLibrary.simpleMessage("删除类别"),
         "deleteCategoryConfirmation": m1,
+        "deletePhrase": MessageLookupByLibrary.simpleMessage("删除短语"),
+        "deletePhraseConfirmation": m2,
         "deletePhraseContent": MessageLookupByLibrary.simpleMessage(
             "1. 转到短语主屏幕。\n2. 长按要删除的类别或短语。\n3. 弹出消息将询问确认。选择“删除”以删除它。"),
         "deletePhraseTitle": MessageLookupByLibrary.simpleMessage("如何删除短语或类别"),
+        "deleteUser": MessageLookupByLibrary.simpleMessage("删除用户"),
+        "deleteUserConfirmation": m3,
         "deleteUserContent": MessageLookupByLibrary.simpleMessage(
             "1. 转到设置页面。\n2. 从列表中选择要删除的用户。\n3. 点击“删除”按钮。"),
         "deleteUserTitle": MessageLookupByLibrary.simpleMessage("如何删除用户"),
+        "enterYourName": MessageLookupByLibrary.simpleMessage("输入你的名字"),
         "home": MessageLookupByLibrary.simpleMessage("首页"),
         "language": MessageLookupByLibrary.simpleMessage("语言"),
         "light": MessageLookupByLibrary.simpleMessage("浅色"),
         "newCategory": MessageLookupByLibrary.simpleMessage("新类别"),
         "newPhrase": MessageLookupByLibrary.simpleMessage("新短语"),
+        "past": MessageLookupByLibrary.simpleMessage("过去"),
+        "progressive": MessageLookupByLibrary.simpleMessage("进行时"),
+        "purposeContent": MessageLookupByLibrary.simpleMessage(
+            "这个应用程序旨在帮助用户，尤其是那些有沟通障碍的用户，使用预定义短语构建句子。它还提供短语建议、多语言和文本转语音等功能，以帮助用户进行有效的沟通。"),
+        "purposeTitle": MessageLookupByLibrary.simpleMessage("这个应用程序的目的是什么？"),
         "removeMessage": MessageLookupByLibrary.simpleMessage("按住以删除全部"),
+        "selectUser": MessageLookupByLibrary.simpleMessage("选择用户"),
         "setting": MessageLookupByLibrary.simpleMessage("设置"),
         "system": MessageLookupByLibrary.simpleMessage("系统"),
         "usePhrasesContent": MessageLookupByLibrary.simpleMessage(
@@ -71,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "userB": MessageLookupByLibrary.simpleMessage("用户B"),
         "userC": MessageLookupByLibrary.simpleMessage("用户C"),
         "userGuide": MessageLookupByLibrary.simpleMessage("用户指南"),
-        "userGuideContent": MessageLookupByLibrary.simpleMessage("用户指南内容在这里")
+        "userGuideContent": MessageLookupByLibrary.simpleMessage("用户指南内容在这里"),
+        "welcome": MessageLookupByLibrary.simpleMessage("欢迎!")
       };
 }

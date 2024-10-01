@@ -25,14 +25,22 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m1(category) =>
       "Adakah anda pasti mahu memadamkan kategori \'${category}\' dan semua frasanya?";
 
+  static String m2(phrase) => "Adakah anda pasti mahu memadam \'${phrase}\'?";
+
+  static String m3(user) => "Adakah anda pasti mahu memadamkan \'${user}\'?";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addCategory": MessageLookupByLibrary.simpleMessage("Tambah Kategori"),
+        "addNewUser":
+            MessageLookupByLibrary.simpleMessage("Tambah Pengguna Baharu"),
         "addPhrase": MessageLookupByLibrary.simpleMessage("Tambah Frasa"),
         "addPhraseContent": MessageLookupByLibrary.simpleMessage(
             "1. Pergi ke halaman Tetapan.\n2. Tekan \'Tambah Frasa\' atau \'Tambah Kategori\'.\n3. Masukkan butiran dan simpan."),
         "addPhraseTitle": MessageLookupByLibrary.simpleMessage(
             "Cara Menambah Frasa atau Kategori Baharu"),
+        "addUserButton":
+            MessageLookupByLibrary.simpleMessage("Tambah Pengguna"),
         "addUserContent": MessageLookupByLibrary.simpleMessage(
             "1. Pergi ke halaman Tetapan.\n2. Tekan butang \'Tambah Pengguna\'.\n3. Masukkan nama pengguna dan simpan."),
         "addUserTitle":
@@ -53,22 +61,35 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteCategory":
             MessageLookupByLibrary.simpleMessage("Padamkan Kategori"),
         "deleteCategoryConfirmation": m1,
+        "deletePhrase": MessageLookupByLibrary.simpleMessage("Padam Frasa"),
+        "deletePhraseConfirmation": m2,
         "deletePhraseContent": MessageLookupByLibrary.simpleMessage(
             "1. Pergi ke skrin utama frasa.\n2. Tekan dan tahan kategori atau frasa yang ingin dipadam.\n3. Mesej pop-up akan meminta pengesahan. Pilih \'Padam\' untuk memadamnya."),
         "deletePhraseTitle": MessageLookupByLibrary.simpleMessage(
             "Cara Memadam Frasa atau Kategori"),
+        "deleteUser": MessageLookupByLibrary.simpleMessage("Padam Pengguna"),
+        "deleteUserConfirmation": m3,
         "deleteUserContent": MessageLookupByLibrary.simpleMessage(
             "1. Pergi ke halaman Tetapan.\n2. Pilih pengguna yang ingin dipadam daripada senarai.\n3. Tekan butang \'Padam\'."),
         "deleteUserTitle":
             MessageLookupByLibrary.simpleMessage("Cara Memadam Pengguna"),
+        "enterYourName":
+            MessageLookupByLibrary.simpleMessage("Masukkan nama anda"),
         "home": MessageLookupByLibrary.simpleMessage("Laman Utama"),
         "language": MessageLookupByLibrary.simpleMessage("Bahasa"),
         "light": MessageLookupByLibrary.simpleMessage("Terang"),
         "newCategory":
             MessageLookupByLibrary.simpleMessage("Cipta Kategori Baharu"),
         "newPhrase": MessageLookupByLibrary.simpleMessage("Cipta Frasa Baharu"),
+        "past": MessageLookupByLibrary.simpleMessage("Lampau"),
+        "progressive": MessageLookupByLibrary.simpleMessage("Progresif"),
+        "purposeContent": MessageLookupByLibrary.simpleMessage(
+            "Aplikasi ini direka untuk membantu pengguna, terutamanya mereka yang mempunyai cabaran komunikasi, membina ayat menggunakan frasa yang telah ditetapkan. Ia juga menawarkan ciri seperti cadangan frasa, pelbagai bahasa, dan teks-ke-pidato untuk membantu pengguna dalam komunikasi yang berkesan."),
+        "purposeTitle":
+            MessageLookupByLibrary.simpleMessage("Apa fungsi aplikasi ini?"),
         "removeMessage": MessageLookupByLibrary.simpleMessage(
             "Tekan dan tahan untuk membuang semua"),
+        "selectUser": MessageLookupByLibrary.simpleMessage("Pilih Pengguna"),
         "setting": MessageLookupByLibrary.simpleMessage("Tetapan"),
         "system": MessageLookupByLibrary.simpleMessage("Sistem"),
         "usePhrasesContent": MessageLookupByLibrary.simpleMessage(
@@ -84,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "userC": MessageLookupByLibrary.simpleMessage("Pengguna C"),
         "userGuide": MessageLookupByLibrary.simpleMessage("Panduan Pengguna"),
         "userGuideContent": MessageLookupByLibrary.simpleMessage(
-            "Kandungan Panduan Pengguna Di Sini")
+            "Kandungan Panduan Pengguna Di Sini"),
+        "welcome": MessageLookupByLibrary.simpleMessage("Selamat Datang!")
       };
 }

@@ -18,7 +18,6 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
-  String selectedUser = 'Add New User';
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +26,7 @@ class _SettingsState extends State<Settings> {
     final s = S.of(context);
     final userProvider = Provider.of<UserProvider>(context);
     final userList = userProvider.users;
-    String selectedUser = userProvider.selectedUser ?? 'Add New User';
+    String selectedUser = userProvider.selectedUser ?? s.addNewUser;
 
     return Scaffold(
       appBar: AppBar(
@@ -43,10 +42,10 @@ class _SettingsState extends State<Settings> {
             leading: const Icon(Icons.person),
             title: DropdownButton<String>(
               value: userList.contains(selectedUser) ? selectedUser : null,
-              hint: const Text('Select User'),
+              hint: Text(s.selectUser),
               onChanged: (String? newValue) {
                 if (newValue != null) {
-                  if (newValue == 'Add New User') {
+                  if (newValue == s.addNewUser) {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -71,21 +70,21 @@ class _SettingsState extends State<Settings> {
                   value: user,
                   child: Text(user),
                 )),
-                const DropdownMenuItem<String>(
-                  value: 'Add New User',
-                  child: Text('Add New User'),
+                 DropdownMenuItem<String>(
+                  value: s.addNewUser,
+                  child: Text(s.addNewUser),
                 ),
               ],
             ),
           ),
 
-          if (selectedUser != 'Add New User' && selectedUser != null)
+          if (selectedUser != s.addNewUser && selectedUser != null)
             ListTile(
               title: ElevatedButton(
                 onPressed: () {
-                  ShowDeleteConfirmation(context, selectedUser!, userProvider);
+                  ShowDeleteConfirmation(context, selectedUser!, userProvider, s);
                 },
-                child: Text('Delete User'),
+                child: Text(s.deleteUser),
               ),
             ),
 
@@ -192,26 +191,26 @@ class _SettingsState extends State<Settings> {
     }
   }
 
-  void ShowDeleteConfirmation(BuildContext context, String userName, UserProvider userProvider) {
+  void ShowDeleteConfirmation(BuildContext context, String userName, UserProvider userProvider, S s) {
     showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Delete User'),
-          content: Text('Are you sure you want to delete $userName?'),
+          title: Text(s.deleteUser),
+          content: Text(s.deleteUserConfirmation(userName)),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Cancel'),
+              child: Text(s.cancel),
             ),
             TextButton(
               onPressed: () {
                 userProvider.deleteUser(userName);
                 Navigator.of(context).pop();
               },
-              child: Text('Delete'),
+              child: Text(s.delete),
             ),
           ],
         );

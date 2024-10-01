@@ -270,11 +270,111 @@ class S {
     );
   }
 
-  /// ``
-  String get noStartingWords {
+  /// `Add New User`
+  String get addNewUser {
     return Intl.message(
-      '',
-      name: 'noStartingWords',
+      'Add New User',
+      name: 'addNewUser',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete User`
+  String get deleteUser {
+    return Intl.message(
+      'Delete User',
+      name: 'deleteUser',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome!`
+  String get welcome {
+    return Intl.message(
+      'Welcome!',
+      name: 'welcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your name`
+  String get enterYourName {
+    return Intl.message(
+      'Enter your name',
+      name: 'enterYourName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `AddUser`
+  String get addUserButton {
+    return Intl.message(
+      'AddUser',
+      name: 'addUserButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete '{phrase}'?`
+  String deletePhraseConfirmation(Object phrase) {
+    return Intl.message(
+      'Are you sure you want to delete \'$phrase\'?',
+      name: 'deletePhraseConfirmation',
+      desc: '',
+      args: [phrase],
+    );
+  }
+
+  /// `Delete Phrase`
+  String get deletePhrase {
+    return Intl.message(
+      'Delete Phrase',
+      name: 'deletePhrase',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select User`
+  String get selectUser {
+    return Intl.message(
+      'Select User',
+      name: 'selectUser',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete '{user}'?`
+  String deleteUserConfirmation(Object user) {
+    return Intl.message(
+      'Are you sure you want to delete \'$user\'?',
+      name: 'deleteUserConfirmation',
+      desc: '',
+      args: [user],
+    );
+  }
+
+  /// `Past`
+  String get past {
+    return Intl.message(
+      'Past',
+      name: 'past',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Progressive`
+  String get progressive {
+    return Intl.message(
+      'Progressive',
+      name: 'progressive',
       desc: '',
       args: [],
     );

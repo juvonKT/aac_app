@@ -22,7 +22,17 @@
   "dark": "Dark",
   "system" : "System",
   "userGuideContent": "User Guide Content Goes Here",
-  "noStartingWords": "",
+  "addNewUser": "Add New User",
+  "deleteUser": "Delete User",
+  "welcome": "Welcome!",
+  "enterYourName": "Enter your name",
+  "addUserButton": "AddUser",
+  "deletePhraseConfirmation": "Are you sure you want to delete '{phrase}'?",
+  "deletePhrase": "Delete Phrase",
+  "selectUser": "Select User",
+  "deleteUserConfirmation": "Are you sure you want to delete '{user}'?",
+  "past": "Past",
+  "progressive" : "Progressive",
 
 
   "purposeTitle": "What is this app for?",

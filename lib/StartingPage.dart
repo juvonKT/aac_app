@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'generated/l10n.dart';
 import 'providers/user_provider.dart';
 
 class StartingPage extends StatefulWidget {
@@ -32,9 +33,10 @@ class _StartingPageState extends State<StartingPage> {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Welcome!'),
+        title: Text(s.welcome),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -42,12 +44,12 @@ class _StartingPageState extends State<StartingPage> {
           children: [
             TextField(
               controller: _controller,
-              decoration: const InputDecoration(labelText: 'Enter your name'),
+              decoration: InputDecoration(labelText: s.enterYourName),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () => _addUser(context, 'en', 'ThemeMode.light'),
-              child: const Text('Add User'),
+              child: Text(s.addUserButton),
             ),
           ],
         ),

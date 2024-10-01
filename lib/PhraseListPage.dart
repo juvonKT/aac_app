@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'firestore_service.dart';
+import 'generated/l10n.dart';
 import 'settings.dart';
 import 'AddPhrasePage.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -330,6 +331,7 @@ class _PhraseListPageState extends State<PhraseListPage> {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
@@ -422,17 +424,17 @@ class _PhraseListPageState extends State<PhraseListPage> {
                             context: context,
                             builder: (BuildContext context) {
                               return AlertDialog(
-                                title: const Text('Delete Phrase'),
-                                content: Text('Are you sure you want to delete "${phrase["phrase"]}"?'),
+                                title: Text(s.deletePhrase),
+                                content: Text(s.deletePhraseConfirmation(phrase["phrase"] as Object)),
                                 actions: <Widget>[
                                   TextButton(
-                                    child: const Text('Cancel'),
+                                    child: Text(s.cancel),
                                     onPressed: () {
                                       Navigator.of(context).pop();
                                     },
                                   ),
                                   TextButton(
-                                    child: const Text('Delete'),
+                                    child: Text(s.delete),
                                     onPressed: () {
                                       deletePhrase(index);
                                       Navigator.of(context).pop();
@@ -495,7 +497,7 @@ class _PhraseListPageState extends State<PhraseListPage> {
                     child: ElevatedButton.icon(
                       onPressed: () => _changeToPastTense(),
                       icon: const Icon(Icons.history, size: 18),
-                      label: const Text('Past'),
+                      label: Text(s.past),
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
                         backgroundColor: Colors.blue[700],
@@ -511,7 +513,7 @@ class _PhraseListPageState extends State<PhraseListPage> {
                     child: ElevatedButton.icon(
                       onPressed: () => _changeToProgressiveTense(),
                       icon: const Icon(Icons.access_time, size: 18),
-                      label: const Text('Progressive'),
+                      label: Text(s.progressive),
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
                         backgroundColor: Colors.green[700],
@@ -534,14 +536,14 @@ class _PhraseListPageState extends State<PhraseListPage> {
             _navigateToSettings();
           }
         },
-        items: const [
+        items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: s.home,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: 'Settings',
+            label: s.setting,
           ),
         ],
         selectedItemColor: Colors.black,

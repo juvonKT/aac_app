@@ -25,14 +25,20 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m1(category) =>
       "カテゴリ \'${category}\' とそのすべてのフレーズを削除してもよろしいですか？";
 
+  static String m2(phrase) => "本当に \'${phrase}\' を削除してもよろしいですか？";
+
+  static String m3(user) => "本当に\'${user}\'を削除してもよろしいですか？";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addCategory": MessageLookupByLibrary.simpleMessage("カテゴリを追加"),
+        "addNewUser": MessageLookupByLibrary.simpleMessage("新しいユーザーを追加"),
         "addPhrase": MessageLookupByLibrary.simpleMessage("フレーズを追加"),
         "addPhraseContent": MessageLookupByLibrary.simpleMessage(
             "1. 設定ページに移動します。\n2. 「フレーズを追加」または「カテゴリを追加」を押します。\n3. 詳細を入力して保存します。"),
         "addPhraseTitle":
             MessageLookupByLibrary.simpleMessage("新しいフレーズまたはカテゴリを追加する方法"),
+        "addUserButton": MessageLookupByLibrary.simpleMessage("ユーザーを追加"),
         "addUserContent": MessageLookupByLibrary.simpleMessage(
             "1. 設定ページに移動します。\n2. 「ユーザーを追加」ボタンを押します。\n3. ユーザーの名前を入力して保存します。"),
         "addUserTitle": MessageLookupByLibrary.simpleMessage("ユーザーを追加する方法"),
@@ -50,19 +56,31 @@ class MessageLookup extends MessageLookupByLibrary {
         "delete": MessageLookupByLibrary.simpleMessage("削除"),
         "deleteCategory": MessageLookupByLibrary.simpleMessage("カテゴリを削除"),
         "deleteCategoryConfirmation": m1,
+        "deletePhrase": MessageLookupByLibrary.simpleMessage("フレーズを削除"),
+        "deletePhraseConfirmation": m2,
         "deletePhraseContent": MessageLookupByLibrary.simpleMessage(
             "1. フレーズのメイン画面に移動します。\n2. 削除したいカテゴリまたはフレーズを長押しします。\n3. 確認を求めるポップアップメッセージが表示されます。「削除」を選択して削除します。"),
         "deletePhraseTitle":
             MessageLookupByLibrary.simpleMessage("フレーズまたはカテゴリを削除する方法"),
+        "deleteUser": MessageLookupByLibrary.simpleMessage("ユーザーを削除"),
+        "deleteUserConfirmation": m3,
         "deleteUserContent": MessageLookupByLibrary.simpleMessage(
             "1. 設定ページに移動します。\n2. リストから削除するユーザーを選択します。\n3. 「削除」ボタンを押します。"),
         "deleteUserTitle": MessageLookupByLibrary.simpleMessage("ユーザーを削除する方法"),
+        "enterYourName":
+            MessageLookupByLibrary.simpleMessage("あなたの名前を入力してください"),
         "home": MessageLookupByLibrary.simpleMessage("ホーム"),
         "language": MessageLookupByLibrary.simpleMessage("言語"),
         "light": MessageLookupByLibrary.simpleMessage("ライト"),
         "newCategory": MessageLookupByLibrary.simpleMessage("新しいカテゴリ"),
         "newPhrase": MessageLookupByLibrary.simpleMessage("新しいフレーズ"),
+        "past": MessageLookupByLibrary.simpleMessage("過去"),
+        "progressive": MessageLookupByLibrary.simpleMessage("進行形"),
+        "purposeContent": MessageLookupByLibrary.simpleMessage(
+            "このアプリは、特にコミュニケーションに課題を抱えるユーザーが、定義されたフレーズを使用して文を構築するのを助けるために設計されています。また、フレーズの提案、複数の言語、音声合成などの機能を提供し、ユーザーが効果的なコミュニケーションを行えるよう支援します。"),
+        "purposeTitle": MessageLookupByLibrary.simpleMessage("このアプリは何のためですか？"),
         "removeMessage": MessageLookupByLibrary.simpleMessage("長押ししてすべて削除"),
+        "selectUser": MessageLookupByLibrary.simpleMessage("ユーザーを選択"),
         "setting": MessageLookupByLibrary.simpleMessage("設定"),
         "system": MessageLookupByLibrary.simpleMessage("システム"),
         "usePhrasesContent": MessageLookupByLibrary.simpleMessage(
@@ -76,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "userC": MessageLookupByLibrary.simpleMessage("ユーザーC"),
         "userGuide": MessageLookupByLibrary.simpleMessage("ユーザーガイド"),
         "userGuideContent":
-            MessageLookupByLibrary.simpleMessage("ユーザーガイドの内容がここに表示されます")
+            MessageLookupByLibrary.simpleMessage("ユーザーガイドの内容がここに表示されます"),
+        "welcome": MessageLookupByLibrary.simpleMessage("ようこそ！")
       };
 }
