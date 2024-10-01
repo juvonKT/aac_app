@@ -28,13 +28,31 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addCategory": MessageLookupByLibrary.simpleMessage("添加类别"),
         "addPhrase": MessageLookupByLibrary.simpleMessage("添加短语"),
+        "addPhraseContent": MessageLookupByLibrary.simpleMessage(
+            "1. 转到设置页面。\n2. 点击“添加短语”或“添加类别”。\n3. 输入详细信息并保存。"),
+        "addPhraseTitle": MessageLookupByLibrary.simpleMessage("如何添加新短语或类别"),
+        "addUserContent": MessageLookupByLibrary.simpleMessage(
+            "1. 转到设置页面。\n2. 点击“添加用户”按钮。\n3. 输入用户的名字并保存。"),
+        "addUserTitle": MessageLookupByLibrary.simpleMessage("如何添加用户"),
         "cancel": MessageLookupByLibrary.simpleMessage("取消"),
         "categoryDeleted": m0,
+        "changeLanguageContent": MessageLookupByLibrary.simpleMessage(
+            "1. 转到设置页面。\n2. 在“语言首选项”下，从下拉菜单中选择你喜欢的语言。\n3. 应用程序将自动切换到所选语言。"),
+        "changeLanguageTitle": MessageLookupByLibrary.simpleMessage("如何更改语言"),
+        "changeThemeContent": MessageLookupByLibrary.simpleMessage(
+            "1. 转到设置页面。\n2. 在“主题”下，选择浅色或深色模式。"),
+        "changeThemeTitle": MessageLookupByLibrary.simpleMessage("如何更改主题"),
         "colourScheme": MessageLookupByLibrary.simpleMessage("配色方案"),
         "dark": MessageLookupByLibrary.simpleMessage("深色"),
         "delete": MessageLookupByLibrary.simpleMessage("删除"),
         "deleteCategory": MessageLookupByLibrary.simpleMessage("删除类别"),
         "deleteCategoryConfirmation": m1,
+        "deletePhraseContent": MessageLookupByLibrary.simpleMessage(
+            "1. 转到短语主屏幕。\n2. 长按要删除的类别或短语。\n3. 弹出消息将询问确认。选择“删除”以删除它。"),
+        "deletePhraseTitle": MessageLookupByLibrary.simpleMessage("如何删除短语或类别"),
+        "deleteUserContent": MessageLookupByLibrary.simpleMessage(
+            "1. 转到设置页面。\n2. 从列表中选择要删除的用户。\n3. 点击“删除”按钮。"),
+        "deleteUserTitle": MessageLookupByLibrary.simpleMessage("如何删除用户"),
         "home": MessageLookupByLibrary.simpleMessage("首页"),
         "language": MessageLookupByLibrary.simpleMessage("语言"),
         "light": MessageLookupByLibrary.simpleMessage("浅色"),
@@ -43,6 +61,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMessage": MessageLookupByLibrary.simpleMessage("按住以删除全部"),
         "setting": MessageLookupByLibrary.simpleMessage("设置"),
         "system": MessageLookupByLibrary.simpleMessage("系统"),
+        "usePhrasesContent": MessageLookupByLibrary.simpleMessage(
+            "1. 转到短语主屏幕。\n2. 选择一个类别或开始输入短语。\n3. 应用程序会根据您的选择建议短语。"),
+        "usePhrasesTitle": MessageLookupByLibrary.simpleMessage("如何使用短语"),
+        "useTTSContent": MessageLookupByLibrary.simpleMessage(
+            "1. 在短语屏幕上，选择一个短语或句子。\n2. 点击扬声器图标以听到该短语的语音输出。"),
+        "useTTSTitle": MessageLookupByLibrary.simpleMessage("如何使用文本转语音"),
         "userA": MessageLookupByLibrary.simpleMessage("用户A"),
         "userB": MessageLookupByLibrary.simpleMessage("用户B"),
         "userC": MessageLookupByLibrary.simpleMessage("用户C"),

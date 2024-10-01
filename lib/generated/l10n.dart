@@ -269,6 +269,196 @@ class S {
       args: [],
     );
   }
+
+  /// ``
+  String get noStartingWords {
+    return Intl.message(
+      '',
+      name: 'noStartingWords',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What is this app for?`
+  String get purposeTitle {
+    return Intl.message(
+      'What is this app for?',
+      name: 'purposeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This app is designed to help users, especially those with communication challenges, construct sentences using predefined phrases. It also offers features like phrase suggestions, multiple languages, and text-to-speech to assist users in effective communication.`
+  String get purposeContent {
+    return Intl.message(
+      'This app is designed to help users, especially those with communication challenges, construct sentences using predefined phrases. It also offers features like phrase suggestions, multiple languages, and text-to-speech to assist users in effective communication.',
+      name: 'purposeContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How to Add a User`
+  String get addUserTitle {
+    return Intl.message(
+      'How to Add a User',
+      name: 'addUserTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1. Navigate to the Settings page.\n2. Tap the 'Add User' button.\n3. Enter the user’s name and save.`
+  String get addUserContent {
+    return Intl.message(
+      '1. Navigate to the Settings page.\n2. Tap the \'Add User\' button.\n3. Enter the user’s name and save.',
+      name: 'addUserContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How to Delete a User`
+  String get deleteUserTitle {
+    return Intl.message(
+      'How to Delete a User',
+      name: 'deleteUserTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1. Navigate to the Settings page.\n2. Select the user you wish to delete from the list.\n3. Tap the 'Delete' button.`
+  String get deleteUserContent {
+    return Intl.message(
+      '1. Navigate to the Settings page.\n2. Select the user you wish to delete from the list.\n3. Tap the \'Delete\' button.',
+      name: 'deleteUserContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How to Change Language`
+  String get changeLanguageTitle {
+    return Intl.message(
+      'How to Change Language',
+      name: 'changeLanguageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1. Go to the Settings page.\n2. Under 'Language Preferences,' select your preferred language from the dropdown.\n3. The app will automatically switch to the selected language.`
+  String get changeLanguageContent {
+    return Intl.message(
+      '1. Go to the Settings page.\n2. Under \'Language Preferences,\' select your preferred language from the dropdown.\n3. The app will automatically switch to the selected language.',
+      name: 'changeLanguageContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How to Change the Theme`
+  String get changeThemeTitle {
+    return Intl.message(
+      'How to Change the Theme',
+      name: 'changeThemeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1. Navigate to Settings.\n2. Under 'Theme,' choose between light or dark mode.`
+  String get changeThemeContent {
+    return Intl.message(
+      '1. Navigate to Settings.\n2. Under \'Theme,\' choose between light or dark mode.',
+      name: 'changeThemeContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How to Use Phrases`
+  String get usePhrasesTitle {
+    return Intl.message(
+      'How to Use Phrases',
+      name: 'usePhrasesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1. Navigate to the main phrase screen.\n2. Choose a category or start typing a phrase.\n3. The app will suggest phrases based on what you've selected.`
+  String get usePhrasesContent {
+    return Intl.message(
+      '1. Navigate to the main phrase screen.\n2. Choose a category or start typing a phrase.\n3. The app will suggest phrases based on what you\'ve selected.',
+      name: 'usePhrasesContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How to Add a New Phrase or Category`
+  String get addPhraseTitle {
+    return Intl.message(
+      'How to Add a New Phrase or Category',
+      name: 'addPhraseTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1. Go to the Settings page.\n2. Tap 'Add Phrase' or 'Add Category.'\n3. Enter the details and save.`
+  String get addPhraseContent {
+    return Intl.message(
+      '1. Go to the Settings page.\n2. Tap \'Add Phrase\' or \'Add Category.\'\n3. Enter the details and save.',
+      name: 'addPhraseContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How to Delete a Phrase or Category`
+  String get deletePhraseTitle {
+    return Intl.message(
+      'How to Delete a Phrase or Category',
+      name: 'deletePhraseTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1. Navigate to the main phrase screen.\n2. Long press on the category or phrase you want to delete.\n3. A pop-up message will ask for confirmation. Select 'Delete' to remove it.`
+  String get deletePhraseContent {
+    return Intl.message(
+      '1. Navigate to the main phrase screen.\n2. Long press on the category or phrase you want to delete.\n3. A pop-up message will ask for confirmation. Select \'Delete\' to remove it.',
+      name: 'deletePhraseContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How to Use Text-to-Speech`
+  String get useTTSTitle {
+    return Intl.message(
+      'How to Use Text-to-Speech',
+      name: 'useTTSTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1. On the phrase screen, select a phrase or sentence.\n2. Tap the speaker icon to hear the phrase spoken aloud.`
+  String get useTTSContent {
+    return Intl.message(
+      '1. On the phrase screen, select a phrase or sentence.\n2. Tap the speaker icon to hear the phrase spoken aloud.',
+      name: 'useTTSContent',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

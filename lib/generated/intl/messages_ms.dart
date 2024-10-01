@@ -29,14 +29,38 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addCategory": MessageLookupByLibrary.simpleMessage("Tambah Kategori"),
         "addPhrase": MessageLookupByLibrary.simpleMessage("Tambah Frasa"),
+        "addPhraseContent": MessageLookupByLibrary.simpleMessage(
+            "1. Pergi ke halaman Tetapan.\n2. Tekan \'Tambah Frasa\' atau \'Tambah Kategori\'.\n3. Masukkan butiran dan simpan."),
+        "addPhraseTitle": MessageLookupByLibrary.simpleMessage(
+            "Cara Menambah Frasa atau Kategori Baharu"),
+        "addUserContent": MessageLookupByLibrary.simpleMessage(
+            "1. Pergi ke halaman Tetapan.\n2. Tekan butang \'Tambah Pengguna\'.\n3. Masukkan nama pengguna dan simpan."),
+        "addUserTitle":
+            MessageLookupByLibrary.simpleMessage("Cara Menambah Pengguna"),
         "cancel": MessageLookupByLibrary.simpleMessage("Batal"),
         "categoryDeleted": m0,
+        "changeLanguageContent": MessageLookupByLibrary.simpleMessage(
+            "1. Pergi ke halaman Tetapan.\n2. Di bawah \'Pilihan Bahasa\', pilih bahasa pilihan anda daripada senarai.\n3. Aplikasi akan secara automatik menukar ke bahasa yang dipilih."),
+        "changeLanguageTitle":
+            MessageLookupByLibrary.simpleMessage("Cara Menukar Bahasa"),
+        "changeThemeContent": MessageLookupByLibrary.simpleMessage(
+            "1. Pergi ke halaman Tetapan.\n2. Di bawah \'Skema Warna\', pilih antara mod terang atau gelap."),
+        "changeThemeTitle":
+            MessageLookupByLibrary.simpleMessage("Cara Menukar Skema Warna"),
         "colourScheme": MessageLookupByLibrary.simpleMessage("Skema Warna"),
         "dark": MessageLookupByLibrary.simpleMessage("Gelap"),
         "delete": MessageLookupByLibrary.simpleMessage("Padam"),
         "deleteCategory":
             MessageLookupByLibrary.simpleMessage("Padamkan Kategori"),
         "deleteCategoryConfirmation": m1,
+        "deletePhraseContent": MessageLookupByLibrary.simpleMessage(
+            "1. Pergi ke skrin utama frasa.\n2. Tekan dan tahan kategori atau frasa yang ingin dipadam.\n3. Mesej pop-up akan meminta pengesahan. Pilih \'Padam\' untuk memadamnya."),
+        "deletePhraseTitle": MessageLookupByLibrary.simpleMessage(
+            "Cara Memadam Frasa atau Kategori"),
+        "deleteUserContent": MessageLookupByLibrary.simpleMessage(
+            "1. Pergi ke halaman Tetapan.\n2. Pilih pengguna yang ingin dipadam daripada senarai.\n3. Tekan butang \'Padam\'."),
+        "deleteUserTitle":
+            MessageLookupByLibrary.simpleMessage("Cara Memadam Pengguna"),
         "home": MessageLookupByLibrary.simpleMessage("Laman Utama"),
         "language": MessageLookupByLibrary.simpleMessage("Bahasa"),
         "light": MessageLookupByLibrary.simpleMessage("Terang"),
@@ -47,6 +71,14 @@ class MessageLookup extends MessageLookupByLibrary {
             "Tekan dan tahan untuk membuang semua"),
         "setting": MessageLookupByLibrary.simpleMessage("Tetapan"),
         "system": MessageLookupByLibrary.simpleMessage("Sistem"),
+        "usePhrasesContent": MessageLookupByLibrary.simpleMessage(
+            "1. Pergi ke skrin utama frasa.\n2. Pilih kategori atau mula menaip frasa.\n3. Aplikasi akan mencadangkan frasa berdasarkan apa yang anda pilih."),
+        "usePhrasesTitle":
+            MessageLookupByLibrary.simpleMessage("Cara Menggunakan Frasa"),
+        "useTTSContent": MessageLookupByLibrary.simpleMessage(
+            "1. Di skrin frasa, pilih frasa atau ayat.\n2. Tekan ikon pembesar suara untuk mendengar frasa tersebut dibacakan."),
+        "useTTSTitle": MessageLookupByLibrary.simpleMessage(
+            "Cara Menggunakan Teks-ke-Ucapan"),
         "userA": MessageLookupByLibrary.simpleMessage("Pengguna A"),
         "userB": MessageLookupByLibrary.simpleMessage("Pengguna B"),
         "userC": MessageLookupByLibrary.simpleMessage("Pengguna C"),

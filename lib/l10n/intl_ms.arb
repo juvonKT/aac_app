@@ -21,5 +21,30 @@
   "light": "Terang",
   "dark": "Gelap",
   "system" : "Sistem",
-  "userGuideContent": "Kandungan Panduan Pengguna Di Sini"
+  "userGuideContent": "Kandungan Panduan Pengguna Di Sini",
+
+  "addUserTitle": "Cara Menambah Pengguna",
+  "addUserContent": "1. Pergi ke halaman Tetapan.\n2. Tekan butang 'Tambah Pengguna'.\n3. Masukkan nama pengguna dan simpan.",
+
+  "deleteUserTitle": "Cara Memadam Pengguna",
+  "deleteUserContent": "1. Pergi ke halaman Tetapan.\n2. Pilih pengguna yang ingin dipadam daripada senarai.\n3. Tekan butang 'Padam'.",
+
+  "changeLanguageTitle": "Cara Menukar Bahasa",
+  "changeLanguageContent": "1. Pergi ke halaman Tetapan.\n2. Di bawah 'Pilihan Bahasa', pilih bahasa pilihan anda daripada senarai.\n3. Aplikasi akan secara automatik menukar ke bahasa yang dipilih.",
+
+  "changeThemeTitle": "Cara Menukar Skema Warna",
+  "changeThemeContent": "1. Pergi ke halaman Tetapan.\n2. Di bawah 'Skema Warna', pilih antara mod terang atau gelap.",
+
+  "usePhrasesTitle": "Cara Menggunakan Frasa",
+  "usePhrasesContent": "1. Pergi ke skrin utama frasa.\n2. Pilih kategori atau mula menaip frasa.\n3. Aplikasi akan mencadangkan frasa berdasarkan apa yang anda pilih.",
+
+  "addPhraseTitle": "Cara Menambah Frasa atau Kategori Baharu",
+  "addPhraseContent": "1. Pergi ke halaman Tetapan.\n2. Tekan 'Tambah Frasa' atau 'Tambah Kategori'.\n3. Masukkan butiran dan simpan.",
+
+  "deletePhraseTitle": "Cara Memadam Frasa atau Kategori",
+  "deletePhraseContent": "1. Pergi ke skrin utama frasa.\n2. Tekan dan tahan kategori atau frasa yang ingin dipadam.\n3. Mesej pop-up akan meminta pengesahan. Pilih 'Padam' untuk memadamnya.",
+
+  "useTTSTitle": "Cara Menggunakan Teks-ke-Ucapan",
+  "useTTSContent": "1. Di skrin frasa, pilih frasa atau ayat.\n2. Tekan ikon pembesar suara untuk mendengar frasa tersebut dibacakan."
+
 }

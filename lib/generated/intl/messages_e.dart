@@ -29,23 +29,60 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addCategory": MessageLookupByLibrary.simpleMessage("Add Category"),
         "addPhrase": MessageLookupByLibrary.simpleMessage("Add Phrase"),
+        "addPhraseContent": MessageLookupByLibrary.simpleMessage(
+            "1. Go to the Settings page.\n2. Tap \'Add Phrase\' or \'Add Category.\'\n3. Enter the details and save."),
+        "addPhraseTitle": MessageLookupByLibrary.simpleMessage(
+            "How to Add a New Phrase or Category"),
+        "addUserContent": MessageLookupByLibrary.simpleMessage(
+            "1. Navigate to the Settings page.\n2. Tap the \'Add User\' button.\n3. Enter the user’s name and save."),
+        "addUserTitle":
+            MessageLookupByLibrary.simpleMessage("How to Add a User"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "categoryDeleted": m0,
+        "changeLanguageContent": MessageLookupByLibrary.simpleMessage(
+            "1. Go to the Settings page.\n2. Under \'Language Preferences,\' select your preferred language from the dropdown.\n3. The app will automatically switch to the selected language."),
+        "changeLanguageTitle":
+            MessageLookupByLibrary.simpleMessage("How to Change Language"),
+        "changeThemeContent": MessageLookupByLibrary.simpleMessage(
+            "1. Navigate to Settings.\n2. Under \'Theme,\' choose between light or dark mode."),
+        "changeThemeTitle":
+            MessageLookupByLibrary.simpleMessage("How to Change the Theme"),
         "colourScheme": MessageLookupByLibrary.simpleMessage("Colour Scheme"),
         "dark": MessageLookupByLibrary.simpleMessage("Dark"),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "deleteCategory":
             MessageLookupByLibrary.simpleMessage("Delete Category"),
         "deleteCategoryConfirmation": m1,
+        "deletePhraseContent": MessageLookupByLibrary.simpleMessage(
+            "1. Navigate to the main phrase screen.\n2. Long press on the category or phrase you want to delete.\n3. A pop-up message will ask for confirmation. Select \'Delete\' to remove it."),
+        "deletePhraseTitle": MessageLookupByLibrary.simpleMessage(
+            "How to Delete a Phrase or Category"),
+        "deleteUserContent": MessageLookupByLibrary.simpleMessage(
+            "1. Navigate to the Settings page.\n2. Select the user you wish to delete from the list.\n3. Tap the \'Delete\' button."),
+        "deleteUserTitle":
+            MessageLookupByLibrary.simpleMessage("How to Delete a User"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "light": MessageLookupByLibrary.simpleMessage("Light"),
         "newCategory": MessageLookupByLibrary.simpleMessage("New Category"),
         "newPhrase": MessageLookupByLibrary.simpleMessage("New Phrase"),
+        "noStartingWords": MessageLookupByLibrary.simpleMessage(""),
+        "purposeContent": MessageLookupByLibrary.simpleMessage(
+            "This app is designed to help users, especially those with communication challenges, construct sentences using predefined phrases. It also offers features like phrase suggestions, multiple languages, and text-to-speech to assist users in effective communication."),
+        "purposeTitle":
+            MessageLookupByLibrary.simpleMessage("What is this app for?"),
         "removeMessage":
             MessageLookupByLibrary.simpleMessage("Hold to remove all"),
         "setting": MessageLookupByLibrary.simpleMessage("Settings"),
         "system": MessageLookupByLibrary.simpleMessage("System"),
+        "usePhrasesContent": MessageLookupByLibrary.simpleMessage(
+            "1. Navigate to the main phrase screen.\n2. Choose a category or start typing a phrase.\n3. The app will suggest phrases based on what you\'ve selected."),
+        "usePhrasesTitle":
+            MessageLookupByLibrary.simpleMessage("How to Use Phrases"),
+        "useTTSContent": MessageLookupByLibrary.simpleMessage(
+            "1. On the phrase screen, select a phrase or sentence.\n2. Tap the speaker icon to hear the phrase spoken aloud."),
+        "useTTSTitle":
+            MessageLookupByLibrary.simpleMessage("How to Use Text-to-Speech"),
         "userA": MessageLookupByLibrary.simpleMessage("User A"),
         "userB": MessageLookupByLibrary.simpleMessage("User B"),
         "userC": MessageLookupByLibrary.simpleMessage("User C"),
