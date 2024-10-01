@@ -182,6 +182,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
   }
 
   Future<void> updateSuggestedWords() async {
+    setState(() {
+      _isLoadingWords = true;
+    });
     final userProvider = Provider.of<UserProvider>(context, listen: false);
     await userProvider.loadUserData();
     String languageCode = userProvider.getLanguageCode();
@@ -189,11 +192,15 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
       List<String> newSuggestions = await apiService.getSuggestions(selectedPhrases, languageCode);
       setState(() {
         suggestedWords = newSuggestions;
+        _isLoadingWords = false;
       });
       print("suggested: $suggestedWords");
     } catch (e) {
       print('Error getting suggestions: $e');
       // Optionally show an error message to the user
+      setState(() {
+        _isLoadingWords = false;
+      });
     }
   }
 
