@@ -447,7 +447,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
                       if (newCategoryText != null && newCategoryText is String) {
                         setState(() {
                           phrases[newCategoryText] = {
-                            "categoryImage": "assets/images/test.png",
+                            "categoryImage": "assets/images/logo.png",
                             "phrases": <Map<String, String>>[]
                           };
                         });

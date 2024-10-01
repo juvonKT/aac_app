@@ -4,12 +4,24 @@
     "phrases": [
       {"phrase": "我", "image": "assets/images/people/I.png"},
       {"phrase": "你", "image": "assets/images/people/you.png"},
-      {"phrase": "我", "image": "assets/images/people/me.png"},
       {"phrase": "我们", "image": "assets/images/people/we.png"},
       {"phrase": "他", "image": "assets/images/people/he.png"},
       {"phrase": "她", "image": "assets/images/people/she.png"},
       {"phrase": "他们", "image": "assets/images/people/they.png"},
-      {"phrase": "我们", "image": "assets/images/people/us.png"}
+      {"phrase": "她们", "image": "assets/images/people/them.png"},
+      {"phrase": "我们", "image": "assets/images/people/us.png"},
+      {"phrase": "朋友", "image": "assets/images/people/friend.png"},
+      {"phrase": "家人", "image": "assets/images/people/family.png"},
+      {"phrase": "陌生人", "image": "assets/images/people/stranger.png"},
+      {"phrase": "老师", "image": "assets/images/people/teacher.png"},
+      {"phrase": "妈妈", "image": "assets/images/people/mom.png"},
+      {"phrase": "爸爸", "image": "assets/images/people/dad.png"},
+      {"phrase": "哥哥", "image": "assets/images/people/brother.png"},
+      {"phrase": "弟弟", "image": "assets/images/people/brother.png"},
+      {"phrase": "姐姐", "image": "assets/images/people/sister.png"},
+      {"phrase": "妹妹", "image": "assets/images/people/sister.png"},
+      {"phrase": "护士", "image": "assets/images/people/nurse.png"},
+      {"phrase": "照顾者", "image": "assets/images/people/caregiver.png"}
     ]
   },
   "东西": {
@@ -20,13 +32,23 @@
       {"phrase": "书", "image": "assets/images/things/book.png"},
       {"phrase": "笔", "image": "assets/images/things/pen.png"},
       {"phrase": "桌子", "image": "assets/images/things/table.png"},
-      {"phrase": "电话", "image": "assets/images/things/phone.png"},
+      {"phrase": "手机", "image": "assets/images/things/phone.png"},
       {"phrase": "电脑", "image": "assets/images/things/computer.png"},
       {"phrase": "床", "image": "assets/images/things/bed.png"},
-      {"phrase": "杯子", "image": "assets/images/things/cup.png"}
+      {"phrase": "杯子", "image": "assets/images/things/cup.png"},
+      {"phrase": "包", "image": "assets/images/things/bag.png"},
+      {"phrase": "手表", "image": "assets/images/things/watch.png"},
+      {"phrase": "玻璃", "image": "assets/images/things/glass.png"},
+      {"phrase": "钱包", "image": "assets/images/things/wallet.png"},
+      {"phrase": "钥匙", "image": "assets/images/things/key.png"},
+      {"phrase": "iPad", "image": "assets/images/things/ipad.png"},
+      {"phrase": "东西", "image": "assets/images/things/stuff.png"},
+      {"phrase": "它", "image": "assets/images/things/it.png"},
+      {"phrase": "这个", "image": "assets/images/things/this.png"},
+      {"phrase": "那个", "image": "assets/images/things/that.png"}
     ]
   },
-  "动作": {
+  "动作1": {
     "categoryImage": "assets/images/actions/actions.png",
     "phrases": [
       {"phrase": "吃", "image": "assets/images/actions/eat.png"},
@@ -36,9 +58,48 @@
       {"phrase": "跑", "image": "assets/images/actions/run.png"},
       {"phrase": "走", "image": "assets/images/actions/walk.png"},
       {"phrase": "跳", "image": "assets/images/actions/jump.png"},
-      {"phrase": "帮助", "image": "assets/images/actions/help.png"},
+      {"phrase": "帮忙", "image": "assets/images/actions/help.png"},
       {"phrase": "读", "image": "assets/images/actions/read.png"},
-      {"phrase": "听", "image": "assets/images/actions/listen.png"}
+      {"phrase": "听", "image": "assets/images/actions/listen.png"},
+      {"phrase": "说", "image": "assets/images/actions/talk.png"},
+      {"phrase": "唱", "image": "assets/images/actions/sing.png"},
+      {"phrase": "跳舞", "image": "assets/images/actions/dance.png"},
+      {"phrase": "游泳", "image": "assets/images/actions/swim.jpeg"},
+      {"phrase": "停", "image": "assets/images/actions/stop.png"},
+      {"phrase": "看", "image": "assets/images/actions/see.jpeg"},
+      {"phrase": "走", "image": "assets/images/actions/go.png"},
+      {"phrase": "看", "image": "assets/images/actions/look.png"},
+      {"phrase": "来", "image": "assets/images/actions/come.png"},
+      {"phrase": "放", "image": "assets/images/actions/put.jpeg"},
+      {"phrase": "坐", "image": "assets/images/actions/sit.png"},
+      {"phrase": "开", "image": "assets/images/actions/open.png"},
+      {"phrase": "开始", "image": "assets/images/actions/start.jpeg"},
+      {"phrase": "等", "image": "assets/images/actions/wait.png"},
+      {"phrase": "看", "image": "assets/images/actions/watch.jpeg"},
+      {"phrase": "洗", "image": "assets/images/actions/wash.jpeg"},
+      {"phrase": "转", "image": "assets/images/actions/turn.jpeg"},
+      {"phrase": "待", "image": "assets/images/actions/stay.jpeg"}
+    ]
+  },
+  "动作 2": {
+    "categoryImage": "assets/images/actions2/actions2.png",
+    "phrases": [
+      {"phrase": "要", "image": "assets/images/actions2/want.png"},
+      {"phrase": "说", "image": "assets/images/actions2/say.png"},
+      {"phrase": "得到", "image": "assets/images/actions2/get.png"},
+      {"phrase": "拿", "image": "assets/images/actions2/take.png"},
+      {"phrase": "做", "image": "assets/images/actions2/make.png"},
+      {"phrase": "知道", "image": "assets/images/actions2/know.png"},
+      {"phrase": "有", "image": "assets/images/actions2/have.png"},
+      {"phrase": "告诉", "image": "assets/images/actions2/tell.png"},
+      {"phrase": "改变", "image": "assets/images/actions2/change.png"},
+      {"phrase": "展示", "image": "assets/images/actions2/show.png"},
+      {"phrase": "是", "image": "assets/images/actions2/is.png"},
+      {"phrase": "想", "image": "assets/images/actions2/think.png"},
+      {"phrase": "做", "image": "assets/images/actions2/do.png"},
+      {"phrase": "给", "image": "assets/images/actions2/give.png"},
+      {"phrase": "用", "image": "assets/images/actions2/use.png"},
+      {"phrase": "试", "image": "assets/images/actions2/try.png"}
     ]
   },
   "地方": {
@@ -51,9 +112,13 @@
       {"phrase": "公园", "image": "assets/images/places/park.png"},
       {"phrase": "商店", "image": "assets/images/places/store.png"},
       {"phrase": "图书馆", "image": "assets/images/places/library.png"},
-      {"phrase": "餐厅", "image": "assets/images/places/restaurant.png"},
+      {"phrase": "餐馆", "image": "assets/images/places/restaurant.png"},
       {"phrase": "医院", "image": "assets/images/places/hospital.png"},
-      {"phrase": "健身房", "image": "assets/images/places/gym.png"}
+      {"phrase": "健身房", "image": "assets/images/places/gym.png"},
+      {"phrase": "海滩", "image": "assets/images/places/beach.png"},
+      {"phrase": "办公室", "image": "assets/images/places/office.png"},
+      {"phrase": "酒店", "image": "assets/images/places/hotel.png"},
+      {"phrase": "购物中心", "image": "assets/images/places/shop.png"}
     ]
   },
   "食物": {
@@ -73,7 +138,16 @@
       {"phrase": "意大利面", "image": "assets/images/food/pasta.png"},
       {"phrase": "酸奶", "image": "assets/images/food/yogurt.png"},
       {"phrase": "葡萄", "image": "assets/images/food/grapes.png"},
-      {"phrase": "橙子", "image": "assets/images/food/orange.png"}
+      {"phrase": "橙子", "image": "assets/images/food/orange.png"},
+      {"phrase": "三明治", "image": "assets/images/food/sandwich.jpeg"},
+      {"phrase": "沙拉", "image": "assets/images/food/salad.png"},
+      {"phrase": "鱼", "image": "assets/images/food/fish.png"},
+      {"phrase": "蛋糕", "image": "assets/images/food/cake.png"},
+      {"phrase": "水果", "image": "assets/images/food/fruit.png"},
+      {"phrase": "小吃", "image": "assets/images/food/snack.png"},
+      {"phrase": "晚餐", "image": "assets/images/food/dinner.png"},
+      {"phrase": "午餐", "image": "assets/images/food/lunch.png"},
+      {"phrase": "早餐", "image": "assets/images/food/breakfast.png"}
     ]
   },
   "感觉": {
@@ -87,7 +161,11 @@
       {"phrase": "累", "image": "assets/images/feelings/tired.png"},
       {"phrase": "无聊", "image": "assets/images/feelings/bored.png"},
       {"phrase": "惊讶", "image": "assets/images/feelings/surprised.png"},
-      {"phrase": "紧张", "image": "assets/images/feelings/nervous.png"}
+      {"phrase": "紧张", "image": "assets/images/feelings/nervous.png"},
+      {"phrase": "平静", "image": "assets/images/feelings/calm.png"},
+      {"phrase": "担心", "image": "assets/images/feelings/worried.png"},
+      {"phrase": "安全", "image": "assets/images/feelings/safe.png"},
+      {"phrase": "困惑", "image": "assets/images/feelings/confused.png"}
     ]
   },
   "形容词": {
@@ -107,22 +185,37 @@
       {"phrase": "吵", "image": "assets/images/descriptive/loud.png"},
       {"phrase": "安静", "image": "assets/images/descriptive/quiet.png"},
       {"phrase": "重", "image": "assets/images/descriptive/heavy.png"},
-      {"phrase": "轻", "image": "assets/images/descriptive/light.png"}
+      {"phrase": "轻", "image": "assets/images/descriptive/light.png"},
+      {"phrase": "好", "image": "assets/images/descriptive/good.png"},
+      {"phrase": "不同", "image": "assets/images/descriptive/different.jpg"},
+      {"phrase": "一样", "image": "assets/images/descriptive/same.png"},
+      {"phrase": "好", "image": "assets/images/descriptive/nice.png"},
+      {"phrase": "喜欢", "image": "assets/images/descriptive/favorite.png"},
+      {"phrase": "旧", "image": "assets/images/descriptive/old.png"},
+      {"phrase": "脏", "image": "assets/images/descriptive/dirty.png"},
+      {"phrase": "湿", "image": "assets/images/descriptive/wet.png"},
+      {"phrase": "坏", "image": "assets/images/descriptive/bad.png"},
+      {"phrase": "小", "image": "assets/images/descriptive/little.png"},
+      {"phrase": "恶心", "image": "assets/images/descriptive/disgusting.png"},
+      {"phrase": "有趣", "image": "assets/images/descriptive/fun.png"},
+      {"phrase": "好笑", "image": "assets/images/descriptive/funny.png"},
+      {"phrase": "新", "image": "assets/images/descriptive/new.png"}
     ]
   },
   "问题": {
     "categoryImage": "assets/images/questions/questions.png",
     "phrases": [
-      {"phrase": "什么？", "image": "assets/images/questions/what.png"},
-      {"phrase": "哪里？", "image":  "assets/images/questions/where.png"},
-      {"phrase": "什么时候？", "image": "assets/images/questions/when.png"},
-      {"phrase": "怎么？", "image": "assets/images/questions/how.png"},
-      {"phrase": "为什么？", "image": "assets/images/questions/why.png"},
-      {"phrase": "谁？", "image": "assets/images/questions/who.png"},
-      {"phrase": "哪个？", "image": "assets/images/questions/which.png"},
-      {"phrase": "我可以吗？", "image": "assets/images/questions/can_i.png"},
-      {"phrase": "你呢？", "image": "assets/images/questions/do_you.png"},
-      {"phrase": "是吗？", "image": "assets/images/questions/is_it.png"}
+      {"phrase": "什么", "image": "assets/images/questions/what.png"},
+      {"phrase": "哪里", "image":  "assets/images/questions/where.png"},
+      {"phrase": "什么时候", "image": "assets/images/questions/when.png"},
+      {"phrase": "怎么", "image": "assets/images/questions/how.png"},
+      {"phrase": "为什么", "image": "assets/images/questions/why.png"},
+      {"phrase": "谁", "image": "assets/images/questions/who.png"},
+      {"phrase": "哪个", "image": "assets/images/questions/which.png"},
+      {"phrase": "可以", "image": "assets/images/questions/can_i.png"},
+      {"phrase": "你呢", "image": "assets/images/questions/do_you.png"},
+      {"phrase": "是吗", "image": "assets/images/questions/is_it.png"},
+      {"phrase": "会", "image": "assets/images/questions/will.png"}
     ]
   },
   "时间": {
@@ -137,7 +230,23 @@
       {"phrase": "昨天", "image": "assets/images/time/yesterday.png"},
       {"phrase": "现在", "image": "assets/images/time/now.png"},
       {"phrase": "稍后", "image": "assets/images/time/later.png"},
-      {"phrase": "很快", "image": "assets/images/time/soon.png"}
+      {"phrase": "很快", "image": "assets/images/time/soon.png"},
+      {"phrase": "下周", "image": "assets/images/time/next_week.png"},
+      {"phrase": "下个月", "image": "assets/images/time/next_month.png"},
+      {"phrase": "天", "image": "assets/images/time/day.png"},
+      {"phrase": "月", "image": "assets/images/time/month.png"},
+      {"phrase": "年", "image": "assets/images/time/year.png"},
+      {"phrase": "今晚", "image": "assets/images/time/tonight.png"},
+      {"phrase": "永远", "image": "assets/images/time/always.png"},
+      {"phrase": "再一次", "image": "assets/images/time/again.png"},
+      {"phrase": "从不", "image": "assets/images/time/never.png"},
+      {"phrase": "早", "image": "assets/images/time/early.png"},
+      {"phrase": "周", "image": "assets/images/time/week.png"},
+      {"phrase": "周末", "image": "assets/images/time/weekend.png"},
+      {"phrase": "之前", "image": "assets/images/time/before.png"},
+      {"phrase": "之后", "image": "assets/images/time/after.png"},
+      {"phrase": "首先", "image": "assets/images/time/first.png"},
+      {"phrase": "最后", "image": "assets/images/time/last.png"}
     ]
   },
   "社交": {
@@ -148,16 +257,24 @@
       {"phrase": "请", "image": "assets/images/social/please.png"},
       {"phrase": "谢谢", "image": "assets/images/social/thank_you.png"},
       {"phrase": "对不起", "image": "assets/images/social/sorry.png"},
-      {"phrase": "你好吗？", "image": "assets/images/social/how_are_you.png"},
-      {"phrase": "我需要帮助", "image":  "assets/images/social/i_need_help.png"},
+      {"phrase": "你好吗", "image": "assets/images/social/how_are_you.png"},
+      {"phrase": "我需要帮助", "image": "assets/images/social/i_need_help.png"},
       {"phrase": "很高兴见到你", "image": "assets/images/social/nice_to_meet_you.png"},
       {"phrase": "打扰一下", "image": "assets/images/social/excuse_me.png"},
-      {"phrase": "我不理解", "image":  "assets/images/social/i_don't_understand.png"},
-      {"phrase": "你能重复一下吗？", "image": "assets/images/social/can_you_repeat_that.png"},
-      {"phrase": "你叫什么名字？", "image": "assets/images/social/what's_your_name.png"},
+      {"phrase": "我不明白", "image": "assets/images/social/i_don't_understand.png"},
+      {"phrase": "你能重复一下吗", "image": "assets/images/social/can_you_repeat_that.png"},
+      {"phrase": "你叫什么名字", "image": "assets/images/social/what's_your_name.png"},
       {"phrase": "我迷路了", "image": "assets/images/social/i'm_lost.png"},
       {"phrase": "我饿了", "image": "assets/images/social/i'm_hungry.png"},
-      {"phrase": "我渴了", "image": "assets/images/social/i'm_thirsty.png"}
+      {"phrase": "我渴了", "image": "assets/images/social/i'm_thirsty.png"},
+      {"phrase": "欢迎", "image": "assets/images/social/welcome.jpeg"},
+      {"phrase": "早上好", "image": "assets/images/social/good_morning.jpeg"},
+      {"phrase": "晚安", "image": "assets/images/social/good_night.jpeg"},
+      {"phrase": "保重", "image": "assets/images/social/take_care.png"},
+      {"phrase": "待会见", "image": "assets/images/social/see_you_later.jpeg"},
+      {"phrase": "我们聊聊吧", "image": "assets/images/social/lets_chat.jpeg"},
+      {"phrase": "我开玩笑的", "image": "assets/images/social/im_joking.jpeg"},
+      {"phrase": "请稍等", "image": "assets/images/social/please_wait.jpeg"}
     ]
   },
   "身体": {
@@ -178,6 +295,144 @@
       {"phrase": "喉咙", "image": "assets/images/health/throat.png"},
       {"phrase": "咳嗽", "image":  "assets/images/health/cough.png"},
       {"phrase": "发烧", "image": "assets/images/health/fever.png"}
+    ]
+  },
+  "交通": {
+    "categoryImage": "assets/images/transportation/transportation.png",
+    "phrases": [
+      {"phrase": "公交车", "image": "assets/images/transportation/bus.png"},
+      {"phrase": "火车", "image": "assets/images/transportation/train.png"},
+      {"phrase": "自行车", "image": "assets/images/transportation/bicycle.png"},
+      {"phrase": "出租车", "image": "assets/images/transportation/taxi.png"},
+      {"phrase": "步行", "image": "assets/images/transportation/walking.png"},
+      {"phrase": "汽车", "image": "assets/images/transportation/car.png"}
+    ]
+  },
+  "天气": {
+    "categoryImage": "assets/images/weather/weather.png",
+    "phrases": [
+      {"phrase": "晴天", "image": "assets/images/weather/sunny.png"},
+      {"phrase": "雨天", "image": "assets/images/weather/rainy.png"},
+      {"phrase": "云天", "image": "assets/images/weather/cloudy.png"},
+      {"phrase": "有风", "image": "assets/images/weather/windy.png"},
+      {"phrase": "下雪", "image": "assets/images/weather/snowy.png"},
+      {"phrase": "热", "image": "assets/images/weather/hot.png"},
+      {"phrase": "冷", "image": "assets/images/weather/cold.png"}
+    ]
+  },
+  "偏好": {
+    "categoryImage": "assets/images/preferences/preferences.png",
+    "phrases": [
+      {"phrase": "我喜欢", "image": "assets/images/preferences/i_like_it.png"},
+      {"phrase": "我不喜欢", "image": "assets/images/preferences/i_dont_like_it.png"},
+      {"phrase": "我想要", "image": "assets/images/preferences/i_want_this.png"},
+      {"phrase": "我需要", "image": "assets/images/preferences/i_need_this.png"},
+      {"phrase": "我更喜欢", "image": "assets/images/preferences/i_prefer.png"},
+      {"phrase": "我爱", "image": "assets/images/preferences/i_love.png"}
+    ]
+  },
+  "小词": {
+    "categoryImage": "assets/images/little_words/little_words.jpeg",
+    "phrases": [
+      {"phrase": "在", "image": "assets/images/little_words/in.png"},
+      {"phrase": "外面", "image": "assets/images/little_words/out.png"},
+      {"phrase": "上", "image": "assets/images/little_words/up.png"},
+      {"phrase": "下", "image": "assets/images/little_words/down.png"},
+      {"phrase": "和", "image": "assets/images/little_words/and.jpeg"},
+      {"phrase": "在", "image": "assets/images/little_words/on.jpeg"},
+      {"phrase": "和", "image": "assets/images/little_words/with.jpeg"},
+      {"phrase": "关", "image": "assets/images/little_words/off.jpeg"},
+      {"phrase": "所有", "image": "assets/images/little_words/all.png"},
+      {"phrase": "不", "image": "assets/images/little_words/dont.png"},
+      {"phrase": "下", "image": "assets/images/little_words/under.jpeg"},
+      {"phrase": "需要", "image": "assets/images/little_words/need.jpeg"},
+      {"phrase": "不", "image": "assets/images/little_words/not.png"},
+      {"phrase": "一些", "image": "assets/images/little_words/some.png"},
+      {"phrase": "因为", "image": "assets/images/little_words/because.png"},
+      {"phrase": "更多", "image": "assets/images/little_words/more.png"},
+      {"phrase": "去", "image": "assets/images/little_words/to.png"},
+      {"phrase": "为了", "image": "assets/images/little_words/for.png"},
+      {"phrase": "也", "image": "assets/images/little_words/too.png"},
+      {"phrase": "在", "image": "assets/images/little_words/at.png"},
+      {"phrase": "由", "image": "assets/images/little_words/by.png"},
+      {"phrase": "在上面", "image": "assets/images/little_words/over.png"},
+      {"phrase": "从", "image": "assets/images/little_words/from.png"}
+    ]
+  },
+  "活动": {
+    "categoryImage": "assets/images/activities/activities.png",
+    "phrases": [
+      {"phrase": "生日", "image": "assets/images/activities/birthday.png"},
+      {"phrase": "游戏", "image": "assets/images/activities/game.png"},
+      {"phrase": "音乐", "image": "assets/images/activities/music.png"},
+      {"phrase": "外面", "image": "assets/images/activities/outside.png"},
+      {"phrase": "电视", "image": "assets/images/activities/tv.png"},
+      {"phrase": "工作", "image": "assets/images/activities/work.png"}
+    ]
+  },
+  "沟通": {
+    "categoryImage": "assets/images/communication/communication.png",
+    "phrases": [
+      {"phrase": "电子邮件", "image": "assets/images/communication/email.png"},
+      {"phrase": "信息", "image": "assets/images/communication/message.png"},
+      {"phrase": "社交媒体", "image": "assets/images/communication/social_media.png"},
+      {"phrase": "打电话", "image": "assets/images/communication/call.png"}
+    ]
+  },
+  "帮助": {
+    "categoryImage": "assets/images/help/help.png",
+    "phrases": [
+      {"phrase": "我不知道", "image": "assets/images/help/i_dont_know.png"},
+      {"phrase": "是", "image": "assets/images/help/yes.png"},
+      {"phrase": "否", "image": "assets/images/help/no.png"},
+      {"phrase": "也许", "image": "assets/images/help/maybe.png"},
+      {"phrase": "还没准备好", "image": "assets/images/help/not_ready.png"},
+      {"phrase": "我需要跟你说话", "image": "assets/images/help/i_need_to_talk_to_you.png"},
+      {"phrase": "那不是我说的", "image": "assets/images/help/thats_not_what_i_said.png"},
+      {"phrase": "有点不对劲", "image": "assets/images/help/somethings_wrong.png"},
+      {"phrase": "帮我的 iPad 充电", "image": "assets/images/help/charge_my_ipad.png"},
+      {"phrase": "我有事情要说", "image": "assets/images/help/i_have_something_to_say.png"},
+      {"phrase": "我不明白", "image": "assets/images/help/i_dont_understand.png"},
+      {"phrase": "无所谓", "image": "assets/images/help/whatever.png"},
+      {"phrase": "太棒了", "image": "assets/images/help/awesome.png"},
+      {"phrase": "快点", "image": "assets/images/help/hurry_up.png"},
+      {"phrase": "帮助我冷静下来", "image": "assets/images/help/help_calming_down.png"},
+      {"phrase": "请重复一遍", "image": "assets/images/help/please_repeat_that.png"},
+      {"phrase": "我自己来", "image": "assets/images/help/do_it_myself.png"},
+      {"phrase": "我需要休息", "image": "assets/images/help/i_need_a_break.png"}
+    ]
+  },
+  "动物": {
+    "categoryImage": "assets/images/animals/animals.png",
+    "phrases": [
+      {"phrase": "狗", "image": "assets/images/animals/dog.png"},
+      {"phrase": "猫", "image": "assets/images/animals/cat.png"},
+      {"phrase": "鸟", "image": "assets/images/animals/bird.png"},
+      {"phrase": "马", "image": "assets/images/animals/horse.png"}
+    ]
+  },
+  "数字": {
+    "categoryImage": "assets/images/numbers/numbers.jpg",
+    "phrases": [
+      {"phrase": "零", "image": "assets/images/numbers/0.png"},
+      {"phrase": "一", "image": "assets/images/numbers/1.jpeg"},
+      {"phrase": "二", "image": "assets/images/numbers/2.png"},
+      {"phrase": "三", "image": "assets/images/numbers/3.png"},
+      {"phrase": "四", "image": "assets/images/numbers/4.png"},
+      {"phrase": "五", "image": "assets/images/numbers/5.png"},
+      {"phrase": "六", "image": "assets/images/numbers/6.png"},
+      {"phrase": "七", "image": "assets/images/numbers/7.png"},
+      {"phrase": "八", "image": "assets/images/numbers/8.jpeg"},
+      {"phrase": "九", "image": "assets/images/numbers/9.png"}
+    ]
+  },
+  "标点符号": {
+    "categoryImage": "assets/images/punctuation/punctuation.png",
+    "phrases": [
+      {"phrase": "。", "image": "assets/images/punctuation/period.png"},
+      {"phrase": "？", "image": "assets/images/punctuation/question_mark.png"},
+      {"phrase": "！", "image": "assets/images/punctuation/exclamation_mark.png"},
+      {"phrase": "，", "image": "assets/images/punctuation/comma.png"}
     ]
   }
 }
