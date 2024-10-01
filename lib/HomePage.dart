@@ -129,9 +129,11 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
   Future<Map<String, Map<String, dynamic>>> loadPhrases() async {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
     await userProvider.loadUserData();
+
     String languageCode = userProvider.getLanguageCode();
     final String directory = (await getApplicationDocumentsDirectory()).path;
     final String path = '$directory/phrases_$languageCode.json';
+    print('phrases: in $languageCode aaaaa');
     final File file = File(path);
 
     if (await file.exists()) {
@@ -445,7 +447,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver{
                       if (newCategoryText != null && newCategoryText is String) {
                         setState(() {
                           phrases[newCategoryText] = {
-                            "categoryImage": "assets/images/test.png",
+                            "categoryImage": "assets/images/logo.png",
                             "phrases": <Map<String, String>>[]
                           };
                         });

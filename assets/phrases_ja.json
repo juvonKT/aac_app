@@ -10,7 +10,17 @@
       {"phrase": "彼女", "image": "assets/images/people/she.png"},
       {"phrase": "彼ら", "image": "assets/images/people/they.png"},
       {"phrase": "彼らを", "image": "assets/images/people/them.png"},
-      {"phrase": "私たちを", "image": "assets/images/people/us.png"}
+      {"phrase": "私たちを", "image": "assets/images/people/us.png"},
+      {"phrase": "友達", "image": "assets/images/people/friend.png"},
+      {"phrase": "家族", "image": "assets/images/people/family.png"},
+      {"phrase": "見知らぬ人", "image": "assets/images/people/stranger.png"},
+      {"phrase": "先生", "image": "assets/images/people/teacher.png"},
+      {"phrase": "お母さん", "image": "assets/images/people/mom.png"},
+      {"phrase": "お父さん", "image": "assets/images/people/dad.png"},
+      {"phrase": "兄弟", "image": "assets/images/people/brother.png"},
+      {"phrase": "姉妹", "image": "assets/images/people/sister.png"},
+      {"phrase": "看護師", "image": "assets/images/people/nurse.png"},
+      {"phrase": "介護者", "image": "assets/images/people/caregiver.png"}
     ]
   },
   "もの": {
@@ -24,7 +34,17 @@
       {"phrase": "電話", "image": "assets/images/things/phone.png"},
       {"phrase": "コンピューター", "image": "assets/images/things/computer.png"},
       {"phrase": "ベッド", "image": "assets/images/things/bed.png"},
-      {"phrase": "カップ", "image": "assets/images/things/cup.png"}
+      {"phrase": "カップ", "image": "assets/images/things/cup.png"},
+      {"phrase": "バッグ", "image": "assets/images/things/bag.png"},
+      {"phrase": "時計", "image": "assets/images/things/watch.png"},
+      {"phrase": "グラス", "image": "assets/images/things/glass.png"},
+      {"phrase": "財布", "image": "assets/images/things/wallet.png"},
+      {"phrase": "鍵", "image": "assets/images/things/key.png"},
+      {"phrase": "アイパッド", "image": "assets/images/things/ipad.png"},
+      {"phrase": "物", "image": "assets/images/things/stuff.png"},
+      {"phrase": "それ", "image": "assets/images/things/it.png"},
+      {"phrase": "これ", "image": "assets/images/things/this.png"},
+      {"phrase": "あれ", "image": "assets/images/things/that.png"}
     ]
   },
   "行動": {
@@ -39,7 +59,47 @@
       {"phrase": "跳ぶ", "image": "assets/images/actions/jump.png"},
       {"phrase": "助ける", "image": "assets/images/actions/help.png"},
       {"phrase": "読む", "image": "assets/images/actions/read.png"},
-      {"phrase": "聞く", "image": "assets/images/actions/listen.png"}
+      {"phrase": "聞く", "image": "assets/images/actions/listen.png"},
+      {"phrase": "話す", "image": "assets/images/actions/talk.png"},
+      {"phrase": "歌う", "image": "assets/images/actions/sing.png"},
+      {"phrase": "踊る", "image": "assets/images/actions/dance.png"},
+      {"phrase": "泳ぐ", "image": "assets/images/actions/swim.jpeg"},
+      {"phrase": "止まる", "image": "assets/images/actions/stop.png"},
+      {"phrase": "見る", "image": "assets/images/actions/see.jpeg"},
+      {"phrase": "行く", "image": "assets/images/actions/go.png"},
+      {"phrase": "見る", "image": "assets/images/actions/look.png"},
+      {"phrase": "来る", "image": "assets/images/actions/come.png"},
+      {"phrase": "置く", "image": "assets/images/actions/put.jpeg"},
+      {"phrase": "座る", "image": "assets/images/actions/sit.png"},
+      {"phrase": "開ける", "image": "assets/images/actions/open.png"},
+      {"phrase": "始める", "image": "assets/images/actions/start.jpeg"},
+      {"phrase": "待つ", "image": "assets/images/actions/wait.png"},
+      {"phrase": "見る", "image": "assets/images/actions/watch.jpeg"},
+      {"phrase": "洗う", "image": "assets/images/actions/wash.jpeg"},
+      {"phrase": "曲がる", "image": "assets/images/actions/turn.jpeg"},
+      {"phrase": "留まる", "image": "assets/images/actions/stay.jpeg"}
+    ]
+  },
+  "行動2": {
+    "categoryImage": "assets/images/actions2/actions2.png",
+    "phrases": [
+      {"phrase": "欲しい", "image": "assets/images/actions2/want.png"},
+      {"phrase": "言う", "image": "assets/images/actions2/say.png"},
+      {"phrase": "得る", "image": "assets/images/actions2/get.png"},
+      {"phrase": "取る", "image": "assets/images/actions2/take.png"},
+      {"phrase": "作る", "image": "assets/images/actions2/make.png"},
+      {"phrase": "知る", "image": "assets/images/actions2/know.png"},
+      {"phrase": "持つ", "image": "assets/images/actions2/have.png"},
+      {"phrase": "伝える", "image": "assets/images/actions2/tell.png"},
+      {"phrase": "変える", "image": "assets/images/actions2/tell.png"},
+      {"phrase": "見せる", "image": "assets/images/actions2/show.png"},
+      {"phrase": "です", "image": "assets/images/actions2/is.png"},
+      {"phrase": "です（複数）", "image": "assets/images/actions2/are.png"},
+      {"phrase": "考える", "image": "assets/images/actions2/think.png"},
+      {"phrase": "する", "image": "assets/images/actions2/do.png"},
+      {"phrase": "与える", "image": "assets/images/actions2/give.png"},
+      {"phrase": "使う", "image": "assets/images/actions2/use.png"},
+      {"phrase": "試す", "image": "assets/images/actions2/try.png"}
     ]
   },
   "場所": {
@@ -54,7 +114,11 @@
       {"phrase": "図書館", "image": "assets/images/places/library.png"},
       {"phrase": "レストラン", "image": "assets/images/places/restaurant.png"},
       {"phrase": "病院", "image": "assets/images/places/hospital.png"},
-      {"phrase": "ジム", "image": "assets/images/places/gym.png"}
+      {"phrase": "ジム", "image": "assets/images/places/gym.png"},
+      {"phrase": "ビーチ", "image": "assets/images/places/beach.png"},
+      {"phrase": "オフィス", "image": "assets/images/places/office.png"},
+      {"phrase": "ホテル", "image": "assets/images/places/hotel.png"},
+      {"phrase": "ショッピングモール", "image": "assets/images/places/shop.png"}
     ]
   },
   "食べ物": {
@@ -73,7 +137,17 @@
       {"phrase": "パスタ", "image": "assets/images/food/pasta.png"},
       {"phrase": "ヨーグルト", "image": "assets/images/food/yogurt.png"},
       {"phrase": "ぶどう", "image": "assets/images/food/grapes.png"},
-      {"phrase": "オレンジ", "image": "assets/images/food/orange.png"}
+      {"phrase": "オレンジ", "image": "assets/images/food/orange.png"},
+      {"phrase": "サンドイッチ", "image": "assets/images/food/sandwich.jpeg"},
+      {"phrase": "ピザ", "image": "assets/images/food/pizza.png"},
+      {"phrase": "サラダ", "image": "assets/images/food/salad.png"},
+      {"phrase": "魚", "image": "assets/images/food/fish.png"},
+      {"phrase": "ケーキ", "image": "assets/images/food/cake.png"},
+      {"phrase": "フルーツ", "image": "assets/images/food/fruit.png"},
+      {"phrase": "スナック", "image": "assets/images/food/snack.png"},
+      {"phrase": "夕食", "image": "assets/images/food/dinner.png"},
+      {"phrase": "昼食", "image": "assets/images/food/lunch.png"},
+      {"phrase": "朝食", "image": "assets/images/food/breakfast.png"}
     ]
   },
   "感情": {
@@ -87,7 +161,11 @@
       {"phrase": "疲れた", "image": "assets/images/feelings/tired.png"},
       {"phrase": "退屈した", "image": "assets/images/feelings/bored.png"},
       {"phrase": "驚いた", "image": "assets/images/feelings/surprised.png"},
-      {"phrase": "緊張した", "image": "assets/images/feelings/nervous.png"}
+      {"phrase": "緊張した", "image": "assets/images/feelings/nervous.png"},
+      {"phrase": "落ち着いた", "image": "assets/images/feelings/calm.png"},
+      {"phrase": "心配した", "image": "assets/images/feelings/worried.png"},
+      {"phrase": "安全な", "image": "assets/images/feelings/safe.png"},
+      {"phrase": "混乱した", "image": "assets/images/feelings/confused.png"}
     ]
   },
   "形容": {
@@ -107,7 +185,21 @@
       {"phrase": "うるさい", "image": "assets/images/descriptive/loud.png"},
       {"phrase": "静かな", "image": "assets/images/descriptive/quiet.png"},
       {"phrase": "重い", "image": "assets/images/descriptive/heavy.png"},
-      {"phrase": "軽い", "image": "assets/images/descriptive/light.png"}
+      {"phrase": "軽い", "image": "assets/images/descriptive/light.png"},
+      {"phrase": "良い", "image": "assets/images/descriptive/good.png"},
+      {"phrase": "違う", "image": "assets/images/descriptive/different.jpg"},
+      {"phrase": "同じ", "image": "assets/images/descriptive/same.png"},
+      {"phrase": "素敵な", "image": "assets/images/descriptive/nice.png"},
+      {"phrase": "お気に入りの", "image": "assets/images/descriptive/favorite.png"},
+      {"phrase": "古い", "image": "assets/images/descriptive/old.png"},
+      {"phrase": "汚い", "image": "assets/images/descriptive/dirty.png"},
+      {"phrase": "濡れた", "image": "assets/images/descriptive/wet.png"},
+      {"phrase": "悪い", "image": "assets/images/descriptive/bad.png"},
+      {"phrase": "小さな", "image": "assets/images/descriptive/little.png"},
+      {"phrase": "嫌な", "image": "assets/images/descriptive/disgusting.png"},
+      {"phrase": "楽しい", "image": "assets/images/descriptive/fun.png"},
+      {"phrase": "面白い", "image": "assets/images/descriptive/funny.png"},
+      {"phrase": "新しい", "image": "assets/images/descriptive/new.png"}
     ]
   },
   "質問": {
@@ -122,7 +214,8 @@
       {"phrase": "どちら？", "image": "assets/images/questions/which.png"},
       {"phrase": "できますか？", "image": "assets/images/questions/can_i.png"},
       {"phrase": "しますか？", "image": "assets/images/questions/do_you.png"},
-      {"phrase": "ですか？", "image": "assets/images/questions/is_it.png"}
+      {"phrase": "ですか？", "image": "assets/images/questions/is_it.png"},
+      {"phrase": "します", "image": "assets/images/questions/will.png"}
     ]
   },
   "時間": {
@@ -137,7 +230,23 @@
       {"phrase": "昨日", "image": "assets/images/time/yesterday.png"},
       {"phrase": "今", "image": "assets/images/time/now.png"},
       {"phrase": "後で", "image": "assets/images/time/later.png"},
-      {"phrase": "すぐに", "image": "assets/images/time/soon.png"}
+      {"phrase": "すぐに", "image": "assets/images/time/soon.png"},
+      {"phrase": "来週", "image": "assets/images/time/next_week.png"},
+      {"phrase": "来月", "image": "assets/images/time/next_month.png"},
+      {"phrase": "日", "image": "assets/images/time/day.png"},
+      {"phrase": "月", "image": "assets/images/time/month.png"},
+      {"phrase": "年", "image": "assets/images/time/year.png"},
+      {"phrase": "今夜", "image": "assets/images/time/tonight.png"},
+      {"phrase": "いつも", "image": "assets/images/time/always.png"},
+      {"phrase": "また", "image": "assets/images/time/again.png"},
+      {"phrase": "決して", "image": "assets/images/time/never.png"},
+      {"phrase": "早く", "image": "assets/images/time/early.png"},
+      {"phrase": "週", "image": "assets/images/time/week.png"},
+      {"phrase": "週末", "image": "assets/images/time/weekend.png"},
+      {"phrase": "前", "image": "assets/images/time/before.png"},
+      {"phrase": "後", "image": "assets/images/time/after.png"},
+      {"phrase": "最初", "image": "assets/images/time/first.png"},
+      {"phrase": "最後", "image": "assets/images/time/last.png"}
     ]
   },
   "ソーシャル": {
@@ -157,7 +266,15 @@
       {"phrase": "お名前は？", "image": "assets/images/social/what's_your_name.png"},
       {"phrase": "道に迷いました", "image": "assets/images/social/i'm_lost.png"},
       {"phrase": "お腹が空きました", "image": "assets/images/social/i'm_hungry.png"},
-      {"phrase": "喉が渇きました", "image": "assets/images/social/i'm_thirsty.png"}
+      {"phrase": "喉が渇きました", "image": "assets/images/social/i'm_thirsty.png"},
+      {"phrase": "ようこそ", "image": "assets/images/social/welcome.jpeg"},
+      {"phrase": "おはようございます", "image": "assets/images/social/good_morning.jpeg"},
+      {"phrase": "おやすみなさい", "image": "assets/images/social/good_night.jpeg"},
+      {"phrase": "お気をつけて", "image": "assets/images/social/take_care.png"},
+      {"phrase": "また後で", "image": "assets/images/social/see_you_later.jpeg"},
+      {"phrase": "話しましょう", "image": "assets/images/social/lets_chat.jpeg"},
+      {"phrase": "冗談です", "image": "assets/images/social/im_joking.jpeg"},
+      {"phrase": "お待ちください", "image": "assets/images/social/please_wait.jpeg"}
     ]
   },
   "健康": {
@@ -178,6 +295,145 @@
       {"phrase": "喉", "image": "assets/images/health/throat.png"},
       {"phrase": "咳", "image": "assets/images/health/cough.png"},
       {"phrase": "熱", "image": "assets/images/health/fever.png"}
+    ]
+  },
+  "交通": {
+    "categoryImage": "assets/images/transportation/transportation.png",
+    "phrases": [
+      {"phrase": "バス", "image": "assets/images/transportation/bus.png"},
+      {"phrase": "電車", "image": "assets/images/transportation/train.png"},
+      {"phrase": "自転車", "image": "assets/images/transportation/bicycle.png"},
+      {"phrase": "タクシー", "image": "assets/images/transportation/taxi.png"},
+      {"phrase": "歩く", "image": "assets/images/transportation/walking.png"},
+      {"phrase": "車", "image": "assets/images/transportation/car.png"}
+    ]
+  },
+  "天気": {
+    "categoryImage": "assets/images/weather/weather.png",
+    "phrases": [
+      {"phrase": "晴れ", "image": "assets/images/weather/sunny.png"},
+      {"phrase": "雨", "image": "assets/images/weather/rainy.png"},
+      {"phrase": "曇り", "image": "assets/images/weather/cloudy.png"},
+      {"phrase": "風", "image": "assets/images/weather/windy.png"},
+      {"phrase": "雪", "image": "assets/images/weather/snowy.png"},
+      {"phrase": "暑い", "image": "assets/images/weather/hot.png"},
+      {"phrase": "寒い", "image": "assets/images/weather/cold.png"}
+    ]
+  },
+  "好み": {
+    "categoryImage": "assets/images/preferences/preferences.png",
+    "phrases": [
+      {"phrase": "好きです", "image": "assets/images/preferences/i_like_it.png"},
+      {"phrase": "好きではありません", "image": "assets/images/preferences/i_dont_like_it.png"},
+      {"phrase": "これが欲しいです", "image": "assets/images/preferences/i_want_this.png"},
+      {"phrase": "これが必要です", "image": "assets/images/preferences/i_need_this.png"},
+      {"phrase": "〜の方が好きです", "image": "assets/images/preferences/i_prefer.png"},
+      {"phrase": "大好きです", "image": "assets/images/preferences/i_love.png"}
+    ]
+  },
+  "小さな言葉": {
+    "categoryImage": "assets/images/little_words/little_words.jpeg",
+    "phrases": [
+      {"phrase": "中", "image": "assets/images/little_words/in.png"},
+      {"phrase": "外", "image": "assets/images/little_words/out.png"},
+      {"phrase": "上", "image": "assets/images/little_words/up.png"},
+      {"phrase": "下", "image": "assets/images/little_words/down.png"},
+      {"phrase": "と", "image": "assets/images/little_words/and.jpeg"},
+      {"phrase": "上に", "image": "assets/images/little_words/on.jpeg"},
+      {"phrase": "と一緒に", "image": "assets/images/little_words/with.jpeg"},
+      {"phrase": "オフ", "image": "assets/images/little_words/off.jpeg"},
+      {"phrase": "全て", "image": "assets/images/little_words/all.png"},
+      {"phrase": "しないで", "image": "assets/images/little_words/dont.png"},
+      {"phrase": "離れて", "image": "assets/images/little_words/away.jpeg"},
+      {"phrase": "下に", "image": "assets/images/little_words/under.jpeg"},
+      {"phrase": "必要", "image": "assets/images/little_words/need.jpeg"},
+      {"phrase": "ない", "image": "assets/images/little_words/not.png"},
+      {"phrase": "いくつかの", "image": "assets/images/little_words/some.png"},
+      {"phrase": "なぜなら", "image": "assets/images/little_words/because.png"},
+      {"phrase": "もっと", "image": "assets/images/little_words/more.png"},
+      {"phrase": "へ", "image": "assets/images/little_words/to.png"},
+      {"phrase": "のために", "image": "assets/images/little_words/for.png"},
+      {"phrase": "も", "image": "assets/images/little_words/too.png"},
+      {"phrase": "で", "image": "assets/images/little_words/at.png"},
+      {"phrase": "によって", "image": "assets/images/little_words/by.png"},
+      {"phrase": "の上に", "image": "assets/images/little_words/over.png"},
+      {"phrase": "から", "image": "assets/images/little_words/from.png"}
+    ]
+  },
+  "活動": {
+    "categoryImage": "assets/images/activities/activities.png",
+    "phrases": [
+      {"phrase": "誕生日", "image": "assets/images/activities/birthday.png"},
+      {"phrase": "ゲーム", "image": "assets/images/activities/game.png"},
+      {"phrase": "音楽", "image": "assets/images/activities/music.png"},
+      {"phrase": "外", "image": "assets/images/activities/outside.png"},
+      {"phrase": "テレビ", "image": "assets/images/activities/tv.png"},
+      {"phrase": "仕事", "image": "assets/images/activities/work.png"}
+    ]
+  },
+  "コミュニケーション": {
+    "categoryImage": "assets/images/communication/communication.png",
+    "phrases": [
+      {"phrase": "メール", "image": "assets/images/communication/email.png"},
+      {"phrase": "メッセージ", "image": "assets/images/communication/message.png"},
+      {"phrase": "ソーシャルメディア", "image": "assets/images/communication/social_media.png"},
+      {"phrase": "電話", "image": "assets/images/communication/call.png"}
+    ]
+  },
+  "助け": {
+    "categoryImage": "assets/images/help/help.png",
+    "phrases": [
+      {"phrase": "分かりません", "image": "assets/images/help/i_dont_know.png"},
+      {"phrase": "はい", "image": "assets/images/help/yes.png"},
+      {"phrase": "いいえ", "image": "assets/images/help/no.png"},
+      {"phrase": "たぶん", "image": "assets/images/help/maybe.png"},
+      {"phrase": "準備ができていません", "image": "assets/images/help/not_ready.png"},
+      {"phrase": "話したいことがあります", "image": "assets/images/help/i_need_to_talk_to_you.png"},
+      {"phrase": "それは私が言ったことではありません", "image": "assets/images/help/thats_not_what_i_said.png"},
+      {"phrase": "何かが間違っています", "image": "assets/images/help/somethings_wrong.png"},
+      {"phrase": "iPadを充電してください", "image": "assets/images/help/charge_my_ipad.png"},
+      {"phrase": "言いたいことがあります", "image": "assets/images/help/i_have_something_to_say.png"},
+      {"phrase": "理解できません", "image": "assets/images/help/i_dont_understand.png"},
+      {"phrase": "なんでもいいです", "image": "assets/images/help/whatever.png"},
+      {"phrase": "素晴らしい", "image": "assets/images/help/awesome.png"},
+      {"phrase": "急いで！", "image": "assets/images/help/hurry_up.png"},
+      {"phrase": "落ち着くのを手伝ってください", "image": "assets/images/help/help_calming_down.png"},
+      {"phrase": "もう一度言ってください", "image": "assets/images/help/please_repeat_that.png"},
+      {"phrase": "自分でします", "image": "assets/images/help/do_it_myself.png"},
+      {"phrase": "休憩が必要です", "image": "assets/images/help/i_need_a_break.png"}
+    ]
+  },
+  "動物": {
+    "categoryImage": "assets/images/animals/animals.png",
+    "phrases": [
+      {"phrase": "犬", "image": "assets/images/animals/dog.png"},
+      {"phrase": "猫", "image": "assets/images/animals/cat.png"},
+      {"phrase": "鳥", "image": "assets/images/animals/bird.png"},
+      {"phrase": "馬", "image": "assets/images/animals/horse.png"}
+    ]
+  },
+  "数字": {
+    "categoryImage": "assets/images/numbers/numbers.jpg",
+    "phrases": [
+      {"phrase": "0", "image": "assets/images/numbers/0.png"},
+      {"phrase": "1", "image": "assets/images/numbers/1.jpeg"},
+      {"phrase": "2", "image": "assets/images/numbers/2.png"},
+      {"phrase": "3", "image": "assets/images/numbers/3.png"},
+      {"phrase": "4", "image": "assets/images/numbers/4.png"},
+      {"phrase": "5", "image": "assets/images/numbers/5.png"},
+      {"phrase": "6", "image": "assets/images/numbers/6.png"},
+      {"phrase": "7", "image": "assets/images/numbers/7.png"},
+      {"phrase": "8", "image": "assets/images/numbers/8.jpeg"},
+      {"phrase": "9", "image": "assets/images/numbers/9.png"}
+    ]
+  },
+  "句読点": {
+    "categoryImage": "assets/images/punctuation/punctuation.png",
+    "phrases": [
+      {"phrase": "。", "image": "assets/images/punctuation/period.png"},
+      {"phrase": "？", "image": "assets/images/punctuation/question_mark.png"},
+      {"phrase": "！", "image": "assets/images/punctuation/exclamation_mark.png"},
+      {"phrase": "、", "image": "assets/images/punctuation/comma.png"}
     ]
   }
 }

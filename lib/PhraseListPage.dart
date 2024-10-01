@@ -391,7 +391,7 @@ class _PhraseListPageState extends State<PhraseListPage> {
                       setState(() {
                         phrasesList.add({
                           "phrase": newPhraseText,
-                          "image": "assets/images/test.png",
+                          "image": "assets/images/logo.png",
                         });
                       });
                       widget.savePhrase();
