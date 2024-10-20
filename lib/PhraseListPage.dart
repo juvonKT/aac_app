@@ -383,7 +383,7 @@ class _PhraseListPageState extends State<PhraseListPage> {
                   ),
                 ),
                 IconButton(
-                  icon: const Icon(Icons.add, color: Colors.black),
+                  icon: Icon(Icons.add, color: Theme.of(context).iconTheme.color),
                   onPressed: () async {
                     final newPhraseText = await Navigator.push(
                       context,

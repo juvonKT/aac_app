@@ -40,27 +40,27 @@
   "purposeContent": "This app is designed to help users, especially those with communication challenges, construct sentences using predefined phrases. It also offers features like phrase suggestions, multiple languages, and text-to-speech to assist users in effective communication.",
 
   "addUserTitle": "How to Add a User",
-  "addUserContent": "1. Navigate to the Settings page.\n2. Tap the 'Add User' button.\n3. Enter the user’s name and save.",
+  "addUserContent": "1. Navigate to the Settings page.\n2. Tap on the 'Add New User' button.\n3. Enter the user’s name and save.",
 
   "deleteUserTitle": "How to Delete a User",
-  "deleteUserContent": "1. Navigate to the Settings page.\n2. Select the user you wish to delete from the list.\n3. Tap the 'Delete' button.",
+  "deleteUserContent": "1. Navigate to the Settings page.\n2. Select the user you wish to delete from the list.\n3. Tap the 'Delete User' button.",
 
   "changeLanguageTitle": "How to Change Language",
-  "changeLanguageContent": "1. Go to the Settings page.\n2. Under 'Language Preferences,' select your preferred language from the dropdown.\n3. The app will automatically switch to the selected language.",
+  "changeLanguageContent": "1. Go to the Settings page.\n2. Under 'Language', select your preferred language from the dropdown.\n3. The app will automatically switch to the selected language.",
 
   "changeThemeTitle": "How to Change the Theme",
-  "changeThemeContent": "1. Navigate to Settings.\n2. Under 'Theme,' choose between light or dark mode.",
+  "changeThemeContent": "1. Navigate to Settings.\n2. Under 'Colour Scheme', choose between light or dark mode.",
 
   "usePhrasesTitle": "How to Use Phrases",
   "usePhrasesContent": "1. Navigate to the main phrase screen.\n2. Choose a category or start typing a phrase.\n3. The app will suggest phrases based on what you've selected.",
 
   "addPhraseTitle": "How to Add a New Phrase or Category",
-  "addPhraseContent": "1. Go to the Settings page.\n2. Tap 'Add Phrase' or 'Add Category.'\n3. Enter the details and save.",
+  "addPhraseContent": "1. Go to the Settings page.\n2. Tap '+'.\n3. Enter the details and save.",
 
   "deletePhraseTitle": "How to Delete a Phrase or Category",
   "deletePhraseContent": "1. Navigate to the main phrase screen.\n2. Long press on the category or phrase you want to delete.\n3. A pop-up message will ask for confirmation. Select 'Delete' to remove it.",
 
   "useTTSTitle": "How to Use Text-to-Speech",
-  "useTTSContent": "1. On the phrase screen, select a phrase or sentence.\n2. Tap the speaker icon to hear the phrase spoken aloud."
+  "useTTSContent": "1. On the Home page near top right corner.\n2. Tap the speaker icon after putting phrases in the field text to hear the phrase spoken aloud."
 }
 

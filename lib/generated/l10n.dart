@@ -420,10 +420,10 @@ class S {
     );
   }
 
-  /// `1. Navigate to the Settings page.\n2. Tap the 'Add User' button.\n3. Enter the user’s name and save.`
+  /// `1. Navigate to the Settings page.\n2. Tap on the 'Add New User' button.\n3. Enter the user’s name and save.`
   String get addUserContent {
     return Intl.message(
-      '1. Navigate to the Settings page.\n2. Tap the \'Add User\' button.\n3. Enter the user’s name and save.',
+      '1. Navigate to the Settings page.\n2. Tap on the \'Add New User\' button.\n3. Enter the user’s name and save.',
       name: 'addUserContent',
       desc: '',
       args: [],
@@ -440,10 +440,10 @@ class S {
     );
   }
 
-  /// `1. Navigate to the Settings page.\n2. Select the user you wish to delete from the list.\n3. Tap the 'Delete' button.`
+  /// `1. Navigate to the Settings page.\n2. Select the user you wish to delete from the list.\n3. Tap the 'Delete User' button.`
   String get deleteUserContent {
     return Intl.message(
-      '1. Navigate to the Settings page.\n2. Select the user you wish to delete from the list.\n3. Tap the \'Delete\' button.',
+      '1. Navigate to the Settings page.\n2. Select the user you wish to delete from the list.\n3. Tap the \'Delete User\' button.',
       name: 'deleteUserContent',
       desc: '',
       args: [],
@@ -460,10 +460,10 @@ class S {
     );
   }
 
-  /// `1. Go to the Settings page.\n2. Under 'Language Preferences,' select your preferred language from the dropdown.\n3. The app will automatically switch to the selected language.`
+  /// `1. Go to the Settings page.\n2. Under 'Language', select your preferred language from the dropdown.\n3. The app will automatically switch to the selected language.`
   String get changeLanguageContent {
     return Intl.message(
-      '1. Go to the Settings page.\n2. Under \'Language Preferences,\' select your preferred language from the dropdown.\n3. The app will automatically switch to the selected language.',
+      '1. Go to the Settings page.\n2. Under \'Language\', select your preferred language from the dropdown.\n3. The app will automatically switch to the selected language.',
       name: 'changeLanguageContent',
       desc: '',
       args: [],
@@ -480,10 +480,10 @@ class S {
     );
   }
 
-  /// `1. Navigate to Settings.\n2. Under 'Theme,' choose between light or dark mode.`
+  /// `1. Navigate to Settings.\n2. Under 'Colour Scheme', choose between light or dark mode.`
   String get changeThemeContent {
     return Intl.message(
-      '1. Navigate to Settings.\n2. Under \'Theme,\' choose between light or dark mode.',
+      '1. Navigate to Settings.\n2. Under \'Colour Scheme\', choose between light or dark mode.',
       name: 'changeThemeContent',
       desc: '',
       args: [],
@@ -520,10 +520,10 @@ class S {
     );
   }
 
-  /// `1. Go to the Settings page.\n2. Tap 'Add Phrase' or 'Add Category.'\n3. Enter the details and save.`
+  /// `1. Go to the Settings page.\n2. Tap '+'.\n3. Enter the details and save.`
   String get addPhraseContent {
     return Intl.message(
-      '1. Go to the Settings page.\n2. Tap \'Add Phrase\' or \'Add Category.\'\n3. Enter the details and save.',
+      '1. Go to the Settings page.\n2. Tap \'+\'.\n3. Enter the details and save.',
       name: 'addPhraseContent',
       desc: '',
       args: [],
@@ -560,10 +560,10 @@ class S {
     );
   }
 
-  /// `1. On the phrase screen, select a phrase or sentence.\n2. Tap the speaker icon to hear the phrase spoken aloud.`
+  /// `1. On the Home page near top right corner.\n2. Tap the speaker icon after putting phrases in the field text to hear the phrase spoken aloud.`
   String get useTTSContent {
     return Intl.message(
-      '1. On the phrase screen, select a phrase or sentence.\n2. Tap the speaker icon to hear the phrase spoken aloud.',
+      '1. On the Home page near top right corner.\n2. Tap the speaker icon after putting phrases in the field text to hear the phrase spoken aloud.',
       name: 'useTTSContent',
       desc: '',
       args: [],

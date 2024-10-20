@@ -35,22 +35,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "addNewUser": MessageLookupByLibrary.simpleMessage("Add New User"),
         "addPhrase": MessageLookupByLibrary.simpleMessage("Add Phrase"),
         "addPhraseContent": MessageLookupByLibrary.simpleMessage(
-            "1. Go to the Settings page.\n2. Tap \'Add Phrase\' or \'Add Category.\'\n3. Enter the details and save."),
+            "1. Go to the Settings page.\n2. Tap \'+\'.\n3. Enter the details and save."),
         "addPhraseTitle": MessageLookupByLibrary.simpleMessage(
             "How to Add a New Phrase or Category"),
         "addUserButton": MessageLookupByLibrary.simpleMessage("AddUser"),
         "addUserContent": MessageLookupByLibrary.simpleMessage(
-            "1. Navigate to the Settings page.\n2. Tap the \'Add User\' button.\n3. Enter the user’s name and save."),
+            "1. Navigate to the Settings page.\n2. Tap on the \'Add New User\' button.\n3. Enter the user’s name and save."),
         "addUserTitle":
             MessageLookupByLibrary.simpleMessage("How to Add a User"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "categoryDeleted": m0,
         "changeLanguageContent": MessageLookupByLibrary.simpleMessage(
-            "1. Go to the Settings page.\n2. Under \'Language Preferences,\' select your preferred language from the dropdown.\n3. The app will automatically switch to the selected language."),
+            "1. Go to the Settings page.\n2. Under \'Language\', select your preferred language from the dropdown.\n3. The app will automatically switch to the selected language."),
         "changeLanguageTitle":
             MessageLookupByLibrary.simpleMessage("How to Change Language"),
         "changeThemeContent": MessageLookupByLibrary.simpleMessage(
-            "1. Navigate to Settings.\n2. Under \'Theme,\' choose between light or dark mode."),
+            "1. Navigate to Settings.\n2. Under \'Colour Scheme\', choose between light or dark mode."),
         "changeThemeTitle":
             MessageLookupByLibrary.simpleMessage("How to Change the Theme"),
         "colourScheme": MessageLookupByLibrary.simpleMessage("Colour Scheme"),
@@ -68,7 +68,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteUser": MessageLookupByLibrary.simpleMessage("Delete User"),
         "deleteUserConfirmation": m3,
         "deleteUserContent": MessageLookupByLibrary.simpleMessage(
-            "1. Navigate to the Settings page.\n2. Select the user you wish to delete from the list.\n3. Tap the \'Delete\' button."),
+            "1. Navigate to the Settings page.\n2. Select the user you wish to delete from the list.\n3. Tap the \'Delete User\' button."),
         "deleteUserTitle":
             MessageLookupByLibrary.simpleMessage("How to Delete a User"),
         "enterYourName":
@@ -96,7 +96,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "usePhrasesTitle":
             MessageLookupByLibrary.simpleMessage("How to Use Phrases"),
         "useTTSContent": MessageLookupByLibrary.simpleMessage(
-            "1. On the phrase screen, select a phrase or sentence.\n2. Tap the speaker icon to hear the phrase spoken aloud."),
+            "1. On the Home page near top right corner.\n2. Tap the speaker icon after putting phrases in the field text to hear the phrase spoken aloud."),
         "useTTSTitle":
             MessageLookupByLibrary.simpleMessage("How to Use Text-to-Speech"),
         "userA": MessageLookupByLibrary.simpleMessage("User A"),

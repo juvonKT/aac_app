@@ -40,6 +40,9 @@ class UserGuidePage extends StatelessWidget {
           _buildSectionTitle(s.addPhraseTitle),
           _buildSectionContent(s.addPhraseContent),
 
+          _buildSectionTitle(s.deletePhraseTitle),
+          _buildSectionContent(s.deletePhraseContent),
+
           _buildSectionTitle(s.useTTSTitle),
           _buildSectionContent(s.useTTSContent),
         ],
